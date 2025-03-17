@@ -23,4 +23,12 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')
+        OUTPUT=$(pylint $(git ls-files '*.py'))
+        echo "$OUTPUT"
+        SCORE=$(echo "$OUTPUT" | grep -oP '(?<=Your code has been rated at )[\d\.]+')
+        if (( $(echo "$SCORE < 9" | bc -l) )); then
+          echo "❌ Pylint score ($SCORE) is below 9. Build has failed."
+          exit 1
+        else
+          echo "✅ Pylint score ($SCORE) meets the requirement (>= 9.0)."
+        fi
