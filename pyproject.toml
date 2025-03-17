@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cert-info"
+version = "0.0.1"
+description = "Simple Python Library to convert JSON to XML"
+readme = "README.md"
+license = { text = "Apache Software License 2.0" }
+keywords = ["json2xml"]
+authors = [
+    { name = "Diogo Ribeiro", email = "diogo.p.ribeiro@inesctec.pt" },
+    { name = "João Marco Silva", email = "joaomarco@di.uminho.pt" }
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/dissect-project/cert-info"
