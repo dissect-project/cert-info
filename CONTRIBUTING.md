@@ -13,11 +13,9 @@ Contributions are more than welcome and they are what makes the community great!
     ```bash
     git commit -m "tag: brief commit description
     
-    Here you can place a more detailed description
-    of what is included in the commit, making sure
-    to not exceed 50 characters per line. The tag 
-    used above should be the same as the one used
-    in the branch, and the brief commit descrip-
-    tion should be self-explanatory."
+    Here you can place a more detailed description of what is included in
+    the commit, making sure to not exceed 72 characters per line. The tag 
+    used above should be the same as the one used in the branch, and the
+    brief commit description should be self-explanatory."
     ```
 - **Pull Requests**: When opening a pull request, make sure to assign at least a reviewer so that all the code being merged has been validated by more than one person. When merging the pull request, make sure to **squash** all **commits** **before merging**.

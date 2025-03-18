@@ -55,7 +55,7 @@ print(result)
 
 ## Contributing
 
-Contributions are more than welcome and they are what makes the community great! Feel free to open issues, suggest features, or submit pull requests. Please check out the [contributions guide](/docs/CONTRIBUTING.md) for more information on how to do so.
+Contributions are more than welcome and they are what makes the community great! Feel free to open issues, suggest features, or submit pull requests. Please check out the [contributions guide](/CONTRIBUTING.md) for more information on how to do so.
 
 ## Documentation
 
