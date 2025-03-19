@@ -73,6 +73,9 @@ Contributions are more than welcome and they are what makes the community great!
     used above should be the same as the one used in the branch, and the
     brief commit description should be self-explanatory."
     ```
+
+- **Testing**: To test the code, execute the `python -m unittest` command in the root of the repository. Make sure all tests pass successfully. To test using `pylint`, run `pylint src` at the root of the project and make sure the score is above `9.0`.
+
 - **Pull Requests**: When opening a pull request, make sure to assign at least a reviewer so that all the code being merged has been validated by more than one person. When merging the pull request, make sure to **squash** all **commits** **before merging**.
 
 ## Documentation
