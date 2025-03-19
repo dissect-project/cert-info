@@ -5,7 +5,7 @@ Verify leaf certificates and the remaining certificate chain.
 """
 
 # app
-from .analyze import *
+from .analyzer import *
 
 # main package info
 __title__ = 'cert-info'
