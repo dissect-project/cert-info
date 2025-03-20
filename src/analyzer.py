@@ -5,7 +5,7 @@ of a given domain, returning the results in json format.
 
 import re
 import requests
-
+import subprocess
 
 class CertificateAnalyzer:
     """Analyze digital certificates for a given domain."""
@@ -64,5 +64,10 @@ class CertificateAnalyzer:
         # Check if the domain is reachable
         if not self.is_reachable(domain):
             return "Domain is not reachable."
+        # Run testssl.sh and wait for its completion
+        #result = subprocess.run(
+        #    f"MAX_SOCKET_FAIL=5 MAX_OSSL_FAIL=5 ./testssl.sh -S --phone-out --jsonfile-pretty cm-porto.json cm-porto.pt", capture_output=True, text=True)
+        result = subprocess.run("pwd", capture_output=True, text=True)
+        result = result.stdout
         # Return a message indicating that the domain is valid and reachable
-        return "Domain is valid and reachable."
+        return result
