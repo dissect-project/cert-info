@@ -5,10 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "cert-info"
 version = "0.0.1"
-description = "Simple Python Library to convert JSON to XML"
+description = "Package that allows to verify the certificate chain of a given domain,"
 readme = "README.md"
-license = { text = "Apache Software License 2.0" }
-keywords = ["json2xml"]
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+license-files = ["LICEN[CS]E*"]
+keywords = []
 authors = [
     { name = "Diogo Ribeiro", email = "diogo.p.ribeiro@inesctec.pt" },
     { name = "João Marco Silva", email = "joaomarco@di.uminho.pt" }
