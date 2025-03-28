@@ -1,11 +1,11 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cert-info"
-version = "0.0.1"
-description = "Package that allows to verify the certificate chain of a given domain,"
+name = "cert_info"
+version = "0.0.3"
+description = "Package that allows to verify the certificate chain of a given domain."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "GPL-3.0-or-later"
@@ -15,7 +15,14 @@ authors = [
     { name = "Diogo Ribeiro", email = "diogo.p.ribeiro@inesctec.pt" },
     { name = "João Marco Silva", email = "joaomarco@di.uminho.pt" }
 ]
-dependencies = []
+dependencies = ["requests"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.package-data]
+"cert_info" = ["testssl/**"]
 
 [project.urls]
 Homepage = "https://github.com/dissect-project/cert-info"

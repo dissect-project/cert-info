@@ -36,7 +36,7 @@ error_msg() {
 
 # Project Root and Source Directory
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SRC_DIR="$PROJECT_ROOT/src"
+SRC_DIR="$PROJECT_ROOT/cert_info"
 TESTSSL_REPO="https://github.com/testssl/testssl.sh.git"
 
 # Print a banner
@@ -59,7 +59,7 @@ sleep 1  # Pause for readability
 print_header "📂 Preparing the Environment" 2
 # Ensure src/ directory exists
 mkdir -p "$SRC_DIR"
-success_msg "The src/ directory exists at $SRC_DIR"
+success_msg "The source code directory exists at $SRC_DIR"
 ##########################################################
 
 ### Clone the testssl.sh repository with a nice spinner ##

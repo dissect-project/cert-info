@@ -5,13 +5,13 @@ is being accurately assessed by the analyzer.
 
 import unittest
 
-from src.analyzer import CertificateAnalyzer
+from cert_info.cert_info import CertificateInformation
 
 class TestDomainValidation(unittest.TestCase):
     """Test the domain validation functions."""
 
     def setUp(self):
-        self.analyzer = CertificateAnalyzer()
+        self.analyzer = CertificateInformation()
 
     def test_valid_domains(self):
         """Tests the validation of valid domain formats."""
