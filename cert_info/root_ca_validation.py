@@ -1,0 +1,144 @@
+"""
+This module contains the code required to verify and validate if
+a given issuer is a valid Certificate Authority (CA) present in
+the local certificate store.
+"""
+
+import os
+import platform
+import subprocess
+from cryptography import x509
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import serialization
+
+class RootCAValidator:
+    """
+    Root Certificate Authority (CA) Validator class that provides methods
+    to validate if a given issuer is a valid CA in the local system.
+    """
+
+    @staticmethod
+    def check_macos_keychain(issuer_cn: str) -> str:
+        """
+        Checks if a given Common Name (CN) exists in macOS System
+        Root CA store.
+        
+        Args:
+            issuer_cn (str): The issuer's Common Name.
+            
+        Returns:
+            str: The certificate of the issuer if found, None otherwise.
+        """
+        try:
+            result = subprocess.run(
+                ["security", "find-certificate", "-a", "-Z", "-c",
+                issuer_cn, "-p", "/System/Library/Keychains/SystemRootCertificates.keychain"],
+                stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True,
+                check=False
+            )
+            # Check if any certificate was found
+            if result.returncode == 0 and result.stdout:
+                # Return the certificate
+                return result.stdout.strip()
+            else:
+                return None
+        except FileNotFoundError:
+            print("macOS 'security' command not found.")
+            return None
+
+    @staticmethod
+    def check_windows_store(issuer_cn: str) -> str:
+        """
+        Checks if a given Common Name (CN) exists in the Windows
+        Root CA store.
+        
+        Args:
+            issuer_cn (str): The issuer's Common Name.
+        
+        Returns:
+            str: The certificate of the issuer if found, None otherwise.
+        """
+        try:
+            result = subprocess.run(
+                ["certutil", "-store", "ROOT"],
+                stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True,
+                check=False
+            )
+            return result.stdout  # If issuer CN appears, it is trusted
+        except FileNotFoundError:
+            print("Windows 'certutil' command not found.")
+            return None
+
+    @staticmethod
+    def check_linux_ca(issuer_cn: str) -> str:
+        """
+        Checks if a given Common Name (CN) exists in the Linux system CA bundle.
+        
+        Args:
+            issuer_cn (str): The issuer's Common Name.
+            
+        Returns:
+            str: The certificate of the issuer if found, None otherwise.
+        """
+        # Possible CA bundle paths for different Linux distros
+        ca_paths = [
+            "/etc/ssl/certs/ca-certificates.crt",  # Debian/Ubuntu
+            "/etc/pki/tls/certs/ca-bundle.crt",    # Red Hat/CentOS/Fedora
+            "/etc/ssl/cert.pem"                    # Alpine Linux
+        ]
+        # Iterate possible paths
+        for ca_path in ca_paths:
+            if os.path.exists(ca_path):
+                with open(ca_path, "r", encoding="utf-8") as ca_file:
+                        return ca_file.read()
+        # Issuer not found in any CA bundle
+        return None
+
+    @staticmethod
+    def check_mozilla_ca_bundle(issuer_cn: str) -> str:
+        """
+        Checks if a given Common Name (CN) exists in Mozilla's CA bundle.
+        
+        Args:
+            issuer_cn (str): The issuer's Common Name.
+            
+        Returns:
+            str: The certificate of the issuer if found, None otherwise.
+        """
+        return None
+
+    @staticmethod
+    def get_certificate(issuer_cn: str) -> bool:
+        """
+        Determines if an issuer Common Name is in the local system
+        CA store of an OS. The function detects which OS is in the
+        local machine, and performs retrieves the certificate. In 
+        case there is no certificate in the local store, Mozzila's
+        CA bundle is used instead.
+        
+        Args:
+            issuer_cn (str): The issuer's Common Name.
+
+        Returns:
+            bool: True if the issuer is present, False otherwise.
+        """
+        # Initialize certificate object
+        cert = None
+        # Get the OS name
+        os_name = platform.system()
+        # Perform validation based on the OS
+        if os_name == "Darwin":  # macOS
+            # Check if the issuer is in the macOS Keychain
+            cert = RootCAValidator.check_macos_keychain(issuer_cn)
+        elif os_name == "Windows":
+            # Check if the issuer is in the Windows Root CA store
+            cert = RootCAValidator.check_windows_store(issuer_cn)
+        elif os_name == "Linux":
+            # Check if the issuer is in the Linux CA bundle
+            cert = RootCAValidator.check_linux_ca(issuer_cn)
+        # Check if certificate was found
+        if cert is None:
+            # Use Mozilla's CA bundle as fallback
+            cert = RootCAValidator.check_mozilla_ca_bundle(issuer_cn)
+        # Return the result
+        return cert

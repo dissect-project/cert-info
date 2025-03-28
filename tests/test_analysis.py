@@ -5,13 +5,13 @@ is working and behaving as expected.
 
 import unittest
 
-from src.analyzer import CertificateAnalyzer
+from cert_info.cert_info import CertificateACertificateInformationnalyzer
 
 class TestDomainAnalysis(unittest.TestCase):
     """Test the domain analysis function."""
 
     def setUp(self):
-        self.analyzer = CertificateAnalyzer()
+        self.analyzer = CertificateInformation()
 
     def test_domains(self):
         """Tests the analysis of a domain."""
