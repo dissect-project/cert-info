@@ -23,33 +23,128 @@ pip install -e /path/to/package
 
 ## Usage (To be Improved)
 
-After installing the package using pip, it should be available to use as any other python package. To import the package use the following line in your program:
+After installing the package using pip, it should be available to use as any other python package, and as a command line utility as well. To import the package use the following line in your program:
 
 ```python
-from cert-info import analyze
+from cert_info import cert_info
 ```
 
 After importing the package, it can be used as follows:
 
 ```python
-result = analyze("www.domain.com")
+# Initialize the Certificate Information object
+cert_analyzer = cert_info.CertificateInformation()
+# Analyze the domain
+result = cert_analyzer.analyze('www.domain.com')
+```
+
+The package can be used as a command line utility by passing the target domain as an argument as shown below:
+
+```bash
+usage: cert-info [-h] -d DOMAIN
+
+Verify the certificate chain of a given domain.
+
+options:
+  -h, --help                    show this help message and exit
+  -d DOMAIN, --domain DOMAIN    the domain to be analyzed.
 ```
 
 ## Output (To be Done)
 
-The `cert-info` package performs an assessment on the certificate chain of a given domain. All of the results are returned in a single object, as shown in the example below:
+The `cert-info` package performs an assessment on the certificate chain of a given domain. All of the results are returned in a single json object, as shown in the example below:
 
-```python
-from cert-info import scan
-
-# Perform the analysis
-result = analyze("www.domain.com")
-
-# Print the result
-print(result)
-
-# Example output
-...
+```json
+{
+    "domain": "www.cm-braga.pt",
+    "date": "2025-03-31 14:24:30",
+    "ip-address": "62.28.4.75",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.cm-braga.pt",
+                    "issuer": "CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US",
+                    "serial_number": 5582148804616936058407029012704790028,
+                    "valid_from": "2024-05-16 00:00:00",
+                    "valid_until": "2025-06-16 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "*.cm-braga.pt",
+                        "cm-braga.pt"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://cdp.rapidssl.com/RapidSSLTLSRSACAG1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://status.rapidssl.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cacerts.rapidssl.com/RapidSSLTLSRSACAG1.crt"
+                    ],
+                    "validation_level": "Domain Validation (DV)",
+                    "fingerprint_SHA256": "fe82fd983b82bc15404d8074f1809a36b89c207dc9380350bf6d3a6a2b79c6d1",
+                    "signature": "..."
+                },
+                "pem": "..."
+            }
+        },
+        {
+            "id": "Intermediate Certificate #1",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate #1",
+                "status": "valid",
+                "certificate": {
+                    ...
+                },
+                "pem": "..."
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    ...
+                },
+                "pem": "..."
+            }
+        }
+    ]
+}
 
 ```
 
