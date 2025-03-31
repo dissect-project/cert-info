@@ -3,11 +3,19 @@ The CertificateValidator class is responsible for validating certificates in a c
 """
 
 import re
+import requests
 from datetime import datetime, timezone
 
 from cryptography import x509
+from cryptography.x509.oid import AuthorityInformationAccessOID
+from cryptography.x509.ocsp import OCSPRequestBuilder, OCSPResponseStatus, OCSPCertStatus
 from cryptography.hazmat.primitives.asymmetric import padding, ec, rsa
-from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives import hashes, serialization
+
+# Define certificate IDs
+LEAF = "Leaf Certificate"
+ROOT = "Root CA Certificate"
+
 
 # Define constants for certificate validation issues
 SIGNATURE_FAILED  = "Signature verification failed"
@@ -94,7 +102,7 @@ class CertificateValidator:
             # Signature is invalid
             return False
 
-    def __certificate_expiration(self, cert: x509.Certificate, issues: list) -> bool:
+    def __check_expiration(self, cert: x509.Certificate, issues: list) -> bool:
         """
         Check if the certificate is expired.
 
@@ -200,6 +208,96 @@ class CertificateValidator:
         issues.append(HOSTNAME_MISMATCH)
         return False
 
+    def __check_revocation(self, cert: x509.Certificate, issuer_cert: x509.Certificate, issues: list, warnings: list) -> bool:
+        """
+        Check wether a certificate is revoked or nor.
+
+        Args:
+            cert (x509.Certificate): The certificate to check.
+            issuer_cert (x509.Certificate): The certificate to of the issuer.
+            issues (list): List to store issues found during validation.
+            warnings (list): List to store warnings found during validation.
+
+        Returns:
+            bool: True if the hostname matches, False otherwise.
+        """
+        # Extract CRL distribution points
+        crl_distribution_points = cert.extensions.get_extension_for_class(
+            x509.CRLDistributionPoints
+        ).value if cert.extensions.get_extension_for_class(x509.CRLDistributionPoints) else None
+        # Extract OCSP URL
+        try:
+            aia_extension = cert.extensions.get_extension_for_oid(
+                x509.ExtensionOID.AUTHORITY_INFORMATION_ACCESS
+            ).value
+            # Get the OCSP server URLS
+            ocsp_urls = [
+                desc.access_location.value
+                for desc in aia_extension
+                if desc.access_method == AuthorityInformationAccessOID.OCSP
+            ]
+        except x509.ExtensionNotFound:
+            ocsp_urls = []
+        # Warn if both CRL and OCSP are missing
+        if not crl_distribution_points and not ocsp_urls:
+            warnings.append("No CRL or OCSP information found in the certificate.")
+            # Validation fails
+            return False
+        # Check revocation via CRL
+        if crl_distribution_points:
+            # Iterate the distribution points
+            for crl_dp in crl_distribution_points:
+                # Get the CRL URL
+                crl_url = crl_dp.full_name[0].value  # Assuming first entry
+                try:
+                    # Make requests to the CRL server
+                    response = requests.get(crl_url, timeout=5)
+                    # Load the response
+                    crl = x509.load_der_x509_crl(response.content)
+                    # Check wether the certificate is present in the list
+                    if any(rev_cert.serial_number == cert.serial_number for rev_cert in crl):
+                        # Append issue
+                        issues.append("Certificate is revoked (found in CRL).")
+                        # Validation failed
+                        return False
+                except Exception as e:
+                    warnings.append(f"Failed to check CRL at {crl_url}: {e}")
+        # Check revocation via OCSP
+        if ocsp_urls:
+            # Initialize OCSP Request
+            builder = OCSPRequestBuilder()
+            # Add certificates to request
+            builder = builder.add_certificate(cert, issuer_cert, hashes.SHA256())
+            # Build request
+            ocsp_request = builder.build()
+            # Serialize request
+            ocsp_request_data = ocsp_request.public_bytes(encoding=serialization.Encoding.DER)
+            # Iterate OCSP URLs
+            for ocsp_url in ocsp_urls:
+                try:
+                    # Send request to OCSP URL
+                    response = requests.post(
+                        ocsp_url,
+                        data=ocsp_request_data,
+                        headers={"Content-Type": "application/ocsp-request"},
+                        timeout=5
+                    )
+                    # Get response
+                    ocsp_response = x509.ocsp.load_der_ocsp_response(response.content)
+                    # Check wether request was successfull
+                    if ocsp_response.response_status == OCSPResponseStatus.SUCCESSFUL:
+                        # Check wether certificate is revoked
+                        if ocsp_response.certificate_status == OCSPCertStatus.REVOKED:
+                            # Append the issue to the list
+                            issues.append("Certificate is revoked (found in OCSP response).")
+                            # Verification failed
+                            return False
+                except Exception as e:
+                    warnings.append(f"Failed to check OCSP at {ocsp_url}: {e}")
+        # Return True if validation does not fail
+        return True
+
+
     def validate(self, domain: str, pos: int, cert_id: str) -> tuple:
         """
         Validate the certificate in the respective chain.
@@ -221,7 +319,7 @@ class CertificateValidator:
         # Load the certificate
         cert_obj = x509.load_pem_x509_certificate(self.chain[pos]['pem'].encode())
         # Check wether the certificate is from a root CA
-        if cert_id != "Root CA Certificate":
+        if cert_id != ROOT:
             # Load the issuer certificate
             issuer_cert_obj = x509.load_pem_x509_certificate(self.chain[pos+1]['pem'].encode())
         else:
@@ -232,21 +330,26 @@ class CertificateValidator:
         status = self.__verify_certificate_signature(cert_obj, issuer_cert_obj, issues)
         ############## EXPIRATION VALIDATION #############
         # Check if the certificate is expired
-        status = self.__certificate_expiration(cert_obj, issues)
+        status = self.__check_expiration(cert_obj, issues)
         ############## CA VALIDATION #####################
         # If the certificate is not a leaf certificate
-        if cert_id != "Leaf Certificate":
+        if cert_id != LEAF:
             # Check if the issuer is a valid CA
             status = self.__check_issuer_ca(issuer_cert_obj, issues)
         ############## COMMON NAME VALIDATION ############
         # If the certificate is a leaf certificate
-        if cert_id == "Leaf Certificate":
+        if cert_id == LEAF:
             expected_cn = domain
         else:
             # Get the issuer's Common Name (CN)
             expected_cn = cert_obj.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME)[0].value
         # Check if expected name matches and is valid
         status = self.__check_common_name(cert_obj, expected_cn, issues, warnings)
+        ############## REVOCATION VALIDATION #############
+        # If the certificate is not a leaf certificate
+        if cert_id != ROOT:
+            # Check if the certificate is revoked
+            status = self.__check_revocation(cert_obj, issuer_cert_obj, issues, warnings)
         ##################################################
         # Return the status, issues, and warnings
         return status, issues, warnings

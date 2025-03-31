@@ -3,7 +3,6 @@ This module provides the function required to analyze the digital certificates
 of a given domain, returning the results in json format.
 """
 
-import json
 import re
 import requests
 import socket

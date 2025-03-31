@@ -23,6 +23,8 @@ class Certificate:
         Returns:
             str: The issuer name.
         """
+        # Initialize issuer
+        issuer = ""
         # Load the certificate
         cert = x509.load_pem_x509_certificate(raw_cert.encode())
         # Iterate over the subject fields to find the Common Name (CN)
@@ -30,7 +32,9 @@ class Certificate:
             # Check if the attribute is the Common Name
             if attribute.oid == x509.NameOID.COMMON_NAME:
                 # Return the issuer name
-                return attribute.value
+                issuer = attribute.value
+        # Return the issuer name
+        return issuer
 
     @staticmethod
     def get_certificate_type(cert: x509.Certificate) -> str:
