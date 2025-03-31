@@ -28,4 +28,4 @@ classifiers = [
 Homepage = "https://github.com/dissect-project/cert-info"
 
 [project.scripts]
-cert_info = "cert_info.cli:main"
+cert-info = "cert_info.cli:main"

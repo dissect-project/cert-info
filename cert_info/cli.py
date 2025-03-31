@@ -5,7 +5,6 @@ the domain name, and returns a response to the terminal.
 """
 
 import argparse
-import re
 
 from cert_info import CertificateInformation
 
@@ -16,7 +15,7 @@ def main():
     """
     # Capture command-line arguments
     parser = argparse.ArgumentParser(description="Verify the certificate chain of a given domain.")
-    # Add an argument for the domain name 
+    # Add an argument for the domain name
     parser.add_argument("-d", "--domain", required=True, help="The domain to be analyzed.")
     # Parse the command-line arguments
     args = parser.parse_args()
@@ -27,6 +26,6 @@ def main():
     # Print the result in JSON format
     print(result)
 
-    
+
 if __name__ == "__main__":
     main()

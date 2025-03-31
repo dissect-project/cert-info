@@ -2,13 +2,12 @@
 This module contains all the code required to validate the certificate chain
 of a given domain.
 """
-import platform
-import subprocess
+
 import socket
 import json
+from datetime import datetime
 
 from cert_info.root_ca_validation import RootCAValidator
-from datetime import datetime
 
 from cert_info.certificate import Certificate
 from cert_info.certificate_validation import CertificateValidator
