@@ -89,6 +89,7 @@ class CertificateInformation:
         conn = SSL.Connection(context, socket.socket(socket.AF_INET, socket.SOCK_STREAM))
         conn.set_tlsext_host_name(domain.encode())
         conn.connect((domain, port))
+        conn.set_connect_state()
         conn.do_handshake()
         # Retrieve the full certificate chain
         cert_chain = []
@@ -100,7 +101,7 @@ class CertificateInformation:
         # Return the certificate chain
         return cert_chain
 
-    def analyze(self, domain):
+    def analyze(self, domain, show_cert=False):
         """"
         Analyze the digital certificates of a given domain.
 
@@ -119,7 +120,7 @@ class CertificateInformation:
             # Build the certificate chain object
             cert_chain = ChainValidator.build_chain(cert_chain)
             # Analyze the certificate chain
-            result = ChainValidator.validate_chain(domain, cert_chain)
+            result = ChainValidator.validate_chain(domain, cert_chain, show_cert)
             # Return a structure with the analysis
             return result
         except KeyboardInterrupt:

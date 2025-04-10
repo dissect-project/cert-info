@@ -14,15 +14,20 @@ def main():
     Main function to execute the utility script.
     """
     # Capture command-line arguments
-    parser = argparse.ArgumentParser(description="Verify the certificate chain of a given domain.")
+    parser = argparse.ArgumentParser(
+        prog="cert-info",
+        description="Verify the certificate chain of a given domain.",
+        epilog="Part of the DISSECT Project."
+    )
     # Add an argument for the domain name
     parser.add_argument("-d", "--domain", required=True, help="The domain to be analyzed.")
+    parser.add_argument("--show-cert", action="store_true", help="Output certificate fields in the response.")
     # Parse the command-line arguments
     args = parser.parse_args()
     # Initialize the CertificateInformation class
     cert_info = CertificateInformation()
     # Run the analysis
-    result = cert_info.analyze(args.domain)
+    result = cert_info.analyze(args.domain, args.show_cert)
     # Print the result in JSON format
     print(result)
 

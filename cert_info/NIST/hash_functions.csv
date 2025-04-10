@@ -1,0 +1,13 @@
+Algorithm,Status
+"MD5","Disallowed"
+"SHA-1","Disallowed"
+"SHA-224","Deprecated"
+"SHA-256","Acceptable"
+"SHA-384","Acceptable"
+"SHA-512","Acceptable"
+"SHA-512/224","Deprecated"
+"SHA-512/256","Acceptable"
+"SHA3-224","Deprecated"
+"SHA3-256","Acceptable"
+"SHA3-384","Acceptable"
+"SHA3-512","Acceptable"

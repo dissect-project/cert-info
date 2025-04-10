@@ -1,0 +1,7 @@
+Algorithm,Key Length,Status
+"DSA","","Disallowed"
+"ECDSA","< 224","Disallowed"
+"ECDSA",">= 224","Acceptable"
+"EdDSA",">= 256","Acceptable"
+"RSA","< 2048","Disallowed"
+"RSA",">= 2048","Acceptable"
