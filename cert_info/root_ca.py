@@ -11,11 +11,33 @@ from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 
-class RootCAValidator:
+class RootCA:
     """
     Root Certificate Authority (CA) Validator class that provides methods
     to validate if a given issuer is a valid CA in the local system.
     """
+
+
+    @staticmethod
+    def check_if_root_ca(cert: str) -> bool:
+        """
+        Checks if a given certificate is a valid Root CA.
+        
+        Args:
+            cert (str): The certificate to be checked.
+        
+        Returns:
+            bool: True if the certificate is a valid Root CA, False otherwise.
+        """
+        # Load the certificate
+        cert = x509.load_pem_x509_certificate(cert.encode(), default_backend())
+        # Check if the certificate is self-signed
+        if cert.issuer == cert.subject:
+            # Check if the certificate is a CA
+            return cert.extensions.get_extension_for_oid(
+                x509.ExtensionOID.BASIC_CONSTRAINTS).value.ca
+        # Certificate is not from a root CA
+        return False
 
     @staticmethod
     def check_macos_keychain(issuer_cn: str) -> str:
@@ -129,16 +151,16 @@ class RootCAValidator:
         # Perform validation based on the OS
         if os_name == "Darwin":  # macOS
             # Check if the issuer is in the macOS Keychain
-            cert = RootCAValidator.check_macos_keychain(issuer_cn)
+            cert = RootCA.check_macos_keychain(issuer_cn)
         elif os_name == "Windows":
             # Check if the issuer is in the Windows Root CA store
-            cert = RootCAValidator.check_windows_store(issuer_cn)
+            cert = RootCA.check_windows_store(issuer_cn)
         elif os_name == "Linux":
             # Check if the issuer is in the Linux CA bundle
-            cert = RootCAValidator.check_linux_ca(issuer_cn)
+            cert = RootCA.check_linux_ca(issuer_cn)
         # Check if certificate was found
         if cert is None:
             # Use Mozilla's CA bundle as fallback
-            cert = RootCAValidator.check_mozilla_ca_bundle(issuer_cn)
+            cert = RootCA.check_mozilla_ca_bundle(issuer_cn)
         # Return the result
         return cert

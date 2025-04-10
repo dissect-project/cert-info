@@ -9,8 +9,10 @@ from datetime import datetime, timezone
 from cryptography import x509
 from cryptography.x509.oid import AuthorityInformationAccessOID
 from cryptography.x509.ocsp import OCSPRequestBuilder, OCSPResponseStatus, OCSPCertStatus
-from cryptography.hazmat.primitives.asymmetric import padding, ec, rsa
+from cryptography.hazmat.primitives.asymmetric import padding, ec, rsa, dsa
 from cryptography.hazmat.primitives import hashes, serialization
+
+from cert_info.NIST.parser import CSVParser
 
 # Define certificate IDs
 LEAF = "Leaf Certificate"
@@ -18,15 +20,25 @@ ROOT = "Root CA Certificate"
 
 
 # Define constants for certificate validation issues
-SIGNATURE_FAILED  = "Signature verification failed"
-HOSTNAME_MISMATCH = "Hostname mismatch"
-EXPIRED           = "Certificate expired"
-NOT_YET_VALID     = "Certificate not yet valid"
-NOT_VALID_CA      = "Issuer is not a valid CA"
-NO_CA_INFO        = "Certificate has no information about being a valid CA"
+SIGNATURE_FAILED    = "Signature verification failed"
+HOSTNAME_MISMATCH   = "Hostname mismatch"
+EXPIRED             = "Certificate expired"
+NOT_YET_VALID       = "Certificate not yet valid"
+NOT_VALID_CA        = "Issuer is not a valid CA"
+NO_CA_INFO          = "Certificate has no information about being a valid CA"
+NIST_DISALLOWED     = "no longer allowed for applying cryptographic protection"
+NIST_DEPRECATED     = "may be used, but user must accept security risks"
+NIST_LEGACY         = "may be used only to process already protected information"
+UNKNOWN_HASH        = "Could not determine signature hash algorithm."
+UNKNOWN_SIGNATURE   = "Could not determine signature algorithm"
+UNKNOWN_KEY         = "Could not determine public key algorithm"
+CRL_REVOKED         = "Certificate is revoked (found in CRL)"
+OCSP_REVOKED        = "Certificate is revoked (found in OCSP)"
+
 
 # Define constants for certificate validation warnings
-WILDCARD_USAGE    = "Certificate uses wildcard domain"
+WILDCARD_USAGE        = "Certificate uses wildcard domain"
+UPDATE_HASH_ALGORITHM = "Hash algorithm used in signature could be updated"
 
 class CertificateValidator:
     """
@@ -58,6 +70,25 @@ class CertificateValidator:
         wildcard_regex = r"^.*\." + re.escape(domain) + r"$"  # Use raw string here
         # Check if the hostname matches the regex (subdomains allowed)
         return re.match(wildcard_regex, hostname) is not None
+    
+    def __is_secure_curve(self, curve) -> bool:
+        """
+        Checks if the given elliptic curve is considered secure.
+        
+        Args:
+            curve ():
+
+        Returns:
+            bool: True if curve is secure, False otherwise
+        """
+        # List of secure curves 
+        secure_curves = {
+            ec.SECP256R1, ec.SECP384R1, ec.SECP521R1,  # NIST recommended curves
+            ec.BrainpoolP256R1, ec.BrainpoolP384R1, ec.BrainpoolP512R1,  # Brainpool curves
+            ec.SECP256K1  # Used in Bitcoin but not always recommended
+        }
+        # Check wether curve is parte of the secure list
+        return isinstance(curve, tuple(secure_curves))
 
     def __verify_certificate_signature(self, cert: x509.Certificate, issuer_cert: x509.Certificate, issues: list) -> bool:
         """
@@ -91,11 +122,9 @@ class CertificateValidator:
                 )
             else:
                 # Add issue to the list
-                issues.append(SIGNATURE_FAILED)
-                # Unsupported public key type
-                return False
-            # Signature is valid
-            return True
+                issues.append(UNKNOWN_SIGNATURE)
+            # Return True if no issues were found
+            return len(issues) == 0
         except Exception:
             # Add issue to the list
             issues.append(SIGNATURE_FAILED)
@@ -219,12 +248,15 @@ class CertificateValidator:
             warnings (list): List to store warnings found during validation.
 
         Returns:
-            bool: True if the hostname matches, False otherwise.
+            bool: False if the validation fails, True otherwise.
         """
         # Extract CRL distribution points
-        crl_distribution_points = cert.extensions.get_extension_for_class(
-            x509.CRLDistributionPoints
-        ).value if cert.extensions.get_extension_for_class(x509.CRLDistributionPoints) else None
+        try:
+            crl_distribution_points = cert.extensions.get_extension_for_class(
+                x509.CRLDistributionPoints
+            ).value if cert.extensions.get_extension_for_class(x509.CRLDistributionPoints) else None
+        except x509.ExtensionNotFound:
+            crl_distribution_points = []
         # Extract OCSP URL
         try:
             aia_extension = cert.extensions.get_extension_for_oid(
@@ -240,9 +272,7 @@ class CertificateValidator:
             ocsp_urls = []
         # Warn if both CRL and OCSP are missing
         if not crl_distribution_points and not ocsp_urls:
-            warnings.append("No CRL or OCSP information found in the certificate.")
-            # Validation fails
-            return False
+            issues.append("No CRL or OCSP information found in the certificate.")
         # Check revocation via CRL
         if crl_distribution_points:
             # Iterate the distribution points
@@ -257,7 +287,7 @@ class CertificateValidator:
                     # Check wether the certificate is present in the list
                     if any(rev_cert.serial_number == cert.serial_number for rev_cert in crl):
                         # Append issue
-                        issues.append("Certificate is revoked (found in CRL).")
+                        issues.append(CRL_REVOKED)
                         # Validation failed
                         return False
                 except Exception as e:
@@ -289,14 +319,81 @@ class CertificateValidator:
                         # Check wether certificate is revoked
                         if ocsp_response.certificate_status == OCSPCertStatus.REVOKED:
                             # Append the issue to the list
-                            issues.append("Certificate is revoked (found in OCSP response).")
+                            issues.append(OCSP_REVOKED)
                             # Verification failed
                             return False
                 except Exception as e:
                     warnings.append(f"Failed to check OCSP at {ocsp_url}: {e}")
         # Return True if validation does not fail
-        return True
+        return len(issues) == 0
 
+    def __check_signature_strength(self, cert: x509.Certificate, issues: list, warnings: list) -> bool:
+        """
+        Check wether the strength of the signature used in a certificate is
+        adequate or not. 
+
+        Args:
+            cert (x509.Certificate): The certificate to check.
+            issuer_cert (x509.Certificate): The certificate to of the issuer.
+            issues (list): List to store issues found during validation.
+            warnings (list): List to store warnings found during validation.
+
+        Returns:
+            bool: True if the signature strength is good, False otherwise.
+        """
+        # Check hash function
+        try:
+            # Get the signature algorithm
+            sig_hash_algorithm = cert.signature_hash_algorithm
+            # Get the hash function status
+            status = CSVParser.get_hash_status(sig_hash_algorithm)
+            # Check the hash function status
+            if status == "Disallowed":
+                # Add issue to the list
+                issues.append("Hash " + NIST_DISALLOWED)
+            elif status == "Deprecated":
+                # Add issue to the list
+                issues.append("Hash " + NIST_DEPRECATED)
+            elif status == "Legacy":
+                # Add issue to the list
+                issues.append("Hash " + NIST_LEGACY)
+        except Exception:
+            issues.append(UNKNOWN_HASH)
+        # Return True if no issues were found
+        return len(issues) == 0
+    
+    def __check_key_strength(self, cert: x509.Certificate, issues: list, warnings: list) -> bool:
+        """
+        Check wether the strength of the key used in a certificate is
+        adequate or not. First step consists in checking the 
+        
+        """
+        # Check the digital signature algorithm
+        try:
+            # Get the public key
+            public_key = cert.public_key()
+            # Get the signature status
+            status, i = CSVParser.get_key_status(public_key)
+            # Check the hash function status
+            if status == "Disallowed":
+                # Add issue to the list
+                issues.append("Key " + NIST_DISALLOWED)
+            elif status == "Deprecated":
+                # Add issue to the list
+                issues.append("Key " + NIST_DEPRECATED)
+            elif status == "Legacy":
+                # Add issue to the list
+                issues.append("Key " + NIST_LEGACY)
+            # Check if issues were found
+            if len(i) > 0:
+                # Iterate through the issues
+                for issue in i:
+                    # Add issue to the list
+                    issues.append(issue)
+        except Exception:
+            issues.append(UNKNOWN_KEY)
+        # Return True if no issues were found
+        return len(issues) == 0
 
     def validate(self, domain: str, pos: int, cert_id: str) -> tuple:
         """
@@ -350,6 +447,12 @@ class CertificateValidator:
         if cert_id != ROOT:
             # Check if the certificate is revoked
             status = self.__check_revocation(cert_obj, issuer_cert_obj, issues, warnings)
+        ############## SIGNATURE VALIDATION ##############
+        # Check if the signature strength is adequate
+        status = self.__check_signature_strength(cert_obj, issues, warnings)
+        ############## PUBLIC KEY VALIDATION #############
+        # Check if the key strength is adequate
+        status = self.__check_key_strength(cert_obj, issues, warnings)
         ##################################################
         # Return the status, issues, and warnings
         return status, issues, warnings
