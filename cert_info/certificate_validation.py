@@ -70,25 +70,6 @@ class CertificateValidator:
         wildcard_regex = r"^.*\." + re.escape(domain) + r"$"  # Use raw string here
         # Check if the hostname matches the regex (subdomains allowed)
         return re.match(wildcard_regex, hostname) is not None
-    
-    def __is_secure_curve(self, curve) -> bool:
-        """
-        Checks if the given elliptic curve is considered secure.
-        
-        Args:
-            curve ():
-
-        Returns:
-            bool: True if curve is secure, False otherwise
-        """
-        # List of secure curves 
-        secure_curves = {
-            ec.SECP256R1, ec.SECP384R1, ec.SECP521R1,  # NIST recommended curves
-            ec.BrainpoolP256R1, ec.BrainpoolP384R1, ec.BrainpoolP512R1,  # Brainpool curves
-            ec.SECP256K1  # Used in Bitcoin but not always recommended
-        }
-        # Check wether curve is parte of the secure list
-        return isinstance(curve, tuple(secure_curves))
 
     def __verify_certificate_signature(self, cert: x509.Certificate, issuer_cert: x509.Certificate, issues: list) -> bool:
         """
@@ -390,7 +371,7 @@ class CertificateValidator:
                 for issue in i:
                     # Add issue to the list
                     issues.append(issue)
-        except Exception:
+        except ValueError:
             issues.append(UNKNOWN_KEY)
         # Return True if no issues were found
         return len(issues) == 0

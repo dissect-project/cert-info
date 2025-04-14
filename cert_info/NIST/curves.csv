@@ -1,0 +1,13 @@
+Curve,Status
+"sect233k1","Deprecated"
+"sect283k1","Deprecated"
+"sect409k1","Deprecated"
+"sect571k1","Deprecated"
+"sect233r1","Deprecated"
+"sect283r1","Deprecated"
+"sect409r1","Deprecated"
+"sect571r1","Deprecated"
+"secp224r1","Acceptable"
+"secp256r1","Acceptable"
+"secp384r1","Acceptable"
+"secp521r1","Acceptable"

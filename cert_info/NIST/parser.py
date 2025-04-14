@@ -5,6 +5,7 @@ files into usable structures for the evaluation of the certificates.
 """
 
 import csv
+import re
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import ec, rsa, dsa, ed25519, ed448
 
@@ -19,6 +20,38 @@ class CSVParser:
         algorithms, or key sizes
     """
 
+    @staticmethod
+    def __verify_curve(curve: str, csv_file: str = "curves.csv") -> str:
+        """
+        Verifies wether the given curve is sacceptable or not according
+        to NITS's guidelines.
+
+        Args:
+            curve (str): The curve to be checked.
+            csv_file (str): The path to the CSV file containing the
+                            NIST recommendations.
+
+        Returns:
+            str: The status of the curve (e.g., "Deprecated", "Acceptable").
+        """
+        # Read the CSV file
+        with open(PATH + csv_file, newline='', encoding='utf-8') as csvfile:
+            # Create a CSV reader
+            reader = csv.DictReader(csvfile)
+            # Iterate through each row in the CSV file
+            for row in reader:
+                # Get the curve name and status
+                name = row["Curve"].strip().upper()
+                status = row["Status"].strip()
+                # Check if the curve mathces
+                if name == curve.upper():
+                    # Return the status for the curve
+                    return status
+        # If the curve is not found in the mapping, return an error
+        raise ValueError(f"Unsupported curve: {curve}")
+
+
+    @staticmethod
     def __verify_range(number: int, range_condition: str) -> bool:
         """
         Verifies whether the given number matches the condition in the
@@ -149,6 +182,12 @@ class CSVParser:
         if isinstance(public_key, ec.EllipticCurvePublicKey):
             # Retrieve the validations for the key type
             validations = name_to_status_and_length.get("ECDSA")
+            # Check if the curve is acceptable
+            curve_status = CSVParser.__verify_curve(public_key.curve.name)
+            # Check if the curve is acceptable
+            if curve_status != "Acceptable":
+                # Append the curve status to the issues list
+                issues.append(f"Usage of curve {curve_status} is {curve_status}")
         # Check if key is RSA
         if isinstance(public_key, rsa.RSAPublicKey):
             # Retrieve the validations for the key type
