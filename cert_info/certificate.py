@@ -35,6 +35,30 @@ class Certificate:
                 issuer = attribute.value
         # Return the issuer name
         return issuer
+    
+    @staticmethod
+    def get_subject(raw_cert: str) -> str:
+        """
+        Extract the subject from a certificate.
+
+        Args:
+            raw_cert (str): The raw certificate data.
+
+        Returns:
+            str: The issuer name.
+        """
+        # Initialize issuer
+        issuer = ""
+        # Load the certificate
+        cert = x509.load_pem_x509_certificate(raw_cert.encode())
+        # Iterate over the subject fields to find the Common Name (CN)
+        for attribute in cert.subject:
+            # Check if the attribute is the Common Name
+            if attribute.oid == x509.NameOID.COMMON_NAME:
+                # Return the issuer name
+                issuer = attribute.value
+        # Return the issuer name
+        return issuer
 
     @staticmethod
     def get_certificate_type(cert: x509.Certificate) -> str:

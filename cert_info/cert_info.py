@@ -48,7 +48,11 @@ class CertificateInformation:
             if not domain.startswith('https'):
                 domain = f'https://{domain}'
             # Try to connect to the domain
-            response = requests.get(domain, timeout=60)
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) \
+                AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+            }
+            response = requests.get(domain, timeout=60, headers=headers)
             # Return True if the connection was successful
             return response.status_code == 200
         except requests.exceptions.RequestException:

@@ -147,8 +147,13 @@ class ChainValidator:
         intermediate_counter = 1
         # Initialize the chain object
         chain = []
+        # Issuer name (aux)
+        issuer = ""
         # Iterate through the provided chain
         for i, cert in enumerate(cert_chain):
+            # If the flag is set to True, skip the rest of the certificates
+            if root_ca_present:
+                continue
             # Check if certificate is a root CA
             if RootCA.check_if_root_ca(cert):
                 # Create the id for the root CA

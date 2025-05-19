@@ -2,6 +2,7 @@
 The CertificateValidator class is responsible for validating certificates in a chain.
 """
 
+from calendar import c
 import re
 import requests
 from datetime import datetime, timezone
@@ -200,6 +201,8 @@ class CertificateValidator:
             pass  # SAN not found, fallback to CN
         # Check the Common Name (CN) only if SAN is missing
         cn_attributes = cert.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME)
+        if len(cn_attributes) == 0:
+            cn_attributes = cert.subject.get_attributes_for_oid(x509.NameOID.ORGANIZATIONAL_UNIT_NAME)
         # Check if CN is present
         if cn_attributes:
             # Get the CN value
@@ -419,8 +422,12 @@ class CertificateValidator:
         if cert_id == LEAF:
             expected_cn = domain
         else:
-            # Get the issuer's Common Name (CN)
-            expected_cn = cert_obj.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME)[0].value
+            if cert_id == ROOT and \
+                len(cert_obj.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME)) == 0:
+                expected_cn = cert_obj.subject.get_attributes_for_oid(x509.NameOID.ORGANIZATIONAL_UNIT_NAME)[0].value
+            else:
+                # Get the issuer's Common Name (CN)
+                expected_cn = cert_obj.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME)[0].value
         # Check if expected name matches and is valid
         status = self.__check_common_name(cert_obj, expected_cn, issues, warnings)
         ############## REVOCATION VALIDATION #############
