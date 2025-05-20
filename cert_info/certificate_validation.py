@@ -5,6 +5,7 @@ The CertificateValidator class is responsible for validating certificates in a c
 from calendar import c
 import re
 import requests
+import subprocess
 from datetime import datetime, timezone
 
 from cryptography import x509
@@ -40,6 +41,7 @@ OCSP_REVOKED        = "Certificate is revoked (found in OCSP)"
 # Define constants for certificate validation warnings
 WILDCARD_USAGE        = "Certificate uses wildcard domain"
 UPDATE_HASH_ALGORITHM = "Hash algorithm used in signature could be updated"
+NO_COMMON_NAME        = "Certificate has no Common Name (CN)"
 
 class CertificateValidator:
     """
@@ -49,6 +51,34 @@ class CertificateValidator:
     def __init__(self, chain: list):
         # Inititalize the certificate chain
         self.chain = chain
+
+    def __validate_dnssec(self, domain: str, warnings: list) -> bool:
+        """
+        Validate wether a domain is DNSSEC validated or not using getdns.
+
+        Args:
+            domain (str): The domain to be validated
+            warnings (list): List to store warnings found during validation
+        Returns:
+            bool: True if the domain is DNSSEC validated, False otherwise
+        """
+        try:
+            # Run the dig command to check DNSSEC
+            result = subprocess.run(["dig", "+dnssec", domain], capture_output=True, text=True)
+            # Check if the ad flag is present
+            if "ad;" in result.stdout.lower():
+                # Return True
+                return True
+            else:
+                # Append warning to list
+                warnings.append(f"DNSSEC validation failed.")
+                # Return False
+                return False
+        except Exception as e:
+            # Append warning to list
+            warnings.append(f"An error occured during DNSSEC validation: {e}")
+            # Return False
+            return False
 
     def __is_wildcard(self, wildcard: str, hostname: str) -> bool:
         """
@@ -203,11 +233,13 @@ class CertificateValidator:
         cn_attributes = cert.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME)
         if len(cn_attributes) == 0:
             cn_attributes = cert.subject.get_attributes_for_oid(x509.NameOID.ORGANIZATIONAL_UNIT_NAME)
+            # Add warning to list
+            warnings.append(NO_COMMON_NAME)
         # Check if CN is present
         if cn_attributes:
             # Get the CN value
             subject_cn = cn_attributes[0].value
-            # Cheeck if the CN is wildcard
+            # Check if the CN is wildcard
             wildcard = self.__is_wildcard(subject_cn, expected)
             # Check if the expected hostname matches the CN (exact or wildcard match)
             if subject_cn == expected or wildcard:
@@ -406,6 +438,11 @@ class CertificateValidator:
         else:
             # The issuer is the root CA itself
             issuer_cert_obj = cert_obj
+        ############### DOMAIN VALIDATION ################
+        # If the certificate is a leaf certificate
+        if cert_id == LEAF:
+            # Check if the domain is DNSSEC validated
+            self.__validate_dnssec(domain, warnings)
         ############## SIGNATURE VALIDATION ##############
         # Verify if certificate was signed by the issuer
         status = self.__verify_certificate_signature(cert_obj, issuer_cert_obj, issues)
