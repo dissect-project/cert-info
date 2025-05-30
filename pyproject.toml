@@ -24,6 +24,9 @@ classifiers = [
 [tool.setuptools.package-data]
 "cert_info" = ["testssl/**"]
 
+[tool.setuptools.packages.find]
+where = ["."]
+
 [project.urls]
 Homepage = "https://github.com/dissect-project/cert-info"
 
