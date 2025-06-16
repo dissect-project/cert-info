@@ -5,12 +5,13 @@ files into usable structures for the evaluation of the certificates.
 """
 
 import csv
-import re
+import os
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import ec, rsa, dsa, ed25519, ed448
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Define the path to the CSV files
-PATH = "cert_info/NIST/"
+PATH = BASE_DIR + '/'
 
 class CSVParser:
     """
