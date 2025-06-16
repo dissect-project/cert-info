@@ -122,9 +122,9 @@ class CertificateInformation:
             # Retrieve the certificate chain from the domain server
             cert_chain = self.__get_certificate_chain(domain)
             # Build the certificate chain object
-            cert_chain = ChainValidator.build_chain(cert_chain)
+            cert_chain, extra_certs = ChainValidator.build_chain_new(cert_chain)
             # Analyze the certificate chain
-            result = ChainValidator.validate_chain(domain, cert_chain, show_cert)
+            result = ChainValidator.validate_chain(domain, cert_chain, extra_certs, show_cert)
             # Return a structure with the analysis
             return result
         except KeyboardInterrupt:
