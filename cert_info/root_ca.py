@@ -130,7 +130,7 @@ class RootCA:
         return None
 
     @staticmethod
-    def get_certificate(issuer_cn: str) -> bool:
+    def get_certificate(issuer_cn: str) -> str:
         """
         Determines if an issuer Common Name is in the local system
         CA store of an OS. The function detects which OS is in the
@@ -142,7 +142,7 @@ class RootCA:
             issuer_cn (str): The issuer's Common Name.
 
         Returns:
-            bool: True if the issuer is present, False otherwise.
+            str: Certificate in string format.
         """
         # Initialize certificate object
         cert = None

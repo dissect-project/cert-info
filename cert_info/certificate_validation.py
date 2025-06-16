@@ -102,7 +102,7 @@ class CertificateValidator:
         # Check if the hostname matches the regex (subdomains allowed)
         return re.match(wildcard_regex, hostname) is not None
 
-    def __verify_certificate_signature(self, cert: x509.Certificate, issuer_cert: x509.Certificate, issues: list) -> bool:
+    def __verify_certificate_signature(self, cert: x509.Certificate, issuer_cert: x509.Certificate, issues: list) -> int:
         """
         Verify if the given certificate was signed by the issuer certificate.
         
@@ -111,7 +111,7 @@ class CertificateValidator:
             issuer_cert (x509.Certificate): The issuer certificate
         
         Returns:
-            bool: True if the signature is valid, False otherwise
+            int: 0 if the signature is valid, 1 otherwise
         """
         # Get the public key of the issuer certificate
         issuer_public_key = issuer_cert.public_key()
@@ -135,15 +135,15 @@ class CertificateValidator:
             else:
                 # Add issue to the list
                 issues.append(UNKNOWN_SIGNATURE)
-            # Return True if no issues were found
-            return len(issues) == 0
+            # Return 0 if length of issues is 0
+            return 0 if len(issues) == 0 else 1
         except Exception:
             # Add issue to the list
             issues.append(SIGNATURE_FAILED)
             # Signature is invalid
-            return False
+            return 1
 
-    def __check_expiration(self, cert: x509.Certificate, issues: list) -> bool:
+    def __check_expiration(self, cert: x509.Certificate, issues: list) -> int:
         """
         Check if the certificate is expired.
 
@@ -152,24 +152,24 @@ class CertificateValidator:
             issues (list): List to store issues found during validation
 
         Returns:
-            bool: True if the certificate is expired, False otherwise
+            int: 1 if the certificate is expired, 0 otherwise
         """
         # Verify certificate expiration
         if cert.not_valid_after_utc < datetime.now(timezone.utc):
             # Add issue to the list
             issues.append(EXPIRED)
             # Update the status
-            return False
+            return 1
         # Verify certificate not yet valid
         if cert.not_valid_before_utc > datetime.now(timezone.utc):
             # Add issue to the list
             issues.append(NOT_YET_VALID)
             # Update the status
-            return False
+            return 1
         # Certificate is valid
-        return True
+        return 0
 
-    def __check_issuer_ca(self, cert: x509.Certificate, issues: list) -> bool:
+    def __check_issuer_ca(self, cert: x509.Certificate, issues: list) -> int:
         """
         Check if the issuer is a valid CA.
 
@@ -178,7 +178,7 @@ class CertificateValidator:
             issues (list): List to store issues found during validation
 
         Returns:
-            bool: True if the issuer is a valid CA, False otherwise
+            int: 1 if the issuer is a valid CA, 0 otherwise
         """
         # Check if the certificate has the CA basic constraint
         try:
@@ -190,14 +190,14 @@ class CertificateValidator:
                 # Add issue to the list
                 issues.append(NOT_VALID_CA)
             # Return the status
-            return basic_constraints.ca
+            return 0 if basic_constraints.ca is True else 1
         except x509.ExtensionNotFound:
             # If the extension is missing, it's likely a leaf certificate.
             issues.append(NO_CA_INFO)
             # Return False
-            return False
+            return 1
 
-    def __check_common_name(self, cert: x509.Certificate, expected: str, issues: list, warnings: list) -> bool:
+    def __check_common_name(self, cert: x509.Certificate, expected: str, issues: list, warnings: list) -> int:
         """
         Check if the certificate's Common Name (CN) or Subject Alternative Name (SAN) matches the expected value.
 
@@ -208,7 +208,7 @@ class CertificateValidator:
             warnings (list): List to store warnings found during validation.
 
         Returns:
-            bool: True if the hostname matches, False otherwise.
+            int: 0 if the hostname matches, 1 otherwise.
         """
         # Try to get Subject Alternative Name (SAN)
         try:
@@ -225,8 +225,8 @@ class CertificateValidator:
                     if wildcard:
                         # Add warning to list
                         warnings.append(WILDCARD_USAGE)
-                    # Return True if it matches
-                    return True
+                    # Return 0 if it matches
+                    return 0
         except x509.ExtensionNotFound:
             pass  # SAN not found, fallback to CN
         # Check the Common Name (CN) only if SAN is missing
@@ -247,13 +247,13 @@ class CertificateValidator:
                 if wildcard:
                     # Add warning to list
                     warnings.append(WILDCARD_USAGE)
-                # Return True if it matches
-                return True
-        # If no match was found, add issue and return False
+                # Return 0 if it matches
+                return 0
+        # If no match was found, add issue and return 1
         issues.append(HOSTNAME_MISMATCH)
-        return False
+        return 1
 
-    def __check_revocation(self, cert: x509.Certificate, issuer_cert: x509.Certificate, issues: list, warnings: list) -> bool:
+    def __check_revocation(self, cert: x509.Certificate, issuer_cert: x509.Certificate, issues: list, warnings: list) -> int:
         """
         Check wether a certificate is revoked or nor.
 
@@ -264,7 +264,7 @@ class CertificateValidator:
             warnings (list): List to store warnings found during validation.
 
         Returns:
-            bool: False if the validation fails, True otherwise.
+            int: 1 if the validation fails, 0 otherwise.
         """
         # Extract CRL distribution points
         try:
@@ -305,7 +305,7 @@ class CertificateValidator:
                         # Append issue
                         issues.append(CRL_REVOKED)
                         # Validation failed
-                        return False
+                        return 1
                 except Exception as e:
                     warnings.append(f"Failed to check CRL at {crl_url}: {e}")
         # Check revocation via OCSP
@@ -337,13 +337,13 @@ class CertificateValidator:
                             # Append the issue to the list
                             issues.append(OCSP_REVOKED)
                             # Verification failed
-                            return False
+                            return 1
                 except Exception as e:
                     warnings.append(f"Failed to check OCSP at {ocsp_url}: {e}")
         # Return True if validation does not fail
-        return len(issues) == 0
+        return 0 if len(issues) == 0 else 1
 
-    def __check_signature_strength(self, cert: x509.Certificate, issues: list, warnings: list) -> bool:
+    def __check_signature_strength(self, cert: x509.Certificate, issues: list, warnings: list) -> int:
         """
         Check wether the strength of the signature used in a certificate is
         adequate or not. 
@@ -355,7 +355,7 @@ class CertificateValidator:
             warnings (list): List to store warnings found during validation.
 
         Returns:
-            bool: True if the signature strength is good, False otherwise.
+            int: 0 if the signature strength is good, 1 otherwise.
         """
         # Check hash function
         try:
@@ -376,13 +376,20 @@ class CertificateValidator:
         except Exception:
             issues.append(UNKNOWN_HASH)
         # Return True if no issues were found
-        return len(issues) == 0
+        return 0 if len(issues) == 0 else 1
     
-    def __check_key_strength(self, cert: x509.Certificate, issues: list, warnings: list) -> bool:
+    def __check_key_strength(self, cert: x509.Certificate, issues: list, warnings: list) -> int:
         """
         Check wether the strength of the key used in a certificate is
-        adequate or not. First step consists in checking the 
+        adequate or not.
         
+        Args:
+            cert (x509.Certificate): The certificate to check.
+            issues (list): List to store issues found during validation.
+            warnings (list): List to store warnings found during validation.
+
+        Returns:
+            int: 0 if the key strength is good, 1 otherwise.
         """
         # Check the digital signature algorithm
         try:
@@ -409,7 +416,7 @@ class CertificateValidator:
         except ValueError:
             issues.append(UNKNOWN_KEY)
         # Return True if no issues were found
-        return len(issues) == 0
+        return 0 if len(issues) == 0 else 1
 
     def validate(self, domain: str, pos: int, cert_id: str) -> tuple:
         """
@@ -428,7 +435,7 @@ class CertificateValidator:
         # Initialize the certificate warnings list
         warnings = []
         # Initialize the certificate validation status
-        status = True
+        status = 0
         # Load the certificate
         cert_obj = x509.load_pem_x509_certificate(self.chain[pos]['pem'].encode())
         # Check wether the certificate is from a root CA
@@ -445,15 +452,15 @@ class CertificateValidator:
             self.__validate_dnssec(domain, warnings)
         ############## SIGNATURE VALIDATION ##############
         # Verify if certificate was signed by the issuer
-        status = self.__verify_certificate_signature(cert_obj, issuer_cert_obj, issues)
+        status += self.__verify_certificate_signature(cert_obj, issuer_cert_obj, issues)
         ############## EXPIRATION VALIDATION #############
         # Check if the certificate is expired
-        status = self.__check_expiration(cert_obj, issues)
+        status += self.__check_expiration(cert_obj, issues)
         ############## CA VALIDATION #####################
         # If the certificate is not a leaf certificate
         if cert_id != LEAF:
             # Check if the issuer is a valid CA
-            status = self.__check_issuer_ca(issuer_cert_obj, issues)
+            status += self.__check_issuer_ca(issuer_cert_obj, issues)
         ############## COMMON NAME VALIDATION ############
         # If the certificate is a leaf certificate
         if cert_id == LEAF:
@@ -466,18 +473,18 @@ class CertificateValidator:
                 # Get the issuer's Common Name (CN)
                 expected_cn = cert_obj.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME)[0].value
         # Check if expected name matches and is valid
-        status = self.__check_common_name(cert_obj, expected_cn, issues, warnings)
+        status += self.__check_common_name(cert_obj, expected_cn, issues, warnings)
         ############## REVOCATION VALIDATION #############
         # If the certificate is not a leaf certificate
         if cert_id != ROOT:
             # Check if the certificate is revoked
-            status = self.__check_revocation(cert_obj, issuer_cert_obj, issues, warnings)
+            status += self.__check_revocation(cert_obj, issuer_cert_obj, issues, warnings)
         ############## SIGNATURE VALIDATION ##############
         # Check if the signature strength is adequate
-        status = self.__check_signature_strength(cert_obj, issues, warnings)
+        status += self.__check_signature_strength(cert_obj, issues, warnings)
         ############## PUBLIC KEY VALIDATION #############
         # Check if the key strength is adequate
-        status = self.__check_key_strength(cert_obj, issues, warnings)
+        status += self.__check_key_strength(cert_obj, issues, warnings)
         ##################################################
         # Return the status, issues, and warnings
         return status, issues, warnings
