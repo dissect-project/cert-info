@@ -22,12 +22,15 @@ def main():
     # Add an argument for the domain name
     parser.add_argument("-d", "--domain", required=True, help="The domain to be analyzed.")
     parser.add_argument("--show-cert", action="store_true", help="Output certificate fields in the response.")
+    parser.add_argument(
+        "-f", "--force", action="store_true", help="Force the analysis even if the domain is not reachable."
+    )
     # Parse the command-line arguments
     args = parser.parse_args()
     # Initialize the CertificateInformation class
     cert_info = CertificateInformation()
     # Run the analysis
-    result = cert_info.analyze(args.domain, args.show_cert)
+    result = cert_info.analyze(args.domain, args.show_cert, args.force)
     # Print the result in JSON format
     print(result)
 

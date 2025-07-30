@@ -9,16 +9,120 @@ import json
 from datetime import datetime
 from cryptography import x509
 from cryptography.hazmat.primitives.asymmetric import padding, ec, rsa
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.serialization import pkcs7
+import certifi
+import requests
 
 from cert_info.root_ca import RootCA
 from cert_info.certificate import Certificate
 from cert_info.certificate_validation import CertificateValidator
+
+# Initialize certifi
+ca_bundle_path = certifi.where()
 
 class ChainValidator:
     """
     ChainValidator class that provides methods to validate the certificate
     chain of a given domain.
     """
+
+    @staticmethod
+    def load_mozilla_ca_certs() -> list:
+        """
+        Load Mozilla CA certificates from the certifi package.
+
+        Returns:
+            list: A list of loaded CA certificates.
+        """
+        with open(certifi.where(), "rb") as f:
+            pem_data = f.read()
+
+        certs = []
+        for cert in pem_data.split(b"-----END CERTIFICATE-----"):
+            if cert.strip():
+                cert += b"-----END CERTIFICATE-----\n"
+                try:
+                    cert_obj = x509.load_pem_x509_certificate(cert)
+                    certs.append(cert_obj)
+                except Exception as e:
+                    print(f"Failed to parse cert: {e}")
+        return certs
+
+    @staticmethod
+    def fetch_issuer_certificate(cert: str) -> tuple[x509.Certificate, bool]:
+        """
+        Fetch the issuer certificate using AIA information.
+
+        Args:
+            cert (str): The certificate to fetch the issuer for.
+
+        Returns:
+            str: The PEM formatted issuer certificate if found, None otherwise.
+            bool: True if the issuer is a trusted CA, False otherwise.
+        """
+        # Load the certificate
+        cert = x509.load_pem_x509_certificate(cert.encode())
+        # Extract the issuer name
+        issuer = cert.issuer.get_attributes_for_oid(x509.NameOID.COMMON_NAME)[0].value
+        #Check if certificate is in local trust store
+        local = RootCA.get_certificate(issuer)
+        # Check if the issuer is a root CA
+        if local is not None:
+            # If it is in trust store, return the certificate
+            return x509.load_pem_x509_certificate(local.encode('utf-8')), True
+        else:
+            # Extract the AIA extension
+            aia = Certificate.get_extension(
+                x509.ExtensionOID.AUTHORITY_INFORMATION_ACCESS, cert
+            )
+            # Checkj if AIA is present
+            if aia:
+                ca_issuers_urls = [desc.access_location.value for desc in aia\
+                                if desc.access_method == x509.OID_CA_ISSUERS]
+                if len(ca_issuers_urls) > 0:
+                    # Fetch the first CA issuer URL
+                    ca_issuer_url = ca_issuers_urls[0]
+                    try:
+                        # Retrieve the issuer certificate from the URL
+                        response = requests.get(ca_issuer_url, verify=ca_bundle_path, timeout=30)
+                        if response.status_code == 200:
+                            try:
+                                # Try PEM
+                                fetched = x509.load_pem_x509_certificate(response.content)
+                            except ValueError:
+                                pass
+
+                            try:
+                                # Try DER
+                                fetched = x509.load_der_x509_certificate(response.content)
+                            except ValueError:
+                                pass
+
+                            try:
+                                # Try both PEM and DER encoded PKCS#7
+                                if b'-----BEGIN PKCS7' in response.content:
+                                    fetched = pkcs7.load_pem_pkcs7_certificates(response.content)
+                                else:
+                                    fetched = pkcs7.load_der_pkcs7_certificates(response.content)
+                                # Check if fetched is a list
+                                if isinstance(fetched, list):
+                                    fetched = fetched[0]
+                            except ValueError:
+                                pass
+                            # Return the fetched certificate
+                            return fetched, False
+                        else:
+                            print(f"Failed to fetch issuer certificate: {response.status_code}")
+                            return None, False
+                    except requests.RequestException as e:
+                        print(f"Error fetching issuer certificate: {e}")
+                        return None, False
+                else:
+                    return None, False
+            else:
+                print("No AIA extension found in the certificate.")
+                return None, False
 
     @staticmethod
     def is_signed_by(cert: str, issuer: str) -> bool:
@@ -234,6 +338,121 @@ class ChainValidator:
         return ordered_chain, extra_certs
 
     @staticmethod
+    def order_cert_chain(cert_chain: list) -> list:
+        """
+        Order the certificate chain based on the issuer of each certificate.
+
+        Args:
+            cert_chain (list): The certificate chain to be ordered
+
+        Returns:
+            list: The ordered certificate chain
+        """
+        # Initialize the ordered chain object
+        ordered_chain = []
+        # Fetch the leaf certificate
+        leaf_cert = next((cert for cert in cert_chain if cert.get('id') == 'Leaf Certificate'), None)
+        # Append the leaf certificate
+        ordered_chain.append(leaf_cert)
+        cert_chain.remove(leaf_cert)
+        # Initialize the target issuer
+        target_issuer = leaf_cert['certificate']['issuer']
+        # Iterate while len cert_chain > 0
+        while len(cert_chain) > 0:
+            # Fetch the next certificate that matches the target issuer
+            next_cert = next((cert for cert in cert_chain if cert['certificate']['subject'] == target_issuer), None)
+            # If no next certificate is found, break the loop
+            if next_cert is None:
+                break
+            # Update the target issuer to the next certificate's subject
+            target_issuer = next_cert['certificate']['issuer']
+            # Append the next certificate to the ordered chain
+            ordered_chain.append(next_cert)
+            # Remove the next certificate from the original chain
+            cert_chain.remove(next_cert)
+        
+        # Return the ordered certificate chain
+        return ordered_chain
+
+    @staticmethod
+    def check_cert_chain(cert_chain: list) -> list:
+        """
+        Reorder the certificate chain to ensure the correct order of certificates,
+        whilst checking if any certificates are missing. Additionally, it checks
+        for extra certificates that are not part of the chain or duplicate
+        certificates.
+
+        Args:
+            cert_chain (list): The certificate chain to be reordered
+
+        Returns:
+            list: The reordered certificate chain
+            extra_certs (list): The extra certificates that are not part of the chain
+            missing (list): The missing certificates that are not part of the chain
+        """
+        # Initialize the ordered chain object
+        ordered_chain = []
+        # Initialize the extra certs object
+        extra_certs = []
+        # Initialize the missing certificates list
+        missing = []
+        # Add the leaf certificate to the ordered chain
+        ordered_chain.append(cert_chain[0])
+        # Remove leaf certificate from the original chain
+        # cert_chain = cert_chain[1:]
+
+        # Check for duplicate certificates
+        clean_chain = set()
+        # Iterate through the certificates in the chain
+        for cert in cert_chain:
+            # Extract the PEM certificate
+            cert_pem = cert['pem']
+            # Check if the certificate is already seen
+            if cert_pem in clean_chain:
+                # If it is a duplicate, add it to the extra certificates
+                extra_certs.append(cert)
+                # Remove certificate from the chain
+                cert_chain.remove(cert)
+            else:
+                clean_chain.add(cert_pem)
+        # Delete the clean_chain variable
+        del clean_chain
+
+        # Check for missing certificates
+        for cert in cert_chain:
+            # Check if the certificate is a root CA
+            if "Root CA Certificate" in cert['id']:
+                # Ignore root CA certificates
+                continue
+            else:
+                # Get the issuer of the certificate
+                issuer = Certificate.get_issuer(cert['pem'])
+                # Check if the issuer is in the ordered chain
+                if not any(issuer == Certificate.get_subject(c['pem']) for c in cert_chain):
+                    issuer_cert, trust_store = ChainValidator.fetch_issuer_certificate(cert['pem'])
+                    # Add the issuer certificate to the missing list
+                    if issuer_cert:
+                        # Check if issuer certificate is in trust store
+                        if not trust_store:
+                            missing.append(issuer)
+                        # Convert certificate to PEM format
+                        issuer_cert = issuer_cert.public_bytes(serialization.Encoding.PEM).decode()
+                        # Check if issuer is root CA
+                        if RootCA.check_if_root_ca(issuer_cert):
+                            id = "Root CA Certificate"
+                        else:
+                            id = "Intermediate Certificate"
+                        # Build the certificate
+                        cert_data = ChainValidator.build_certificate(id, issuer_cert)
+                        # Add the certificate to the chain
+                        cert_chain.append(cert_data)
+
+        # Reorder the certificate chain
+        ordered_chain = ChainValidator.order_cert_chain(cert_chain)
+
+        return ordered_chain, extra_certs, missing
+
+    @staticmethod
     def build_chain_new(cert_chain: list) -> list:
         """
         Build the certificate chain for a given list.
@@ -243,6 +462,8 @@ class ChainValidator:
 
         Returns:
             list: The certificate chain
+            extra: The extra certificates that are not part of the chain
+            missing: The missing certificates that are not part of the chain
         """
         # Initialize the chain object
         chain = []
@@ -261,10 +482,10 @@ class ChainValidator:
             cert_data = ChainValidator.build_certificate(cert_id, cert)
             # Add certificate to chain
             chain.append(cert_data)
-        # Order the certificate chain and check for extra certificates
-        chain, extra = ChainValidator.reorder_cert_chain(chain)
+        # Order the certificate chain and check for missing and extra certificates
+        chain, extra, missing = ChainValidator.check_cert_chain(chain)
         # Return the response object
-        return chain, extra
+        return chain, extra, missing
 
     @staticmethod
     def build_chain(cert_chain: list) -> list:
@@ -333,12 +554,17 @@ class ChainValidator:
 
 
     @staticmethod
-    def validate_chain(domain: str, cert_chain: list, extra_certs: list, show_cert: bool) -> dict:
+    def validate_chain(domain: str, cert_chain: list, extra_certs: list, missing: list,show_cert: bool) -> dict:
         """
         Validate the certificate chain of a given domain.
 
         Args:
             cert_chain (list): The certificate chain to be validated
+            extra_certs (list): The extra certificates that are not part of the chain
+            missing (list): The missing certificates that are not part of the chain
+            domain (str): The domain to be validated
+            show_cert (bool): Whether to show the certificate fields in the response
+
 
         Returns:
             dict: The response object containing the validation
@@ -356,10 +582,21 @@ class ChainValidator:
         if len(extra_certs) > 0:
             # Add the extra certificates to the response
             response["analysis"].append("Extra certificates were provided.")
+        # Check if missing certificates are present
+        if len(missing) > 0:
+            # Add the missing certificates to the response
+            response["analysis"].append("Missing certificates had to be fetched from AIA.")
         # Iterate through the provided chain
         for i, cert in enumerate(cert_chain):
             # Validate the certificate
             cert_data = ChainValidator.validate_certificate(domain, i, cert, cert_chain)
+            # Add warnings to certificates that were missing
+            for missing_cert in missing:
+                # Check if the subject string contains the missing issuer
+                if missing_cert in cert_data['certificate']['certificate']['subject']:
+                    cert_data['warnings'].append(
+                        "Certificate was missing and fetched from AIA."
+                    )
             # If flag is set to False
             if not show_cert:
                 # Remove the certificate from the response

@@ -105,26 +105,28 @@ class CertificateInformation:
         # Return the certificate chain
         return cert_chain
 
-    def analyze(self, domain, show_cert=False):
+    def analyze(self, domain, show_cert=False, force=False):
         """"
         Analyze the digital certificates of a given domain.
 
         Args:
             domain (str): The domain to be analyzed.
+            show_cert (bool): Whether to show the certificate fields in the response.
+            force (bool): Whether to force the analysis even if the domain is not reachable.
         """
         # Check if the domain is valid
         if not self.is_valid(domain):
             return self.__build_error_message("Invalid domain.")
         # Check if the domain is reachable
-        if not self.is_reachable(domain):
+        if not self.is_reachable(domain) and not force:
             return self.__build_error_message("Domain is not reachable.")
         try:
             # Retrieve the certificate chain from the domain server
             cert_chain = self.__get_certificate_chain(domain)
             # Build the certificate chain object
-            cert_chain, extra_certs = ChainValidator.build_chain_new(cert_chain)
+            cert_chain, extra_certs, missing = ChainValidator.build_chain_new(cert_chain)
             # Analyze the certificate chain
-            result = ChainValidator.validate_chain(domain, cert_chain, extra_certs, show_cert)
+            result = ChainValidator.validate_chain(domain, cert_chain, extra_certs, missing, show_cert)
             # Return a structure with the analysis
             return result
         except KeyboardInterrupt:
