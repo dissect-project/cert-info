@@ -28,6 +28,35 @@ class ChainValidator:
     """
 
     @staticmethod
+    def extract_cert_by_subject(cert_data: str, subject: str) -> str:
+        """
+        Extracts a certificate from a string based on the Common Name (CN).
+
+        Args:
+            cert_data (str): The string containing multiple PEM certificates.
+            subject (str): The subject to search for in the certificates.
+
+        Returns:
+            str: The PEM certificate that matches the subject, or None if not found.
+        """
+        # Find all PEM certificates in the string
+        pem_certs = re.findall(
+            r"-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----",
+            cert_data,
+            re.DOTALL
+        )
+        # Iterate through the found PEM certificates
+        for pem in pem_certs:
+            # Load the certificate
+            cert = x509.load_pem_x509_certificate(pem.encode())
+            # Convert the full subject to a string for easy comparison
+            full_subject = cert.subject.rfc4514_string()  # e.g., "CN=..., O=..., C=..."
+            # Check if the CN matches the provided common name
+            if full_subject == subject:
+                return pem  # Return PEM of matching cert
+        return None  # No match found
+
+    @staticmethod
     def load_mozilla_ca_certs() -> list:
         """
         Load Mozilla CA certificates from the certifi package.
@@ -63,12 +92,20 @@ class ChainValidator:
         """
         # Load the certificate
         cert = x509.load_pem_x509_certificate(cert.encode())
-        # Extract the issuer name
-        issuer = cert.issuer.get_attributes_for_oid(x509.NameOID.COMMON_NAME)[0].value
+        # Check if CN has content
+        if len(cert.issuer.get_attributes_for_oid(x509.NameOID.COMMON_NAME)) > 0:
+            # Extract the issuer name
+            issuer = cert.issuer.get_attributes_for_oid(x509.NameOID.COMMON_NAME)[0].value
+            subject = cert.issuer.rfc4514_string()
+        else:
+            issuer = cert.issuer.get_attributes_for_oid(x509.NameOID.ORGANIZATIONAL_UNIT_NAME)[0].value
+            subject = cert.issuer.rfc4514_string()
         #Check if certificate is in local trust store
         local = RootCA.get_certificate(issuer)
         # Check if the issuer is a root CA
         if local is not None:
+            # Fetch the matching certificate from the local trust store
+            local = ChainValidator.extract_cert_by_subject(local, subject)
             # If it is in trust store, return the certificate
             return x509.load_pem_x509_certificate(local.encode('utf-8')), True
         else:
@@ -76,7 +113,7 @@ class ChainValidator:
             aia = Certificate.get_extension(
                 x509.ExtensionOID.AUTHORITY_INFORMATION_ACCESS, cert
             )
-            # Checkj if AIA is present
+            # Check if AIA is present
             if aia:
                 ca_issuers_urls = [desc.access_location.value for desc in aia\
                                 if desc.access_method == x509.OID_CA_ISSUERS]
@@ -590,6 +627,10 @@ class ChainValidator:
         for i, cert in enumerate(cert_chain):
             # Validate the certificate
             cert_data = ChainValidator.validate_certificate(domain, i, cert, cert_chain)
+            # Check if the certificate status is invalid
+            if cert_data['status'] == "invalid":
+                # Update the response status
+                response["status"] = "invalid"
             # Add warnings to certificates that were missing
             for missing_cert in missing:
                 # Check if the subject string contains the missing issuer

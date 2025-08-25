@@ -11,6 +11,8 @@ from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 
+MOZILLA_CA_BUNDLE = "cert_info/mozilla-certs.pem"
+
 class RootCA:
     """
     Root Certificate Authority (CA) Validator class that provides methods
@@ -127,6 +129,36 @@ class RootCA:
         Returns:
             str: The certificate of the issuer if found, None otherwise.
         """
+        if not os.path.isfile(MOZILLA_CA_BUNDLE):
+            raise FileNotFoundError(f"PEM file '{MOZILLA_CA_BUNDLE}' not found.")
+
+        # Read the PEM file
+        with open(MOZILLA_CA_BUNDLE, "r", encoding="utf-8") as f:
+            bundle_pem = f.read()
+
+        # Split the bundle into individual certificates
+        certs = bundle_pem.split("-----END CERTIFICATE-----")
+        for cert_pem in certs:
+            cert_pem = cert_pem.strip()
+            if not cert_pem:
+                continue
+            cert_pem += "\n-----END CERTIFICATE-----\n"
+
+            try:
+                cert = x509.load_pem_x509_certificate(cert_pem.encode(), default_backend())
+            except Exception:
+                continue  # Skip invalid certificates
+            # Get the subject CN
+            subject = cert.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME)
+            # Check if CN is present
+            if len(subject) > 0:
+                # Check the Common Name (CN)
+                if subject and subject[0].value == issuer_cn:
+                    return cert_pem  # Return the full PEM
+            else:
+                # Check the Organizational Unit (OU) if CN is not present
+                if cert.subject.get_attributes_for_oid(x509.NameOID.ORGANIZATIONAL_UNIT_NAME)[0].value == issuer_cn:
+                    return cert_pem
         return None
 
     @staticmethod

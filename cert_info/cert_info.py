@@ -90,6 +90,7 @@ class CertificateInformation:
         """
         # Retrieve the certificate chain using OpenSSL
         context = SSL.Context(SSL.TLS_CLIENT_METHOD)
+        context.set_options(SSL.OP_NO_SSLv2 | SSL.OP_NO_SSLv3)
         conn = SSL.Connection(context, socket.socket(socket.AF_INET, socket.SOCK_STREAM))
         conn.set_tlsext_host_name(domain.encode())
         conn.connect((domain, port))
