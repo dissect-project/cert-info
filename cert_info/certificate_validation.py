@@ -210,6 +210,8 @@ class CertificateValidator:
         Returns:
             int: 0 if the hostname matches, 1 otherwise.
         """
+        # Convert expected to lowercase for case-insensitive comparison
+        expected = expected.lower()
         # Try to get Subject Alternative Name (SAN)
         try:
             # Get the SAN extension
@@ -217,6 +219,8 @@ class CertificateValidator:
             san_dns_names = san_extension.value.get_values_for_type(x509.DNSName)
             # Iterate through the SAN DNS names
             for san in san_dns_names:
+                # Convert to lowercase for case-insensitive comparison
+                san = san.lower()
                 # Check if SAN is wildcard
                 wildcard = self.__is_wildcard(san, expected)
                 # Check if the expected hostname matches the SAN (exact or wildcard match)
@@ -239,6 +243,8 @@ class CertificateValidator:
         if cn_attributes:
             # Get the CN value
             subject_cn = cn_attributes[0].value
+            # Convert to lowercase for case-insensitive comparison
+            subject_cn = subject_cn.lower()
             # Check if the CN is wildcard
             wildcard = self.__is_wildcard(subject_cn, expected)
             # Check if the expected hostname matches the CN (exact or wildcard match)
