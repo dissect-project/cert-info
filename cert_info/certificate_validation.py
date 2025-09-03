@@ -361,7 +361,7 @@ class CertificateValidator:
             warnings (list): List to store warnings found during validation.
 
         Returns:
-            int: 0 if the signature strength is good, 1 otherwise.
+            int: 0
         """
         # Check hash function
         try:
@@ -381,8 +381,8 @@ class CertificateValidator:
                 issues.append("Hash " + NIST_LEGACY)
         except Exception:
             issues.append(UNKNOWN_HASH)
-        # Return True if no issues were found
-        return 0 if len(issues) == 0 else 1
+        # Return 0 in all cases, since it does not invalidate chain
+        return 0
     
     def __check_key_strength(self, cert: x509.Certificate, issues: list, warnings: list) -> int:
         """
