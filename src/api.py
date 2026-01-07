@@ -2,9 +2,7 @@
 FastAPI implementation of cert-info tool.
 """
 
-import os
 import json
-from typing import Optional
 import uvicorn
 from fastapi import FastAPI, Path, Query
 from pydantic import BaseModel

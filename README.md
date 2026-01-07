@@ -160,10 +160,6 @@ Contributions are more than welcome and they are what makes the community great!
 
 - **Pull Requests**: When opening a pull request, make sure to assign at least a reviewer so that all the code being merged has been validated by more than one person. When merging the pull request, make sure to **squash** all **commits** **before merging**.
 
-## Documentation
-
-Full documentation for `cert-info` can be accessed [here](). (TBD)
-
 ## Authors
 
 - [Diogo Ribeiro](https://github.com/ribeiropdiogo)

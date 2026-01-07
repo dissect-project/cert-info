@@ -1,5 +1,5 @@
 """
-The File Manager is repsonsible for managing the files that are
+The File Manager is responsible for managing the files that are
 used in the retrieval and validation of the certificate chain.
 """
 
