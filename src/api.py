@@ -7,7 +7,7 @@ import uvicorn
 from fastapi import FastAPI, Path, Query
 from pydantic import BaseModel
 
-from src.cert_info import CertificateInformation
+from src.certificate_info import CertificateInformation
 
 app = FastAPI(title="cert-info API", description="Certificate chain verification API")
 
