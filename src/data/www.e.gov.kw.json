@@ -1,0 +1,149 @@
+{
+    "domain": "www.e.gov.kw",
+    "date": "2025-12-15 11:23:30",
+    "ip-address": "51.145.196.42",
+    "status": "valid",
+    "analysis": [
+        "Missing certificates had to be fetched from AIA."
+    ],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.e.gov.kw,O=Central Agency for Information Technology,L=Kuwait City,C=KW",
+                    "issuer": "CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US",
+                    "serial_number": 6424227843874695120259205932999106005,
+                    "valid_from": "2025-04-30 00:00:00",
+                    "valid_until": "2026-04-29 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "*.e.gov.kw",
+                        "e.gov.kw"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl3.digicert.com/DigiCertGlobalG2TLSRSASHA2562020CA1-1.crl",
+                        "http://crl4.digicert.com/DigiCertGlobalG2TLSRSASHA2562020CA1-1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.digicert.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cacerts.digicert.com/DigiCertGlobalG2TLSRSASHA2562020CA1-1.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "b4a49fa375f80706144aa43e5ff630b7852be51b90343808a2b8525e41bbaa21",
+                    "signature": "476b6d76d7dd6350afb0f9f403396ad013080080a92d18ac9119e4d081ad3538ca1862a0efbcbb838f0f14d4f8a761b8e65929bde41d0e58a9d873165054ee83c9cc375dbb5d36cd038f3e2c8cc7c19a9e2ed334cf6d39de7a719a20e0ef8d8585894c46fb71995d8f86d9062b1772d4ee592c82da2675b1849c3d0f80776010e8c2a727c3074e3197acd2b989bf5f59f7b9d057302ae9762a9f256403d1460f6d78894425a2571471e00cfc988729e838637ca9103aae091015b7c546b38718531d05707dca9a41da103ec1cdb1c1ce0d08ce5cbbbbcc7d63248a00164e6a4b38b4c48ade963367aa9deff3324e6cafa450ccfe228ce7f07fd14b1bbfab9e05"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIG4jCCBcqgAwIBAgIQBNVC4xOEfI5sxrBQdVXd1TANBgkqhkiG9w0BAQsFADBZ\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMTMwMQYDVQQDEypE\naWdpQ2VydCBHbG9iYWwgRzIgVExTIFJTQSBTSEEyNTYgMjAyMCBDQTEwHhcNMjUw\nNDMwMDAwMDAwWhcNMjYwNDI5MjM1OTU5WjBsMQswCQYDVQQGEwJLVzEUMBIGA1UE\nBxMLS3V3YWl0IENpdHkxMjAwBgNVBAoTKUNlbnRyYWwgQWdlbmN5IGZvciBJbmZv\ncm1hdGlvbiBUZWNobm9sb2d5MRMwEQYDVQQDDAoqLmUuZ292Lmt3MIIBIjANBgkq\nhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoc6poXsccXtEnkdoaRcLEdQpZIo3CI3I\nomAxqJTcpNOHdlA/90VkO0L71AicyyB6PrvmKg+rii8QtpJk7bhtndKQAq/oz0EJ\nlCG9VDuHoiaQlvyctb0KZ6U1OgwBR+qYdn1RYsC1v3WOC3f478iOTcozkjgdXRTv\nR66NJ7fHGN65kgIZX1wHA8+bx0VWwYTdTwQWLvl560i/pPDjWp0R44RAHenURm9Y\nalfrKlBib0YPy2rtQqOd1bq9oA27hnBXcRrDXPBlAPvByLxeLtuOSAEDo69N8Pr+\nWXwOIYfW7hVmOHsf7i06FsnF2rGLmRRLwwfSqug5cktFA6yLeQbf4QIDAQABo4ID\nkTCCA40wHwYDVR0jBBgwFoAUdIWAwGbH3zfez70pN6oDHb7tzRcwHQYDVR0OBBYE\nFL27ZEI9zsslenYRoi1NESKYtHkUMB8GA1UdEQQYMBaCCiouZS5nb3Yua3eCCGUu\nZ292Lmt3MD4GA1UdIAQ3MDUwMwYGZ4EMAQICMCkwJwYIKwYBBQUHAgEWG2h0dHA6\nLy93d3cuZGlnaWNlcnQuY29tL0NQUzAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYw\nFAYIKwYBBQUHAwEGCCsGAQUFBwMCMIGfBgNVHR8EgZcwgZQwSKBGoESGQmh0dHA6\nLy9jcmwzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbEcyVExTUlNBU0hBMjU2\nMjAyMENBMS0xLmNybDBIoEagRIZCaHR0cDovL2NybDQuZGlnaWNlcnQuY29tL0Rp\nZ2lDZXJ0R2xvYmFsRzJUTFNSU0FTSEEyNTYyMDIwQ0ExLTEuY3JsMIGHBggrBgEF\nBQcBAQR7MHkwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBR\nBggrBgEFBQcwAoZFaHR0cDovL2NhY2VydHMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0\nR2xvYmFsRzJUTFNSU0FTSEEyNTYyMDIwQ0ExLTEuY3J0MAwGA1UdEwEB/wQCMAAw\nggF/BgorBgEEAdZ5AgQCBIIBbwSCAWsBaQB1AA5XlLzzrqk+MxssmQez95Dfm8I9\ncTIl3SGpJaxhxU4hAAABloVdPdkAAAQDAEYwRAIgMaZhQdEk/UnWybcRjbCA3rZ+\neddkqgj6nN3ELy5UMpQCIEVXSm2s9syjJTTNUsnme4nx8OYleHUGReBSuBcMly0+\nAHcAZBHEbKQS7KeJHKICLgC8q08oB9QeNSer6v7VA8l9zfAAAAGWhV09kgAABAMA\nSDBGAiEA+n15+m16FX+VOn01UtpqOKxuac5zPYp48XFaCdGDxDUCIQCuEEci5auO\nXiH/qcVlN1vroQaBJIpTzSd/TM04rbyvlAB3AEmcm2neHXzs/DbezYdkprhbrwqH\ngBnRVVL76esp3fjDAAABloVdPbIAAAQDAEgwRgIhAJ0yditqrbM8lPfguXBCngK2\nmgeirmxqJVjDeGvSJlbBAiEApVo7zvt/iW6OjPPMUWAMHRSRWfvqTe590juGeYvz\n9bQwDQYJKoZIhvcNAQELBQADggEBAEdrbXbX3WNQr7D59AM5atATCACAqS0YrJEZ\n5NCBrTU4yhhioO+8u4OPDxTU+KdhuOZZKb3kHQ5YqdhzFlBU7oPJzDddu102zQOP\nPiyMx8Gani7TNM9tOd56cZog4O+NhYWJTEb7cZldj4bZBisXctTuWSyC2iZ1sYSc\nPQ+Ad2AQ6MKnJ8MHTjGXrNK5ib9fWfe50FcwKul2Kp8lZAPRRg9teIlEJaJXFHHg\nDPyYhynoOGN8qRA6rgkQFbfFRrOHGFMdBXB9yppB2hA+wc2xwc4NCM5cu7vMfWMk\nigAWTmpLOLTEit6WM2eqne/zMk5sr6RQzP4ijOfwf9FLG7+rngU=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "Certificate was missing and fetched from AIA."
+            ],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US",
+                    "issuer": "CN=DigiCert Global Root G2,OU=www.digicert.com,O=DigiCert Inc,C=US",
+                    "serial_number": 17226682543955925492517929723242541158,
+                    "valid_from": "2021-03-30 00:00:00",
+                    "valid_until": "2031-03-29 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl3.digicert.com/DigiCertGlobalRootG2.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.digicert.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cacerts.digicert.com/DigiCertGlobalRootG2.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "c8025f9fc65fdfc95b3ca8cc7867b9a587b5277973957917463fc813d0b625a9",
+                    "signature": "90f170cb289769977c74fdc0fa267b53abadcd65fdba9c069c8ad75a4387ed4d4c565fadc1c5b505202e59d1ff4af5a02ad8b095adc92e4a3bd7a7f66f8829fc303f2484bbc3b77b93072caf876b7633ed005552b2599ee4b9d0f3dfe70ffeddf8c4b910728109045fcf979e2e32758ecf9a58d257317e370181b2666d291ab166096dd16e90f4b9fa2f0114c55c566401d97d87a838539f8b5d466d5cc6278481d47e8c8ca39b52e7c688ec377c2afbf0555a387210d80013cf4c73dbaa3735a82981699c76bcde187b90d4cacfef6703fd045a2116b1ffea3fdfdc82f5ebf45992230d242a95254ccaa191e6d4b7ac8774b3f16da399dbf9d5bd84409f0798"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIEyDCCA7CgAwIBAgIQDPW9BitWAvR6uFAsI8zwZjANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0yMTAzMzAwMDAwMDBaFw0zMTAzMjkyMzU5NTlaMFkxCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKkRpZ2lDZXJ0IEdsb2Jh\nbCBHMiBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAMz3EGJPprtjb+2QUlbFbSd7ehJWivH0+dbn4Y+9lavyYEEV\ncNsSAPonCrVXOFt9slGTcZUOakGUWzUb+nv6u8W+JDD+Vu/E832X4xT1FE3LpxDy\nFuqrIvAxIhFhaZAmunjZlx/jfWardUSVc8is/+9dCopZQ+GssjoP80j812s3wWPc\n3kbW20X+fSP9kOhRBx5Ro1/tSUZUfyyIxfQTnJcVPAPooTncaQwywa8WV0yUR0J8\nosicfebUTVSvQpmowQTCd5zWSOTOEeAqgJnwQ3DPP3Zr0UxJqyRewg2C/Uaoq2yT\nzGJSQnWS+Jr6Xl6ysGHlHx+5fwmY6D36g39HaaECAwEAAaOCAYIwggF+MBIGA1Ud\nEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHSFgMBmx9833s+9KTeqAx2+7c0XMB8G\nA1UdIwQYMBaAFE4iVCAYlebjbuYP+vq5Eu0GF485MA4GA1UdDwEB/wQEAwIBhjAd\nBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwdgYIKwYBBQUHAQEEajBoMCQG\nCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKG\nNGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2JhbFJvb3RH\nMi5jcnQwQgYDVR0fBDswOTA3oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29t\nL0RpZ2lDZXJ0R2xvYmFsUm9vdEcyLmNybDA9BgNVHSAENjA0MAsGCWCGSAGG/WwC\nATAHBgVngQwBATAIBgZngQwBAgEwCAYGZ4EMAQICMAgGBmeBDAECAzANBgkqhkiG\n9w0BAQsFAAOCAQEAkPFwyyiXaZd8dP3A+iZ7U6utzWX9upwGnIrXWkOH7U1MVl+t\nwcW1BSAuWdH/SvWgKtiwla3JLko716f2b4gp/DA/JIS7w7d7kwcsr4drdjPtAFVS\nslme5LnQ89/nD/7d+MS5EHKBCQRfz5eeLjJ1js+aWNJXMX43AYGyZm0pGrFmCW3R\nbpD0ufovARTFXFZkAdl9h6g4U5+LXUZtXMYnhIHUfoyMo5tS58aI7Dd8KvvwVVo4\nchDYABPPTHPbqjc1qCmBaZx2vN4Ye5DUys/vZwP9BFohFrH/6j/f3IL16/RZkiMN\nJCqVJUzKoZHm1Lesh3Sz8W2jmdv51b2EQJ8HmA==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=DigiCert Global Root G2,OU=www.digicert.com,O=DigiCert Inc,C=US",
+                    "issuer": "CN=DigiCert Global Root G2,OU=www.digicert.com,O=DigiCert Inc,C=US",
+                    "serial_number": 4293743540046975378534879503202253541,
+                    "valid_from": "2013-08-01 12:00:00",
+                    "valid_until": "2038-01-15 12:00:00",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "cb3ccbb76031e5e0138f8dd39a23f9de47ffc35e43c1144cea27d46a5ab1cb5f",
+                    "signature": "606728946f0e4863eb31ddea6718d5897d3cc58b4a7fe9bedb2b17dfb05f73772a3213398167428423f2456735ec88bff88fb0610c34a4ae204c84c6dbf835e176d9dfa642bbc74408867f3674245ada6c0d145935bdf249ddb61fc9b30d472a3d992fbb5cbbb5d420e1995f534615db689bf0f330d53e31e28d849ee38adada963e3513a55ff0f970507047411157194ec08fae06c49513172f1b259f75f2b18e99a16f13b14171fe882ac84f102055d7f31445e5e044f4ea879532930efe5346fa2c9dff8b22b94bd90945a4dea4b89a58dd1b7d529f8e59438881a49e26d56faddd0dc6377ded03921be5775f76ee3c8dc45d565ba2d9666eb33537e532b6"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDjjCCAnagAwIBAgIQAzrx5qcRqaC7KGSxHQn65TANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0xMzA4MDExMjAwMDBaFw0zODAxMTUxMjAwMDBaMGExCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j\nb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IEcyMIIBIjANBgkqhkiG\n9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuzfNNNx7a8myaJCtSnX/RrohCgiN9RlUyfuI\n2/Ou8jqJkTx65qsGGmvPrC3oXgkkRLpimn7Wo6h+4FR1IAWsULecYxpsMNzaHxmx\n1x7e/dfgy5SDN67sH0NO3Xss0r0upS/kqbitOtSZpLYl6ZtrAGCSYP9PIUkY92eQ\nq2EGnI/yuum06ZIya7XzV+hdG82MHauVBJVJ8zUtluNJbd134/tJS7SsVQepj5Wz\ntCO7TG1F8PapspUwtP1MVYwnSlcUfIKdzXOS0xZKBgyMUNGPHgm+F6HmIcr9g+UQ\nvIOlCsRnKPZzFBQ9RnbDhxSJITRNrw9FDKZJobq7nMWxM4MphQIDAQABo0IwQDAP\nBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAdBgNVHQ4EFgQUTiJUIBiV\n5uNu5g/6+rkS7QYXjzkwDQYJKoZIhvcNAQELBQADggEBAGBnKJRvDkhj6zHd6mcY\n1Yl9PMWLSn/pvtsrF9+wX3N3KjITOYFnQoQj8kVnNeyIv/iPsGEMNKSuIEyExtv4\nNeF22d+mQrvHRAiGfzZ0JFrabA0UWTW98kndth/Jsw1HKj2ZL7tcu7XUIOGZX1NG\nFdtom/DzMNU+MeKNhJ7jitralj41E6Vf8PlwUHBHQRFXGU7Aj64GxJUTFy8bJZ91\n8rGOmaFvE7FBcf6IKshPECBV1/MUReXgRPTqh5Uykw7+U0b6LJ3/iyK5S9kJRaTe\npLiaWN0bfVKfjllDiIGknibVb63dDcY3fe0Dkhvld1927jyNxF1WW6LZZm6zNTfl\nMrY=\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

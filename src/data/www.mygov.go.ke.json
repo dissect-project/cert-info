@@ -1,0 +1,145 @@
+{
+    "domain": "www.mygov.go.ke",
+    "date": "2025-12-15 19:23:55",
+    "ip-address": "102.210.148.119",
+    "status": "valid",
+    "analysis": [
+        "Missing certificates had to be fetched from AIA."
+    ],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.mygov.go.ke",
+                    "issuer": "CN=emSign SSL CA - G1,O=eMudhra Technologies Limited,OU=emSign PKI,C=IN",
+                    "serial_number": 465129800446264775628448203923504434,
+                    "valid_from": "2025-09-29 12:30:23",
+                    "valid_until": "2026-10-24 12:30:23",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "mygov.go.ke",
+                        "*.mygov.go.ke"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.emsign.com?emSignSSLCAG1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.emSign.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://repository.emsign.com/certs/emSignSSLCAG1.crt"
+                    ],
+                    "validation_level": "Domain Validation (DV)",
+                    "fingerprint_SHA256": "06b635bc19a43165393707e4a254b6303dcc887560b4e6cc452ae2d64fc72e7d",
+                    "signature": "6488e100621b6f0dd5ef47be38fabb8432d4b9eea463b6e85a9008e2f50d3d115090d4604785e3e650598790cc9c4c4bf1ec7d1c43d62e69e2c7bbdb1f015aea251f893a382c4c6e309deefa78cdf230d8772f9d60e38057774aed9a95c28755fba27089afdc643a1e58a7f7852b6e00d3110f7ee488658252cb65967e5144c4023220f6dffc01c37914f546612999563233e794b4f4d1a1352504655ea46c1c0b4660d42007b8969dbf4974a9a8ae891862c50b9c5044134ab341cf17e375dac42751f06e887888e9963cf058d2ebb869b0648c5e5e9201fcc4735c5efa7a47885eca5b903b46383ee749d1c87b90e61a11d51dc8ee76cbd0810e1e93363771"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGNDCCBRygAwIBAgIPWZSrcmHPDvn5BMTlU70yMA0GCSqGSIb3DQEBCwUAMGYx\nCzAJBgNVBAYTAklOMRMwEQYDVQQLEwplbVNpZ24gUEtJMSUwIwYDVQQKExxlTXVk\naHJhIFRlY2hub2xvZ2llcyBMaW1pdGVkMRswGQYDVQQDExJlbVNpZ24gU1NMIENB\nIC0gRzEwHhcNMjUwOTI5MTIzMDIzWhcNMjYxMDI0MTIzMDIzWjAYMRYwFAYDVQQD\nDA0qLm15Z292LmdvLmtlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA\nvWj4JgznuJ40uGLPECLrc8gJbJY4sczimwgpQVkqm6jjFf5OYjFM2l+aufQ/bPqD\n7Z8bh3bNlqACPh3JlYR6kNAsD3ZhEul2gXOvT4JQn6y4SqnCBeprxBUnTjErhoaR\nM1yzPOBo11WRYoBXZXs+MGdDKhACTa/jcOS8Pae53I3nwxfN5xIeM7rLWo7nDTqm\ncK2OoV9Zd+Krdh6ELxn7YQsN9KLaM74FIxRT+DAVzNkJSdtUkI+KSZVSoPwfdfcT\nWcTpvVkHSYwUR6E/od4dp7wYJ2qGNTA6BS7Ufw99Jh1YIhhTIKuJpWlTvHGirXGv\nkyk/fUpL7PA7k6c2QDhr8wIDAQABo4IDKzCCAycwHwYDVR0jBBgwFoAUNNH3OTJF\nQEqZK32JaldprZWv4zcwHQYDVR0OBBYEFGxR/5P4Wjc7hT9+SUrlfrSuMa7DMB0G\nA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjBOBgNVHSAERzBFMDkGCysGAQQB\ng44hAQABMCowKAYIKwYBBQUHAgEWHGh0dHA6Ly9yZXBvc2l0b3J5LmVtU2lnbi5j\nb20wCAYGZ4EMAQIBMHQGCCsGAQUFBwEBBGgwZjAiBggrBgEFBQcwAYYWaHR0cDov\nL29jc3AuZW1TaWduLmNvbTBABggrBgEFBQcwAoY0aHR0cDovL3JlcG9zaXRvcnku\nZW1zaWduLmNvbS9jZXJ0cy9lbVNpZ25TU0xDQUcxLmNydDA4BgNVHR8EMTAvMC2g\nK6AphidodHRwOi8vY3JsLmVtc2lnbi5jb20/ZW1TaWduU1NMQ0FHMS5jcmwwJQYD\nVR0RBB4wHIILbXlnb3YuZ28ua2WCDSoubXlnb3YuZ28ua2UwDgYDVR0PAQH/BAQD\nAgWgMAwGA1UdEwEB/wQCMAAwggF/BgorBgEEAdZ5AgQCBIIBbwSCAWsBaQB3ANgJ\nVTuUT3r/yBYZb5RPhauw+Pxeh1UmDxXRLnK7RUsUAAABmZVz7AcAAAQDAEgwRgIh\nAOpcNLPxM6M8xJX8cUufYjrsDkuW6+/J07JRo2COp5iqAiEAuRYnPPCUS6tRS8jw\ntSNfu5nHJenjVyChOCdXzgnPkN0AdwDLOPcViXyEoURfW8Hd+8lu8ppZzUcKaQWF\nsMsUwxRY5wAAAZmVc/C7AAAEAwBIMEYCIQCHqaDZYnRzSwDSkv+w8dDptVpb/DZ7\nLspN932IrI3MIQIhAKzSKWY/D/DC6mIywqN1dGO9r7Ro61wM5/cO7u2qHMuyAHUA\nrKswcGzr7IQx9BPS9JFfER5CJEOx8qaMTzwrO6ceAsMAAAGZlXP6UwAABAMARjBE\nAiBpZA10uzhIPCXOSeAaQDkLakTgFze+Pgl2TAAm7uOcWgIgLC5a8di9zs09TK4g\nsebjCm8Vhg01ol/35E1N/kxzLTkwDQYJKoZIhvcNAQELBQADggEBAGSI4QBiG28N\n1e9Hvjj6u4Qy1LnupGO26FqQCOL1DT0RUJDUYEeF4+ZQWYeQzJxMS/HsfRxD1i5p\n4se72x8BWuolH4k6OCxMbjCd7vp4zfIw2HcvnWDjgFd3Su2alcKHVfuicImv3GQ6\nHlin94UrbgDTEQ9+5IhlglLLZZZ+UUTEAjIg9t/8AcN5FPVGYSmZVjIz55S09NGh\nNSUEZV6kbBwLRmDUIAe4lp2/SXSpqK6JGGLFC5xQRBNKs0HPF+N12sQnUfBuiHiI\n6ZY88FjS67hpsGSMXl6SAfzEc1xe+npHiF7KW5A7Rjg+50nRyHuQ5hoR1R3I7nbL\n0IEOHpM2N3E=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "Certificate was missing and fetched from AIA."
+            ],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=emSign SSL CA - G1,O=eMudhra Technologies Limited,OU=emSign PKI,C=IN",
+                    "issuer": "CN=emSign Root CA - G1,O=eMudhra Technologies Limited,OU=emSign PKI,C=IN",
+                    "serial_number": 158103984135515362304145,
+                    "valid_from": "2018-02-18 18:30:00",
+                    "valid_until": "2033-02-18 18:30:00",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl.emsign.com?RootCAG1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.emsign.com"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "47b2efbc3670e7db4b41f22c51fc02ee84fb2dbf3082a49f2c2688122e9210a1",
+                    "signature": "1a04365f04af9c3fd664948ed03779a4a600fe9987e9ff4dcfe757143657c016861dd46ff8954e3af2b83b24b4f0a855dc0f3726ad6b7c96676200c7e5c702c678d39b352f5192976230309d448b421ead3420c6dbce3e6bcfe1d2cc09fa5ac6cb9fd79f9fd5a13b530eef67754ac11b54e4f0fd9dec7cfa564bc0d2a7dd53459b91291795983f7aed09ec40660d2941ba7ac4d5ef774e8a01c29ddc209485c25246b14eba059fbc13e92aadf699256aac41904c7fcb3a741f1a59b42f2e2ba68e171eb6e12f7217c9e4e94eeb6ec727e24258385fb453d26c845910e3e731e6429dddc18db66693cde9a86521a7f80b72e87ebfa033ed78ba447143dc93349a"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIEgjCCA2qgAwIBAgIKIXrVixxxPAAgkTANBgkqhkiG9w0BAQsFADBnMQswCQYD\nVQQGEwJJTjETMBEGA1UECxMKZW1TaWduIFBLSTElMCMGA1UEChMcZU11ZGhyYSBU\nZWNobm9sb2dpZXMgTGltaXRlZDEcMBoGA1UEAxMTZW1TaWduIFJvb3QgQ0EgLSBH\nMTAeFw0xODAyMTgxODMwMDBaFw0zMzAyMTgxODMwMDBaMGYxCzAJBgNVBAYTAklO\nMRMwEQYDVQQLEwplbVNpZ24gUEtJMSUwIwYDVQQKExxlTXVkaHJhIFRlY2hub2xv\nZ2llcyBMaW1pdGVkMRswGQYDVQQDExJlbVNpZ24gU1NMIENBIC0gRzEwggEiMA0G\nCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCU1fhvfUV6OJOhMHAzBZDvxxpa5bvT\nS1x6S4rVQmP/+125Wj2gpxvtII2RyqXQFlZd3qAKMLgqgHGzeJcyjw6CXbzJHmri\nliVGWmuLn/NUKjKJgP9zd6eGOHe6mT1WjB9ZZEFLsDYoXBthTwcHdLWK2quJrHgS\n3hZiJnpkX+hmaY7DX89oUMI1uvCQaPljgTvtiR9vtmeg/GgyePX8K5EUMozX8ElR\nDMWkzdFUYv0DVcSQcbN1R/IDhWW1vPHzU8kexAMO4B/E5sj6FGrAeMM36/uZ3AmF\n4mt/0Ia2BKPsW/K2T3hkaNSTr2BKlUm6bRccONcNAyzyN258xcUcX+RJAgMBAAGj\nggEvMIIBKzAfBgNVHSMEGDAWgBT77w2GnrDj3am58SEXfz788HcrGjAdBgNVHQ4E\nFgQUNNH3OTJFQEqZK32JaldprZWv4zcwDgYDVR0PAQH/BAQDAgEGMB0GA1UdJQQW\nMBQGCCsGAQUFBwMBBggrBgEFBQcDAjA9BgNVHSAENjA0MDIGBFUdIAAwKjAoBggr\nBgEFBQcCARYcaHR0cDovL3JlcG9zaXRvcnkuZW1zaWduLmNvbTASBgNVHRMBAf8E\nCDAGAQH/AgEAMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcwAYYWaHR0cDovL29j\nc3AuZW1zaWduLmNvbTAzBgNVHR8ELDAqMCigJqAkhiJodHRwOi8vY3JsLmVtc2ln\nbi5jb20/Um9vdENBRzEuY3JsMA0GCSqGSIb3DQEBCwUAA4IBAQAaBDZfBK+cP9Zk\nlI7QN3mkpgD+mYfp/03P51cUNlfAFoYd1G/4lU468rg7JLTwqFXcDzcmrWt8lmdi\nAMflxwLGeNObNS9RkpdiMDCdRItCHq00IMbbzj5rz+HSzAn6WsbLn9efn9WhO1MO\n72d1SsEbVOTw/Z3sfPpWS8DSp91TRZuRKReVmD967QnsQGYNKUG6esTV73dOigHC\nndwglIXCUkaxTroFn7wT6Sqt9pklaqxBkEx/yzp0HxpZtC8uK6aOFx624S9yF8nk\n6U7rbscn4kJYOF+0U9JshFkQ4+cx5kKd3cGNtmaTzemoZSGn+Aty6H6/oDPteLpE\ncUPckzSa\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=emSign Root CA - G1,O=eMudhra Technologies Limited,OU=emSign PKI,C=IN",
+                    "issuer": "CN=emSign Root CA - G1,O=eMudhra Technologies Limited,OU=emSign PKI,C=IN",
+                    "serial_number": 235931866688319308814040,
+                    "valid_from": "2018-02-18 18:30:00",
+                    "valid_until": "2043-02-18 18:30:00",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "40f6af0346a99aa1cd1d555a4e9cce62c7f9634603ee406615833dc8c8d00367",
+                    "signature": "59fff28cf5877d713da39f1b5bd1daf8d39c6b36bd9ba961ebde162c743d9ee675dad7baa7bc4217e73d91ebe57ddd3e9cf1cf92ac6c48ccc2223f693bc5b6152fa335c6682a1c57af39ef8dd035c3180c7b00561ccd8b1974debe0f12e0d0aaa13f0234b170ce9d18d608030946ee60e07eb6c44904517d7060bcaab2ff79727aa61d3d5f2af8cae2fd39b747b9eb7edf0423affa9c0607e9fb63938040b5c66c0a3128ce0c9fcfb3233580418d6cc4377b812f80a1404285e9d9388de8a153cd01bf69e85a06f2450b90faaee1bf9df2ae573ca5aeb256f48b6540e9fd31812cf43909d8ee6ba7b4a61d15a598f70181d8857df3515c7188debacc1f807e4a"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDlDCCAnygAwIBAgIKMfXkYgxsWO3W2DANBgkqhkiG9w0BAQsFADBnMQswCQYD\nVQQGEwJJTjETMBEGA1UECxMKZW1TaWduIFBLSTElMCMGA1UEChMcZU11ZGhyYSBU\nZWNobm9sb2dpZXMgTGltaXRlZDEcMBoGA1UEAxMTZW1TaWduIFJvb3QgQ0EgLSBH\nMTAeFw0xODAyMTgxODMwMDBaFw00MzAyMTgxODMwMDBaMGcxCzAJBgNVBAYTAklO\nMRMwEQYDVQQLEwplbVNpZ24gUEtJMSUwIwYDVQQKExxlTXVkaHJhIFRlY2hub2xv\nZ2llcyBMaW1pdGVkMRwwGgYDVQQDExNlbVNpZ24gUm9vdCBDQSAtIEcxMIIBIjAN\nBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk0u76WaK7p1b1TST0Bsew+eeuGQz\nf2N4aLTNLnF115sgxk0pvLZoYIr3IZpWNVrzdr3YzZr/k1ZLpVkGoZM0Kd0WNHVO\n8oG0x5ZOrRkVUkr+PHB1cM2vK6sVmjM8qrOLqs1D/fXqcP/tzxE7lM5OMhbTI0Aq\nd7OvPAEsbO2ZLIvZTmmYsvePQbAyeGHWDV/D+qJAkh1cF+ZwPjXnorfCYuKrpDhM\ntTk1b+oDafo6VGiFbdbyL0NVHpENDtjVaqSW0RM8LHhQ6DqS0hdW5TUaQBw+jSzt\nOd9C4INBdN+jzcKGYEho42kLVACL5HZpIQ15TjQIXhTCzLG3rdd8cIrHhQIDAQAB\no0IwQDAdBgNVHQ4EFgQU++8Nhp6w492pufEhF38+/PB3KxowDgYDVR0PAQH/BAQD\nAgEGMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAFn/8oz1h31x\nPaOfG1vR2vjTnGs2vZupYeveFix0PZ7mddrXuqe8QhfnPZHr5X3dPpzxz5KsbEjM\nwiI/aTvFthUvozXGaCocV685743QNcMYDHsAVhzNixl03r4PEuDQqqE/AjSxcM6d\nGNYIAwlG7mDgfrbESQRRfXBgvKqy/3lyeqYdPV8q+Mri/Tm3R7nrft8EI6/6nAYH\n6ftjk4BAtcZsCjEozgyfz7MjNYBBjWzEN3uBL4ChQEKF6dk4jeihU80Bv2noWgby\nRQuQ+q7hv53yrlc8pa6yVvSLZUDp/TGBLPQ5Cdjua6e0ph0VpZj3AYHYhX3zUVxx\niN66zB+Afko=\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

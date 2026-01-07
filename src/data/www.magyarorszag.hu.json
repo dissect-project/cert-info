@@ -1,0 +1,162 @@
+{
+    "domain": "www.magyarorszag.hu",
+    "date": "2025-12-15 11:08:20",
+    "ip-address": "84.206.131.222",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.magyarorszag.hu,O=IdomSoft Zrt.,L=Budapest,C=HU",
+                    "issuer": "1.2.840.113549.1.9.1=info@e-szigno.hu,CN=e-Szigno SSL CA 2014,O=Microsec Ltd.,L=Budapest,C=HU",
+                    "serial_number": 104266041136064432744824001784074,
+                    "valid_from": "2025-01-21 08:41:45",
+                    "valid_until": "2026-02-21 08:41:44",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "magyarorszag.hu",
+                        "*.magyarorszag.hu",
+                        "mo.hu",
+                        "*.mo.hu",
+                        "hungary.hu",
+                        "*.hungary.hu",
+                        "www.magyarorszag.hu",
+                        "www.xn--magyarorszg-t7a.hu",
+                        "xn--magyarorszg-t7a.hu"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth"
+                    ],
+                    "crl_distribution_points": [
+                        "http://sslca2014-crl1.e-szigno.hu/sslca2014.crl",
+                        "http://sslca2014-crl2.e-szigno.hu/sslca2014.crl",
+                        "http://sslca2014-crl3.e-szigno.hu/sslca2014.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://sslca2014-ocsp1.e-szigno.hu",
+                        "http://sslca2014-ocsp2.e-szigno.hu",
+                        "http://sslca2014-ocsp3.e-szigno.hu"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://sslca2014-ca1.e-szigno.hu/sslca2014.crt",
+                        "http://sslca2014-ca2.e-szigno.hu/sslca2014.crt",
+                        "http://sslca2014-ca3.e-szigno.hu/sslca2014.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "ce640778a688c9bdac4e43e4ef3e28c398a08e27d414719fdebbd2c583f466a2",
+                    "signature": "0f584902fe669fb74aaecd191706edf7fc461cf4b4527836f0144df6321a0915b8544a113d40922173d2ea7623a04ebdc1b3d4b2c00640c729a8e52182a8a05befac3300ca4190c1783c648d4be67a672891f70f1a87c45eb6b735335a9ce1c1dffc5734b7c3c30ee85d930cbc8675d0c6eab66b5814a28958dc0781c663c7fcdcffee059a030fea05a612a70dd9b8cbf14bac7e72cfc6122fcc4dd86df323ce152ea2b9b30b44df6a0a592dccc9d82bf8796f50d8e32d32cb285c874af5e2a1fbf606211fdcf6a4870484f6a6587e4d6109bc227b6dc47f931a0b12e108c0668c343cdff6e9853d63e752fa81ef8201972f39989659e66d237c68da817d757c"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIIJDCCBwygAwIBAgIOBSQFv8aBM5ghqeAD6QowDQYJKoZIhvcNAQELBQAweDEL\nMAkGA1UEBhMCSFUxETAPBgNVBAcMCEJ1ZGFwZXN0MRYwFAYDVQQKDA1NaWNyb3Nl\nYyBMdGQuMR0wGwYDVQQDDBRlLVN6aWdubyBTU0wgQ0EgMjAxNDEfMB0GCSqGSIb3\nDQEJARYQaW5mb0BlLXN6aWduby5odTAeFw0yNTAxMjEwODQxNDVaFw0yNjAyMjEw\nODQxNDRaMFQxCzAJBgNVBAYTAkhVMREwDwYDVQQHDAhCdWRhcGVzdDEWMBQGA1UE\nCgwNSWRvbVNvZnQgWnJ0LjEaMBgGA1UEAwwRKi5tYWd5YXJvcnN6YWcuaHUwggEi\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDcP4iVEoiZLzGYur8qOrjOALSg\nVfgKcmuhEw555O36prj5+eVoEAEux28iBKkUkrmeCUdYVYcxRIt/YtjOrESrUTxe\nA+WdFZGa7oY1heaj/kcybMdijtJYT3w9LEAq9xW4zBESI1WVazEvm2aMYvZNmYwI\npA+pucKqbFBaYrvH0JGNFnSPlqKE9vEbCYYLaH3yw1dfyt/KT8PItl+D1imwPY66\noatxRtAUv5f7tGmfhB8qPXM6VP/cV3fbIZbLuvtYLbjPtg87tNsA6taGZrW4liS2\nvsmvD8sobRMUW8rNeHKXi5LRSRGVszyhHJmqpUdUF7rmDI+KJzcnCnp/MeLtAgMB\nAAGjggTOMIIEyjAOBgNVHQ8BAf8EBAMCBaAwggF/BgorBgEEAdZ5AgQCBIIBbwSC\nAWsBaQB3AFZs1aN2voPf40K2dcScIySYp2m6w4LLq0mjh32asy0BAAABlIgGbWMA\nAAQDAEgwRgIhAKY3JQHdo+TNQ2B1dS7K8EKX2uV78eRSAzrovEzCSy8kAiEA7Spk\nt/prZZqxJAOdxCQ8XgtvViEOZ9Uz0w3WYfRQkr4AdgAOV5S8866pPjMbLJkHs/eQ\n35vCPXEyJd0hqSWsYcVOIQAAAZSIBnwAAAAEAwBHMEUCIQDoGIOSD4+dqjflKbu2\nREmDKcC1jL8wblRr+JwZlxWpnQIgajt46O600nr5/YuBIB0ZkYNrTNyFLW9HAlc4\nlGWup9kAdgDLOPcViXyEoURfW8Hd+8lu8ppZzUcKaQWFsMsUwxRY5wAAAZSIBn8F\nAAAEAwBHMEUCIELRFx1WEMikPW3kA7rzu5o9uQ/EeHPxn/IJ92ZwxeOnAiEAteJN\n//d/kCNNKfVu/h4SpWYLH00fwwsNEW0rL5SvNEowEwYDVR0lBAwwCgYIKwYBBQUH\nAwEwLgYDVR0gBCcwJTAIBgZngQwBAgIwCAYGBACPegEHMA8GDSsGAQQBgagYAgEB\ngR8wHQYDVR0OBBYEFOEETDaPlRJ3ZIKSOJNcm2hijNgXMB8GA1UdIwQYMBaAFN5q\nsE5DqghBR3S/pYqBVEwgxXUoMIGiBgNVHREEgZowgZeCD21hZ3lhcm9yc3phZy5o\ndYIRKi5tYWd5YXJvcnN6YWcuaHWCBW1vLmh1ggcqLm1vLmh1ggpodW5nYXJ5Lmh1\nggwqLmh1bmdhcnkuaHWCE3d3dy5tYWd5YXJvcnN6YWcuaHWCGnd3dy54bi0tbWFn\neWFyb3JzemctdDdhLmh1ghZ4bi0tbWFneWFyb3JzemctdDdhLmh1MIGwBgNVHR8E\ngagwgaUwNaAzoDGGL2h0dHA6Ly9zc2xjYTIwMTQtY3JsMS5lLXN6aWduby5odS9z\nc2xjYTIwMTQuY3JsMDWgM6Axhi9odHRwOi8vc3NsY2EyMDE0LWNybDIuZS1zemln\nbm8uaHUvc3NsY2EyMDE0LmNybDA1oDOgMYYvaHR0cDovL3NzbGNhMjAxNC1jcmwz\nLmUtc3ppZ25vLmh1L3NzbGNhMjAxNC5jcmwwggFWBggrBgEFBQcBAQSCAUgwggFE\nMC4GCCsGAQUFBzABhiJodHRwOi8vc3NsY2EyMDE0LW9jc3AxLmUtc3ppZ25vLmh1\nMC4GCCsGAQUFBzABhiJodHRwOi8vc3NsY2EyMDE0LW9jc3AyLmUtc3ppZ25vLmh1\nMC4GCCsGAQUFBzABhiJodHRwOi8vc3NsY2EyMDE0LW9jc3AzLmUtc3ppZ25vLmh1\nMDoGCCsGAQUFBzAChi5odHRwOi8vc3NsY2EyMDE0LWNhMS5lLXN6aWduby5odS9z\nc2xjYTIwMTQuY3J0MDoGCCsGAQUFBzAChi5odHRwOi8vc3NsY2EyMDE0LWNhMi5l\nLXN6aWduby5odS9zc2xjYTIwMTQuY3J0MDoGCCsGAQUFBzAChi5odHRwOi8vc3Ns\nY2EyMDE0LWNhMy5lLXN6aWduby5odS9zc2xjYTIwMTQuY3J0MA0GCSqGSIb3DQEB\nCwUAA4IBAQAPWEkC/maft0quzRkXBu33/EYc9LRSeDbwFE32MhoJFbhUShE9QJIh\nc9LqdiOgTr3Bs9SywAZAxymo5SGCqKBb76wzAMpBkMF4PGSNS+Z6ZyiR9w8ah8Re\ntrc1M1qc4cHf/Fc0t8PDDuhdkwy8hnXQxuq2a1gUoolY3AeBxmPH/Nz/7gWaAw/q\nBaYSpw3ZuMvxS6x+cs/GEi/MTdht8yPOFS6iubMLRN9qClktzMnYK/h5b1DY4y0y\nyyhch0r14qH79gYhH9z2pIcEhPamWH5NYQm8InttxH+TGgsS4QjAZow0PN/26YU9\nY+dS+oHvggGXLzmYllnmbSN8aNqBfXV8\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "1.2.840.113549.1.9.1=info@e-szigno.hu,CN=e-Szigno SSL CA 2014,O=Microsec Ltd.,L=Budapest,C=HU",
+                    "issuer": "1.2.840.113549.1.9.1=info@e-szigno.hu,CN=Microsec e-Szigno Root CA 2009,O=Microsec Ltd.,L=Budapest,C=HU",
+                    "serial_number": 25799471706756366967625188106,
+                    "valid_from": "2014-07-08 14:35:21",
+                    "valid_until": "2029-12-29 14:35:21",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "SAN": [
+                        "info@e-szigno.hu"
+                    ],
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://rootca2009-crl1.e-szigno.hu/rootca2009.crl",
+                        "http://rootca2009-crl2.e-szigno.hu/rootca2009.crl",
+                        "http://rootca2009-crl3.e-szigno.hu/rootca2009.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://rootca2009-ocsp1.e-szigno.hu",
+                        "http://rootca2009-ocsp2.e-szigno.hu",
+                        "http://rootca2009-ocsp3.e-szigno.hu"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://rootca2009-ca1.e-szigno.hu/rootca2009.crt",
+                        "http://rootca2009-ca2.e-szigno.hu/rootca2009.crt",
+                        "http://rootca2009-ca3.e-szigno.hu/rootca2009.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "eac241c0440a36830111383336bc20cac7409c20f6e88d4f84f4827be919e338",
+                    "signature": "b120a716d5fe61a1d6f5803bc77138dc2ff9a3fb35be5d5d33f4623b6b204e9ae7357e2295cafa29eef8e25fb401d5d1a9f7da8be9ce9b5ad84bd1e5c8bf0bba3d87c7b27e8ae44f13039dd3f067dedecbfe6a6b3e3cb7bc1dcfac3a6170ace4ba4ccd4e01986fae6d374635942fc3a730971465de9d8a65365bc898fbb777cce4972b295c27f3ce386df1532924278bdd31cf188ef1bcf92e31680cc8a2bc228a3195c7a593048b842cc84293eaca93f915e9f1db11add27f9254aef24510bb8c725934d3315b3d7021bb671cd157234b83745ceef31c6027b928e88ff87d72d2947d151486a8c4bb4706b40382799cc9462a8810e51fe9a7bd7970c6ca9a94"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGXjCCBUagAwIBAgIMU1zSo6wT2dxKS4MKMA0GCSqGSIb3DQEBCwUAMIGCMQsw\nCQYDVQQGEwJIVTERMA8GA1UEBwwIQnVkYXBlc3QxFjAUBgNVBAoMDU1pY3Jvc2Vj\nIEx0ZC4xJzAlBgNVBAMMHk1pY3Jvc2VjIGUtU3ppZ25vIFJvb3QgQ0EgMjAwOTEf\nMB0GCSqGSIb3DQEJARYQaW5mb0BlLXN6aWduby5odTAeFw0xNDA3MDgxNDM1MjFa\nFw0yOTEyMjkxNDM1MjFaMHgxCzAJBgNVBAYTAkhVMREwDwYDVQQHDAhCdWRhcGVz\ndDEWMBQGA1UECgwNTWljcm9zZWMgTHRkLjEdMBsGA1UEAwwUZS1Temlnbm8gU1NM\nIENBIDIwMTQxHzAdBgkqhkiG9w0BCQEWEGluZm9AZS1zemlnbm8uaHUwggEiMA0G\nCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC/z1KGU12pZR5il1tkzC8F9itEF/A5\nu3FQnzLdPqurZo4o7YTOKdkV/bzRnGf5xphe6LZHhENDZJ78LkSxUNs7jLMnMjp1\nUDoW0cREg5nstWDX7heSMD59HBrm1W8sHMvmfwch+wwGaSUhzglff2WzdzCADqaB\nYkVTgm3XoEpGaoBMYAoyTnVbs2QX40AfGbzcQUDRxm4zcTU5ovfM6c3obQkCp4+s\n1K5nsmTzO/MnH1t+eE+0mt58aMwrqTe3vjabnppgDmMN2nXDEErjb9HrD/pv9Yeq\nXmWPzKTfJ0veEi/xndoeSkQOXETDB0u8vQlu/bmTgBUs3skzWp2X0vLbAgMBAAGj\nggLbMIIC1zAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBBjA7BgNVHSAE\nNDAyMDAGBFUdIAAwKDAmBggrBgEFBQcCARYaaHR0cDovL2NwLmUtc3ppZ25vLmh1\nL2FjcHMwHQYDVR0OBBYEFN5qsE5DqghBR3S/pYqBVEwgxXUoMB8GA1UdIwQYMBaA\nFMsPxt9CQ8w9y7VII6EaeqYquzRoMBsGA1UdEQQUMBKBEGluZm9AZS1zemlnbm8u\naHUwgbYGA1UdHwSBrjCBqzA3oDWgM4YxaHR0cDovL3Jvb3RjYTIwMDktY3JsMS5l\nLXN6aWduby5odS9yb290Y2EyMDA5LmNybDA3oDWgM4YxaHR0cDovL3Jvb3RjYTIw\nMDktY3JsMi5lLXN6aWduby5odS9yb290Y2EyMDA5LmNybDA3oDWgM4YxaHR0cDov\nL3Jvb3RjYTIwMDktY3JsMy5lLXN6aWduby5odS9yb290Y2EyMDA5LmNybDCCAV8G\nCCsGAQUFBwEBBIIBUTCCAU0wLwYIKwYBBQUHMAGGI2h0dHA6Ly9yb290Y2EyMDA5\nLW9jc3AxLmUtc3ppZ25vLmh1MC8GCCsGAQUFBzABhiNodHRwOi8vcm9vdGNhMjAw\nOS1vY3NwMi5lLXN6aWduby5odTAvBggrBgEFBQcwAYYjaHR0cDovL3Jvb3RjYTIw\nMDktb2NzcDMuZS1zemlnbm8uaHUwPAYIKwYBBQUHMAKGMGh0dHA6Ly9yb290Y2Ey\nMDA5LWNhMS5lLXN6aWduby5odS9yb290Y2EyMDA5LmNydDA8BggrBgEFBQcwAoYw\naHR0cDovL3Jvb3RjYTIwMDktY2EyLmUtc3ppZ25vLmh1L3Jvb3RjYTIwMDkuY3J0\nMDwGCCsGAQUFBzAChjBodHRwOi8vcm9vdGNhMjAwOS1jYTMuZS1zemlnbm8uaHUv\ncm9vdGNhMjAwOS5jcnQwDQYJKoZIhvcNAQELBQADggEBALEgpxbV/mGh1vWAO8dx\nONwv+aP7Nb5dXTP0YjtrIE6a5zV+IpXK+inu+OJftAHV0an32ovpzpta2EvR5ci/\nC7o9h8eyforkTxMDndPwZ97ey/5qaz48t7wdz6w6YXCs5LpMzU4BmG+ubTdGNZQv\nw6cwlxRl3p2KZTZbyJj7t3fM5JcrKVwn8844bfFTKSQni90xzxiO8bz5LjFoDMii\nvCKKMZXHpZMEi4QsyEKT6sqT+RXp8dsRrdJ/klSu8kUQu4xyWTTTMVs9cCG7ZxzR\nVyNLg3Rc7vMcYCe5KOiP+H1y0pR9FRSGqMS7Rwa0A4J5nMlGKogQ5R/pp715cMbK\nmpQ=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "1.2.840.113549.1.9.1=info@e-szigno.hu,CN=Microsec e-Szigno Root CA 2009,O=Microsec Ltd.,L=Budapest,C=HU",
+                    "issuer": "1.2.840.113549.1.9.1=info@e-szigno.hu,CN=Microsec e-Szigno Root CA 2009,O=Microsec Ltd.,L=Budapest,C=HU",
+                    "serial_number": 14014712776195784473,
+                    "valid_from": "2009-06-16 11:30:18",
+                    "valid_until": "2029-12-30 11:30:18",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "SAN": [
+                        "info@e-szigno.hu"
+                    ],
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "3c5f81fea5fab82c64bfa2eaecafcde8e077fc8620a7cae537163df36edbf378",
+                    "signature": "c9d10e5e2ed5ccb37c3ecbfc3dff0d28959304c8bfdacd79b84390f0a4beeff2ef2198bcd4d45d06f6ee42ec306ca0aaa9caf1af8afa3f0b736a3eea2e407e1fae546179eb2e0837d723f38c9fbe1db1e1a475dba0e25414b1ba1c29a418f612baa21414e33135c840ffb7e0057657c11c59f2f8bfe4ed25625c84f07e7e1fb3bef9b72111cc03015670a710921e1b34811ead9c1ac3043ced0261d61e06f35f3a87f22bf14587e53dacd1c75784bd6baedcd8f9b61b62700b3d36c942f232d77a61e6d2db3dcfc8a9c99bdcdb5844d76f38af7f78d3a3ad1a75ba1cc1367c8f1e6d1cc37546ae3505a6f65c3d21ee56f0c982222d7a54ab70c37d2265827096"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIECjCCAvKgAwIBAgIJAMJ+QwRORz8ZMA0GCSqGSIb3DQEBCwUAMIGCMQswCQYD\nVQQGEwJIVTERMA8GA1UEBwwIQnVkYXBlc3QxFjAUBgNVBAoMDU1pY3Jvc2VjIEx0\nZC4xJzAlBgNVBAMMHk1pY3Jvc2VjIGUtU3ppZ25vIFJvb3QgQ0EgMjAwOTEfMB0G\nCSqGSIb3DQEJARYQaW5mb0BlLXN6aWduby5odTAeFw0wOTA2MTYxMTMwMThaFw0y\nOTEyMzAxMTMwMThaMIGCMQswCQYDVQQGEwJIVTERMA8GA1UEBwwIQnVkYXBlc3Qx\nFjAUBgNVBAoMDU1pY3Jvc2VjIEx0ZC4xJzAlBgNVBAMMHk1pY3Jvc2VjIGUtU3pp\nZ25vIFJvb3QgQ0EgMjAwOTEfMB0GCSqGSIb3DQEJARYQaW5mb0BlLXN6aWduby5o\ndTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOn4j/NjrdqG2KfgQvvP\nkd6mJviZpWNwrZuuyjNAfW2WbqEORO7hE52UQlKavXWFdCyoDh2Tthi3jCyoz/tc\ncbna7P7ofo/kLx2yqHWH2Leh5TvPmUpG0IMZfcChEhyVbUr02MelTTMuhTlAdX4U\nfIASmFDHQWe4oIBhVKZsTh/gnQ4H6cm6M+f+wFUoLAKApxn1ntxVUwOXewdI/5n7\nN4okxFnMUBBjjqqpGrCEGob5X7uxUG6k0QrM1XF+H6cbfPVTbiJfyyvm1HxdrtbC\nxkzlBQHZ7Vf8wSN5/PrIJIOV87VqUQHQd9bpEqH5GoP7ghu5sJf0dgYzQ0mg/wu1\n+rUCAwEAAaOBgDB+MA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMB0G\nA1UdDgQWBBTLD8bfQkPMPcu1SCOhGnqmKrs0aDAfBgNVHSMEGDAWgBTLD8bfQkPM\nPcu1SCOhGnqmKrs0aDAbBgNVHREEFDASgRBpbmZvQGUtc3ppZ25vLmh1MA0GCSqG\nSIb3DQEBCwUAA4IBAQDJ0Q5eLtXMs3w+y/w9/w0olZMEyL/azXm4Q5DwpL7v8u8h\nmLzU1F0G9u5C7DBsoKqpyvGvivo/C3NqPuouQH4frlRheesuCDfXI/OMn74dseGk\nddug4lQUsbocKaQY9hK6ohQU4zE1yED/t+AFdlfBHFny+L/k7SViXITwfn4fs775\ntyERzAMBVnCnEJIeGzSBHq2cGsMEPO0CYdYeBvNfOofyK/FFh+U9rNHHV4S9a67c\n2Pm2G2JwCz02yULyMtd6YebS2z3PyKnJm9zbWETXbzivf3jTo60adbocwTZ8jx5t\nHMN1Rq41Bab2XD0h7lbwyYIiLXpUq3DDfSJlgnCW\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

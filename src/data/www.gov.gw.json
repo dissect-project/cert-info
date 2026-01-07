@@ -1,0 +1,184 @@
+{
+    "domain": "www.gov.gw",
+    "date": "2025-12-15 11:08:04",
+    "ip-address": "193.58.105.75",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=gov.gw",
+                    "issuer": "CN=WR1,O=Google Trust Services,C=US",
+                    "serial_number": 245544204906859426559020669825266920202,
+                    "valid_from": "2025-10-23 07:28:51",
+                    "valid_until": "2026-01-21 07:28:50",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "gov.gw",
+                        "www.gov.gw"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://c.pki.goog/wr1/GCsZGu2HYr4.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://o.pki.goog/s/wr1/uLo"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://i.pki.goog/wr1.crt"
+                    ],
+                    "validation_level": "Domain Validation (DV)",
+                    "fingerprint_SHA256": "7bf6faa5877dc7ae2dcde0e2f4803a710cca5bd6f4f3665d77060639dea4cb43",
+                    "signature": "a0c42edb585d0a3aa28fced9172d9304fdb410354e1ec643a2ebac85111fe0c8dae8f6c0935b8ade66f603f77a8f30e3b9810c82763f53736c145bfe27605641f86cf6d013c6910d258b8e2ef353c26c804b308d78758ac27775f731aa0a713b35d1286151ac2c1352146ae0947fd62fdfb3d6e7fb37f6444233687ef8221e1fdd9346f348cca57cf0213d74971a2f1ec052ec72c70d40bd30378f81554f3d5f5410ca88f7ade83b2efa4598e32a04d1691f1767dd54a22ea149a4178d04ae08910c880137230e8722c28b3508a57570c9b796bb13a057a94cd24be21a1376891c60aedcace00315c483863810aadcd3c86c6f49ac1577fbd79bf276e340a634"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGJTCCBQ2gAwIBAgIRALi6F/wS1h/KDdFLyv02qwowDQYJKoZIhvcNAQELBQAw\nOzELMAkGA1UEBhMCVVMxHjAcBgNVBAoTFUdvb2dsZSBUcnVzdCBTZXJ2aWNlczEM\nMAoGA1UEAxMDV1IxMB4XDTI1MTAyMzA3Mjg1MVoXDTI2MDEyMTA3Mjg1MFowETEP\nMA0GA1UEAxMGZ292Lmd3MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA\n524CZrf/rJJNtVgBYesJd8xf5HOq7xLqIPTz/PkZtyH3xRc9j3wMzWfHAxIlivxO\nxwmcHwyvQQqqO2W5XMWMWokigmAjnh7uqtYZyztM9ny6p+dH1nZlAMOIho0dLGLM\nh084hds9KQ1X+zemof7UjZw/M4olfchj2bv0ww2cfhOTO9yzzh4inuH+PQcTarlY\nGg/RuIElfRyQpZMFMCB+pYfqB6r/C2UlhKFcB6v8rMu6m4BT+UM7Hy0RkOvmxD9L\n8jZYa4w3PQOEd43J3MxGpPLn0NNCJHre9uskP6c/OfyalX3qxCQ3MtaWBxx5/Vd5\npBCJAGbaSbDdGPTwNOotPfgNQd2MLeD6kzlMGViB3kbTkinhMVTohK58itmZoDxr\nPJIXi0pBt7jQjbwDNVkcQelZMhTxKU949LUScjh7FfViKSg84TzkF/Am35NnA6h3\nBRXWq9nW8wECaFQPsY6Nwc5ILkeB1Ozlp+4kLDA2qZ2PiHdw0tBq+HxSBiUClAVj\n6c8H1BG5eg1Yj4hdCqbh05C0PhxU/tIn7gF4xo7tl/VQX/XRXmTP4/jLXTlbCG+4\ndDX4N9HSZvUlQ4QDNLkTm31jOXNnQfMgHi5QZD4FIRjltszCrqtUl+FtFKtHfFeF\nPIe82TZcOKdAWLRtYawBxAFOSwb0m2GSJmes08PWgEUCAwEAAaOCAkwwggJIMA4G\nA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAA\nMB0GA1UdDgQWBBSOojIWtSQFR6si0oi8YlhxnbZziTAfBgNVHSMEGDAWgBRmaUnU\n3iqckQPPiQ4kuA4wA26ILjBeBggrBgEFBQcBAQRSMFAwJwYIKwYBBQUHMAGGG2h0\ndHA6Ly9vLnBraS5nb29nL3Mvd3IxL3VMbzAlBggrBgEFBQcwAoYZaHR0cDovL2ku\ncGtpLmdvb2cvd3IxLmNydDAdBgNVHREEFjAUggZnb3YuZ3eCCnd3dy5nb3YuZ3cw\nEwYDVR0gBAwwCjAIBgZngQwBAgEwNgYDVR0fBC8wLTAroCmgJ4YlaHR0cDovL2Mu\ncGtpLmdvb2cvd3IxL0dDc1pHdTJIWXI0LmNybDCCAQUGCisGAQQB1nkCBAIEgfYE\ngfMA8QB3AA5XlLzzrqk+MxssmQez95Dfm8I9cTIl3SGpJaxhxU4hAAABmhAvY4QA\nAAQDAEgwRgIhAMWr+ZjarouE6lHmyUhQL7CZ7Ynywc3pLlNXlspukSYzAiEArUnI\nphOWwM1dX/HnEMVYMSA6WxS3nxBVhmYIyOkxTEoAdgAZhtTHKKpv/roDb3gqTQGR\nqs4tcjEPrs5dcEEtJUzH1AAAAZoQL2OVAAAEAwBHMEUCIQDKVLP3RyDlc68DHCZd\npfDO3bgy7Y36wUN6jRFTh/k9OgIgcoAqD2e+biQGNB0HSy4jAjmUGttdYUnqi6WL\nALmZrqwwDQYJKoZIhvcNAQELBQADggEBAKDELttYXQo6oo/O2RctkwT9tBA1Th7G\nQ6LrrIURH+DI2uj2wJNbit5m9gP3eo8w47mBDIJ2P1NzbBRb/idgVkH4bPbQE8aR\nDSWLji7zU8JsgEswjXh1isJ3dfcxqgpxOzXRKGFRrCwTUhRq4JR/1i/fs9bn+zf2\nREIzaH74Ih4f3ZNG80jMpXzwIT10lxovHsBS7HLHDUC9MDePgVVPPV9UEMqI963o\nOy76RZjjKgTRaR8XZ91Uoi6hSaQXjQSuCJEMiAE3Iw6HIsKLNQildXDJt5a7E6BX\nqUzSS+IaE3aJHGCu3KzgAxXEg4Y4EKrc08hsb0msFXf715vyduNApjQ=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=WR1,O=Google Trust Services,C=US",
+                    "issuer": "CN=GTS Root R1,O=Google Trust Services LLC,C=US",
+                    "serial_number": 169943283142817666033504407772870502567,
+                    "valid_from": "2023-12-13 09:00:00",
+                    "valid_until": "2029-02-20 14:00:00",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://c.pki.goog/r/r1.crl"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://i.pki.goog/r1.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "b10b6f00e609509e8700f6d34687a2bfce38ea05a8fdf1cdc40c3a2a0d0d0e45",
+                    "signature": "4ee6b3081120916027f951904d0218eeb8c189d5228497e6d6dfe64e3a3b29047ede20f1e28d8bd3aa1e174437c29298a50808fd378ca9495831642665b58f1343d7f297ec540139139b553a3877e1b3402700cf567b19549c333779f0e41190eecc51b2917321c33fa9b6d3a4d7977fd208e16b24dbe4efe8549515950bdffd2e1eb69d6ebb835a3450e0867b998a8a884aa4d3c769399f93981cf0ca4106cb5fc85db7ab6fa029d524a79f6f9123bb7a37f7ea3c2af0c058e9f248351ba7ad4404c605a3d80b1f868c93053d7fa4f7b025be88f7ffdf12bea75e80b3d810f8efc547251e988a2c3eb734c9956ab55075d20bea43af4dee64d299f146747e9a77461c841cefb4cb6dc6457a36b9e8fca7952aa67abe7bf1cec206b3eaa3505598fc9650afafeac1aecececcabb4106b156ce3bd74708fcca4fa75a2fc4c56dd7b10d2b12e4df82e910a00a566ab09f36c71d18e15cd7820bdf385c33b02c4a742b83331e5f1939625001a9027559450be3f203718fd895ff40ba2a58d1c6b8df5cf6f2ce6c384756cfcbfbae437be39d9e78e914623dc71b6c37246cc9a1dd1407f9cfbba53a85c35e41c209e8ff121b3976871178db75e96db16c7fc406e8ab26b3b3144dabb402f192c9754dd12339f20a5ce25f52a41e548e7e840ed5fa7d7e03f9fb3698344bee4e0f2b568795d6e7871c37576b26730ae78b6da338747"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFCzCCAvOgAwIBAgIQf9niwtIEigR0tieibQhopzANBgkqhkiG9w0BAQsFADBH\nMQswCQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExM\nQzEUMBIGA1UEAxMLR1RTIFJvb3QgUjEwHhcNMjMxMjEzMDkwMDAwWhcNMjkwMjIw\nMTQwMDAwWjA7MQswCQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNl\ncnZpY2VzMQwwCgYDVQQDEwNXUjEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK\nAoIBAQDPbjYWircr7kaYAx1TcA937qNLoHK+jyMtwkfGj1yN+T3mGo7uMyINyRFI\nuLBizvRpDXICfd7VJg/DbpvPfg7XIM/GkDujggbaOp3/bFa/3OlhlEXkabxPD8kT\nwK1hRHIggdAPK55oamJqj4oiV3lpK+IkM352YyxdvFFpfiMHsf92gfHuuFi1azUV\n76HmSCg5lzHZBx+Vp56uz5i8no2KA+Gwl01Qb5NMSh/4233xkJkVf+OW7e4xgepy\nPVId3yVkpQtwqp7oqLlHyKdaECVgb0Lh1z/njwzwwoNGMyDmS3cEdqFop10VGO/Y\nKHc1rQ6tRuRibuKq+MzvN34PJrMHAgMBAAGjgf4wgfswDgYDVR0PAQH/BAQDAgGG\nMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8ECDAGAQH/\nAgEAMB0GA1UdDgQWBBRmaUnU3iqckQPPiQ4kuA4wA26ILjAfBgNVHSMEGDAWgBTk\nrysmcRorSCeFL1JmLO/wiRNxPjA0BggrBgEFBQcBAQQoMCYwJAYIKwYBBQUHMAKG\nGGh0dHA6Ly9pLnBraS5nb29nL3IxLmNydDArBgNVHR8EJDAiMCCgHqAchhpodHRw\nOi8vYy5wa2kuZ29vZy9yL3IxLmNybDATBgNVHSAEDDAKMAgGBmeBDAECATANBgkq\nhkiG9w0BAQsFAAOCAgEATuazCBEgkWAn+VGQTQIY7rjBidUihJfm1t/mTjo7KQR+\n3iDx4o2L06oeF0Q3wpKYpQgI/TeMqUlYMWQmZbWPE0PX8pfsVAE5E5tVOjh34bNA\nJwDPVnsZVJwzN3nw5BGQ7sxRspFzIcM/qbbTpNeXf9II4Wsk2+Tv6FSVFZUL3/0u\nHradbruDWjRQ4IZ7mYqKiEqk08dpOZ+TmBzwykEGy1/IXberb6Ap1SSnn2+RI7t6\nN/fqPCrwwFjp8kg1G6etRATGBaPYCx+GjJMFPX+k97Alvoj3/98SvqdegLPYEPjv\nxUclHpiKLD63NMmVarVQddIL6kOvTe5k0pnxRnR+mndGHIQc77TLbcZFeja56Pyn\nlSqmer578c7CBrPqo1BVmPyWUK+v6sGuzs7Mq7QQaxVs4710cI/MpPp1ovxMVt17\nENKxLk34LpEKAKVmqwnzbHHRjhXNeCC984XDOwLEp0K4MzHl8ZOWJQAakCdVlFC+\nPyA3GP2JX/QLoqWNHGuN9c9vLObDhHVs/L+65De+OdnnjpFGI9xxtsNyRsyaHdFA\nf5z7ulOoXDXkHCCej/Ehs5docReNt16W2xbH/EBuirJrOzFE2rtALxksl1TdEjOf\nIKXOJfUqQeVI5+hA7V+n1+A/n7Npg0S+5ODytWh5XW54ccN1drJnMK54ttozh0c=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=GTS Root R1,O=Google Trust Services LLC,C=US",
+                    "issuer": "CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE",
+                    "serial_number": 159159747900478145820483398898491642637,
+                    "valid_from": "2020-06-19 00:00:42",
+                    "valid_until": "2028-01-28 00:00:42",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.pki.goog/gsr1/gsr1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.pki.goog/gsr1"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://pki.goog/gsr1/gsr1.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "3ee0278df71fa3c125c4cd487f01d774694e6fc57e0cd94c24efd769133918e5",
+                    "signature": "34a41eb128a3d0b47617a6317a21e9d1523ec8db74164188b83d351dede4ff93e15c5fabbbea7ccfdbe40dd18b57f2266f5bbe17466894376f6b7ac8c01837fa2551acec68bfb2c849fd5a9aca0123ac84802b028c9997eb496a8c75d7c7deb2c9979f5848570e35a1e41ad6fd6f83816fef8ccf97afc0852af0f54e6909912de168b8c12b73e9d4d9fc22c0371f0b661d49ed02558f67e132d7d326bf70e33df4676d3d7ce53488e332faa76e066a6fbd8b91ee164be83ba9b337e7c344a47ed86cd7c746f5929be7d521be66921994556cd429b20dc1665be277494828ed9dd71a337253b38235cf628bc9248ba5b7390cbb7e2a41bf52cffca296b6c2823f"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFYjCCBEqgAwIBAgIQd70NbNs2+RrqIQ/E8FjTDTANBgkqhkiG9w0BAQsFADBX\nMQswCQYDVQQGEwJCRTEZMBcGA1UEChMQR2xvYmFsU2lnbiBudi1zYTEQMA4GA1UE\nCxMHUm9vdCBDQTEbMBkGA1UEAxMSR2xvYmFsU2lnbiBSb290IENBMB4XDTIwMDYx\nOTAwMDA0MloXDTI4MDEyODAwMDA0MlowRzELMAkGA1UEBhMCVVMxIjAgBgNVBAoT\nGUdvb2dsZSBUcnVzdCBTZXJ2aWNlcyBMTEMxFDASBgNVBAMTC0dUUyBSb290IFIx\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAthECix7joXebO9y/lD63\nladAPKH9gvl9MgaCcfb2jH/76Nu8ai6Xl6OMS/kr9rH5zoQdsfnFl97vufKj6bwS\niV6nqlKr+CMny6SxnGPb15l+8Ape62im9MZaRw1NEDPjTrETo8gYbEvs/AmQ351k\nKSUjB6G00j0uYODP0gmHu81I8E3CwnqIiru6z1kZ1q+PsAewnjHxgsHA3y6mbWwZ\nDrXYfiYaRQM9sHmklCitD38m5agI/pboPGiUU+6DOogrFZYJsuB6jC511pzrp1Zk\nj5ZPaK49l8KEj8C8QMALXL32h7M1bKwYUH+E4EzNktMg6TO8UpmvMrUpsyUqtEj5\ncuHKZPfmghCN6J3Cioj6OGaK/GP5Afl4/Xtcd/p2h/rs37EOeZVXtL0m79YB0esW\nCruOC7XFxYpVq9Os6pFLKcwZpDIlTirxZUTQAs6qzkm06p98g7BAe+dDq6dso499\niYH6TKX/1Y7DzkvgtdizjkXPdsDtQCv9Uw+wp9U7DbGKogPeMa3Md+pvez7W35Ei\nEua++tgy/BBjFFFy3l3WFpO9KWgz7zpm7AeKJt8T11dleCfeXkkUAKIAf5qoIbap\nsZWwpbkNFhHax2xIPEDgfg1azVY80ZcFuctL7TlLnMQ/0lUTbiSw1nH69MG6zO0b\n9f6BQdgAmD06yK56mDcYBZUCAwEAAaOCATgwggE0MA4GA1UdDwEB/wQEAwIBhjAP\nBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTkrysmcRorSCeFL1JmLO/wiRNxPjAf\nBgNVHSMEGDAWgBRge2YaRQ2XyolQL30EzTSo//z9SzBgBggrBgEFBQcBAQRUMFIw\nJQYIKwYBBQUHMAGGGWh0dHA6Ly9vY3NwLnBraS5nb29nL2dzcjEwKQYIKwYBBQUH\nMAKGHWh0dHA6Ly9wa2kuZ29vZy9nc3IxL2dzcjEuY3J0MDIGA1UdHwQrMCkwJ6Al\noCOGIWh0dHA6Ly9jcmwucGtpLmdvb2cvZ3NyMS9nc3IxLmNybDA7BgNVHSAENDAy\nMAgGBmeBDAECATAIBgZngQwBAgIwDQYLKwYBBAHWeQIFAwIwDQYLKwYBBAHWeQIF\nAwMwDQYJKoZIhvcNAQELBQADggEBADSkHrEoo9C0dhemMXoh6dFSPsjbdBZBiLg9\nNR3t5P+T4Vxfq7vqfM/b5A3Ri1fyJm9bvhdGaJQ3b2t6yMAYN/olUazsaL+yyEn9\nWprKASOshIArAoyZl+tJaox118fessmXn1hIVw41oeQa1v1vg4Fv74zPl6/AhSrw\n9U5pCZEt4Wi4wStz6dTZ/CLANx8LZh1J7QJVj2fhMtfTJr9w4z30Z209fOU0iOMy\n+qduBmpvvYuR7hZL6Dupszfnw0Skfths18dG9ZKb59UhvmaSGZRVbNQpsg3BZlvi\nd0lIKO2d1xozclOzgjXPYovJJIultzkMu34qQb9Sz/yilrbCgj8=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [
+                "Hash no longer allowed for applying cryptographic protection"
+            ],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE",
+                    "issuer": "CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE",
+                    "serial_number": 4835703278459707669005204,
+                    "valid_from": "1998-09-01 12:00:00",
+                    "valid_until": "2028-01-28 12:00:00",
+                    "signature_algorithm": "sha1WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "ebd41040e4bb3ec742c9e381d31ef2a41a48b6685c96e7cef3c1df6cd4331c99",
+                    "signature": "d673e77c4f76d08dbfecbaa2be34c52832b57cfc6c9c2c2bbd099e53bf6b5eaa1148b6e508a3b3ca3d614dd34609b33ec3a0e363551bf2baefad39e143b938a3e62f8a263befa05056f9c60afd38cdc40b705194979804dfc35f94d515c914419cc45d7564150dff5530ec868fff0def2cb96346f6aafcdfbc69fd2e1248649ae095f0a6ef298f01b115b50c1da5fe692c6924781eb3a71c7162eecac897ac175d8ac2f847866e2ac4563195d06789852bf96ca65d469d0caa82e49951dd70b7db563d61e46ae15cd6f6fe3dde41cc07ae6352bf5353f42be9c7fdb6f7825f85d24118db81b3041cc51fa4806f1520c9de0c880a1dd66655e2fc48c9292669e0"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDdTCCAl2gAwIBAgILBAAAAAABFUtaw5QwDQYJKoZIhvcNAQEFBQAwVzELMAkG\nA1UEBhMCQkUxGTAXBgNVBAoTEEdsb2JhbFNpZ24gbnYtc2ExEDAOBgNVBAsTB1Jv\nb3QgQ0ExGzAZBgNVBAMTEkdsb2JhbFNpZ24gUm9vdCBDQTAeFw05ODA5MDExMjAw\nMDBaFw0yODAxMjgxMjAwMDBaMFcxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9i\nYWxTaWduIG52LXNhMRAwDgYDVQQLEwdSb290IENBMRswGQYDVQQDExJHbG9iYWxT\naWduIFJvb3QgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDaDuaZ\njc6j40+Kfvvxi4Mla+pIH/EqsLmVEQS98GPR4mdmzxzdzxtIK+6NiY6arymAZavp\nxy0Sy6scTHAHoT0KMM0VjU/43dSMUBUc71DuxC73/OlS8pF94G3VNTCOXkNz8kHp\n1Wrjsok6Vjk4bwY8iGlbKk3Fp1S4bInMm/k8yuX9ifUSPJJ4ltbcdG6TRGHRjcdG\nsnUOhugZitVtbNV4FpWi6cgKOOvyJBNPc1STE4U6G7weNLWLBYy5d4ux2x8gkasJ\nU26Qzns3dLlwR5EiUWMWea6xrkEmCMgZK9FGqkjWZCrXgzT/LCrBbBlDSgeF59N8\n9iFo7+ryUp9/k5DPAgMBAAGjQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMBAf8E\nBTADAQH/MB0GA1UdDgQWBBRge2YaRQ2XyolQL30EzTSo//z9SzANBgkqhkiG9w0B\nAQUFAAOCAQEA1nPnfE920I2/7LqivjTFKDK1fPxsnCwrvQmeU79rXqoRSLblCKOz\nyj1hTdNGCbM+w6DjY1Ub8rrvrTnhQ7k4o+YviiY776BQVvnGCv04zcQLcFGUl5gE\n38NflNUVyRRBnMRddWQVDf9VMOyGj/8N7yy5Y0b2qvzfvGn9LhJIZJrglfCm7ymP\nAbEVtQwdpf5pLGkkeB6zpxxxYu7KyJesF12KwvhHhm4qxFYxldBniYUr+WymXUad\nDKqC5JlR3XC321Y9YeRq4VzW9v493kHMB65jUr9TU/Qr6cf9tveCX4XSQRjbgbME\nHMUfpIBvFSDJ3gyICh3WZlXi/EjJKSZp4A==\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

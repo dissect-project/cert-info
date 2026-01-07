@@ -1,0 +1,141 @@
+{
+    "domain": "www.e-gov.az",
+    "date": "2025-12-15 19:14:38",
+    "ip-address": "185.96.124.225",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.e-gov.az",
+                    "issuer": "CN=Sectigo Public Server Authentication CA DV R36,O=Sectigo Limited,C=GB",
+                    "serial_number": 267488936056951345652413446041470236358,
+                    "valid_from": "2025-12-10 00:00:00",
+                    "valid_until": "2026-12-10 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "*.e-gov.az",
+                        "e-gov.az"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "ocsp_urls": [
+                        "http://ocsp.sectigo.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt"
+                    ],
+                    "validation_level": "Domain Validation (DV)",
+                    "fingerprint_SHA256": "c6c32cf680410b64efd2527bc1934f99ec166b96e6162cdef5cc9f095e22ae27",
+                    "signature": "14f13510cb3dbf840bcd2c23d2d79021743b0a1a9a4d06eacd71d2cad7a77c514f0eae3626427d8c5d18932e146862303467f638b80ac0bad9165bcdccc696cd5b394e2a70ce687c6cf91600995010574e51634511ebabc04efd6c13d0eaffb4605acbac3dc53fd1cf923d8a216a2cc77de8204c1fe8cd2541659365b31cc74451cc9ba2bf1482279d7fe44178357e606c42836836a474e190e8d10b78036395377d92da054802c0b3be1bb4193af911c58832eec50f127a11873a3caa35e9ec33c6b307f53baffe7deb77c71c32802a865009596d23212758b20364ab1ead7ff5fcaddc4674e2f0c4cddb012d0c17644e8e0f065cd17d1582c62965d834335fb9746dc11c7d106b240458b4a6d8444f82ad772af686435abf42659239a61ee68a6806541f49654512425abba7e1592e20e0e3557302357af5ac256bc9c25f87a1e76244f3b7a7fc72b4a9110856eef6f3f3e0fa21107f10618fe2958acebc5c212d78f80d4799b2f57202e9e51759195f9712f77af35536b222926103650e7a"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGgzCCBOugAwIBAgIRAMk8fsPAeqpR6asBgSLv9sYwDQYJKoZIhvcNAQELBQAw\nYDELMAkGA1UEBhMCR0IxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE3MDUGA1UE\nAxMuU2VjdGlnbyBQdWJsaWMgU2VydmVyIEF1dGhlbnRpY2F0aW9uIENBIERWIFIz\nNjAeFw0yNTEyMTAwMDAwMDBaFw0yNjEyMTAyMzU5NTlaMBUxEzARBgNVBAMMCiou\nZS1nb3YuYXowggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDeGZfG4Wep\nRXrC7cU9yd962gh4XFga8eHR450SC2Eni6kAHdHSQu2Q43uT5CiYnuuSS+Bz4In3\nKzB/vVdIzIu4lGGQ64o7YqHbZKNww8hsnEO4nKFpBLhYtJOriO3O4A7xYp/Jc7b8\nVmdrYd5VA20ekoDARpEHcmjJ78lCJP3ICNbp4gUeiCRIIMs3PVc1qpkKsSnXr6Xs\nvx+jSpMHouXyoxnU5tka1F4g/gkiVOFQ7MpCsACg5ZshUU7o6O7s4wTRyGga4b2k\n6Ezi2Nmlx6T48yoWBWcKiA58/iuhfSY5Zi2TlY8o66RszXIq9fit8Adb7f37dDkv\n3YXOA5seeY/PAgMBAAGjggMBMIIC/TAfBgNVHSMEGDAWgBRowBIWGA6vzvaHpjJX\no0ZRXcsHJzAdBgNVHQ4EFgQUruA6qZNWUH9ilaG48srZqu1TWV0wDgYDVR0PAQH/\nBAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUF\nBwMCMEkGA1UdIARCMEAwNAYLKwYBBAGyMQECAgcwJTAjBggrBgEFBQcCARYXaHR0\ncHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQIBMIGEBggrBgEFBQcBAQR4MHYw\nTwYIKwYBBQUHMAKGQ2h0dHA6Ly9jcnQuc2VjdGlnby5jb20vU2VjdGlnb1B1Ymxp\nY1NlcnZlckF1dGhlbnRpY2F0aW9uQ0FEVlIzNi5jcnQwIwYIKwYBBQUHMAGGF2h0\ndHA6Ly9vY3NwLnNlY3RpZ28uY29tMB8GA1UdEQQYMBaCCiouZS1nb3YuYXqCCGUt\nZ292LmF6MIIBiQYKKwYBBAHWeQIEAgSCAXkEggF1AXMAdwDXbX0Q0af1d8LH6V/X\nAL/5gskzWmXh0LMBcxfAyMVpdwAAAZsGdCNXAAAEAwBIMEYCIQDrvFWIS/Xv3r/v\n5/lDPfNKiEZ6TuVWtNeNdw8XAEPLrwIhAMhiEFvMd1yFAow/d7UDVxpKrnWG/sqq\nCdPxnlFBooY0AHcAr2eIO1ewTt2Pptl+9i6o64EKx3Fg8CReVdYML+eFhzoAAAGb\nBnQkGgAABAMASDBGAiEA3gLQBabiNVQtprAL7PPqnqLJN8U2bDXUjvDzLI8atn4C\nIQDmrGImLxmR7y7q6y/Qj6/XOa0t40OTqfYiL43e4tqKXgB/AGz+UBlDqF6pFrxS\n0TPk3Mke8UEcfSWEINFzgJ4YGOs6AAABmwZ0JhkACAAABQABpt3dBAMASDBGAiEA\n7wdLmRVdOMmJ5vT6C9ANZhInaZ/AE9nDKbnAjBmXvT8CIQDrV5MN5k3iERpVGnKO\nohCCZcu1F1JQK3sX+IDabkZRmTANBgkqhkiG9w0BAQsFAAOCAYEAFPE1EMs9v4QL\nzSwj0teQIXQ7ChqaTQbqzXHSytenfFFPDq42JkJ9jF0Yky4UaGIwNGf2OLgKwLrZ\nFlvNzMaWzVs5Tipwzmh8bPkWAJlQEFdOUWNFEeurwE79bBPQ6v+0YFrLrD3FP9HP\nkj2KIWosx33oIEwf6M0lQWWTZbMcx0RRzJuivxSCJ51/5EF4NX5gbEKDaDakdOGQ\n6NELeANjlTd9ktoFSALAs74btBk6+RHFiDLuxQ8SehGHOjyqNensM8azB/U7r/59\n63fHHDKAKoZQCVltIyEnWLIDZKserX/1/K3cRnTi8MTN2wEtDBdkTo4PBlzRfRWC\nxill2DQzX7l0bcEcfRBrJARYtKbYRE+CrXcq9oZDWr9CZZI5ph7mimgGVB9JZUUS\nQlq7p+FZLiDg41VzAjV69awla8nCX4eh52JE87en/HK0qREIVu728/Pg+iEQfxBh\nj+KVis68XCEtePgNR5my9XIC6eUXWRlflxL3evNVNrIikmEDZQ56\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Sectigo Public Server Authentication CA DV R36,O=Sectigo Limited,C=GB",
+                    "issuer": "CN=Sectigo Public Server Authentication Root R46,O=Sectigo Limited,C=GB",
+                    "serial_number": 76401540956980317967350201603557417905,
+                    "valid_from": "2021-03-22 00:00:00",
+                    "valid_until": "2036-03-21 23:59:59",
+                    "signature_algorithm": "sha384WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 3072,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl.sectigo.com/SectigoPublicServerAuthenticationRootR46.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.sectigo.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://crt.sectigo.com/SectigoPublicServerAuthenticationRootR46.p7c"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "8c54c334b66ba4e426772af4a3f9136c19a1aec729fdb28c535c07a5a4ef22e0",
+                    "signature": "62d382f45cbe4ea102170e34228b2923dda42c682849918f392417301aa6b06599510eebbb1edc8f576ee9df6b0fa0bccded41d9e42392b1a420bfce175b3bbd29a061569fb11a1977f20752b92842f5fc159c14b263eeeda9a005f698de0f9dab5c748cd18a6fa23a073765e8b80c0fdab1a7ede2ec640e9ddf49f0b15289eb58e99e23501cd5a0ea33f22014f383858761e102e88fc356a2d159d8dfc45323ef247a919655f1b17c15b3c07f6e2237a8a0879aa2c545bc4f1c998501e13487e5d5320f48c772ddbef1c78a12d228154fc57c7abf9836959ef7030995ed2208ad74c15074c65a55e86639bca145d0c3e0d402b3481a23d0008058f82fd42d9004738502cdc917fceca967f98534960086afd1cb837ac63bcabe638a692ec39dba7419e99c4f34621f380a5b3d57f98427b9f0467089674720c9fd94f3faf85e34e32f0d36e81b422c416deafec79dfa5ab6611592e3124869edf1577fdaf7dab34f7dbef85ff53dd01772e25ce9dfe5f5ba487506e33103f104843a13392de5ec006f73b058490b9b436e3dd0e71d908cd48776700eb6a4315adb693c54336a76e0de9d07e9ecdb3a6d582bdaea3cd6afc216288331cf12cfbf92addde3ca71476f90153fb26aae8d27334f3cd28c8a11e50a9003a94dd594529ee1c8582be124496d9189d3007e35409e920163bae86aeb5044b037f7206732f824b12acf56"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGTDCCBDSgAwIBAgIQOXpmzCdWNi4NqofKbqvjsTANBgkqhkiG9w0BAQwFADBf\nMQswCQYDVQQGEwJHQjEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMTYwNAYDVQQD\nEy1TZWN0aWdvIFB1YmxpYyBTZXJ2ZXIgQXV0aGVudGljYXRpb24gUm9vdCBSNDYw\nHhcNMjEwMzIyMDAwMDAwWhcNMzYwMzIxMjM1OTU5WjBgMQswCQYDVQQGEwJHQjEY\nMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMTcwNQYDVQQDEy5TZWN0aWdvIFB1Ymxp\nYyBTZXJ2ZXIgQXV0aGVudGljYXRpb24gQ0EgRFYgUjM2MIIBojANBgkqhkiG9w0B\nAQEFAAOCAY8AMIIBigKCAYEAljZf2HIz7+SPUPQCQObZYcrxLTHYdf1ZtMRe7Yeq\nRPSwygz16qJ9cAWtWNTcuICc++p8Dct7zNGxCpqmEtqifO7NvuB5dEVexXn9RFFH\n12Hm+NtPRQgXIFjx6MSJcNWuVO3XGE57L1mHlcQYj+g4hny90aFh2SCZCDEVkAja\nEMMfYPKuCjHuuF+bzHFb/9gV8P9+ekcHENF2nR1efGWSKwnfG5RawlkaQDpRtZTm\nM64TIsv/r7cyFO4nSjs1jLdXYdz5q3a4L0NoabZfbdxVb+CUEHfB0bpulZQtH1Rv\n38e/lIdP7OTTIlZh6OYL6NhxP8So0/sht/4J9mqIGxRFc0/pC8suja+wcIUna0HB\npXKfXTKpzgis+zmXDL06ASJf5E4A2/m+Hp6b84sfPAwQ766rI65mh50S0Di9E3Pn\n2WcaJc+PILsBmYpgtmgWTR9eV9otfKRUBfzHUHcVgarub/XluEpRlTtZudU5xbFN\nxx/DgMrXLUAPaI60fZ6wA+PTAgMBAAGjggGBMIIBfTAfBgNVHSMEGDAWgBRWc1hk\nlfmSGrASKgRieaFAFYghSTAdBgNVHQ4EFgQUaMASFhgOr872h6YyV6NGUV3LBycw\nDgYDVR0PAQH/BAQDAgGGMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0lBBYwFAYI\nKwYBBQUHAwEGCCsGAQUFBwMCMBsGA1UdIAQUMBIwBgYEVR0gADAIBgZngQwBAgEw\nVAYDVR0fBE0wSzBJoEegRYZDaHR0cDovL2NybC5zZWN0aWdvLmNvbS9TZWN0aWdv\nUHVibGljU2VydmVyQXV0aGVudGljYXRpb25Sb290UjQ2LmNybDCBhAYIKwYBBQUH\nAQEEeDB2ME8GCCsGAQUFBzAChkNodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3Rp\nZ29QdWJsaWNTZXJ2ZXJBdXRoZW50aWNhdGlvblJvb3RSNDYucDdjMCMGCCsGAQUF\nBzABhhdodHRwOi8vb2NzcC5zZWN0aWdvLmNvbTANBgkqhkiG9w0BAQwFAAOCAgEA\nYtOC9Fy+TqECFw40IospI92kLGgoSZGPOSQXMBqmsGWZUQ7rux7cj1du6d9rD6C8\nze1B2eQjkrGkIL/OF1s7vSmgYVafsRoZd/IHUrkoQvX8FZwUsmPu7amgBfaY3g+d\nq1x0jNGKb6I6Bzdl6LgMD9qxp+3i7GQOnd9J8LFSietY6Z4jUBzVoOoz8iAU84OF\nh2HhAuiPw1ai0VnY38RTI+8kepGWVfGxfBWzwH9uIjeooIeaosVFvE8cmYUB4TSH\n5dUyD0jHct2+8ceKEtIoFU/FfHq/mDaVnvcDCZXtIgitdMFQdMZaVehmObyhRdDD\n4NQCs0gaI9AAgFj4L9QtkARzhQLNyRf87Kln+YU0lgCGr9HLg3rGO8q+Y4ppLsOd\nunQZ6ZxPNGIfOApbPVf5hCe58EZwiWdHIMn9lPP6+F404y8NNugbQixBber+x536\nWrZhFZLjEkhp7fFXf9r32rNPfb74X/U90Bdy4lzp3+X1ukh1BuMxA/EEhDoTOS3l\n7ABvc7BYSQubQ2490OcdkIzUh3ZwDrakMVrbaTxUM2p24N6dB+ns2zptWCva6jzW\nr8IWKIMxzxLPv5Kt3ePKcUdvkBU/smqujSczTzzSjIoR5QqQA6lN1ZRSnuHIWCvh\nJEltkYnTAH41QJ6SAWO66GrrUESwN/cgZzL4JLEqz1Y=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Sectigo Public Server Authentication Root R46,O=Sectigo Limited,C=GB",
+                    "issuer": "CN=Sectigo Public Server Authentication Root R46,O=Sectigo Limited,C=GB",
+                    "serial_number": 156256931880233212765902055439220583700,
+                    "valid_from": "2021-03-22 00:00:00",
+                    "valid_until": "2046-03-21 23:59:59",
+                    "signature_algorithm": "sha384WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "7bb647a62aeeac88bf257aa522d01ffea395e0ab45c73f93f65654ec38f25a06",
+                    "signature": "2f5c993cfc065e8c942e70ead232318db4f051d5bc0af3649f075ed5c17368647aa2b90ee8f95d852da83745aa28f496055060a9497e9fe29936291344476a9d55203cd89bf10332bada40a173ea83a1b744a60e99019be4bc7fbe13947ecaa61e7680363d84068b3326656dca7e9efe1f8c58387b1a83b10fbc1711bbe606cc63fa81f2814cda0b106ba1fad528a5cf064016ff7b7d185e3912a4539e7e324210a62191a91c4e177c84bc9f8cd1e8dfe651b936473f90b9c7bc02dc5b1c4f0e48c125839c0a3f9eb10333121a27acf7226c24d10141f85803fe2568221f9a5a3c7c6c9e7548f381f166676e4c82c0eeba570e18ef2e9af712d8a06be905a5a1e968f8bc4c3f121e45e852c0a3bf122779b9cc313cc3f63a221603a0c98f66a45ba24dd6812506e976a4000a3ecbcd359be0e138cb6053862842411c4457e8a8adab45e32510bcdb3e6541fb1ba6970febb97479f91ebc1d570d47afc32f9f8746a7eb265a0f5663b562606e00fbe3271122e7fe998f34f5b9e8c39172bdd8c31eb92ef2914451d057cd0c34d54821bfdb13f166254352d2702236cd9fc41c7520ad637263060f0e27ced26a0dbcb5391ae9d1767ad15ce4e749492d553768f01a3a983e54178754e9a62750897b202f3fffbfa18b4a4798ff2b7b493ec32946601842ab3329bac029b91389d3888a39413bc9fda6ed1ff46063dfd22d55018b"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFijCCA3KgAwIBAgIQdY39i658BwD6qSWn4cetFDANBgkqhkiG9w0BAQwFADBf\nMQswCQYDVQQGEwJHQjEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMTYwNAYDVQQD\nEy1TZWN0aWdvIFB1YmxpYyBTZXJ2ZXIgQXV0aGVudGljYXRpb24gUm9vdCBSNDYw\nHhcNMjEwMzIyMDAwMDAwWhcNNDYwMzIxMjM1OTU5WjBfMQswCQYDVQQGEwJHQjEY\nMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMTYwNAYDVQQDEy1TZWN0aWdvIFB1Ymxp\nYyBTZXJ2ZXIgQXV0aGVudGljYXRpb24gUm9vdCBSNDYwggIiMA0GCSqGSIb3DQEB\nAQUAA4ICDwAwggIKAoICAQCTvtU2UnXYASOgHEdCSe5jtrch/cSV1UgrJnwUUxDa\nef0rty2k1Cz66jLdScK5vQ9IPXtamFSvnl0xdE8H/FAh3aTPaE8bEmNtJZlMKpnz\nSDBh+oF8HqcIStw+KxwfGExxqjWMrfhu6DtK2eWUAtaJhBOqbchPM8xQljeSM9xf\niOefVNlI8JhD1mb9nxc4Q8UBUQvX4yMPFF1bFOdLvt30yNoDN9HWOaEhUTCDsG3X\nME6WW5HwcCSrv0WBZEMNvSE6Lzzpng3LILVCJ8zab5vuZDCQOc2TZYEhMbUjUDM3\nIuM47fgxMMxF/mL50V0yeUKH32rMVhlATc6qu/m1dkmU8Sf4kaWD5QazYw6A3OAS\nVYCmO2a0OYctyPDQ0RTp5A1NDvZdV3LFOxxHVp3i1fuBYYzMTYCQNFu31xR13NgE\nSJ/AwSiItOkcyqex8Va3e0lMWeUgFaiEAin6OJRpmkkGj80feRQXEgyDet4fsZfu\n+Zd4KKTIRJLpfSYFplhym3kT2BFfrsU4YjRosoYwjviQYZ4ybPUHNs2iTG7sijbt\n8uaZFURww3y8nDnAtOFr94MlI1fZEoDlSfB1D++N6xybVCi0ITz8fAr/73trdf+L\nHaAZBav6+CuBQug4urv7qv094PPK306Xlynt8xhW6aWWrL3DkJiy4Pmi1KZHQ3xt\nzwIDAQABo0IwQDAdBgNVHQ4EFgQUVnNYZJX5khqwEioEYnmhQBWIIUkwDgYDVR0P\nAQH/BAQDAgGGMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQEMBQADggIBAC9c\nmTz8Bl6MlC5w6tIyMY208FHVvArzZJ8HXtXBc2hkeqK5Duj5XYUtqDdFqij0lgVQ\nYKlJfp/imTYpE0RHap1VIDzYm/EDMrraQKFz6oOht0SmDpkBm+S8f74TlH7Kph52\ngDY9hAaLMyZlbcp+nv4fjFg4exqDsQ+8FxG75gbMY/qB8oFM2gsQa6H61SilzwZA\nFv97fRheORKkU55+MkIQpiGRqRxOF3yEvJ+M0ejf5lG5Nkc/kLnHvALcWxxPDkjB\nJYOcCj+esQMzEhonrPcibCTRAUH4WAP+JWgiH5paPHxsnnVI84HxZmduTILA7rpX\nDhjvLpr3Etiga+kFpaHpaPi8TD8SHkXoUsCjvxInebnMMTzD9joiFgOgyY9mpFui\nTdaBJQbpdqQACj7LzTWb4OE4y2BThihCQRxEV+ioratF4yUQvNs+ZUH7G6aXD+u5\ndHn5HrwdVw1Hr8Mvn4dGp+smWg9WY7ViYG4A++MnESLn/pmPNPW56MORcr3Ywx65\nLvKRRFHQV80MNNVIIb/bE/FmJUNS0nAiNs2fxBx1IK1jcmMGDw4nztJqDby1ORrp\n0XZ60Vzk50lJLVU3aPAaOpg+VBeHVOmmJ1CJeyAvP/+/oYtKR5j/K3tJPsMpRmAY\nQqszKbrAKbkTidOIijlBO8n9pu0f9GBj39ItVQGL\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

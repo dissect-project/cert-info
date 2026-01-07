@@ -15,42 +15,29 @@ The certificate analysis component focuses on validating each certificate in a g
 
 ## Installation
 
-This component consists of a python package that can be imported locally by other python programs. Therefore, having `python` and `pip` installed are the two main pre-requisites to build and run this component. For privacy reasons, the component will not be publicy accessible. With this in mind, `pip` will be used to **install the package locally**:
+In order to keep the execution simple, this tool runs as a web service inside a docker container. Therefore, docker is a pre-requisite to run `cert-info`. With docker installed and running, run the following command to build the image:
 
 ```bash
-pip install -e /path/to/package
+docker build -t cert-info:latest .
 ```
 
-## Usage (To be Improved)
-
-After installing the package using pip, it should be available to use as any other python package, and as a command line utility as well. To import the package use the following line in your program:
-
-```python
-from cert_info import cert_info
-```
-
-After importing the package, it can be used as follows:
-
-```python
-# Initialize the Certificate Information object
-cert_analyzer = cert_info.CertificateInformation()
-# Analyze the domain
-result = cert_analyzer.analyze('www.domain.com')
-```
-
-The package can be used as a command line utility by passing the target domain as an argument as shown below:
+To create a container using the previously built image, run the following command to expose the service in port `6010`:
 
 ```bash
-usage: cert-info [-h] -d DOMAIN
-
-Verify the certificate chain of a given domain.
-
-options:
-  -h, --help                    show this help message and exit
-  -d DOMAIN, --domain DOMAIN    the domain to be analyzed.
+docker run -p 6010:6010 --name cert-info cert-info:latest
 ```
 
-## Output (To be Done)
+## Usage
+
+After deploying `cert-info` using docker, the interaction is done using `GET` requests to the endpoint `/certinfo/{domain}`, where `{domain}` is the domain to be assessed. Additional options can be used as query parameters: `showcert` (`True`/`False`) to include certificate fields in the output, and `force` (`True`/`False`) to force the scan even if the domain is unreachable.
+
+Example:
+
+```bash
+GET /certinfo/www.uminho.pt?showcert=True
+```
+
+## Output
 
 The `cert-info` package performs an assessment on the certificate chain of a given domain. All of the results are returned in a single json object, as shown in the example below:
 

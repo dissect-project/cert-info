@@ -1,0 +1,147 @@
+{
+    "domain": "www.ibb.istanbul",
+    "date": "2025-12-17 14:57:38",
+    "ip-address": "185.68.222.139",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain",
+                "Failed to check OCSP at http://ocsp.comodoca.com: HTTPConnectionPool(host='ocsp.comodoca.com', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10605c8c0>: Failed to establish a new connection: [Errno 61] Connection refused'))"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.ibb.istanbul,O=\u0130stanbul B\u00fcy\u00fck\u015fehir Belediyesi,ST=\u0130stanbul,C=TR",
+                    "issuer": "CN=COMODO RSA Organization Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB",
+                    "serial_number": 244900694024586610081643962674678154038,
+                    "valid_from": "2025-09-17 00:00:00",
+                    "valid_until": "2026-09-25 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "*.ibb.istanbul",
+                        "ibb.istanbul"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.comodoca.com/COMODORSAOrganizationValidationSecureServerCA.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.comodoca.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://crt.comodoca.com/COMODORSAOrganizationValidationSecureServerCA.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "8fde9eb08743dbff5c9983f10edcadfaf6cffbf5e57d67f62736b29fcffbcec3",
+                    "signature": "537dc60bc2b6732f8b6263ac293a485aeb6553eedae23d37c0ae4a9c7807539b51e33a304b1d711cf104734b8f7a77956ba47c738a4a0207109099f13495eee2b48c8988d695d098d2c76e45ab192b1c400d85604c9d998b8b83d49d702758ff1d43c2cd0f6641bd49310706c28a368df5a0e1b1e97ac43436d1ee788f85a3cb4889bfc41cb69467249b990f062b86ad835910487bad371b06782846f5c169ea016aaf7ae423fa6374d0eb45b49b6e3c6d3d8f4bf3f1308e0d1fafa0e2fc727058ca3a2f4b4917cc41c5fb659f5ff1e84286668cf2cc9c63b22b5b1cca3ec7092536b11cf6dcd1fc9e75e02f8b7485651caf65721661a23cdd82ced05fc9392b"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIG7TCCBdWgAwIBAgIRALg+KHLW/ygUp1tyEkKxQzYwDQYJKoZIhvcNAQELBQAw\ngZYxCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO\nBgNVBAcTB1NhbGZvcmQxGjAYBgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMTwwOgYD\nVQQDEzNDT01PRE8gUlNBIE9yZ2FuaXphdGlvbiBWYWxpZGF0aW9uIFNlY3VyZSBT\nZXJ2ZXIgQ0EwHhcNMjUwOTE3MDAwMDAwWhcNMjYwOTI1MjM1OTU5WjBnMQswCQYD\nVQQGEwJUUjESMBAGA1UECAwJxLBzdGFuYnVsMSswKQYDVQQKDCLEsHN0YW5idWwg\nQsO8ecO8a8WfZWhpciBCZWxlZGl5ZXNpMRcwFQYDVQQDDA4qLmliYi5pc3RhbmJ1\nbDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMf3j8Z2x0oWcHdASpm/\np9BgohlYLCZXv88mqaixTNuJiYkj0GLy/8EHXvP5k1V81l1JLgnPHwPm1cXMNoBk\nCebq6Ne+WE3UxUAAcr4t84EDZprfDv0SkYT5UV/6g4C9At6GLRxsuzgtbnBjBnJy\nVjhUpUz89LAQwXqIdzlJmeVTkBzwY5xhNJkUHCTOwIfmFNcHyn0jb/8atIhYqvIv\nROoCHram1tOiYMIXAEbzif1ZhH46gCT3Fy8mLBXqHRHlFXb+s+5ehAovKABGsyc9\n2r2pmoDu1DohllMZARwj7Yu9qjE7+Tl2ys6LmcUGM24UuxZ6DDOBSgrGYhMRNnDK\nv/MCAwEAAaOCA2IwggNeMB8GA1UdIwQYMBaAFJrzK9rPrU+2L7sqSEgqErcbQsEk\nMB0GA1UdDgQWBBTjrH6d5lnyY63vlwRs8qja5LO0ojAOBgNVHQ8BAf8EBAMCBaAw\nDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwSgYD\nVR0gBEMwQTA1BgwrBgEEAbIxAQIBAwQwJTAjBggrBgEFBQcCARYXaHR0cHM6Ly9z\nZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQICMFoGA1UdHwRTMFEwT6BNoEuGSWh0dHA6\nLy9jcmwuY29tb2RvY2EuY29tL0NPTU9ET1JTQU9yZ2FuaXphdGlvblZhbGlkYXRp\nb25TZWN1cmVTZXJ2ZXJDQS5jcmwwgYsGCCsGAQUFBwEBBH8wfTBVBggrBgEFBQcw\nAoZJaHR0cDovL2NydC5jb21vZG9jYS5jb20vQ09NT0RPUlNBT3JnYW5pemF0aW9u\nVmFsaWRhdGlvblNlY3VyZVNlcnZlckNBLmNydDAkBggrBgEFBQcwAYYYaHR0cDov\nL29jc3AuY29tb2RvY2EuY29tMCcGA1UdEQQgMB6CDiouaWJiLmlzdGFuYnVsggxp\nYmIuaXN0YW5idWwwggF+BgorBgEEAdZ5AgQCBIIBbgSCAWoBaAB2ANgJVTuUT3r/\nyBYZb5RPhauw+Pxeh1UmDxXRLnK7RUsUAAABmVaonQkAAAQDAEcwRQIgVbfhAN39\ni2L/D6tmrInbmUlKWnnQQICyJt9Zi1XcNQACIQDH5Zq+/eJIxgFxlvGBjW0TrbYz\nmm+tsJ+CL4zoz8EH/wB1AK9niDtXsE7dj6bZfvYuqOuBCsdxYPAkXlXWDC/nhYc6\nAAABmVaonbQAAAQDAEYwRAIgXl60V1M07xXjNMa5mDdfx7usb45gnQgzURvoiRKW\narcCIDnu567f5vqZPXI+1nbnzw8sOXXcznoW6MsTQhMi29nxAHcA1219ENGn9XfC\nx+lf1wC/+YLJM1pl4dCzAXMXwMjFaXcAAAGZVqic6QAABAMASDBGAiEA0bGrrJKj\n5HJzCQUagSjdMt/dTwxEjYOMwYf1MOiC/SUCIQCSE04/D/S2hL4v7ZYyiMdoVbN1\nAMmrEFOgK+7HgFRyrjANBgkqhkiG9w0BAQsFAAOCAQEAU33GC8K2cy+LYmOsKTpI\nWutlU+7a4j03wK5KnHgHU5tR4zowSx1xHPEEc0uPeneVa6R8c4pKAgcQkJnxNJXu\n4rSMiYjWldCY0sduRasZKxxADYVgTJ2Zi4uD1J1wJ1j/HUPCzQ9mQb1JMQcGwoo2\njfWg4bHpesQ0NtHueI+Fo8tIib/EHLaUZySbmQ8GK4atg1kQSHutNxsGeChG9cFp\n6gFqr3rkI/pjdNDrRbSbbjxtPY9L8/Ewjg0fr6Di/HJwWMo6L0tJF8xBxftln1/x\n6EKGZozyzJxjsitbHMo+xwklNrEc9tzR/J514C+LdIVlHK9lchZhojzdgs7QX8k5\nKw==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "Failed to check OCSP at http://ocsp.comodoca.com: HTTPConnectionPool(host='ocsp.comodoca.com', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10605d2e0>: Failed to establish a new connection: [Errno 61] Connection refused'))"
+            ],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=COMODO RSA Organization Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB",
+                    "issuer": "CN=COMODO RSA Certification Authority,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB",
+                    "serial_number": 72455227028690029815281926829722123430,
+                    "valid_from": "2014-02-12 00:00:00",
+                    "valid_until": "2029-02-11 23:59:59",
+                    "signature_algorithm": "sha384WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl.comodoca.com/COMODORSACertificationAuthority.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.comodoca.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://crt.comodoca.com/COMODORSAAddTrustCA.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "111006378afbe8e99bb02ba87390ca429fca2773f74d7f7eb5744f5ddf68014b",
+                    "signature": "698a36689a1e3b650be07ccfa6ab713baf61a43fe464014910d31d8fe2d5ed67d39e5b97bd421e07f9d0bb6df732955a222962f80c9c59562736a0221211fa47f451c9597b294aa548357cc59766e027253b157a32754a91fba66b9ee253fa0d8c13fb23b80b122caeeddb1d4790d5d093697691381534d718ea7ebc6b58de2a39900344044a56d868e5f57c697e9e7d544bd0d886ab676613575e892a17ad2daebd400e66ed8aff54b4c101cba9e047ba11618fadae23482ac62579891c410495c011ea572bd6b497fab1e91562ec4a7177fdf3a19cdaf66b0029c532e7fa4eeab32aa718971c58a742365fec14cff87b0ef7ddcc88159a9a5cc8f120c7d18672a1179baebafe6ca832d100764973f73f27873cb6c92dfaaa9090c90a099fc9691f0719a9bfdebaf80b88824416107f07c080225f7fbc30debacd07796456d8fff34f9c30bb6e1e514be6cdbd17c4c5bfc83f8eb11f8a46b706436f622dcf519d45ca8ae9138bc0c791be5bb6fa374a89fef09dda1326222c06903e8b1398a019d6ddda4a487f3d0f899d24724b0e7b44ffd436b6837623588b146cb85df7616d3976eddd123d6b87889791bec046021e761cddb6af5c4ff500d69c4da9e09ea28efcb116795c21d345819a0c396c6d28d725d2b71190d0f6de6f5ef4faa48b6677722f9b90402c521260f9ffb5702e899a790989812dec5c786f8187f1fc55"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGDjCCA/agAwIBAgIQNoJef7WkgZN+9tFza7k8pjANBgkqhkiG9w0BAQwFADCB\nhTELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4G\nA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQxKzApBgNV\nBAMTIkNPTU9ETyBSU0EgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkwHhcNMTQwMjEy\nMDAwMDAwWhcNMjkwMjExMjM1OTU5WjCBljELMAkGA1UEBhMCR0IxGzAZBgNVBAgT\nEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMR\nQ09NT0RPIENBIExpbWl0ZWQxPDA6BgNVBAMTM0NPTU9ETyBSU0EgT3JnYW5pemF0\naW9uIFZhbGlkYXRpb24gU2VjdXJlIFNlcnZlciBDQTCCASIwDQYJKoZIhvcNAQEB\nBQADggEPADCCAQoCggEBALkU2YXyQURX/zBEHtw8RKMXuG4B+KNfwqkhHc5Z9Ozz\niKkJMjyxi2OkPic284/5OGYuB5dBj0um3cNfnnM858ogDU98MgXPwS5IZUqF0B9W\nMW2O5cYy1Bu8n32W/JjXT/j0WFb440W+kRiC5Iq+r81SN1GHTx6Xweg6rvn/RuRl\nPz/DR4MvzLhCXi1+91porl1LwKY1IfWGo8hJi5hjYA3JIUjCkjBlRrKGNQRCJX6t\np05LEkAAeohoXG+fo6R4ESGuPQsOvkUUI8/rddf2oPG8RWxevKEy7PNYeEIoCzoB\ndvDFoJ7BaXDej0umed/ydrbjDxN8GDuxUWxqIDnOnmkCAwEAAaOCAWUwggFhMB8G\nA1UdIwQYMBaAFLuvfgI9+qbxPISOre44mOzZMjLUMB0GA1UdDgQWBBSa8yvaz61P\nti+7KkhIKhK3G0LBJDAOBgNVHQ8BAf8EBAMCAYYwEgYDVR0TAQH/BAgwBgEB/wIB\nADAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwGwYDVR0gBBQwEjAGBgRV\nHSAAMAgGBmeBDAECAjBMBgNVHR8ERTBDMEGgP6A9hjtodHRwOi8vY3JsLmNvbW9k\nb2NhLmNvbS9DT01PRE9SU0FDZXJ0aWZpY2F0aW9uQXV0aG9yaXR5LmNybDBxBggr\nBgEFBQcBAQRlMGMwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jcnQuY29tb2RvY2EuY29t\nL0NPTU9ET1JTQUFkZFRydXN0Q0EuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz\ncC5jb21vZG9jYS5jb20wDQYJKoZIhvcNAQEMBQADggIBAGmKNmiaHjtlC+B8z6ar\ncTuvYaQ/5GQBSRDTHY/i1e1n055bl71CHgf50Ltt9zKVWiIpYvgMnFlWJzagIhIR\n+kf0UclZeylKpUg1fMWXZuAnJTsVejJ1SpH7pmue4lP6DYwT+yO4CxIsru3bHUeQ\n1dCTaXaROBU01xjqfrxrWN4qOZADRARKVtho5fV8aX6efVRL0NiGq2dmE1deiSoX\nrS2uvUAOZu2K/1S0wQHLqeBHuhFhj62uI0gqxiV5iRxBBJXAEepXK9a0l/qx6RVi\n7Epxd/3zoZza9msAKcUy5/pO6rMqpxiXHFinQjZf7BTP+HsO993MiBWamlzI8SDH\n0YZyoRebrrr+bKgy0QB2SXP3PyeHPLbJLfqqkJDJCgmfyWkfBxmpv966+AuIgkQW\nEH8HwIAiX3+8MN66zQd5ZFbY//NPnDC7bh5RS+bNvRfExb/IP46xH4pGtwZDb2It\nz1GdRcqK6ROLwMeRvlu2+jdKif7wndoTJiIsBpA+ixOYoBnW3dpKSH89D4mdJHJL\nDntE/9Q2toN2I1iLFGy4XfdhbTl27d0SPWuHiJeRvsBGAh52HN22r1xP9QDWnE2p\n4J6ijvyxFnlcIdNFgZoMOWxtKNcl0rcRkND23m9e9Pqki2Z3ci+bkEAsUhJg+f+1\ncC6JmnkJiYEt7Fx4b4GH8fxV\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=COMODO RSA Certification Authority,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB",
+                    "issuer": "CN=COMODO RSA Certification Authority,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB",
+                    "serial_number": 101909084537582093308941363524873193117,
+                    "valid_from": "2010-01-19 00:00:00",
+                    "valid_until": "2038-01-18 23:59:59",
+                    "signature_algorithm": "sha384WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "52f0e1c4e58ec629291b60317f074671b85d7ea80d5b07273463534b32b40234",
+                    "signature": "0af1d54684b7ae51bb6cb24d411400934c9ccbe5c054cfa0258e02f9fdb0a20df520983c132dac56a2b0d67e1192e92eba9e2e9a72b1bd19446c6135a29ab41612695a8ce1d73ea41ae82f03f4ae611d101b2aa48b7ac5fe05a6e1c0d6c8fe9eae8f2bba3d99f8d8730958466ea69cf4d727d395da3783721cd373e0a2479903385dd5497900291cc7ec9b201c0724695778b239fc3a84a0b59c7c8dbf2e936227b739da1718aebd3c0968ff849b3cd5d60b03e3579e14f7d1eb4fc8bd8723b7b6494379855cbaeb920ba1c6e868a84c16b11a990ae8532c92bba10918750c65a87bcb23b71ac22885c31bffd02b62efa47b099198678c1401cd68066a6321750380888a6e81c685f2a9a42de7f4a524104783cacdf48d7958b1069be71a2ad99d01d7947ded034acaf0dbe8a9013ef55699c91e8e493dbbe509b9e04f49923d168240cccc59c6e63aed122e693c6c95b1fdaa1d7b7f86be1e0e3246fbfb138f757f4c8b4b4663fe00344070c1c3b9a1dda670e204b341bce98091ea649c7ae12203a99c6e6f0e654f6c87875ef36ea0f975a59b40e853b2279d4ab9c077218dff87f2debc8cef17dfb7490bd1f26e300b1a0e4e76ed11fcf5e956b27dbfc76d0a938ca5d0c0b61dbe3a4e94a2d76e6c0bc28a7cfa20f3c4e4e5cd0da8cb9192b17c85ecb51469660e82e7cdcec82da6517f21c1355385064a5d9fadbb1b5f74"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIF2DCCA8CgAwIBAgIQTKr5yttjb+Af907YWwOGnTANBgkqhkiG9w0BAQwFADCB\nhTELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4G\nA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQxKzApBgNV\nBAMTIkNPTU9ETyBSU0EgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkwHhcNMTAwMTE5\nMDAwMDAwWhcNMzgwMTE4MjM1OTU5WjCBhTELMAkGA1UEBhMCR0IxGzAZBgNVBAgT\nEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMR\nQ09NT0RPIENBIExpbWl0ZWQxKzApBgNVBAMTIkNPTU9ETyBSU0EgQ2VydGlmaWNh\ndGlvbiBBdXRob3JpdHkwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCR\n6FSS0gpWsawNJN3Fz0RndJkrN6N9I3AAcbxT38T6KhKPS38QVr2fcHK3YX/JSw8X\npz3jsARh7v8Rl8f0hj4K+j5c+ZPmNHrZFGvnnLOFoIJ6dq9xkNfs/Q36nGz637CC\n9BR++b7Epi9Pf5l/tfxnQ3K9DADWietrLNPtj5gcFKt+5eNu/Nio5JIk2kNrYrhV\n/erBvGy2i/MOjZrkm2xpmfh4SDBF1a3hDTxFYPwyllEnvGfDyi62a+pGx8cgoLEf\nZd5ICLqkTqnyg0Y3hOvozIFIQ2dOciqbXL1MGyiKXCJ7tKuY2e7gUYPDCUZObT6Z\n+pUX2nwzV0E8jVHtC7ZcryxjGt9XyD+86V3Em69FmeKjWiS0uqlWPc9vqv9JWL7w\nqP/0uK3pN/u6uPQLOvnoQ0IeidiEyxPx2bvhiWC4jChWrBQdnArncevPDt09qZah\nSL0896+1DSJMwBGB7FY79tOi4lu3sgQiUpWAk2nojkxl8ZEDLXB0AuqLZxUpaVIC\nu9ffUGpVRr+goyhhf3DQw6KqLCGqR84onAZFdr+CGCe01a60y1Dma/RMhnEw6abf\nFobg2P9A3fvQQoh/ozM6LlweQRGBY84YcWsr7KaKtzFcOmpH4MN5WdYgGq/yapiq\ncrxXStJLnbsQ/LBMQeXtHT1eKJ2czL+zUdqnR+WEUwIDAQABo0IwQDAdBgNVHQ4E\nFgQUu69+Aj36pvE8hI6t7jiY7NkyMtQwDgYDVR0PAQH/BAQDAgEGMA8GA1UdEwEB\n/wQFMAMBAf8wDQYJKoZIhvcNAQEMBQADggIBAArx1UaEt65Ru2yyTUEUAJNMnMvl\nwFTPoCWOAvn9sKIN9SCYPBMtrFaisNZ+EZLpLrqeLppysb0ZRGxhNaKatBYSaVqM\n4dc+pBroLwP0rmEdEBsqpIt6xf4FpuHA1sj+nq6PK7o9mfjYcwlYRm6mnPTXJ9OV\n2jeDchzTc+CiR5kDOF3VSXkAKRzH7JsgHAckaVd4sjn8OoSgtZx8jb8uk2Intzna\nFxiuvTwJaP+EmzzV1gsD41eeFPfR60/IvYcjt7ZJQ3mFXLrrkguhxuhoqEwWsRqZ\nCuhTLJK7oQkYdQxlqHvLI7cawiiFwxv/0Cti76R7CZGYZ4wUAc1oBmpjIXUDgIiK\nboHGhfKppC3n9KUkEEeDys30jXlYsQab5xoq2Z0B15R97QNKyvDb6KkBPvVWmcke\njkk9u+UJueBPSZI9FoJAzMxZxuY67RIuaTxslbH9qh17f4a+Hg4yRvv7E491f0yL\nS0Zj/gA0QHDBw7mh3aZw4gSzQbzpgJHqZJx64SIDqZxubw5lT2yHh17zbqD5daWb\nQOhTsiedSrnAdyGN/4fy3ryM7xfft0kL0fJuMAsaDk527RH89elWsn2/x20Kk4yl\n0MC2Hb46TpSi125sC8KKfPog88Tk5c0NqMuRkrF8hey1FGlmDoLnzc7ILaZRfyHB\nNVOFBkpdn627G190\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

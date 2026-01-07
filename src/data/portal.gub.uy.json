@@ -1,0 +1,179 @@
+{
+    "domain": "portal.gub.uy",
+    "date": "2025-12-15 11:56:11",
+    "ip-address": "179.27.170.100",
+    "status": "invalid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "invalid",
+            "issues": [
+                "Certificate expired"
+            ],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.portal.gub.uy,O=Agesic,OU=Agesic,L=Montevideo,ST=Montevideo,C=UY",
+                    "issuer": "CN=Certum Organization Validation CA SHA2,OU=Certum Certification Authority,O=Unizeto Technologies S.A.,C=PL",
+                    "serial_number": 51452308311718864359826127868016207124,
+                    "valid_from": "2020-07-09 17:56:03",
+                    "valid_until": "2022-07-09 17:56:03",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "*.portal.gub.uy",
+                        "portal.gub.uy"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.certum.pl/ovcasha2.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ovcasha2.ocsp-certum.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://repository.certum.pl/ovcasha2.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "c55a648ac89ac1b10a148c0a85eff70ffba6e6ecfd5cc3d9c6403d708763375b",
+                    "signature": "505c796fb9c3b881a9e14acd73937d00b807243923c0d4195251745717ca0a4985b68ba02b0a464f99784118cd21b27330eb2c96b9ab5472e1f3ecb63050db8569c4f3ef26d5511ed98f9b382f7df54dfffa849c0c49e97fa9478ad6fe0bf100fc54e4756d9a497aba163b1678cc2e65eb436a53e3d7108676f54e4eafeae8e8cc9c7358cce2ef4286b359bbee99060da4b62805a98888f0fedac09deed75a583f91898906529bfbf1fbc0262f5dcb9e9c8c400754ec7716fec06bf936271e31b72782c12296da3822c60dcad01531602a7280bb912e482c70a008668ce1de596db8afe4b48d4ae20238e0f6c6d6bb90830fbc09aa8d8da79ab60e3e513b0e4d"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGyjCCBbKgAwIBAgIQJrVaqCr62PDgs+jOv2QlFDANBgkqhkiG9w0BAQsFADCB\nizELMAkGA1UEBhMCUEwxIjAgBgNVBAoTGVVuaXpldG8gVGVjaG5vbG9naWVzIFMu\nQS4xJzAlBgNVBAsTHkNlcnR1bSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTEvMC0G\nA1UEAxMmQ2VydHVtIE9yZ2FuaXphdGlvbiBWYWxpZGF0aW9uIENBIFNIQTIwHhcN\nMjAwNzA5MTc1NjAzWhcNMjIwNzA5MTc1NjAzWjBzMQswCQYDVQQGEwJVWTETMBEG\nA1UECAwKTW9udGV2aWRlbzETMBEGA1UEBwwKTW9udGV2aWRlbzEPMA0GA1UECwwG\nQWdlc2ljMQ8wDQYDVQQKDAZBZ2VzaWMxGDAWBgNVBAMMDyoucG9ydGFsLmd1Yi51\neTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK6+i7VBLks6fH/S+k0j\nlj7tg6EennPOoiBwkO4es626o1ERbl8ycWx0O8A3+7raBCpEGeSjV8RZ4wDyOdgM\nyLvEktyB6IYy85wOb8PnUUlJWqxMXCd1ES5TsgqJqX9lK3zjIYV7AU6L7xiqrjih\nEo3zz+aGHM2a3fJi9pxB+mR/uM5cWj7dGk/xux+7bmL0f09oFovnk/GDq6RD0KqA\n2hYpPWadGmWjRBZVOdSzF+uzDiqOy0CVGQhtyGSAahTCHtYkBVLlS++UM65X22f1\nCFN+u0yiP3aHbyc4zxO1i6cXit5zZAalHrPlljeZ71UyJ6LX9dVxjTKl3iLyrf7U\ntBsCAwEAAaOCAz8wggM7MAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAU7u3oVGAT\nCzWDoPprekY69z4wu2YwHQYDVR0OBBYEFEL3XSQ89SHEvTXBevhb4BhKurlkMB0G\nA1UdEgQWMBSBEm92Y2FzaGEyQGNlcnR1bS5wbDBxBggrBgEFBQcBAQRlMGMwKwYI\nKwYBBQUHMAGGH2h0dHA6Ly9vdmNhc2hhMi5vY3NwLWNlcnR1bS5jb20wNAYIKwYB\nBQUHMAKGKGh0dHA6Ly9yZXBvc2l0b3J5LmNlcnR1bS5wbC9vdmNhc2hhMi5jZXIw\nSwYDVR0gBEQwQjAIBgZngQwBAgIwNgYLKoRoAYb2dwIFAQIwJzAlBggrBgEFBQcC\nARYZaHR0cHM6Ly93d3cuY2VydHVtLnBsL0NQUzAyBgNVHR8EKzApMCegJaAjhiFo\ndHRwOi8vY3JsLmNlcnR1bS5wbC9vdmNhc2hhMi5jcmwwHQYDVR0lBBYwFAYIKwYB\nBQUHAwEGCCsGAQUFBwMCMA4GA1UdDwEB/wQEAwIFoDApBgNVHREEIjAggg8qLnBv\ncnRhbC5ndWIudXmCDXBvcnRhbC5ndWIudXkwggF8BgorBgEEAdZ5AgQCBIIBbASC\nAWgBZgB2AFWB1MIWkDYBSuoLm1c8U/DA5Dh4cCUIFy+jqh0HE9MMAAABczS4W5YA\nAAQDAEcwRQIgDciPpTSV4SWGZYdRlX/JWLmn3JyA0r+rP9f3b0/Clq8CIQD1LoZw\n+tW+pGcuHZ+LZbRsy+jmFat7+DWFdqcgb8YqNQB1AG9Tdqwx8DEZ2JkApFEV/3cV\nHBHZAsEAKQaNsgiaN9kTAAABczS4XUEAAAQDAEYwRAIgHNvI9rrUOtMLbKeVw2I+\nQndPpRgD9D/krxiL9mfrxPECICPPGLbc2QbSmc0kn/yFkTN8VndRFMh/HObtmCbZ\n+wsJAHUARqVV63X6kSAwtaKJafTzfREsQXS+/Um4havy/HD+bUcAAAFzNLhdhAAA\nBAMARjBEAiB8S+EdizXXtge8FjgVLL5UwN5xpcqgisOV7BafMjafxQIgSVhgBun6\n21ZAZB76L0N/AaunatIqjLJSEZ0hWyxAUC0wDQYJKoZIhvcNAQELBQADggEBAFBc\neW+5w7iBqeFKzXOTfQC4ByQ5I8DUGVJRdFcXygpJhbaLoCsKRk+ZeEEYzSGyczDr\nLJa5q1Ry4fPstjBQ24VpxPPvJtVRHtmPmzgvffVN//qEnAxJ6X+pR4rW/gvxAPxU\n5HVtmkl6uhY7FnjMLmXrQ2pT49cQhnb1Tk6v6ujozJxzWMzi70KGs1m77pkGDaS2\nKAWpiIjw/trAne7XWlg/kYmJBlKb+/H7wCYvXcuenIxAB1Tsdxb+wGv5NiceMbcn\ngsEilto4IsYNytAVMWAqcoC7kS5ILHCgCGaM4d5Zbbiv5LSNSuICOOD2xta7kIMP\nvAmqjY2nmrYOPlE7Dk0=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Certum Organization Validation CA SHA2,OU=Certum Certification Authority,O=Unizeto Technologies S.A.,C=PL",
+                    "issuer": "CN=Certum Trusted Network CA,OU=Certum Certification Authority,O=Unizeto Technologies S.A.,C=PL",
+                    "serial_number": 241488846714582753926027625151469715990,
+                    "valid_from": "2014-09-11 12:00:00",
+                    "valid_until": "2027-06-09 10:46:39",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.certum.pl/ctnca.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://subca.ocsp-certum.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://repository.certum.pl/ctnca.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "fd02362244f31266caff005818d1004ec4eb08fb239aafaaafff47497d6005d6",
+                    "signature": "23561a70b27b13e01b01c779fc0a87c7491e84c43f16cc33b0b6fbcb455224c72aba1576a7cf1f2c1d999ee4d07ff4966d2e3f5c2571b8f593f74b3dbe20ba0a74518341eea93ca2cdb6ba7488f58cbfd71a4ca8d1fd51d83bccae05f35602d98b43f78d87556435ffc19844d59b3266663d227c8a35f31bac4e488bb7599821faa9bf079529740d645577962fa21c1888f9be7355c15422491ae83d3faaa87720571aece4802304550d29d410ac89e9bc616a890f2ec0e75eea0a79f08a47d5ed61f0322873fbcd6bdbffee5679b38f10d7bda5164ba0bf81471cc7465760b582b190b57c92f3be991a4f43e5bf50f927ab8c10bcd2195f1803adf7a3cafa3d"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIE1TCCA72gAwIBAgIRALWtD2OFTMRiLks5I7KQAhYwDQYJKoZIhvcNAQELBQAw\nfjELMAkGA1UEBhMCUEwxIjAgBgNVBAoTGVVuaXpldG8gVGVjaG5vbG9naWVzIFMu\nQS4xJzAlBgNVBAsTHkNlcnR1bSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTEiMCAG\nA1UEAxMZQ2VydHVtIFRydXN0ZWQgTmV0d29yayBDQTAeFw0xNDA5MTExMjAwMDBa\nFw0yNzA2MDkxMDQ2MzlaMIGLMQswCQYDVQQGEwJQTDEiMCAGA1UEChMZVW5pemV0\nbyBUZWNobm9sb2dpZXMgUy5BLjEnMCUGA1UECxMeQ2VydHVtIENlcnRpZmljYXRp\nb24gQXV0aG9yaXR5MS8wLQYDVQQDEyZDZXJ0dW0gT3JnYW5pemF0aW9uIFZhbGlk\nYXRpb24gQ0EgU0hBMjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMQu\n1QDMW2HpTB+NQ14+w+dvSV0k/bXvNTz9K6KrTKgXDm1eJZ44QNMo9Hb5230nvrJh\nwenVEmOsJRD/Ux/oSGDASK58+ckfgY8CeMMsk7rNkwAlBgDp3mBpdhBADMFevgxb\nB+ADq01B91Mit5Tbkc2wP1VlMr2bglVZxmGS39NjpwFRmrzEdxpWdWSX48Ksowt7\nQH7QGQ0Af/972ZIam1ctsRGcOkA5h6t/iZXlV5Y2+H4/4pcr4uF4z30I5VHyJWqx\ndhbFlaBnmnj/ChLa4wdpObqZl7IUz3MOBioMzH8DyiuEAZ5O1+wPALidIlc3GbVJ\ngl6/SwKwh4O4EywWxZMCAwEAAaOCAT4wggE6MA8GA1UdEwEB/wQFMAMBAf8wHQYD\nVR0OBBYEFO7t6FRgEws1g6D6a3pGOvc+MLtmMB8GA1UdIwQYMBaAFAh2zcsH/yT2\nxc3tu5C84oQ3RnX3MA4GA1UdDwEB/wQEAwIBBjAvBgNVHR8EKDAmMCSgIqAghh5o\ndHRwOi8vY3JsLmNlcnR1bS5wbC9jdG5jYS5jcmwwawYIKwYBBQUHAQEEXzBdMCgG\nCCsGAQUFBzABhhxodHRwOi8vc3ViY2Eub2NzcC1jZXJ0dW0uY29tMDEGCCsGAQUF\nBzAChiVodHRwOi8vcmVwb3NpdG9yeS5jZXJ0dW0ucGwvY3RuY2EuY2VyMDkGA1Ud\nIAQyMDAwLgYEVR0gADAmMCQGCCsGAQUFBwIBFhhodHRwOi8vd3d3LmNlcnR1bS5w\nbC9DUFMwDQYJKoZIhvcNAQELBQADggEBACNWGnCyexPgGwHHefwKh8dJHoTEPxbM\nM7C2+8tFUiTHKroVdqfPHywdmZ7k0H/0lm0uP1wlcbj1k/dLPb4gugp0UYNB7qk8\nos22unSI9Yy/1xpMqNH9Udg7zK4F81YC2YtD942HVWQ1/8GYRNWbMmZmPSJ8ijXz\nG6xOSIu3WZgh+qm/B5UpdA1kVXeWL6IcGIj5vnNVwVQiSRroPT+qqHcgVxrs5IAj\nBFUNKdQQrInpvGFqiQ8uwOde6gp58IpH1e1h8DIoc/vNa9v/7lZ5s48Q172lFkug\nv4FHHMdGV2C1grGQtXyS876ZGk9D5b9Q+SerjBC80hlfGAOt96PK+j0=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Certum Trusted Network CA,OU=Certum Certification Authority,O=Unizeto Technologies S.A.,C=PL",
+                    "issuer": "CN=Certum CA,O=Unizeto Sp. z o.o.,C=PL",
+                    "serial_number": 196157293353240526643865071022521293608,
+                    "valid_from": "2008-10-22 12:07:37",
+                    "valid_until": "2027-06-10 10:46:39",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.certum.pl/ca.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://subca.ocsp-certum.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://repository.certum.pl/ca.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "949424dc2ccaab5e9e80d66e0e3f7deeb3201c607d4315ef4c6f2d93a917279d",
+                    "signature": "8de6fd4066a34c9ca7aba1da84dd1c3007e6dbc72dec83a156e41d3c26a1a5092be87d62beb27594dd08f27f2841e48067024e8a8fc335d0d5a92728ead2f4ab068643ae8ce3f9887de0dbbd428180021275b2e81771ab21953146420d881039d36fec2f42ea405362bfebca789eaba2d52e05ea33abe9d69794425e04ed2ced6a9c7a957d052a057f085d66ad61d476ac7596977363bd1a415929a55e2283c38b59fa9aa2f6bd30bf721d1c99869cf2853c1df726962f2ef902b1b5a950e838fa9b0a5eb404c0ce4e392cca0b5b62f04d58503499e69a2cd290d70981d6c0aa5ecefed2f7a1ba4bd9d6868e191fa606474272e0560a001c78b98dcc99043749"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIEtDCCA5ygAwIBAgIRAJOShUABZXFflH8oj+/JmygwDQYJKoZIhvcNAQELBQAw\nPjELMAkGA1UEBhMCUEwxGzAZBgNVBAoTElVuaXpldG8gU3AuIHogby5vLjESMBAG\nA1UEAxMJQ2VydHVtIENBMB4XDTA4MTAyMjEyMDczN1oXDTI3MDYxMDEwNDYzOVow\nfjELMAkGA1UEBhMCUEwxIjAgBgNVBAoTGVVuaXpldG8gVGVjaG5vbG9naWVzIFMu\nQS4xJzAlBgNVBAsTHkNlcnR1bSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTEiMCAG\nA1UEAxMZQ2VydHVtIFRydXN0ZWQgTmV0d29yayBDQTCCASIwDQYJKoZIhvcNAQEB\nBQADggEPADCCAQoCggEBAOP7faNyusLwyRSH9WsBTuFuQAe6bSddf/dbLbNax1Ff\nq6QypmGHtm4PhtIwApf412lXoRg5XWpkecYBWaw8MUo4fNIE0kso6CBfOweizE1z\n2/OuT8dW1Vqnlon686to1COGWSfPCSe8rG5ygxwwct/gounS4XR1Gb0qnnsVVAQb\n10M5rVUoxeIau/TA5K44STPMdoWfOUXSpJ7yEoxR+HzkLX/1rF/rFp+xLdG6zJFC\nd0wlyZA4b9vwzPuOHpdZPtVgTuYFKO1JeRNLukjbL/ly0znK/h/YNHL1tEDPMQHD\n7N4RLRddH7hQ0V4Zp2neBzMoylCV+adUy1SGUEWp+UkCAwEAAaOCAWswggFnMA8G\nA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFAh2zcsH/yT2xc3tu5C84oQ3RnX3MFIG\nA1UdIwRLMEmhQqRAMD4xCzAJBgNVBAYTAlBMMRswGQYDVQQKExJVbml6ZXRvIFNw\nLiB6IG8uby4xEjAQBgNVBAMTCUNlcnR1bSBDQYIDAQAgMA4GA1UdDwEB/wQEAwIB\nBjAsBgNVHR8EJTAjMCGgH6AdhhtodHRwOi8vY3JsLmNlcnR1bS5wbC9jYS5jcmww\naAYIKwYBBQUHAQEEXDBaMCgGCCsGAQUFBzABhhxodHRwOi8vc3ViY2Eub2NzcC1j\nZXJ0dW0uY29tMC4GCCsGAQUFBzAChiJodHRwOi8vcmVwb3NpdG9yeS5jZXJ0dW0u\ncGwvY2EuY2VyMDkGA1UdIAQyMDAwLgYEVR0gADAmMCQGCCsGAQUFBwIBFhhodHRw\nOi8vd3d3LmNlcnR1bS5wbC9DUFMwDQYJKoZIhvcNAQELBQADggEBAI3m/UBmo0yc\np6uh2oTdHDAH5tvHLeyDoVbkHTwmoaUJK+h9Yr6ydZTdCPJ/KEHkgGcCToqPwzXQ\n1aknKOrS9KsGhkOujOP5iH3g271CgYACEnWy6BdxqyGVMUZCDYgQOdNv7C9C6kBT\nYr/rynieq6LVLgXqM6vp1peUQl4E7Sztapx6lX0FKgV/CF1mrWHUdqx1lpdzY70a\nQVkppV4ig8OLWfqaova9ML9yHRyZhpzyhTwd9yaWLy75ArG1qVDoOPqbCl60BMDO\nTjksygtbYvBNWFA0meaaLNKQ1wmB1sCqXs7+0vehukvZ1oaOGR+mBkdCcuBWCgAc\neLmNzJkEN0k=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [
+                "Hash no longer allowed for applying cryptographic protection"
+            ],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Certum CA,O=Unizeto Sp. z o.o.,C=PL",
+                    "issuer": "CN=Certum CA,O=Unizeto Sp. z o.o.,C=PL",
+                    "serial_number": 65568,
+                    "valid_from": "2002-06-11 10:46:39",
+                    "valid_until": "2027-06-11 10:46:39",
+                    "signature_algorithm": "sha1WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "d8e0febc1db2e38d00940f37d27d41344d993e734b99d5656d9778d4d8143624",
+                    "signature": "b88dceefe714bacfeeb044926cb4393ea2846eadb82177d2d4778287e6204181eee2f811b763d11737be1976241c041a4ceb3daa676f2dd4cdfe653170c51ba6020aba607b6d58c29a49fe63320b6be33ac0acab3bb0e8d309518c1083c634e0c52be01ab66014276c32778cbcb27298cfcdcc3fb9c8244214d657fce62643a91de58090ce0354283ef73fd3f84ded6a0a3a93139b3b142313639c3fd1872779e54c51e301ad855d1a3bb1d57310a4d3f2bc6e64f55a5690a8c70e4c740f2e713bf7c847f4696f15f2115e831e9c7c52aefd02da12a8596718dbbc70dd9bb169ed80ce8940486a0e35ca29661521942ce8602a9b854a40f36b8a24ec06162c73"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDDDCCAfSgAwIBAgIDAQAgMA0GCSqGSIb3DQEBBQUAMD4xCzAJBgNVBAYTAlBM\nMRswGQYDVQQKExJVbml6ZXRvIFNwLiB6IG8uby4xEjAQBgNVBAMTCUNlcnR1bSBD\nQTAeFw0wMjA2MTExMDQ2MzlaFw0yNzA2MTExMDQ2MzlaMD4xCzAJBgNVBAYTAlBM\nMRswGQYDVQQKExJVbml6ZXRvIFNwLiB6IG8uby4xEjAQBgNVBAMTCUNlcnR1bSBD\nQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM6xwS7TT3zNJc4YPk/E\njG+AanPIW1H4m9LcuwBcsaD8dQPugfCI7iNS6eYVM42sLQnFdvkrOYCJ5JdLkKWo\nePhzQ3ukYbDYWMzhbGZ+nPMJXlVjhNWo7/OxLjBos8Q82KxujZlakE403Daaj4GI\nULdtlkIJ89eVgw1BS7Bqa/j8D35in2fE7SZfECYPCE/wpFcozo+47UX2bu4lXapu\nOb7kky/ZR6By6/qmW6/KUz/iDsaWVhFu9+lmqSbYf5VT7QqFiLpPKaVCjF62/IUg\nAKpoC6EahQGcxEZjgoi2IrHu/qpGWX7PNSzVttpd90gzFFS269lvzs2I1qsb2pY7\nHVkCAwEAAaMTMBEwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQUFAAOCAQEA\nuI3O7+cUus/usESSbLQ5PqKEbq24IXfS1HeCh+YgQYHu4vgRt2PRFze+GXYkHAQa\nTOs9qmdvLdTN/mUxcMUbpgIKumB7bVjCmkn+YzILa+M6wKyrO7Do0wlRjBCDxjTg\nxSvgGrZgFCdsMneMvLJymM/NzD+5yCRCFNZX/OYmQ6kd5YCQzgNUKD73P9P4Te1q\nCjqTE5s7FCMTY5w/0YcneeVMUeMBrYVdGjux1XMQpNPyvG5k9VpWkKjHDkx0Dy5x\nO/fIR/RpbxXyEV6DHpx8Uq79AtoSqFlnGNu8cN2bsWntgM6JQEhqDjXKKWYVIZQs\n6GAqm4VKQPNriiTsBhYscw==\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

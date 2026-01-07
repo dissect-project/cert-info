@@ -1,0 +1,186 @@
+{
+    "domain": "www.toronto.ca",
+    "date": "2025-12-15 10:59:37",
+    "ip-address": "3.160.132.29",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=www.toronto.ca,O=City of Toronto,L=Toronto,ST=Ontario,C=CA",
+                    "issuer": "CN=Entrust OV TLS Issuing ECC CA 1,O=SSL Corporation,C=US",
+                    "serial_number": 90619113046275627064418793281647059433,
+                    "valid_from": "2025-05-05 14:27:53",
+                    "valid_until": "2026-05-05 13:55:27",
+                    "signature_algorithm": "ecdsa-with-SHA384",
+                    "public_key_type": "ECPublicKey",
+                    "public_key_size": 256,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "www.toronto.ca"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crls.ssl.com/Entrust-OVTLS-I-E1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsps.ssl.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cert.ssl.com/Entrust-OVTLS-I-E1.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "cfbb31be5507bf4965c89b76c3b13f3034c13b42c97d8adbd32c33bdaea4c54a",
+                    "signature": "306402301d2de9f167955dfa2fc07b518e1dda6a47486036af703336fb6e13a6d86b3260202aecb5a7dceb23f82769e5ba4f1ac002302e0bec6772dd95070e6bcf9fad533545007ceefe8b8d2c62ab39e7fa5886164e1eeaedb622f50d7325128e64c6ea27ef"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIEvDCCBEOgAwIBAgIQRCybOMSmVbwvSWI5UMSh6TAKBggqhkjOPQQDAzBRMQsw\nCQYDVQQGEwJVUzEYMBYGA1UECgwPU1NMIENvcnBvcmF0aW9uMSgwJgYDVQQDDB9F\nbnRydXN0IE9WIFRMUyBJc3N1aW5nIEVDQyBDQSAxMB4XDTI1MDUwNTE0Mjc1M1oX\nDTI2MDUwNTEzNTUyN1owZDELMAkGA1UEBhMCQ0ExEDAOBgNVBAgMB09udGFyaW8x\nEDAOBgNVBAcMB1Rvcm9udG8xGDAWBgNVBAoMD0NpdHkgb2YgVG9yb250bzEXMBUG\nA1UEAwwOd3d3LnRvcm9udG8uY2EwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASa\nHH4HSFsdwaYHK9KWZzjsbRHrPiXHdS414Xt+uQdzrLvQTCdvKoVqXm9j60UHOwaM\nhG8srlIj/g3P3CCkqvB7o4IC6DCCAuQwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAW\ngBTsVHAVwkhY3CLxiEQMWhB1vCitnDBoBggrBgEFBQcBAQRcMFowNgYIKwYBBQUH\nMAKGKmh0dHA6Ly9jZXJ0LnNzbC5jb20vRW50cnVzdC1PVlRMUy1JLUUxLmNlcjAg\nBggrBgEFBQcwAYYUaHR0cDovL29jc3BzLnNzbC5jb20wGQYDVR0RBBIwEIIOd3d3\nLnRvcm9udG8uY2EwIwYDVR0gBBwwGjAIBgZngQwBAgIwDgYMKwYBBAGCqTABAwEC\nMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATA7BgNVHR8ENDAyMDCgLqAs\nhipodHRwOi8vY3Jscy5zc2wuY29tL0VudHJ1c3QtT1ZUTFMtSS1FMS5jcmwwHQYD\nVR0OBBYEFGWZlL3biQmAUNe/azzN4n2UYUU9MA4GA1UdDwEB/wQEAwIHgDCCAXwG\nCisGAQQB1nkCBAIEggFsBIIBaAFmAHYAyzj3FYl8hKFEX1vB3fvJbvKaWc1HCmkF\nhbDLFMMUWOcAAAGWoOHOmAAABAMARzBFAiEA21A/RmAbZVK8rNOjFl/o2Eya+T/S\nodSJPrK7THy+KyQCICy8U9UYWJy5mlyjiMZpOy0nNQsg2dpiFZwbbtlRxI1lAHUA\nJS+Uwisp6W6fQRpyBytpXFtS/5epDSVAu/zcUexN7gsAAAGWoOHPNAAABAMARjBE\nAiAkfO9W9lplGcxUWYGNTslWEGGZezlGEPsVUtVwjmrYbgIgXQsjzbuVhMq048pY\nDDOfMhJgDK60ZWJtSG+XSyKTfBUAdQAOV5S8866pPjMbLJkHs/eQ35vCPXEyJd0h\nqSWsYcVOIQAAAZag4c60AAAEAwBGMEQCIFl9i/h5d8jqIVouP/ZkzkiY/XlZf/KP\n69NT7n4+wD91AiB0cC4dp3ojxWcIZ+pBtiQoMFyCCdOjGe9ydABxWGPN1zAKBggq\nhkjOPQQDAwNnADBkAjAdLenxZ5Vd+i/Ae1GOHdpqR0hgNq9wMzb7bhOm2GsyYCAq\n7LWn3Osj+Cdp5bpPGsACMC4L7Gdy3ZUHDmvPn61TNUUAfO7+i40sYqs55/pYhhZO\nHurttiL1DXMlEo5kxuon7w==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Entrust OV TLS Issuing ECC CA 1,O=SSL Corporation,C=US",
+                    "issuer": "CN=SSL.com TLS ECC Root CA 2022,O=SSL Corporation,C=US",
+                    "serial_number": 96716820104204093748915326753122010098,
+                    "valid_from": "2024-08-22 17:53:07",
+                    "valid_until": "2027-08-22 17:53:06",
+                    "signature_algorithm": "ecdsa-with-SHA384",
+                    "public_key_type": "ECPublicKey",
+                    "public_key_size": 384,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crls.ssl.com/SSLcom-TLS-Root-2022-ECC.crl"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cert.ssl.com/SSLcom-TLS-Root-2022-ECC.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "87026a05bc3ad085a8e447c2d2864e2ebec7d017dc488de255cf4e5eb0576271",
+                    "signature": "3066023100c8eddbe8072943c1b6d224c51cdbad4fc4634fda721f2ce92b8c1c502e25e38f530853af32a490861af2bf38eba7fff2023100b47bbf171cccf8efa4582caf6462e97c9d6457f1028229ee2ea37d4672a1842ea51d518590739e6147ad44432e2318e1"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDCDCCAo2gAwIBAgIQSML7ZB64hjDgvZkLmY/D8jAKBggqhkjOPQQDAzBOMQsw\nCQYDVQQGEwJVUzEYMBYGA1UECgwPU1NMIENvcnBvcmF0aW9uMSUwIwYDVQQDDBxT\nU0wuY29tIFRMUyBFQ0MgUm9vdCBDQSAyMDIyMB4XDTI0MDgyMjE3NTMwN1oXDTI3\nMDgyMjE3NTMwNlowUTELMAkGA1UEBhMCVVMxGDAWBgNVBAoMD1NTTCBDb3Jwb3Jh\ndGlvbjEoMCYGA1UEAwwfRW50cnVzdCBPViBUTFMgSXNzdWluZyBFQ0MgQ0EgMTB2\nMBAGByqGSM49AgEGBSuBBAAiA2IABABrFpTlXGVCNvshBKVNrQJu+WygvNOhTWFd\nraNAxolTs3cD77tZZTOghe2jyFn58794LHAOeK0vUEGuzdVb62UYaZb4Dg6kR3v/\nNPCpgHQiGR1RxoGFBwbtmYSxgQ0EvqOCASswggEnMBIGA1UdEwEB/wQIMAYBAf8C\nAQAwHwYDVR0jBBgwFoAUiY8vo+groBRUe/NWuCZfZzgLnNAwTAYIKwYBBQUHAQEE\nQDA+MDwGCCsGAQUFBzAChjBodHRwOi8vY2VydC5zc2wuY29tL1NTTGNvbS1UTFMt\nUm9vdC0yMDIyLUVDQy5jZXIwEQYDVR0gBAowCDAGBgRVHSAAMB0GA1UdJQQWMBQG\nCCsGAQUFBwMCBggrBgEFBQcDATBBBgNVHR8EOjA4MDagNKAyhjBodHRwOi8vY3Js\ncy5zc2wuY29tL1NTTGNvbS1UTFMtUm9vdC0yMDIyLUVDQy5jcmwwHQYDVR0OBBYE\nFOxUcBXCSFjcIvGIRAxaEHW8KK2cMA4GA1UdDwEB/wQEAwIBhjAKBggqhkjOPQQD\nAwNpADBmAjEAyO3b6AcpQ8G20iTFHNutT8RjT9pyHyzpK4wcUC4l449TCFOvMqSQ\nhhryvzjrp//yAjEAtHu/FxzM+O+kWCyvZGLpfJ1kV/ECginuLqN9RnKhhC6lHVGF\nkHOeYUetREMuIxjh\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=SSL.com TLS ECC Root CA 2022,O=SSL Corporation,C=US",
+                    "issuer": "CN=SSL.com EV Root Certification Authority ECC,O=SSL Corporation,L=Houston,ST=Texas,C=US",
+                    "serial_number": 78499417860755378313242233845787498908,
+                    "valid_from": "2023-11-07 17:26:27",
+                    "valid_until": "2038-11-03 17:26:26",
+                    "signature_algorithm": "ecdsa-with-SHA384",
+                    "public_key_type": "ECPublicKey",
+                    "public_key_size": 384,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crls.ssl.com/SSLcom-RootCA-EV-ECC-384-R1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsps.ssl.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cert.ssl.com/SSLcom-RootCA-EV-ECC-384-R1.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "ac25863ba43b96aea864ba2aa256022af9d38dc93e97437f3de603cc487306cb",
+                    "signature": "3065023100de509f1c3c664c6eb4977095177499c4d211d258715f54835eb86927fd07b233198b324febd6bfb639f77452b60fabbb02304b7ec8ffcedec5aee886e504e693071f478ed81d3c0f2a2f9c825872ac710b62c3f8888a2d343b116250cad4b8764826"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDWjCCAuCgAwIBAgIQOw5wHVPLtxRQojGWD0GZnDAKBggqhkjOPQQDAzB/MQsw\nCQYDVQQGEwJVUzEOMAwGA1UECAwFVGV4YXMxEDAOBgNVBAcMB0hvdXN0b24xGDAW\nBgNVBAoMD1NTTCBDb3Jwb3JhdGlvbjE0MDIGA1UEAwwrU1NMLmNvbSBFViBSb290\nIENlcnRpZmljYXRpb24gQXV0aG9yaXR5IEVDQzAeFw0yMzExMDcxNzI2MjdaFw0z\nODExMDMxNzI2MjZaME4xCzAJBgNVBAYTAlVTMRgwFgYDVQQKDA9TU0wgQ29ycG9y\nYXRpb24xJTAjBgNVBAMMHFNTTC5jb20gVExTIEVDQyBSb290IENBIDIwMjIwdjAQ\nBgcqhkjOPQIBBgUrgQQAIgNiAARFKTVz+sK4I84UfaixTaBbNu4qLFPDYAk1siRm\nJmnAs5XWXZJAGQ7GpRNw9O8SUShd58y9+TyFwc+UkMkrzpJCWFln/ZQnEGSMTwSx\nTUnke0+b9ecI+AOI96fDkksZVIGjggFQMIIBTDAPBgNVHRMBAf8EBTADAQH/MB8G\nA1UdIwQYMBaAFFvKXuXe0oGqzagtZFG22XKbl+ZPMHEGCCsGAQUFBwEBBGUwYzA/\nBggrBgEFBQcwAoYzaHR0cDovL2NlcnQuc3NsLmNvbS9TU0xjb20tUm9vdENBLUVW\nLUVDQy0zODQtUjEuY2VyMCAGCCsGAQUFBzABhhRodHRwOi8vb2NzcHMuc3NsLmNv\nbTARBgNVHSAECjAIMAYGBFUdIAAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF\nBwMBMEQGA1UdHwQ9MDswOaA3oDWGM2h0dHA6Ly9jcmxzLnNzbC5jb20vU1NMY29t\nLVJvb3RDQS1FVi1FQ0MtMzg0LVIxLmNybDAdBgNVHQ4EFgQUiY8vo+groBRUe/NW\nuCZfZzgLnNAwDgYDVR0PAQH/BAQDAgGGMAoGCCqGSM49BAMDA2gAMGUCMQDeUJ8c\nPGZMbrSXcJUXdJnE0hHSWHFfVINeuGkn/QeyMxmLMk/r1r+2Ofd0UrYPq7sCMEt+\nyP/O3sWu6IblBOaTBx9HjtgdPA8qL5yCWHKscQtiw/iIii00OxFiUMrUuHZIJg==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=SSL.com EV Root Certification Authority ECC,O=SSL Corporation,L=Houston,ST=Texas,C=US",
+                    "issuer": "CN=SSL.com EV Root Certification Authority ECC,O=SSL Corporation,L=Houston,ST=Texas,C=US",
+                    "serial_number": 3182246526754555285,
+                    "valid_from": "2016-02-12 18:15:23",
+                    "valid_until": "2041-02-12 18:15:23",
+                    "signature_algorithm": "ecdsa-with-SHA256",
+                    "public_key_type": "ECPublicKey",
+                    "public_key_size": 384,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "22a2c1f7bded704cc1e701b5f408c310880fe956b5de2a4a44f99c873a25a7c8",
+                    "signature": "30650231008ae6408937ebe9d513d9cad46b24f3b03d8746581aecb1df6ffb56ba706bc738cce8b18c4f0ff7f167760e83d01e518f02303df62328264cc6608793269bb2351ebad6f73cd11ccefa253ca61a81155bf3120f6cee658ac987a8f907e0629a8c5c4a"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIClDCCAhqgAwIBAgIILCmcWxbtBZUwCgYIKoZIzj0EAwIwfzELMAkGA1UEBhMC\nVVMxDjAMBgNVBAgMBVRleGFzMRAwDgYDVQQHDAdIb3VzdG9uMRgwFgYDVQQKDA9T\nU0wgQ29ycG9yYXRpb24xNDAyBgNVBAMMK1NTTC5jb20gRVYgUm9vdCBDZXJ0aWZp\nY2F0aW9uIEF1dGhvcml0eSBFQ0MwHhcNMTYwMjEyMTgxNTIzWhcNNDEwMjEyMTgx\nNTIzWjB/MQswCQYDVQQGEwJVUzEOMAwGA1UECAwFVGV4YXMxEDAOBgNVBAcMB0hv\ndXN0b24xGDAWBgNVBAoMD1NTTCBDb3Jwb3JhdGlvbjE0MDIGA1UEAwwrU1NMLmNv\nbSBFViBSb290IENlcnRpZmljYXRpb24gQXV0aG9yaXR5IEVDQzB2MBAGByqGSM49\nAgEGBSuBBAAiA2IABKoSR5CYG/vvw0AHgyBO8TCCogbR8pKGYfL2IWjKAMTH6kMA\nVIbc/R/fALhBYlzccBYy3h+Z1MzFB8gIH2EWB1E9fVwHU+M1OIzfzZ/ZLg1Kthku\nWnBaBu2+8KGwytAJKaNjMGEwHQYDVR0OBBYEFFvKXuXe0oGqzagtZFG22XKbl+ZP\nMA8GA1UdEwEB/wQFMAMBAf8wHwYDVR0jBBgwFoAUW8pe5d7SgarNqC1kUbbZcpuX\n5k8wDgYDVR0PAQH/BAQDAgGGMAoGCCqGSM49BAMCA2gAMGUCMQCK5kCJN+vp1RPZ\nytRrJPOwPYdGWBrssd9v+1a6cGvHOMzosYxPD/fxZ3YOg9AeUY8CMD32IygmTMZg\nh5Mmm7I1HrrW9zzRHM76JTymGoEVW/MSD2zuZYrJh6j5B+BimoxcSg==\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

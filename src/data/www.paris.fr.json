@@ -1,0 +1,149 @@
+{
+    "domain": "www.paris.fr",
+    "date": "2025-12-15 11:04:33",
+    "ip-address": "151.101.195.52",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "2.5.4.5=S3663100286,CN=crt-c0001-001-01.paris.fr,O=VILLE DE PARIS,L=PARIS,C=FR",
+                    "issuer": "CN=Certigna Server Authentication OVCP EU CA G1,2.5.4.97=NTRFR-48146308100036,O=Certigna,C=FR",
+                    "serial_number": 234853019599891878368543613618021449806,
+                    "valid_from": "2025-12-05 00:00:00",
+                    "valid_until": "2026-03-04 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "c93-parisapp-cache.apps.paris.fr",
+                        "paris-recette.paris.fr",
+                        "parisv3-preprod.paris.fr",
+                        "quefaire.paris.fr",
+                        "quefaire-api.paris.fr",
+                        "crt-c0001-001-01.paris.fr",
+                        "c93-parisapp-cache-dev.apps.paris.fr",
+                        "cdn.paris.fr",
+                        "paris-v4-preprod.paris.fr",
+                        "c93-parisapp-cache-rec.apps.paris.fr",
+                        "villeapp-mc-cdn.paris.fr",
+                        "www.api-site.paris.fr",
+                        "www.paris.fr"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.certigna.com/CertignaServerAuthenticationOVCPEUCAG1.crl"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cert.certigna.com/CertignaServerAuthenticationOVCPEUCAG1.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "fbf7d989a71011a3665b776bf4ccef7fbc73bbc01b78cde2a2acff417bbc4267",
+                    "signature": "a6545702d8c6d706b149ed8f9200d1f3fb5b930aa2284e8af82c9207a07df7e0959ea539b421734ea84121e95af56ca9be5320f0e210498cef621bf140196a0199cd2f7e93d7b2fafe51369aaddfb69a522201b567216d43acaf23a6d99f10a66118bbff0b1435d8c1b32b6399c9443d2375910a0e183519b00cef8f6557c0ef8b90664756c2cb6ea481d044220c08087d11a414272c5204bd58eafa5526f5b7acb27dfd2b1c94ac044071da28f79c69806337fcc5f4d118de814c07907bac7991de41e50f775990099a8d3218ee78de6aa7b5f69d28b593c5e634357c45969624cfcaf7e8abc80d49297377001a92ef371a2a03b5c25ebe605420460729226395ee8a87722607a34ac15fc6e4c56aee26fe4f207122b87d00a2ff2d414d3f0646da493444b53b26c71995100e768a9e6470212653f638221090e10267b3f8f4cf87a3752e17dffb05988526fb389aedd64aca2e2d635c8132e63aad071a0229d1d84f6dc67d646933cd52c0a501d4dcf3d356aa1498fb70536bd1b2bdee69b99a428cf27eba8ef2015df874d910b946bca652d3d4265f4a053111c6482877e0d8d1f7ee5282b3f53abba221f6ccae1e1c362c06d9c58ac7ba776d383776db7da7f9f6cfb50a7ec7a1d551acc269b634e7d339257c144d13a7f03d506c26294a5d9ebf9f4c3ead941f237d29ceacff5cea85957c12f4b10397ab6770220ec7dd"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIII1DCCBrygAwIBAgIRALCvC9oq1sdIZ/SffbC7wE4wDQYJKoZIhvcNAQELBQAw\ndjELMAkGA1UEBhMCRlIxETAPBgNVBAoMCENlcnRpZ25hMR0wGwYDVQRhDBROVFJG\nUi00ODE0NjMwODEwMDAzNjE1MDMGA1UEAwwsQ2VydGlnbmEgU2VydmVyIEF1dGhl\nbnRpY2F0aW9uIE9WQ1AgRVUgQ0EgRzEwHhcNMjUxMjA1MDAwMDAwWhcNMjYwMzA0\nMjM1OTU5WjBwMQswCQYDVQQGEwJGUjEOMAwGA1UEBwwFUEFSSVMxFzAVBgNVBAoM\nDlZJTExFIERFIFBBUklTMSIwIAYDVQQDDBljcnQtYzAwMDEtMDAxLTAxLnBhcmlz\nLmZyMRQwEgYDVQQFEwtTMzY2MzEwMDI4NjCCASIwDQYJKoZIhvcNAQEBBQADggEP\nADCCAQoCggEBANpq8izRVE2GP7dFHe0Az8W+Dl9rrW9h0whcqK3qLP56DGzyL/mk\nvxUBeKB77MQn9+rp5AZS4SGJbF/g6c8FkXK0WbZpR/ZFX39NEYJstamFUR6UTaG2\ndjqlgko5zJQgXrMKFBZXo2z0xvpP0+VjxchQHnvZqBaBgbp9KllXkYXEWS2Xr3h3\nWT1QK6jBI5T6gHRqzp6+WT8uhJNGhKDe1gZULY5m0oO8eXRPjioReOAZZIw6bkiX\n5SrDZmYnDrQ6yliTte9wmCqdK6H6HTXV/b2Dnngbx6LLONgg/CczFauVnvkivRbt\n4Fcw2tRGv+/DsaIMpnIirNTJz2ZR27REv30CAwEAAaOCBGEwggRdMF8GCCsGAQUF\nBwEBBFMwUTBPBggrBgEFBQcwAoZDaHR0cDovL2NlcnQuY2VydGlnbmEuY29tL0Nl\ncnRpZ25hU2VydmVyQXV0aGVudGljYXRpb25PVkNQRVVDQUcxLmNlcjAfBgNVHSME\nGDAWgBSgcuZGxDBc5K3CHMLVYjiYgVpUpjAMBgNVHRMBAf8EAjAAMFMGA1UdIARM\nMEowCAYGBACPegEHMDQGCyqBegGBMQEXAQEBMCUwIwYIKwYBBQUHAgEWF2h0dHA6\nLy9jcHMuY2VydGlnbmEuY29tMAgGBmeBDAECAjBTBgNVHR8ETDBKMEigRqBEhkJo\ndHRwOi8vY3JsLmNlcnRpZ25hLmNvbS9DZXJ0aWduYVNlcnZlckF1dGhlbnRpY2F0\naW9uT1ZDUEVVQ0FHMS5jcmwwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDgYDVR0PAQH/\nBAQDAgWgMIIBWgYDVR0RBIIBUTCCAU2CIGM5My1wYXJpc2FwcC1jYWNoZS5hcHBz\nLnBhcmlzLmZyghZwYXJpcy1yZWNldHRlLnBhcmlzLmZyghhwYXJpc3YzLXByZXBy\nb2QucGFyaXMuZnKCEXF1ZWZhaXJlLnBhcmlzLmZyghVxdWVmYWlyZS1hcGkucGFy\naXMuZnKCGWNydC1jMDAwMS0wMDEtMDEucGFyaXMuZnKCJGM5My1wYXJpc2FwcC1j\nYWNoZS1kZXYuYXBwcy5wYXJpcy5mcoIMY2RuLnBhcmlzLmZyghlwYXJpcy12NC1w\ncmVwcm9kLnBhcmlzLmZygiRjOTMtcGFyaXNhcHAtY2FjaGUtcmVjLmFwcHMucGFy\naXMuZnKCGHZpbGxlYXBwLW1jLWNkbi5wYXJpcy5mcoIVd3d3LmFwaS1zaXRlLnBh\ncmlzLmZyggx3d3cucGFyaXMuZnIwHQYDVR0OBBYEFIsSBoUdAuGGyHomfUSqkUqI\nkw35MIIBfQYKKwYBBAHWeQIEAgSCAW0EggFpAWcAdQB0251Y99R+nf14ehYqmRwY\nz2mNp8cpkYyaGLBFDbpEvAAAAZrtxmDAAAAEAwBGMEQCIFBb4OIJf9QXbCHLXxFd\nQlfVhjrGxxBkD5vcuqZ9OrwVAiBGIn/nSKJMW4kkHaQgQE24bdjzeHneYSs4VIGC\nPB49WAB3AJaXZL9VWJet90OHaDcIQnfp8DrV9qTzNm5GpD8PyqnGAAABmu3GX/YA\nAAQDAEgwRgIhAL8Z1xzqSlb3ODB2dHytwFVFl2CIfObIx6+PbhIoEUjtAiEA1uDX\n8rC0HwbRTlcP0gZuTxjwj9H0Bby6OInXYNXcvEUAdQBJnJtp3h187Pw23s2HZKa4\nW68Kh4AZ0VVS++nrKd34wwAAAZrtxmH7AAAEAwBGMEQCIFXym6DkHz4IjOo7cJXn\n72HYAyBQ4yCC+5ESrrJoOhHhAiAhDVnPSuehVYr6btWRq7ikoj9wqggu9mvwsm8k\nM2HwcTANBgkqhkiG9w0BAQsFAAOCAgEAplRXAtjG1waxSe2PkgDR8/tbkwqiKE6K\n+CySB6B99+CVnqU5tCFzTqhBIela9WypvlMg8OIQSYzvYhvxQBlqAZnNL36T17L6\n/lE2mq3ftppSIgG1ZyFtQ6yvI6bZnxCmYRi7/wsUNdjBsytjmclEPSN1kQoOGDUZ\nsAzvj2VXwO+LkGZHVsLLbqSB0EQiDAgIfRGkFCcsUgS9WOr6VSb1t6yyff0rHJSs\nBEBx2ij3nGmAYzf8xfTRGN6BTAeQe6x5kd5B5Q93WZAJmo0yGO543mqntfadKLWT\nxeY0NXxFlpYkz8r36KvIDUkpc3cAGpLvNxoqA7XCXr5gVCBGBykiY5XuiodyJgej\nSsFfxuTFau4m/k8gcSK4fQCi/y1BTT8GRtpJNES1OybHGZUQDnaKnmRwISZT9jgi\nEJDhAmez+PTPh6N1Lhff+wWYhSb7OJrt1krKLi1jXIEy5jqtBxoCKdHYT23GfWRp\nM81SwKUB1Nzz01aqFJj7cFNr0bK97mm5mkKM8n66jvIBXfh02RC5RrymUtPUJl9K\nBTERxkgod+DY0ffuUoKz9Tq7oiH2zK4eHDYsBtnFise6d204N3bbfaf59s+1Cn7H\nodVRrMJptjTn0zklfBRNE6fwPVBsJilKXZ6/n0w+rZQfI30pzqz/XOqFlXwS9LED\nl6tncCIOx90=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Certigna Server Authentication OVCP EU CA G1,2.5.4.97=NTRFR-48146308100036,O=Certigna,C=FR",
+                    "issuer": "CN=Certigna,O=Dhimyotis,C=FR",
+                    "serial_number": 571967344697170408225122364694989780131675299392,
+                    "valid_from": "2025-02-28 09:49:04",
+                    "valid_until": "2027-06-28 09:49:03",
+                    "signature_algorithm": "sha384WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl.certigna.com/Certigna.crl"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cert.certigna.com/Certigna.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "1a209db499625b4ea29f597be7744ba1e240b8c7629f75b41a3373339fd7eddf",
+                    "signature": "9188c590c6bf2daeed5c321dff796d0d2f0f2acc61c6638103a6d1b0b783416214d84d4cff5035cb46d1930e18e994469a454b2dd4110fd98922fc679654f2a1e3b324f9340555bac5580f9dc6adca1371d1b284168b9eb71ee4f89ef22a1bbf9378c93fd5c0c6d6c2595890e2b67706f00160703cac199f71c6d532bd386bff882d3a53ff54221b3847729a367e7950fa8917ab472e8a4379fd63251cd82c4c9206d9be72105b5863ce07971d1e8c95f770e01de29a2df6f1dd8eff1ed8abc8abf8e8a5d079972bffc1b690e041f3f62e59e1dbe61028ecc7da041d10e6528784a15d6c6ff23fda7a773c78ed613af3ce839361469e6e67579056ac4694f1d7"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFhTCCBG2gAwIBAgIUZC/nHF2pouqOZECc9JYzehjW3kAwDQYJKoZIhvcNAQEM\nBQAwNDELMAkGA1UEBhMCRlIxEjAQBgNVBAoMCURoaW15b3RpczERMA8GA1UEAwwI\nQ2VydGlnbmEwHhcNMjUwMjI4MDk0OTA0WhcNMjcwNjI4MDk0OTAzWjB2MQswCQYD\nVQQGEwJGUjERMA8GA1UECgwIQ2VydGlnbmExHTAbBgNVBGEMFE5UUkZSLTQ4MTQ2\nMzA4MTAwMDM2MTUwMwYDVQQDDCxDZXJ0aWduYSBTZXJ2ZXIgQXV0aGVudGljYXRp\nb24gT1ZDUCBFVSBDQSBHMTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIB\nANZ0kTuG6eFTF0KPbtvYBB5zIq+eR03FgyQAyRZE0lqCGRyx96ko+W/yyfxbCgPx\nMw5jlxdXteXBh8DLc5S4w0ICfOSc8vabFuXKhKa8BAB5/VtdzZosAF1AvFC1WLEV\nvPiUJRTsY0BkhnFI0UKdLN145hY4EL+CaSUENQ19006BR5P5HeWtmikYHgiq/TBl\nhTsnaYB6SL8mT40GfBxmp6PEjjrhKLurSQOMbF+6HiEnfZUr3OrKDncxN0GHxFYc\nIFBTL53JBNFA9qbPYsD6KubJmUqVoImyRKR+eXJHVNfPMhYzQv3EaYh2rpHRsjV9\n6yZBIqBc3QSw82gj8bxh+rZRz8e+QISMlvljhHXqn+Qy4puuMt+3yQmnwFTYJQ13\nNFv1Uh3cJ5tEHP+yaLLCDqjy+cGCwNGMgsdWhS/67F4/AvRyI424psxuS/RbnKRr\nva0ZpDLTABgqfnONeU0LdkP817nGKNTKX2BDMD93BzOKzjDSBITJIRR8QICTKtQz\nmaKhd4UgbqPp+Bq1dMVhk5wW+x+bIHcB+wpqkO534SRMz93ijW2hSKrDWa2CB0Pl\n5tgcoGZThtjB3/Fm45XQLfW+vcTf+7nH8CRjMXO9swS6TovOXIpa5aG3jM+Dgewg\n6RbxtO/uIjv1zuIdS02d2h8Is2CvJ9/duOKucuYt1YnfAgMBAAGjggFLMIIBRzBB\nBggrBgEFBQcBAQQ1MDMwMQYIKwYBBQUHMAKGJWh0dHA6Ly9jZXJ0LmNlcnRpZ25h\nLmNvbS9DZXJ0aWduYS5jZXIwHwYDVR0jBBgwFoAUGu3+QTmQtCRZvgHyUtVF9lo5\n3BEwEgYDVR0TAQH/BAgwBgEB/wIBADBIBgNVHSAEQTA/MAgGBmeBDAECAjAzBgoq\ngXoBgTEBAAECMCUwIwYIKwYBBQUHAgEWF2h0dHA6Ly9jcHMuY2VydGlnbmEuY29t\nMDUGA1UdHwQuMCwwKqAooCaGJGh0dHA6Ly9jcmwuY2VydGlnbmEuY29tL0NlcnRp\nZ25hLmNybDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDgYDVR0PAQH/\nBAQDAgEGMB0GA1UdDgQWBBSgcuZGxDBc5K3CHMLVYjiYgVpUpjANBgkqhkiG9w0B\nAQwFAAOCAQEAkYjFkMa/La7tXDId/3ltDS8PKsxhxmOBA6bRsLeDQWIU2E1M/1A1\ny0bRkw4Y6ZRGmkVLLdQRD9mJIvxnllTyoeOzJPk0BVW6xVgPncatyhNx0bKEFoue\ntx7k+J7yKhu/k3jJP9XAxtbCWViQ4rZ3BvABYHA8rBmfccbVMr04a/+ILTpT/1Qi\nGzhHcpo2fnlQ+okXq0cuikN5/WMlHNgsTJIG2b5yEFtYY84Hlx0ejJX3cOAd4pot\n9vHdjv8e2KvIq/jopdB5lyv/wbaQ4EHz9i5Z4dvmECjsx9oEHRDmUoeEoV1sb/I/\n2np3PHjtYTrzzoOTYUaebmdXkFasRpTx1w==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [
+                "Hash no longer allowed for applying cryptographic protection"
+            ],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Certigna,O=Dhimyotis,C=FR",
+                    "issuer": "CN=Certigna,O=Dhimyotis,C=FR",
+                    "serial_number": 18364802974209362175,
+                    "valid_from": "2007-06-29 15:13:05",
+                    "valid_until": "2027-06-29 15:13:05",
+                    "signature_algorithm": "sha1WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "e3b6a2db2ed7ce48842f7ac53241c7b71d54144bfb40c11f3f1d0b42f5eea12d",
+                    "signature": "85031e9271f642afe1a3619eebf3c00ff2a5d4da95e6d6be68363d7e6e1f4c8aefd10f216d5ea55263ce12f8ef2ada6feb37fe1302c7cb3b3e226bda612e7fd4723ddd30e11e4c40198c0fd79cd183307b9859dc7dc6b90c294ca133a2eb673a6584d396e2ed7645708fb52bdef923d6496e3c14b5c69f351e50d0c18f6a70440262cbae1d6841a7aa57e853aa07d206f6d514060b9103752c6c72b561959a0d8bb90de7f5df54cddee6d8d609089763e5c12eb0b74426c026c0af55309e3bd5362a1904f45c1effcf2cb7ffd0fd874011d51123bb48c021a9a4282dfd15f8b04e2bf4305b21fc119134be41ef7b9d9775ff9795c096582feabb46d7bbe4d92e"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDqDCCApCgAwIBAgIJAP7c4wEPyUj/MA0GCSqGSIb3DQEBBQUAMDQxCzAJBgNV\nBAYTAkZSMRIwEAYDVQQKDAlEaGlteW90aXMxETAPBgNVBAMMCENlcnRpZ25hMB4X\nDTA3MDYyOTE1MTMwNVoXDTI3MDYyOTE1MTMwNVowNDELMAkGA1UEBhMCRlIxEjAQ\nBgNVBAoMCURoaW15b3RpczERMA8GA1UEAwwIQ2VydGlnbmEwggEiMA0GCSqGSIb3\nDQEBAQUAA4IBDwAwggEKAoIBAQDIaPHJ1tazNHUmgh7stL7qXOEm7RFHYeGifBZ4\nQCHkYJ5ayGPhxLGWkv8YbWkj4Sti993iNi+RB7lIzw7sebYs5zRLcAglozyHGxny\ngQcPOJAZ0xH+hrTy0V4eHpbNgGzOOzGTtvKg0KmVEn2lmsxryIRWijOp5yIVUxbw\nzBfsV1/pogqYCd7jX5xv3EjjhQsVWqa6n6xI4wmy9/Qy3l40vhx4XUJbzg4ij02Q\n130yGLMLLGq/jj8UEYkgDncUtT2UCIf3JR7VsmAA7G8qKCVuKj4YYxclPz5EIBb2\nJsglrgVKtOdjLPOMFlN+XPsRGgjBRmKfIrjxwo1p3Po6WAbfAgMBAAGjgbwwgbkw\nDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUGu3+QTmQtCRZvgHyUtVF9lo53BEw\nZAYDVR0jBF0wW4AUGu3+QTmQtCRZvgHyUtVF9lo53BGhOKQ2MDQxCzAJBgNVBAYT\nAkZSMRIwEAYDVQQKDAlEaGlteW90aXMxETAPBgNVBAMMCENlcnRpZ25hggkA/tzj\nAQ/JSP8wDgYDVR0PAQH/BAQDAgEGMBEGCWCGSAGG+EIBAQQEAwIABzANBgkqhkiG\n9w0BAQUFAAOCAQEAhQMeknH2Qq/ho2Ge6/PAD/Kl1NqV5ta+aDY9fm4fTIrv0Q8h\nbV6lUmPOEvjvKtpv6zf+EwLHyzs+ImvaYS5/1HI93TDhHkxAGYwP15zRgzB7mFnc\nfca5DClMoTOi62c6ZYTTluLtdkVwj7Ur3vkj1kluPBS1xp81HlDQwY9qcEQCYsuu\nHWhBp6pX6FOqB9IG9tUUBguRA3UsbHK1YZWaDYu5Def131TN3ubY1gkIl2PlwS6w\nt0QmwCbAr1UwnjvVNioZBPRcHv/PLLf/0P2HQBHVESO7SMAhqaQoLf0V+LBOK/Qw\nWyH8EZE0vkHve52Xdf+XlcCWWC/qu0bXu+TZLg==\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

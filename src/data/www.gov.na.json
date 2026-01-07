@@ -1,0 +1,242 @@
+{
+    "domain": "www.gov.na",
+    "date": "2025-12-15 11:37:07",
+    "ip-address": "154.0.193.136",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=gov.na,O=Office of the Prime Minister,L=Windhoek,C=NA",
+                    "issuer": "CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US",
+                    "serial_number": 17483371234241055343904299947896207310,
+                    "valid_from": "2025-09-01 00:00:00",
+                    "valid_until": "2026-08-29 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "gov.na",
+                        "www.gov.na",
+                        "mawf.gov.na",
+                        "mfmr.gov.na",
+                        "mlr.gov.na",
+                        "mod.gov.na",
+                        "modva.gov.na",
+                        "veterans.gov.na",
+                        "mgecw.gov.na",
+                        "mgepesw.gov.na",
+                        "meft.gov.na",
+                        "mof.gov.na",
+                        "mfpe.gov.na",
+                        "mhss.gov.na",
+                        "mhaiss.gov.na",
+                        "mha.gov.na",
+                        "ncs.gov.na",
+                        "nampol.gov.na",
+                        "moe.gov.na",
+                        "msyns.gov.na",
+                        "mheti.gov.na",
+                        "mirt.gov.na",
+                        "mit.gov.na",
+                        "mirco.gov.na",
+                        "mict.gov.na",
+                        "mojlr.gov.na",
+                        "moj.gov.na",
+                        "mol.gov.na",
+                        "mme.gov.na",
+                        "mime.gov.na",
+                        "murd.gov.na",
+                        "mwt.gov.na",
+                        "acc.gov.na",
+                        "npc.gov.na",
+                        "ag.gov.na",
+                        "opg.gov.na",
+                        "op.gov.na",
+                        "oag.gov.na",
+                        "opm.gov.na",
+                        "erongorc.gov.na",
+                        "hardaprc.gov.na",
+                        "karasrc.gov.na",
+                        "Kavangoeastrc.gov.na",
+                        "kavangowestrc.gov.na",
+                        "khomasrc.gov.na",
+                        "kunenerc.gov.na",
+                        "ohangwenarc.gov.na",
+                        "omahekerc.gov.na",
+                        "omusatirc.gov.na",
+                        "oshanarc.gov.na",
+                        "oshikotorc.gov.na",
+                        "otjozondjuparc.gov.na",
+                        "zambezirc.gov.na",
+                        "aroabvc.gov.na",
+                        "koesvc.gov.na",
+                        "pobc.gov.na",
+                        "ictsummit.gov.na",
+                        "pocketguide.gov.na",
+                        "picasso.gov.na",
+                        "apsd.gov.na",
+                        "namibiasport.gov.na",
+                        "aclrr.gov.na",
+                        "psc.gov.na",
+                        "legalaid.gov.na",
+                        "maginalisedcommunities.gov.na",
+                        "wch.gov.na",
+                        "nan.gov.na",
+                        "egov.gov.na",
+                        "nln.gov.na",
+                        "decentralisation.gov.na",
+                        "nrpa.gov.na",
+                        "nmrc.gov.na",
+                        "mwt-daaii.gov.na",
+                        "eservice.gov.na",
+                        "fns.gov.na",
+                        "egp1.gov.na",
+                        "egp2.gov.na",
+                        "egpadmin.gov.na",
+                        "gcs.gov.na",
+                        "gcs2.gov.na",
+                        "gcsadmin.gov.na",
+                        "crnot.gov.na",
+                        "crnot1.gov.na",
+                        "cbmis.gov.na",
+                        "cbmis1.gov.na",
+                        "cbmisrt.gov.na",
+                        "isas.gov.na",
+                        "isas2.gov.na",
+                        "gbvs.gov.na",
+                        "gbvs2.gov.na",
+                        "modfs.gov.na",
+                        "servicedesk.gov.na",
+                        "egovservicedesk.gov.na",
+                        "eapp1.gov.na",
+                        "eapp2.gov.na",
+                        "eapp3.gov.na",
+                        "plutoportal1.gov.na",
+                        "plutoportal2.gov.na",
+                        "plutoportal3.gov.na",
+                        "plutoportal4.gov.na",
+                        "mawlr.gov.na",
+                        "edrms.gov.na",
+                        "neptune.gov.na",
+                        "eprocurement.gov.na"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://cdp.geotrust.com/GeoTrustTLSRSACAG1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://status.geotrust.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cacerts.geotrust.com/GeoTrustTLSRSACAG1.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "eb09eda7c1666d3d4b4185a85a91d3b372bc300587acbd5055171b69a3699770",
+                    "signature": "876bd7af66496f2e61c2896e050e6180ba404dbc959ecead8f8fdd73dd6ae5d5e324a868fbc86cb74a7d974fb3d1b8ec3d7611ac3c4a99636da983aca9fff049794d8e80448d5481cbc875bbef55afdb01ef7b294133fb01e8292faffda570ef1a7a62f520da71f18ee4b0dd1fe09f35ea23ffbe7416821891ac758301715db7e06f3b5d8ca804fa25227c3e2ae9caf91b266b771cbf96b247c7d36f2d685f3db07f54a07dee9eb3148a1d794997e6c81521ba91dccdf9b4621bcebb7740645069102dfb82e2a2a032bd241492cd716640b1352b84d838f27db78ef711f855632131a9e3b2609034054c2a0f72b2c6f833d67876cf00ef886314f8ab4cfcf936"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIMdjCCC16gAwIBAgIQDScswO43f+mNgxoEaR33zjANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgUlNBIENBIEcx\nMB4XDTI1MDkwMTAwMDAwMFoXDTI2MDgyOTIzNTk1OVowWDELMAkGA1UEBhMCTkEx\nETAPBgNVBAcTCFdpbmRob2VrMSUwIwYDVQQKExxPZmZpY2Ugb2YgdGhlIFByaW1l\nIE1pbmlzdGVyMQ8wDQYDVQQDEwZnb3YubmEwggEiMA0GCSqGSIb3DQEBAQUAA4IB\nDwAwggEKAoIBAQDt3gibUVyR0r340Q0XSf1dO8bZv7RMQ+DhiXo+K2jv0cqH3S8E\nclNdYwUOgBhYtT70uyR53sMp9/tA91TyesxvNNCTuOMoLlwGq2ISDR5iPDafAh+3\nOlrVtYnQSsffg1bC3srklVEGHWkyVNQ3hZ821hwSKWuWqvvWqC41LzQqWdRceqP5\n1AF3ck/6YeFWXSoBA/C2m9HI9gkRjCAcijlyY3nTWI5y0g3ROK+/RKhMchPDwe+x\ndVgUw/882eTZvM50yDi7Rt3+rE/K+0HlbCrvp1h+fz2r1OSShRSZOaQKGLK/Kv6o\nL24Pn9I5V8/t8gPjwjTaIZZc7QFnB6fY7SHFAgMBAAGjggkyMIIJLjAfBgNVHSME\nGDAWgBSUT9Rdi+Sk4qaA/v3Y+QDvo74CVzAdBgNVHQ4EFgQUPLHFGNZm4rp426eA\nt3rtdJ5ix3owggYzBgNVHREEggYqMIIGJoIGZ292Lm5hggp3d3cuZ292Lm5hggtt\nYXdmLmdvdi5uYYILbWZtci5nb3YubmGCCm1sci5nb3YubmGCCm1vZC5nb3YubmGC\nDG1vZHZhLmdvdi5uYYIPdmV0ZXJhbnMuZ292Lm5hggxtZ2Vjdy5nb3YubmGCDm1n\nZXBlc3cuZ292Lm5hggttZWZ0Lmdvdi5uYYIKbW9mLmdvdi5uYYILbWZwZS5nb3Yu\nbmGCC21oc3MuZ292Lm5hgg1taGFpc3MuZ292Lm5hggptaGEuZ292Lm5hggpuY3Mu\nZ292Lm5hgg1uYW1wb2wuZ292Lm5hggptb2UuZ292Lm5hggxtc3lucy5nb3YubmGC\nDG1oZXRpLmdvdi5uYYILbWlydC5nb3YubmGCCm1pdC5nb3YubmGCDG1pcmNvLmdv\ndi5uYYILbWljdC5nb3YubmGCDG1vamxyLmdvdi5uYYIKbW9qLmdvdi5uYYIKbW9s\nLmdvdi5uYYIKbW1lLmdvdi5uYYILbWltZS5nb3YubmGCC211cmQuZ292Lm5hggpt\nd3QuZ292Lm5hggphY2MuZ292Lm5hggpucGMuZ292Lm5hgglhZy5nb3YubmGCCm9w\nZy5nb3YubmGCCW9wLmdvdi5uYYIKb2FnLmdvdi5uYYIKb3BtLmdvdi5uYYIPZXJv\nbmdvcmMuZ292Lm5hgg9oYXJkYXByYy5nb3YubmGCDmthcmFzcmMuZ292Lm5hghRL\nYXZhbmdvZWFzdHJjLmdvdi5uYYIUa2F2YW5nb3dlc3RyYy5nb3YubmGCD2tob21h\nc3JjLmdvdi5uYYIPa3VuZW5lcmMuZ292Lm5hghJvaGFuZ3dlbmFyYy5nb3YubmGC\nEG9tYWhla2VyYy5nb3YubmGCEG9tdXNhdGlyYy5nb3YubmGCD29zaGFuYXJjLmdv\ndi5uYYIRb3NoaWtvdG9yYy5nb3YubmGCFW90am96b25kanVwYXJjLmdvdi5uYYIQ\nemFtYmV6aXJjLmdvdi5uYYIOYXJvYWJ2Yy5nb3YubmGCDWtvZXN2Yy5nb3YubmGC\nC3BvYmMuZ292Lm5hghBpY3RzdW1taXQuZ292Lm5hghJwb2NrZXRndWlkZS5nb3Yu\nbmGCDnBpY2Fzc28uZ292Lm5hggthcHNkLmdvdi5uYYITbmFtaWJpYXNwb3J0Lmdv\ndi5uYYIMYWNscnIuZ292Lm5hggpwc2MuZ292Lm5hgg9sZWdhbGFpZC5nb3YubmGC\nHW1hZ2luYWxpc2VkY29tbXVuaXRpZXMuZ292Lm5hggp3Y2guZ292Lm5hggpuYW4u\nZ292Lm5hggtlZ292Lmdvdi5uYYIKbmxuLmdvdi5uYYIXZGVjZW50cmFsaXNhdGlv\nbi5nb3YubmGCC25ycGEuZ292Lm5hggtubXJjLmdvdi5uYYIQbXd0LWRhYWlpLmdv\ndi5uYYIPZXNlcnZpY2UuZ292Lm5hggpmbnMuZ292Lm5hggtlZ3AxLmdvdi5uYYIL\nZWdwMi5nb3YubmGCD2VncGFkbWluLmdvdi5uYYIKZ2NzLmdvdi5uYYILZ2NzMi5n\nb3YubmGCD2djc2FkbWluLmdvdi5uYYIMY3Jub3QuZ292Lm5hgg1jcm5vdDEuZ292\nLm5hggxjYm1pcy5nb3YubmGCDWNibWlzMS5nb3YubmGCDmNibWlzcnQuZ292Lm5h\nggtpc2FzLmdvdi5uYYIMaXNhczIuZ292Lm5hggtnYnZzLmdvdi5uYYIMZ2J2czIu\nZ292Lm5hggxtb2Rmcy5nb3YubmGCEnNlcnZpY2VkZXNrLmdvdi5uYYIWZWdvdnNl\ncnZpY2VkZXNrLmdvdi5uYYIMZWFwcDEuZ292Lm5hggxlYXBwMi5nb3YubmGCDGVh\ncHAzLmdvdi5uYYITcGx1dG9wb3J0YWwxLmdvdi5uYYITcGx1dG9wb3J0YWwyLmdv\ndi5uYYITcGx1dG9wb3J0YWwzLmdvdi5uYYITcGx1dG9wb3J0YWw0Lmdvdi5uYYIM\nbWF3bHIuZ292Lm5hggxlZHJtcy5nb3YubmGCDm5lcHR1bmUuZ292Lm5hghNlcHJv\nY3VyZW1lbnQuZ292Lm5hMD4GA1UdIAQ3MDUwMwYGZ4EMAQICMCkwJwYIKwYBBQUH\nAgEWG2h0dHA6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzAOBgNVHQ8BAf8EBAMCBaAw\nHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMD8GA1UdHwQ4MDYwNKAyoDCG\nLmh0dHA6Ly9jZHAuZ2VvdHJ1c3QuY29tL0dlb1RydXN0VExTUlNBQ0FHMS5jcmww\ndgYIKwYBBQUHAQEEajBoMCYGCCsGAQUFBzABhhpodHRwOi8vc3RhdHVzLmdlb3Ry\ndXN0LmNvbTA+BggrBgEFBQcwAoYyaHR0cDovL2NhY2VydHMuZ2VvdHJ1c3QuY29t\nL0dlb1RydXN0VExTUlNBQ0FHMS5jcnQwDAYDVR0TAQH/BAIwADCCAX0GCisGAQQB\n1nkCBAIEggFtBIIBaQFnAHYA2AlVO5RPev/IFhlvlE+Fq7D4/F6HVSYPFdEucrtF\nSxQAAAGZBSNkBwAABAMARzBFAiBI+gQzQTd5NHlnayrJWBmbYvl2vKx1ei2rekxv\nfxzXzQIhAJJsYWjwGjnRs0zUoM+UU80kHmCyQwX+ij5LdbS5JAr9AHYAwjF+V0UZ\no0XufzjespBB68fCIVoiv3/Vta12mtkOUs0AAAGZBSNj8gAABAMARzBFAiBLusWE\nf5Jf58+xmDzdymo7lItrPIs49v7NNIu7spH86AIhAMmW81NqIMJH+7MDtsvv3u3p\nvLj06oXtua8XLt8K2BqOAHUAlE5Dh/rswe+B8xkkJqgYZQHH0184AgE/cmd9VTcu\nGdgAAAGZBSNkCAAABAMARjBEAiBwC0l8K6CvOz0HBnSnyqixqY4LPE5OqFbWDz15\n75wYgAIgUcc8IybJTRT9wvExvzGqTnPKQH9PjGq3KjZS9CZ9UpIwDQYJKoZIhvcN\nAQELBQADggEBAIdr169mSW8uYcKJbgUOYYC6QE28lZ7OrY+P3XPdauXV4ySoaPvI\nbLdKfZdPs9G47D12Eaw8SpljbamDrKn/8El5TY6ARI1UgcvIdbvvVa/bAe97KUEz\n+wHoKS+v/aVw7xp6YvUg2nHxjuSw3R/gnzXqI/++dBaCGJGsdYMBcV234G87XYyo\nBPolInw+KunK+Rsma3ccv5ayR8fTby1oXz2wf1Sgfe6esxSKHXlJl+bIFSG6kdzN\n+bRiG867d0BkUGkQLfuC4qKgMr0kFJLNcWZAsTUrhNg48n23jvcR+FVjITGp47Jg\nkDQFTCoPcrLG+DPWeHbPAO+IYxT4q0z8+TY=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US",
+                    "issuer": "CN=DigiCert Global Root G2,OU=www.digicert.com,O=DigiCert Inc,C=US",
+                    "serial_number": 17318747245906231087668175401711030649,
+                    "valid_from": "2017-11-02 12:23:37",
+                    "valid_until": "2027-11-02 12:23:37",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl3.digicert.com/DigiCertGlobalRootG2.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.digicert.com"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "c06e307f7cfc1d32fa72a4c033c87b90019af216f0775d64978a2eca6c8a230e",
+                    "signature": "821c043a82e9c5a9c865125c08e301c630b0ae2288617b2b0786f7b8b5449cf5930661468a3aa2b53526d0589e3cc1738fbfb179a71c99379a53f22f5c6e200b7db0c782efebeb791205e701410b4302379b1b1f084d37527329b89f35e3f9a33a59750166902a3e9de062291e87a8803e2cc4cc08c32ebf6921186b8f1e6b43cdee06984199b582f217c110a5ae588cfb95ea4d82aff3775f11694f7851a6dff7bac53f65bf707ca3ed5a9a339d9e3fe38735a7daf315c658ad6923dc0fbb4cd0491341a63f67e15e13f50ff5d57c85bf874c8224612257d1a59bfb8639adc35c79666c07314b2091ada1be641900ee1e1278ce98f25ffb3014693c2cfa97c6"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIEjTCCA3WgAwIBAgIQDQd4KhM/xvmlcpbhMf/ReTANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0xNzExMDIxMjIzMzdaFw0yNzExMDIxMjIzMzdaMGAxCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j\nb20xHzAdBgNVBAMTFkdlb1RydXN0IFRMUyBSU0EgQ0EgRzEwggEiMA0GCSqGSIb3\nDQEBAQUAA4IBDwAwggEKAoIBAQC+F+jsvikKy/65LWEx/TMkCDIuWegh1Ngwvm4Q\nyISgP7oU5d79eoySG3vOhC3w/3jEMuipoH1fBtp7m0tTpsYbAhch4XA7rfuD6whU\ngajeErLVxoiWMPkC/DnUvbgi74BJmdBiuGHQSd7LwsuXpTEGG9fYXcbTVN5SATYq\nDfbexbYxTMwVJWoVb6lrBEgM3gBBqiiAiy800xu1Nq07JdCIQkBsNpFtZbIZhsDS\nfzlGWP4wEmBQ3O67c+ZXkFr2DcrXBEtHam80Gp2SNhou2U5U7UesDL/xgLK6/0d7\n6TnEVMSUVJkZ8VeZr+IUIlvoLrtjLbqugb0T3OYXW+CQU0kBAgMBAAGjggFAMIIB\nPDAdBgNVHQ4EFgQUlE/UXYvkpOKmgP792PkA76O+AlcwHwYDVR0jBBgwFoAUTiJU\nIBiV5uNu5g/6+rkS7QYXjzkwDgYDVR0PAQH/BAQDAgGGMB0GA1UdJQQWMBQGCCsG\nAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8ECDAGAQH/AgEAMDQGCCsGAQUFBwEB\nBCgwJjAkBggrBgEFBQcwAYYYaHR0cDovL29jc3AuZGlnaWNlcnQuY29tMEIGA1Ud\nHwQ7MDkwN6A1oDOGMWh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEds\nb2JhbFJvb3RHMi5jcmwwPQYDVR0gBDYwNDAyBgRVHSAAMCowKAYIKwYBBQUHAgEW\nHGh0dHBzOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwDQYJKoZIhvcNAQELBQADggEB\nAIIcBDqC6cWpyGUSXAjjAcYwsK4iiGF7KweG97i1RJz1kwZhRoo6orU1JtBYnjzB\nc4+/sXmnHJk3mlPyL1xuIAt9sMeC7+vreRIF5wFBC0MCN5sbHwhNN1JzKbifNeP5\nozpZdQFmkCo+neBiKR6HqIA+LMTMCMMuv2khGGuPHmtDze4GmEGZtYLyF8EQpa5Y\njPuV6k2Cr/N3XxFpT3hRpt/3usU/Zb9wfKPtWpoznZ4/44c1p9rzFcZYrWkj3A+7\nTNBJE0GmP2fhXhP1D/XVfIW/h0yCJGEiV9Glm/uGOa3DXHlmbAcxSyCRraG+ZBkA\n7h4SeM6Y8l/7MBRpPCz6l8Y=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=DigiCert Global Root G2,OU=www.digicert.com,O=DigiCert Inc,C=US",
+                    "issuer": "CN=DigiCert Global Root G2,OU=www.digicert.com,O=DigiCert Inc,C=US",
+                    "serial_number": 4293743540046975378534879503202253541,
+                    "valid_from": "2013-08-01 12:00:00",
+                    "valid_until": "2038-01-15 12:00:00",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "cb3ccbb76031e5e0138f8dd39a23f9de47ffc35e43c1144cea27d46a5ab1cb5f",
+                    "signature": "606728946f0e4863eb31ddea6718d5897d3cc58b4a7fe9bedb2b17dfb05f73772a3213398167428423f2456735ec88bff88fb0610c34a4ae204c84c6dbf835e176d9dfa642bbc74408867f3674245ada6c0d145935bdf249ddb61fc9b30d472a3d992fbb5cbbb5d420e1995f534615db689bf0f330d53e31e28d849ee38adada963e3513a55ff0f970507047411157194ec08fae06c49513172f1b259f75f2b18e99a16f13b14171fe882ac84f102055d7f31445e5e044f4ea879532930efe5346fa2c9dff8b22b94bd90945a4dea4b89a58dd1b7d529f8e59438881a49e26d56faddd0dc6377ded03921be5775f76ee3c8dc45d565ba2d9666eb33537e532b6"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDjjCCAnagAwIBAgIQAzrx5qcRqaC7KGSxHQn65TANBgkqhkiG9w0BAQsFADBh\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\nd3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH\nMjAeFw0xMzA4MDExMjAwMDBaFw0zODAxMTUxMjAwMDBaMGExCzAJBgNVBAYTAlVT\nMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j\nb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IEcyMIIBIjANBgkqhkiG\n9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuzfNNNx7a8myaJCtSnX/RrohCgiN9RlUyfuI\n2/Ou8jqJkTx65qsGGmvPrC3oXgkkRLpimn7Wo6h+4FR1IAWsULecYxpsMNzaHxmx\n1x7e/dfgy5SDN67sH0NO3Xss0r0upS/kqbitOtSZpLYl6ZtrAGCSYP9PIUkY92eQ\nq2EGnI/yuum06ZIya7XzV+hdG82MHauVBJVJ8zUtluNJbd134/tJS7SsVQepj5Wz\ntCO7TG1F8PapspUwtP1MVYwnSlcUfIKdzXOS0xZKBgyMUNGPHgm+F6HmIcr9g+UQ\nvIOlCsRnKPZzFBQ9RnbDhxSJITRNrw9FDKZJobq7nMWxM4MphQIDAQABo0IwQDAP\nBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAdBgNVHQ4EFgQUTiJUIBiV\n5uNu5g/6+rkS7QYXjzkwDQYJKoZIhvcNAQELBQADggEBAGBnKJRvDkhj6zHd6mcY\n1Yl9PMWLSn/pvtsrF9+wX3N3KjITOYFnQoQj8kVnNeyIv/iPsGEMNKSuIEyExtv4\nNeF22d+mQrvHRAiGfzZ0JFrabA0UWTW98kndth/Jsw1HKj2ZL7tcu7XUIOGZX1NG\nFdtom/DzMNU+MeKNhJ7jitralj41E6Vf8PlwUHBHQRFXGU7Aj64GxJUTFy8bJZ91\n8rGOmaFvE7FBcf6IKshPECBV1/MUReXgRPTqh5Uykw7+U0b6LJ3/iyK5S9kJRaTe\npLiaWN0bfVKfjllDiIGknibVb63dDcY3fe0Dkhvld1927jyNxF1WW6LZZm6zNTfl\nMrY=\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

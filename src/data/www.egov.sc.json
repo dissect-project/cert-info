@@ -1,0 +1,150 @@
+{
+    "domain": "www.egov.sc",
+    "date": "2025-12-15 11:46:34",
+    "ip-address": "196.13.208.87",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=www.gov.sc",
+                    "issuer": "CN=WISeKey CertifyID SSL GB CA 2,O=WISeKey,C=CH",
+                    "serial_number": 65002622386136095298244389828642057377261808051,
+                    "valid_from": "2025-07-28 06:45:31",
+                    "valid_until": "2026-07-28 06:45:10",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "www.gov.sc",
+                        "autodiscover.gov.sc",
+                        "egov.sc",
+                        "*.egov.sc",
+                        "ict.gov.sc",
+                        "*.ict.gov.sc",
+                        "finance.gov.sc",
+                        "*.finance.gov.sc"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://public.wisekey.com/crl/wcidsslgbca2.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.wisekey.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://public.wisekey.com/crt/wcidsslgbca2.cer"
+                    ],
+                    "validation_level": "Domain Validation (DV)",
+                    "fingerprint_SHA256": "a8b922c3a27a1ac799c8a6b8b17bb30d665bc980e0cc35fba2dbc3584baf9c14",
+                    "signature": "27de23805a477c34502f7bcf7c6b28c8d387b589e338dc58e771278f6937710ead85c2a1b7debd548a847cb009b3220bce653cbe8fe339bea14392b74f2d565c73613d6735fd6daff9274c29a0fb50467b03f45e592972463103dbd2843e5bcd8f33304c09f155e9d4ecc88886d56bf095498c2fb796ced845fe55fb6916635a0dd4a4d3f9936b77b4611e89436ee0d776122044f687932021aa1cc2f6dcda7c5bd59e35e1900bb11c6105cf5b0a1474040e14e85e07d696e4f44b56669548f8367af13782b5621c21ee6c52094a58606eebead47a886d3aece452c4b1c926aceada15efe610b1a4d49ade0a587b8104b1abdea147168ffaa8ec8c7cdca158a4"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGZDCCBUygAwIBAgIUC2LRgoJDjuhSuSRFuNawRl2r6bMwDQYJKoZIhvcNAQEL\nBQAwRzELMAkGA1UEBhMCQ0gxEDAOBgNVBAoTB1dJU2VLZXkxJjAkBgNVBAMTHVdJ\nU2VLZXkgQ2VydGlmeUlEIFNTTCBHQiBDQSAyMB4XDTI1MDcyODA2NDUzMVoXDTI2\nMDcyODA2NDUxMFowFTETMBEGA1UEAwwKd3d3Lmdvdi5zYzCCASIwDQYJKoZIhvcN\nAQEBBQADggEPADCCAQoCggEBAMz/LlM9k3E50KqKkSHDGK/uwcr63XDX4PLG9Ys+\nJFHsp2YX5UKx9xssOZaxWEICHa0wWToAZkltjZLO0lrejMKuALghDkMLpmuuKc+F\n9hFmGK7ASGoktaeWL8iDNoUdqLch+m/GJG09KECbgTIHjaf5IrY7S4rSfqdEHrgm\nJZz/YzPSqDTO7NT+IMs3G/jJDl17UiFVPDT5zEKRnyjnqUuaXTmhYVm0t7/0gpZK\naHPPgUP2yk3kBiAyY1trMKJ06EDssAVVPDCkYGr9bsWimQXfkJKUEJ18G+CtIBHW\naGhLYEDAWmYaiC92BvoDSWqmQg+vwEDJT+URZBTIQ7tYS0UCAwEAAaOCA3gwggN0\nMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUXxvFCns4fT7DtzG/pPsUI1LhjRsw\nbwYIKwYBBQUHAQEEYzBhMDoGCCsGAQUFBzAChi5odHRwOi8vcHVibGljLndpc2Vr\nZXkuY29tL2NydC93Y2lkc3NsZ2JjYTIuY2VyMCMGCCsGAQUFBzABhhdodHRwOi8v\nb2NzcC53aXNla2V5LmNvbTB6BgNVHREEczBxggp3d3cuZ292LnNjghNhdXRvZGlz\nY292ZXIuZ292LnNjggdlZ292LnNjggkqLmVnb3Yuc2OCCmljdC5nb3Yuc2OCDCou\naWN0Lmdvdi5zY4IOZmluYW5jZS5nb3Yuc2OCECouZmluYW5jZS5nb3Yuc2MwRQYD\nVR0gBD4wPDA6BgZngQwBAgEwMDAuBggrBgEFBQcCARYiaHR0cDovL3d3dy53aXNl\na2V5LmNvbS9yZXBvc2l0b3J5LzAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUH\nAwEwPwYDVR0fBDgwNjA0oDKgMIYuaHR0cDovL3B1YmxpYy53aXNla2V5LmNvbS9j\ncmwvd2NpZHNzbGdiY2EyLmNybDAdBgNVHQ4EFgQU+8jIjhKD//T1Yd+4FlzTZeb2\n4EYwDgYDVR0PAQH/BAQDAgWgMIIBfgYKKwYBBAHWeQIEAgSCAW4EggFqAWgAdgDL\nOPcViXyEoURfW8Hd+8lu8ppZzUcKaQWFsMsUwxRY5wAAAZhPx7IKAAAEAwBHMEUC\nICh4zP4o352J9OZIv6akVnjLCWXAR3TRnQ1P2NYwVhIfAiEApy3HQ9CAGmNubkiv\nvhlhdC1pvttczOiBCYeFIQxEDosAdgDYCVU7lE96/8gWGW+UT4WrsPj8XodVJg8V\n0S5yu0VLFAAAAZhPx7GoAAAEAwBHMEUCIAw/OGcf/mC8a9zSn2AA8S0gZ9V4HsDy\nAZT6CUZtWB23AiEAowCkF4gXjXiUj22LdU/G3uWiHUrzAQMRZIg2My6dd90AdgCU\nscGKsNBXxHvgrAQOHyy8jcN1cnvJUfIKUmEmhjunPAAAAZhPx7ImAAAEAwBHMEUC\nIA8akAhRxWxwVLXbANPn3MLdQWvaT9kqL5rhMdEkh6RaAiEA9zM4o2bLTujPwGhU\n+nikZkkKe4+F+Ir2k8yk0jfkTzEwDQYJKoZIhvcNAQELBQADggEBACfeI4BaR3w0\nUC97z3xrKMjTh7WJ4zjcWOdxJ49pN3EOrYXCobfevVSKhHywCbMiC85lPL6P4zm+\noUOSt08tVlxzYT1nNf1tr/knTCmg+1BGewP0XlkpckYxA9vShD5bzY8zMEwJ8VXp\n1OzIiIbVa/CVSYwvt5bO2EX+VftpFmNaDdSk0/mTa3e0YR6JQ27g13YSIET2h5Mg\nIaocwvbc2nxb1Z414ZALsRxhBc9bChR0BA4U6F4H1pbk9EtWZpVI+DZ68TeCtWIc\nIe5sUglKWGBu6+rUeohtOuzkUsSxySas6toV7+YQsaTUmt4KWHuBBLGr3qFHFo/6\nqOyMfNyhWKQ=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=WISeKey CertifyID SSL GB CA 2,O=WISeKey,C=CH",
+                    "issuer": "CN=OISTE WISeKey Global Root GB CA,OU=OISTE Foundation Endorsed,O=WISeKey,C=CH",
+                    "serial_number": 1137338005277831156642429454920130962263113757,
+                    "valid_from": "2020-07-04 15:25:26",
+                    "valid_until": "2035-07-04 15:35:26",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://public.wisekey.com/crl/owgrgbca.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.wisekey.com/"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://public.wisekey.com/crt/owgrgbca.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "c8a610ba9417770d2c02de22bca8c56a428af75e8e354efa36c568221ddb7cfc",
+                    "signature": "0510deb328ea597091e09986746a83697676cb1545e863144f36f208c6f0486aff37341cb877941826a91ccc525fd1d11b585effea485b7f8555c92e406fb864d43d6fcf904e8d461f77db6ec9bb23f3c7a1fa7c9afe1ff1b7840d74bb016fe57ca3594f548c2681627dacea0113076777def9ed52dc87007db8f46622171849db8f965f169826541714c69d3b088fb1330d9655de0fe078daa53799ef010bf1e5a3f8d16ac07b49c0276b49c10596f396189c55f4da0f961472ba2b02d8e510bc533abb9855309fc89c6bda638bebd1c60b91c465feb70450df62c27f49ff7cfc272a48db1ac7c08f26b6d2419204996073d4e2a34137372d37ade3eeed4e81"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIEuTCCA6GgAwIBAgITMwAAAB1sHJ4B1ms5uQAAAAAAHTANBgkqhkiG9w0BAQsF\nADBtMQswCQYDVQQGEwJDSDEQMA4GA1UEChMHV0lTZUtleTEiMCAGA1UECxMZT0lT\nVEUgRm91bmRhdGlvbiBFbmRvcnNlZDEoMCYGA1UEAxMfT0lTVEUgV0lTZUtleSBH\nbG9iYWwgUm9vdCBHQiBDQTAeFw0yMDA3MDQxNTI1MjZaFw0zNTA3MDQxNTM1MjZa\nMEcxCzAJBgNVBAYTAkNIMRAwDgYDVQQKEwdXSVNlS2V5MSYwJAYDVQQDEx1XSVNl\nS2V5IENlcnRpZnlJRCBTU0wgR0IgQ0EgMjCCASIwDQYJKoZIhvcNAQEBBQADggEP\nADCCAQoCggEBAPskiJ2KuwQyuDILa9u+q2DamhpomWIrrCxyjq2w2rY95wJyqf74\ncLEwHEJ89L9F0z5MFpF0FgW2CVZCLTLwHiDEtaRz0I5xLQA4x6W1cbonXiK857hS\nASEGsZoXdljjkH1lo1B3f2VvVdQ0frgF3nU4swwHE9kg+LI6Ed9n36/iYuMQY9Rp\nYqYFBJcIdcEgyyI11g93mNnGg3CZifiqBjVq4jIaKSAkIa3bXQr2gylcaERQPaiD\no0KRxTP+xQu04uirsJhzpqB/ps63IiIJHb7pXvZf/n97JU1rlanOtZFUzjjjye5G\nQ0oslh0gCH8INBMH2ta/a+xI7/ULBfcqFXsCAwEAAaOCAXYwggFyMB0GA1UdDgQW\nBBRfG8UKezh9PsO3Mb+k+xQjUuGNGzAfBgNVHSMEGDAWgBQ1D8g2Y17io+z5O2YV\nzlFS45GaPTA7BgNVHR8ENDAyMDCgLqAshipodHRwOi8vcHVibGljLndpc2VrZXku\nY29tL2NybC9vd2dyZ2JjYS5jcmwwbAYIKwYBBQUHAQEEYDBeMDYGCCsGAQUFBzAC\nhipodHRwOi8vcHVibGljLndpc2VrZXkuY29tL2NydC9vd2dyZ2JjYS5jcnQwJAYI\nKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLndpc2VrZXkuY29tLzBCBgNVHSAEOzA5MDcG\nBFUdIAAwLzAtBggrBgEFBQcCARYhaHR0cDovL3d3dy53aXNla2V5LmNvbS9yZXBv\nc2l0b3J5MB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8E\nCDAGAQH/AgEAMA4GA1UdDwEB/wQEAwIBBjANBgkqhkiG9w0BAQsFAAOCAQEABRDe\nsyjqWXCR4JmGdGqDaXZ2yxVF6GMUTzbyCMbwSGr/NzQcuHeUGCapHMxSX9HRG1he\n/+pIW3+FVckuQG+4ZNQ9b8+QTo1GH3fbbsm7I/PHofp8mv4f8beEDXS7AW/lfKNZ\nT1SMJoFifazqARMHZ3fe+e1S3IcAfbj0ZiIXGEnbj5ZfFpgmVBcUxp07CI+xMw2W\nVd4P4HjapTeZ7wEL8eWj+NFqwHtJwCdrScEFlvOWGJxV9NoPlhRyuisC2OUQvFM6\nu5hVMJ/InGvaY4vr0cYLkcRl/rcEUN9iwn9J/3z8JypI2xrHwI8mttJBkgSZYHPU\n4qNBNzctN63j7u1OgQ==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=OISTE WISeKey Global Root GB CA,OU=OISTE Foundation Endorsed,O=WISeKey,C=CH",
+                    "issuer": "CN=OISTE WISeKey Global Root GB CA,OU=OISTE Foundation Endorsed,O=WISeKey,C=CH",
+                    "serial_number": 157768595616588414422159278966750757568,
+                    "valid_from": "2014-12-01 15:00:32",
+                    "valid_until": "2039-12-01 15:10:31",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "6b9c08e86eb0f767cfad65cd98b62149e5494a67f5845e7bd1ed019f27b86bd6",
+                    "signature": "404cfb87b29981907e9dc5b0b026cd887b2b328d6eb8217158977dae3714af3ee7f79ae27df671989904aa437478a3e349613e738c4d94e0f971c4b6160e53781fd6a2872f023981293caf15982130fe2890008cd1e1cbfa5ec8fdf810463ba27842911774550ade50674d66d1a7fffdd9c0b5a8a38ace66f50f43cda72b577b63466aaa2e52d8f4ede16dad29907848bae123aaa389ecb5ab96c0b44ba21d979e7af26e4071df68f1654dce7c05df5365a9a5f0b197047015460398d4d2bf54b4a0587d526fda562662d4d8db89316f1cf022c2d3621c35cd4c6915541a9098deeb1e5fca77c7cb8e3d43699c9a58d0243bdf1b40967e35ad81c74e71ba8813"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDtTCCAp2gAwIBAgIQdrEgUnTwhYdGs/gjGvbCwDANBgkqhkiG9w0BAQsFADBt\nMQswCQYDVQQGEwJDSDEQMA4GA1UEChMHV0lTZUtleTEiMCAGA1UECxMZT0lTVEUg\nRm91bmRhdGlvbiBFbmRvcnNlZDEoMCYGA1UEAxMfT0lTVEUgV0lTZUtleSBHbG9i\nYWwgUm9vdCBHQiBDQTAeFw0xNDEyMDExNTAwMzJaFw0zOTEyMDExNTEwMzFaMG0x\nCzAJBgNVBAYTAkNIMRAwDgYDVQQKEwdXSVNlS2V5MSIwIAYDVQQLExlPSVNURSBG\nb3VuZGF0aW9uIEVuZG9yc2VkMSgwJgYDVQQDEx9PSVNURSBXSVNlS2V5IEdsb2Jh\nbCBSb290IEdCIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2Be3\nHEokKtaXscriHvt9OO+Y9bI5mE4nuBFde9IllIiCFSZqGzG7qFshISvYD06fWvGx\nWuR51jIjK+FTzJlFXHtPrby/h0oLS5daqPZI7H17Dc0hBt+eFf1Biki3IPShehtX\n1F1Q/7pn2COZH8g/497/b1t3sWtuuMlk9+HKQUYOKXHQuSP8yYFfTvdv37+ErXNk\nu7dCjmn21HYdfp2nuFeKUWdy19SouJVUQHMD9ur06/4oQnc/nSMbsrY9gBQHTC5P\n99UKFg29ZkM3fiNDecNAhvVMKdqOmq0NpQSHiB6F4+lT1ZvIiwNjeOvgGUpuuy9r\nM2RYk61pv48b74JIxwIDAQABo1EwTzALBgNVHQ8EBAMCAYYwDwYDVR0TAQH/BAUw\nAwEB/zAdBgNVHQ4EFgQUNQ/INmNe4qPs+TtmFc5RUuORmj0wEAYJKwYBBAGCNxUB\nBAMCAQAwDQYJKoZIhvcNAQELBQADggEBAEBM+4eymYGQfp3FsLAmzYh7KzKNbrgh\ncViXfa43FK8+5/ea4n32cZiZBKpDdHij40lhPnOMTZTg+XHEthYOU3gf1qKHLwI5\ngSk8rxWYITD+KJAAjNHhy/peyP34EEY7onhCkRd0VQreUGdNZtGn//3ZwLWoo4rO\nZvUPQ82nK1d7Y0Zqqi5S2PTt4W2tKZB4SLrhI6qjiey1q5bAtEuiHZeeevJuQHHf\naPFlTc58Bd9TZaml8LGXBHAVRgOY1NK/VLSgWH1Sb9pWJmLU2NuJMW8c8CLC02Ic\nNc1MaRVUGpCY3useX8p3x8uOPUNpnJpY0CQ73xtAln41rYHHTnG6iBM=\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

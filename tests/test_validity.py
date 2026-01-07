@@ -5,7 +5,7 @@ is being accurately assessed by the analyzer.
 
 import unittest
 
-from cert_info.cert_info import CertificateInformation
+from src.cert_info import CertificateInformation
 
 class TestDomainValidation(unittest.TestCase):
     """Test the domain validation functions."""

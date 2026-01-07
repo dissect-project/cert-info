@@ -1,0 +1,183 @@
+{
+    "domain": "www.gouvernement.lu",
+    "date": "2025-12-15 11:28:39",
+    "ip-address": "185.106.27.152",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.gouvernement.lu,O=Centre des technologies de l'information de l'\u00c9tat,L=Luxembourg,C=LU",
+                    "issuer": "CN=GEANT TLS RSA 1,O=Hellenic Academic and Research Institutions CA,C=GR",
+                    "serial_number": 101354738842000245407644644134064375414,
+                    "valid_from": "2025-09-19 06:46:01",
+                    "valid_until": "2026-09-19 06:46:01",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "*.gouvernement.lu",
+                        "gouvernement.lu"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "crl_distribution_points": [
+                        "http://crl.harica.gr/HARICA-GEANT-TLS-R1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp-tls.harica.gr"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://crt.harica.gr/HARICA-GEANT-TLS-R1.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "85fca67c79367d703661d82e7a45c46bef56fea9dccecb2e3c25f55ea2d6ec6e",
+                    "signature": "39b3b0898366d26e92d6df3f58e50486eeb2981b5517109120ba5ffeae966fd4673087485366f4e232edeae7c9e6fc75fc7c54a6e114a87708d1c3fcd3775b47fbd1e6a015daa81c20dc2d5b34e3889b51ee1456f31576f9c01abaa380fc412a41bc819861c186028be4fd250d0807bafe5f02c438b01faebb1d2e0124abd23a25284a1dfa878394b605f55114dad797c534da1c97cf2cdc20132d7bb7a53a10c7a361457f5b9fda8055234efb6013c212e33e95b070fbb28c18e7c03761c8214d7687f61c2b322bff0731800ccc13cce4e3011f1050a681a519a27312c720ca6c6b110de0a43b160382443e890890812d368fbab21462fc7658388ae06a139bf47da17e3dd7fd08a3059a5da22d52fe0503383039a98ed5a6cd5eb8303aef2e9f430644a3508716f0d9b2feb35c8a98ab94e7786a17fcc78dbdd689ea110f1b67cd027e6756184c4bdd2f3a6a1b0f36aac7756b3f22f0cdd8693700018fb4335ff434abb78cbf25c84c404651f56512f2f492b95c86d7249435cc1fbbc4f710"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIH6jCCBlKgAwIBAgIQTEA2cIBd6OyMSU0taI5GdjANBgkqhkiG9w0BAQsFADBg\nMQswCQYDVQQGEwJHUjE3MDUGA1UECgwuSGVsbGVuaWMgQWNhZGVtaWMgYW5kIFJl\nc2VhcmNoIEluc3RpdHV0aW9ucyBDQTEYMBYGA1UEAwwPR0VBTlQgVExTIFJTQSAx\nMB4XDTI1MDkxOTA2NDYwMVoXDTI2MDkxOTA2NDYwMVowfDELMAkGA1UEBhMCTFUx\nEzARBgNVBAcMCkx1eGVtYm91cmcxPDA6BgNVBAoMM0NlbnRyZSBkZXMgdGVjaG5v\nbG9naWVzIGRlIGwnaW5mb3JtYXRpb24gZGUgbCfDiXRhdDEaMBgGA1UEAwwRKi5n\nb3V2ZXJuZW1lbnQubHUwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDS\n4lwd3Z+VCLQEEW5eawwByQWP9qTBs5tWE5CpreTyLl9ufu41JxANcGQiSI6uw3s7\ndCwRpcft/9qitOkcbb5QOz3RwiVnbRBNJx1vQY/YoKIIMFNV6yi7bHPndXGm1Eeq\nSQDZ+8ppKvOBzaLrs47ADFiSDcqHIFOxWWHkm/FFgu2Dyc4VHlpuhFU7i/oqauEr\ngbgLV25ig7VGIgsU21oA6jQcIYzJ3cJEnoMcsHQHMIuC0VaZBNqypZkkYJdX20Ms\nXHTEisDckVTzBDSJLqMeodrxr2wtG88JWjVzHHq6oNwlWPX+bQje9E0OAUHPjJXE\nUw4uocIfbyhIsRZjg/OBAcW6CaQYaYjK/XP7QmqC6r3AaK3j3nTDWcfjUIUrdIfg\nr4pYz1UFFT/8pIN15lwEIP9nQDkwhX32qqZZGMzmgp6hWL/amshfRu0K3QGz6IWS\nWzILWLSTNs8z3Je0sh7LEqBnJzjJk74oNa5POsb11HGOFbOEqv/Ma45fCkATTjeo\nYq/uLR555JRcL+Y6TmzMBWPCgKxnDm1j2R/PHyyC+5apyTPKAkJ0O33SKwFBQO0F\nt4652/oClEz6ARqAWawvsxXYKOg9Q8cAnF0ebpyaELDWAzg2rjKuF/PRjsGKbjX4\neYHnjGnWt0dIN9Qhb6a9GdjSZAGVHF7SPsLIv8zP9wIDAQABo4IDAjCCAv4wHwYD\nVR0jBBgwFoAUhgFyP4ypcOIxBlMWzgFfW3nIPDswbwYIKwYBBQUHAQEEYzBhMDgG\nCCsGAQUFBzAChixodHRwOi8vY3J0LmhhcmljYS5nci9IQVJJQ0EtR0VBTlQtVExT\nLVIxLmNlcjAlBggrBgEFBQcwAYYZaHR0cDovL29jc3AtdGxzLmhhcmljYS5ncjAt\nBgNVHREEJjAkghEqLmdvdXZlcm5lbWVudC5sdYIPZ291dmVybmVtZW50Lmx1MC0G\nA1UdIAQmMCQwCAYGZ4EMAQICMAgGBgQAj3oBBzAOBgwrBgEEAYHPEQEBAQIwHQYD\nVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMD0GA1UdHwQ2MDQwMqAwoC6GLGh0\ndHA6Ly9jcmwuaGFyaWNhLmdyL0hBUklDQS1HRUFOVC1UTFMtUjEuY3JsMB0GA1Ud\nDgQWBBQHXW1B63QPjqslbdWLdTEFzU5MeTAOBgNVHQ8BAf8EBAMCBaAwggF9Bgor\nBgEEAdZ5AgQCBIIBbQSCAWkBZwB1AJROQ4f67MHvgfMZJCaoGGUBx9NfOAIBP3Jn\nfVU3LhnYAAABmWDCMxQAAAQDAEYwRAIgZyo34h8Vwf2e6l0L/7M3u0TKVb0Je0ti\ngd4WEgWCbhwCIHctPhEprQS6WcJhnpGrfG6+7CpUv8VV2O2/fBZ/MR/OAHUA1219\nENGn9XfCx+lf1wC/+YLJM1pl4dCzAXMXwMjFaXcAAAGZYMIzFwAABAMARjBEAiBy\nrEPQ2XazZ4FF/ruv9b9BagEJvBRKsrk0c8aYgFrtygIgWJb7C+yFiF4Grpy9l64t\n5BK4zR/yPU4f1hcKe2Ux4woAdwDYCVU7lE96/8gWGW+UT4WrsPj8XodVJg8V0S5y\nu0VLFAAAAZlgwjLmAAAEAwBIMEYCIQDabOF351rcn26R1DdxM/KTQMwNgUnLtlAt\nclZZbW3OdQIhAL6fUMvD7gjjAwtis+zFKP6+vLx9y8Eef05Q792ljdI3MA0GCSqG\nSIb3DQEBCwUAA4IBgQA5s7CJg2bSbpLW3z9Y5QSG7rKYG1UXEJEgul/+rpZv1Gcw\nh0hTZvTiMu3q58nm/HX8fFSm4RSodwjRw/zTd1tH+9HmoBXaqBwg3C1bNOOIm1Hu\nFFbzFXb5wBq6o4D8QSpBvIGYYcGGAovk/SUNCAe6/l8CxDiwH667HS4BJKvSOiUo\nSh36h4OUtgX1URTa15fFNNocl88s3CATLXu3pToQx6NhRX9bn9qAVSNO+2ATwhLj\nPpWwcPuyjBjnwDdhyCFNdof2HCsyK/8HMYAMzBPM5OMBHxBQpoGlGaJzEscgymxr\nEQ3gpDsWA4JEPokIkIEtNo+6shRi/HZYOIrgahOb9H2hfj3X/QijBZpdoi1S/gUD\nODA5qY7Vps1euDA67y6fQwZEo1CHFvDZsv6zXIqYq5TneGoX/MeNvdaJ6hEPG2fN\nAn5nVhhMS90vOmobDzaqx3VrPyLwzdhpNwABj7QzX/Q0q7eMvyXITEBGUfVlEvL0\nkrlchtcklDXMH7vE9xA=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=GEANT TLS RSA 1,O=Hellenic Academic and Research Institutions CA,C=GR",
+                    "issuer": "CN=HARICA TLS RSA Root CA 2021,O=Hellenic Academic and Research Institutions CA,C=GR",
+                    "serial_number": 27693033167928194888280225673824770850,
+                    "valid_from": "2025-01-03 11:15:00",
+                    "valid_until": "2039-12-31 11:14:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 3072,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl.harica.gr/HARICA-TLS-Root-2021-RSA.crl"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://crt.harica.gr/HARICA-TLS-Root-2021-RSA.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "5b678dc44095a52895b63b31f27227f4b36c3e347491bf2bfa691837a5fb8c79",
+                    "signature": "192cb2343362b3a8e0632c29e81a0a13f5eb235ee9272471607298ce39e51dab31eb90df397150d384b7e2947e0b9e380daeae9e23e9394f6ecfd7c69c2e3772357f4f4bba4e5bf998115ccee86c4e992d37ab55058aa134a1ca5df84765e52bca44cbbfbaec7b7895c273b7e2ba2b9804ba83d21900cf79ff9f51f997ac572004c70c6ed7c36fd76e6c528d659c68e670178aa84530e2320726a0dc7fad393b87f33b8877da47443b14a4020727dfd6d9605f2dc29abfb20a465341443fec3c1cbdd3727d5873cac25f244120c0f9a6bb5c2624edb26d1327feec633d179719efe6329275ea9effebb501244ca65d428e54b35f1515ef6aaa3f78b576cb764ecf7a3258341e0e665962e382ddeebb6a7c5954c9c87b808c453a68b2c4c41062b626522fbbe25119bdfa0d86eade7f40aea6e2a9cfa3b774bbfa90ef53d74b8d7430680504e481edd4cc769f4c87b7476a37ba35ca5063f0c9cf66eff1444f228b502c1253fe4e01539e04253c42d90a2a333c0266e92a97b7a4759ccaadd1ec1dcb98800b90c3d3c9dc837f17a7eb9203a9111b56af0dc63864253854cf8d09a8e94deaea8aa9e0c84a3fc8a2e718c2ca96db80253bb673366a21426322f1ea76dc7e210528741814ded97be4bb368d7fddacc8af25d87ccefb5dc62c28f360b4cfbd74cef54a4af031b27c664eb9a9aec1b0276cda44dd17e357d21a510189"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGBTCCA+2gAwIBAgIQFNV782kiKCGaVWf6kWUbIjANBgkqhkiG9w0BAQsFADBs\nMQswCQYDVQQGEwJHUjE3MDUGA1UECgwuSGVsbGVuaWMgQWNhZGVtaWMgYW5kIFJl\nc2VhcmNoIEluc3RpdHV0aW9ucyBDQTEkMCIGA1UEAwwbSEFSSUNBIFRMUyBSU0Eg\nUm9vdCBDQSAyMDIxMB4XDTI1MDEwMzExMTUwMFoXDTM5MTIzMTExMTQ1OVowYDEL\nMAkGA1UEBhMCR1IxNzA1BgNVBAoMLkhlbGxlbmljIEFjYWRlbWljIGFuZCBSZXNl\nYXJjaCBJbnN0aXR1dGlvbnMgQ0ExGDAWBgNVBAMMD0dFQU5UIFRMUyBSU0EgMTCC\nAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAKEEaZSzEzznAPk8IEa17GSG\nyJzPTj4cwRY7/vcq2BPT5+IRGxQtaCdgLXIEl2cdPdIkj2eyakFmgMjAtyeju8V8\ndRayQCD/bWjJ7thDlowgLljQaXirxnYbT8bzRHAhCZqBakYgi5KWw9dANLyDHGpX\nUdY259ab0lWEaFE5Uu6IzQSMJOAy4l/Twym8GUiy0qMDEBFSlm31C9BXpdHKKAlh\nvIjMiKoDeTWl5vZaLB2MMRGY1yW2ftPgIP0/MkX1uFITlvHmmMTngxplH1nybEIJ\nFiwHg1KiLk1TprcZgeO2gxE5Lz3wTFWrsUlAzrh5xWmscWkjNi/4BpeuiT5+NExF\nczboLnXOfjuci/7bsnPi1/aZN/iKNbJRnngFoLaKVMmqCS7Xo34f+BITatryQZFE\nu2oDKExQGlxDBCfYMLgLucX/onpLzUSgeQITNLx6i5tGGbUYH+9Dy3GI66L/5tPj\nqzlOsydki8ZYGE5SBJeWCZ2IrhUe0WzZ2b6Zhk6JAQIDAQABo4IBLTCCASkwEgYD\nVR0TAQH/BAgwBgEB/wIBADAfBgNVHSMEGDAWgBQKSCOmYKSSCjPqk1vFV+olTb0S\n7jBNBggrBgEFBQcBAQRBMD8wPQYIKwYBBQUHMAKGMWh0dHA6Ly9jcnQuaGFyaWNh\nLmdyL0hBUklDQS1UTFMtUm9vdC0yMDIxLVJTQS5jZXIwEQYDVR0gBAowCDAGBgRV\nHSAAMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATBCBgNVHR8EOzA5MDeg\nNaAzhjFodHRwOi8vY3JsLmhhcmljYS5nci9IQVJJQ0EtVExTLVJvb3QtMjAyMS1S\nU0EuY3JsMB0GA1UdDgQWBBSGAXI/jKlw4jEGUxbOAV9becg8OzAOBgNVHQ8BAf8E\nBAMCAYYwDQYJKoZIhvcNAQELBQADggIBABkssjQzYrOo4GMsKegaChP16yNe6Sck\ncWBymM455R2rMeuQ3zlxUNOEt+KUfgueOA2urp4j6TlPbs/XxpwuN3I1f09Luk5b\n+ZgRXM7obE6ZLTerVQWKoTShyl34R2XlK8pEy7+67Ht4lcJzt+K6K5gEuoPSGQDP\nef+fUfmXrFcgBMcMbtfDb9dubFKNZZxo5nAXiqhFMOIyByag3H+tOTuH8zuId9pH\nRDsUpAIHJ9/W2WBfLcKav7IKRlNBRD/sPBy903J9WHPKwl8kQSDA+aa7XCYk7bJt\nEyf+7GM9F5cZ7+YyknXqnv/rtQEkTKZdQo5Us18VFe9qqj94tXbLdk7PejJYNB4O\nZlli44Ld7rtqfFlUych7gIxFOmiyxMQQYrYmUi+74lEZvfoNhuref0CupuKpz6O3\ndLv6kO9T10uNdDBoBQTkge3UzHafTIe3R2o3ujXKUGPwyc9m7/FETyKLUCwSU/5O\nAVOeBCU8QtkKKjM8AmbpKpe3pHWcyq3R7B3LmIALkMPTydyDfxen65IDqREbVq8N\nxjhkJThUz40JqOlN6uqKqeDISj/IoucYwsqW24AlO7ZzNmohQmMi8ep23H4hBSh0\nGBTe2XvkuzaNf92syK8l2HzO+13GLCjzYLTPvXTO9UpK8DGyfGZOuamuwbAnbNpE\n3RfjV9IaUQGJ\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=HARICA TLS RSA Root CA 2021,O=Hellenic Academic and Research Institutions CA,C=GR",
+                    "issuer": "CN=Hellenic Academic and Research Institutions RootCA 2015,O=Hellenic Academic and Research Institutions Cert. Authority,L=Athens,C=GR",
+                    "serial_number": 56328771026522685634132374679777689382,
+                    "valid_from": "2021-09-02 07:41:55",
+                    "valid_until": "2029-08-31 07:41:54",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.harica.gr/HaricaRootCA2015.crl"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://repo.harica.gr/certs/HaricaRootCA2015.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "4acd8dc6020a545a858943a553b5e0f3fc5b859aea1746650d69cf1210f956d8",
+                    "signature": "c0cdefeb5678b771818fd415a4c579c85729ea1dc0ba0b0ee46e45e85c1640a85f4035000aa33d9843e5b2ceba5aaca56294c1baa7a99d59329e2f2e9e403461152bbd0eb318af84c1631229d9ee592d0064f7ac5b1b7c127a90429130c0d0c0343726f3334805e674daf3604c0840fc1105e58965ac82a528ad7ba4ee6b1a768b17efddcce36965980723d73264003ce5cb38b881c3ef21ce2c91f9b3d4e5bd8f1c70c9a47fe35558ccf572c3b9b4aec2fd9f7bf93c2149d73ae57586b22aaf6039dc0e6489cd25080f53a8a65c414165676a751fb174beea1d5324773051a05aa7623af66e89f0f3b47193b740b1dce65143c94c86b2cc34ddb54efc5e43a5d058af2560570d03e2541d99e4d74e54f5003439c00c0e6872db82dd84c6da77291bd68d28ce20800cabde299d9f3e5465d8a862479cbf64d52474f69571393c7fe27c9b3ca7df96160cb316c5bdec1505d672ac662516be5c8f63d0bd3caba123838c793100f7d6084576235c3499ab7d34928e6c5d454a546da8b004784abdf0a92e612c63417f29bb159c2c43efe36be7de9c400b01b02210ca48f61ef5969329221771eeb751ce735e48ea24fe954c6aabc167422f02afb25dbeddf02fad00d0f421c531632c89aa413bf3d44975c1993bd24c5efe229c114812e30032518fc7372ba04c7e7a10d7c864746acc3b0a8a15d8309f88426522c2b32dc3d97b"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGwDCCBKigAwIBAgIQKmCG1NTeRcleS5j7vy+/JjANBgkqhkiG9w0BAQsFADCB\npjELMAkGA1UEBhMCR1IxDzANBgNVBAcTBkF0aGVuczFEMEIGA1UEChM7SGVsbGVu\naWMgQWNhZGVtaWMgYW5kIFJlc2VhcmNoIEluc3RpdHV0aW9ucyBDZXJ0LiBBdXRo\nb3JpdHkxQDA+BgNVBAMTN0hlbGxlbmljIEFjYWRlbWljIGFuZCBSZXNlYXJjaCBJ\nbnN0aXR1dGlvbnMgUm9vdENBIDIwMTUwHhcNMjEwOTAyMDc0MTU1WhcNMjkwODMx\nMDc0MTU0WjBsMQswCQYDVQQGEwJHUjE3MDUGA1UECgwuSGVsbGVuaWMgQWNhZGVt\naWMgYW5kIFJlc2VhcmNoIEluc3RpdHV0aW9ucyBDQTEkMCIGA1UEAwwbSEFSSUNB\nIFRMUyBSU0EgUm9vdCBDQSAyMDIxMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIIC\nCgKCAgEAi8Lnr2WbBWeWyQ0kudAOZPzO4iQYLIR/d1HLBBE2uF7taXGnnuQlCZdn\nwUfCz5EWNmI9OAThUYL/rNK0ad0u7BGjRe5raztMv4yNpB6dEbnpOPl6DgyY4iMd\n0U5j1Oe4QUT7a69r2h/TxZGIW6SJktGB5ow5WKDWaUOprZhSWG7bCvtrz2j646Re\nOkVzmAfqXwJy3gyls5+uqR23HbP8ilnnbnJlrfUwlCMH84IWSzWYnFO7L8rkWtnH\njR38mJn7LKSCa/AqH44LX3FcXK5CeymJgcsDo5nKiJ4LQAlBM9vmWHr9rplwwFoP\n1hOGcS92afyQ3dstbtHym/Uaa55vFYx68EsooCI4gCRsNqQ78jCR83gTz8E/Navx\nHREjtUMingGStxgC5RHRgtsVAMxhN8EqfJrh0LqzUEbugqydMfj7I+IDAEhwowkm\neRVTYPM4XK046oEAYxS5M17dC9ugRQcaMwn4TbSnAqZp9MJZBYhlhVauS8vg3jx9\nLRrI6fsfo2FK1ioTrXdMGhibkQ9Y2AZUxZf4qj8giqaFpnf2pvwc4u5ulDMqg1CE\nCuVPhvhQRXgAgetbaOMmjcx7XFH0FCxAvhpgHXpyYR0fYy2Iqs6iRZAI/Gu+s1Aq\nWv2oSBhG1pBAkpAKhF5oMfjr7Q3THcZ9mRhVVidlLo1FxSTszuMCAwEAAaOCASEw\nggEdMA8GA1UdEwEB/wQFMAMBAf8wHwYDVR0jBBgwFoAUcRVnyMjJvXVdctA4GGqd\n83EkVAswTAYIKwYBBQUHAQEEQDA+MDwGCCsGAQUFBzAChjBodHRwOi8vcmVwby5o\nYXJpY2EuZ3IvY2VydHMvSGFyaWNhUm9vdENBMjAxNS5jcnQwEQYDVR0gBAowCDAG\nBgRVHSAAMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATA6BgNVHR8EMzAx\nMC+gLaArhilodHRwOi8vY3JsLmhhcmljYS5nci9IYXJpY2FSb290Q0EyMDE1LmNy\nbDAdBgNVHQ4EFgQUCkgjpmCkkgoz6pNbxVfqJU29Eu4wDgYDVR0PAQH/BAQDAgGG\nMA0GCSqGSIb3DQEBCwUAA4ICAQDAze/rVni3cYGP1BWkxXnIVynqHcC6Cw7kbkXo\nXBZAqF9ANQAKoz2YQ+WyzrparKVilMG6p6mdWTKeLy6eQDRhFSu9DrMYr4TBYxIp\n2e5ZLQBk96xbG3wSepBCkTDA0MA0NybzM0gF5nTa82BMCED8EQXliWWsgqUorXuk\n7msadosX793M42llmAcj1zJkADzlyzi4gcPvIc4skfmz1OW9jxxwyaR/41VYzPVy\nw7m0rsL9n3v5PCFJ1zrldYayKq9gOdwOZInNJQgPU6imXEFBZWdqdR+xdL7qHVMk\ndzBRoFqnYjr2bonw87Rxk7dAsdzmUUPJTIayzDTdtU78XkOl0FivJWBXDQPiVB2Z\n5NdOVPUANDnADA5octuC3YTG2ncpG9aNKM4ggAyr3imdnz5UZdioYkecv2TVJHT2\nlXE5PH/ifJs8p9+WFgyzFsW97BUF1nKsZiUWvlyPY9C9PKuhI4OMeTEA99YIRXYj\nXDSZq300ko5sXUVKVG2osAR4Sr3wqS5hLGNBfym7FZwsQ+/ja+fenEALAbAiEMpI\n9h71lpMpIhdx7rdRznNeSOok/pVMaqvBZ0IvAq+yXb7d8C+tAND0IcUxYyyJqkE7\n89RJdcGZO9JMXv4inBFIEuMAMlGPxzcroEx+ehDXyGR0asw7CooV2DCfiEJlIsKz\nLcPZew==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Hellenic Academic and Research Institutions RootCA 2015,O=Hellenic Academic and Research Institutions Cert. Authority,L=Athens,C=GR",
+                    "issuer": "CN=Hellenic Academic and Research Institutions RootCA 2015,O=Hellenic Academic and Research Institutions Cert. Authority,L=Athens,C=GR",
+                    "serial_number": 0,
+                    "valid_from": "2015-07-07 10:11:21",
+                    "valid_until": "2040-06-30 10:11:21",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "a040929a02ce53b4acf4f2ffc6981ce4496f755e6d45fe0b2a692bcd52523f36",
+                    "signature": "75bb6d544baa10584634f262d716365d085ed56cc887bdb42e46f231f87cea42b5931655dca10c12a0da617e0f5858736472c7e8458edca9f2263fc6798cb153083381b05613bee6515cd89b0a4f4b9c565302e94ff60d60ea4d4255e87c1b2121d31b3acc77f2b890f168c7f95afefa2df4bfc9f5451bce38102a378a79a3b4e3096c858693ff89962778818f67e34674548ed90d69e24af44d7403ffb277ed956797e4b1c5abbf6a23e8d494e2442862c44be2f0d8e2296b1a707e2461937b4f0332250d45242b96b4466abf4a0bf79a8fc1ac1ac567f36f34d2fa73638cef16b0a8a4462af8eb12ec72b4eff82b7e8c52c08b8454f92f3ee355a8dc66b1d9e15fd8b38c593459a4ab4f6cbb1f18db75abd8cb92cd9438610e07061f4b4610f115be8d855c3b4a2b81790fb4699f4950974df70e565dc0956ac236c31b68c9f52adc479abeb2cec525e8fa03b9daf9166e9184f51c28c8fc26ccd71c9056a75f6f3a04bccd78890b8e0f2fa3aa4fa21b123d1608400ff1464cd7aa7b08c10af56d27de028fcac3b52bcae9ebc8215338a5cc3bd8773730a24fd96fd1f240ad417a17c5d64a3589b741d57c867f554d834aa57320c03aaf90f19a248ed98e71ca7bb886dab28f993e1d130d1211eed4abf0e9157602e4e0dfaa201e5b61856440a990970dad53d25a1d876a00976562b4be6f6aa7f52c42ed32adb6219ebebc"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGCzCCA/OgAwIBAgIBADANBgkqhkiG9w0BAQsFADCBpjELMAkGA1UEBhMCR1Ix\nDzANBgNVBAcTBkF0aGVuczFEMEIGA1UEChM7SGVsbGVuaWMgQWNhZGVtaWMgYW5k\nIFJlc2VhcmNoIEluc3RpdHV0aW9ucyBDZXJ0LiBBdXRob3JpdHkxQDA+BgNVBAMT\nN0hlbGxlbmljIEFjYWRlbWljIGFuZCBSZXNlYXJjaCBJbnN0aXR1dGlvbnMgUm9v\ndENBIDIwMTUwHhcNMTUwNzA3MTAxMTIxWhcNNDAwNjMwMTAxMTIxWjCBpjELMAkG\nA1UEBhMCR1IxDzANBgNVBAcTBkF0aGVuczFEMEIGA1UEChM7SGVsbGVuaWMgQWNh\nZGVtaWMgYW5kIFJlc2VhcmNoIEluc3RpdHV0aW9ucyBDZXJ0LiBBdXRob3JpdHkx\nQDA+BgNVBAMTN0hlbGxlbmljIEFjYWRlbWljIGFuZCBSZXNlYXJjaCBJbnN0aXR1\ndGlvbnMgUm9vdENBIDIwMTUwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoIC\nAQDC+Kk/G4n8PDwEXT2QNrCROnk8ZlrvbTkBSRq0t89/TSNTt5AA4xMqKKYx8ZEA\n4yjsriFBzh/a/X0SWwGDD7mwX5nh8hKDgE0GPt+sr+ehiGsxr/CL0BgzuNtFajT0\nAoAkKAoCFZVedioNmToUW/bLy1O8E00BiDeUJRtCvCLYjqOWXjrZMts+6PAQZe10\n4S+nfK8nNLspfZu2zwnI5dMK/IhlZXQK3HMcXM1AsRzUtoSMTFDPaI6oWa7CJ06C\nojXdFPQf/7J31Ycvqm59JCfnxssm5uX+Zwdj2EUN3TpZZTlYepKZcj2chF6IIbjV\n9Cz82XBST3i4vTwri5WY9bPRaM8gFH5MXF/ni+X1NYEZN9cRCLdmvtNKzoNXADrD\ngfgXy5I2XdGj2HUb4Ysn6npIQf1FGQatJ5lOwXBH3bWfgVMS5bGMSF0xQxfjjMZ6\nY5ZLKTBOhE5iGV48zpeQpX8B653g+IuJ3SWYPZK2fu/Z8VFRfS0myGlZYeCsargq\nNhEEelC9MoS+L9xy1dcdFkfkR2YgP/SWxa+OAXqlD3pk9Q0Yh9muiNX6hME6wGko\nLfINaFGq46V3xqSQDqE3izEjR8EJCOtu93ib14L8hCCZSRm2Ekax+0VVFqmjZayc\nBw/qa9wfLgZy7IaIEuQt218FL+TwA9MmM+eAws1CoRc0CwIDAQABo0IwQDAPBgNV\nHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQUcRVnyMjJvXVd\nctA4GGqd83EkVAswDQYJKoZIhvcNAQELBQADggIBAHW7bVRLqhBYRjTyYtcWNl0I\nXtVsyIe9tC5G8jH4fOpCtZMWVdyhDBKg2mF+D1hYc2Ryx+hFjtyp8iY/xnmMsVMI\nM4GwVhO+5lFc2JsKT0ucVlMC6U/2DWDqTUJV6HwbISHTGzrMd/K4kPFox/la/vot\n9L/J9UUbzjgQKjeKeaO04wlshYaT/4mWJ3iBj2fjRnRUjtkNaeJK9E10A/+yd+2V\nZ5fkscWrv2oj6NSU4kQoYsRL4vDY4ilrGnB+JGGTe08DMiUNRSQrlrRGar9KC/ea\nj8GsGsVn82800vpzY4zvFrCopEYq+OsS7HK07/grfoxSwIuEVPkvPuNVqNxmsdnh\nX9izjFk0WaSrT2y7HxjbdavYy5LNlDhhDgcGH0tGEPEVvo2FXDtKK4F5D7Rpn0lQ\nl033DlZdwJVqwjbDG2jJ9SrcR5q+ss7FJej6A7na+RZukYT1HCjI/CbM1xyQVqdf\nbzoEvM14iQuODy+jqk+iGxI9FghAD/FGTNeqewjBCvVtJ94Cj8rDtSvK6evIIVM4\npcw72Hc3MKJP2W/R8kCtQXoXxdZKNYm3QdV8hn9VTYNKpXMgwDqvkPGaJI7ZjnHK\ne7iG2rKPmT4dEw0SEe7Uq/DpFXYC5ODfqiAeW2GFZECpkJcNrVPSWh2HagCXZWK0\nvm9qp/UsQu0yrbYhnr68\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

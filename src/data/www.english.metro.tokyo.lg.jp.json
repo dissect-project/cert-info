@@ -1,0 +1,140 @@
+{
+    "domain": "www.english.metro.tokyo.lg.jp",
+    "date": "2025-12-15 11:18:35",
+    "ip-address": "18.154.29.76",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=www.english.metro.tokyo.lg.jp,O=Tokyo Metropolitan Government,L=Shinjuku-ku,ST=Tokyo,C=JP",
+                    "issuer": "CN=SECOM Passport for Web SR 3.0 CA,O=SECOM Trust Systems CO.\\,LTD.,C=JP",
+                    "serial_number": 92015405215198996092929008370063076550,
+                    "valid_from": "2025-05-19 05:15:59",
+                    "valid_until": "2026-06-18 14:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "www.english.metro.tokyo.lg.jp"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth"
+                    ],
+                    "crl_distribution_points": [
+                        "http://repo1.secomtrust.net/spcpp/pfw/pfwsr3ca/fullcrl2.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://sr30.ocsp.secomtrust.net"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://repo1.secomtrust.net/spcpp/pfw/pfwsr3ca/ca2-der.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "082fef97afc9f4b4f5fb39ef0d97a9d2a9b7725694b477ffa8e49e3f2b18b2f4",
+                    "signature": "b2b3b51a77cb08e7450035c6d2e63c7a9b4125720d1710059e6f09023b07fcf88bbecb9e3bd1a18f7ff8daf7785f95b3342a7dc12a91c8fd098d150bcf928f33a00be627906e6dd0798aa5940d936b2268b9f1df88aade4f74d1c96c9397745ef8aca5e7bd7c0cb57a5f8c6ed59c38686bcb8837867f39b5ff23ffbcdd16b69e4a27996ae6ab094949eed013013570724e88ef6df19bec494469782d58ca96e1229d260a0397e947d708149101290ebc946ecf6bccc4bdb4f148e574ffbccec4772a9ac6fea888a34cc8e9468eb068296f5151f439182374bebc1a6ac1ef03d1fcffae9ae8534b0e3e98252b3864fac2df50bbd8e53b4dd8450ecdf210d2465b"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIHMTCCBhmgAwIBAgIQRTmFvaMvXOZB2lR1r2lsxjANBgkqhkiG9w0BAQsFADBf\nMQswCQYDVQQGEwJKUDElMCMGA1UEChMcU0VDT00gVHJ1c3QgU3lzdGVtcyBDTy4s\nTFRELjEpMCcGA1UEAxMgU0VDT00gUGFzc3BvcnQgZm9yIFdlYiBTUiAzLjAgQ0Ew\nHhcNMjUwNTE5MDUxNTU5WhcNMjYwNjE4MTQ1OTU5WjCBgzELMAkGA1UEBhMCSlAx\nDjAMBgNVBAgTBVRva3lvMRQwEgYDVQQHEwtTaGluanVrdS1rdTEmMCQGA1UEChMd\nVG9reW8gTWV0cm9wb2xpdGFuIEdvdmVybm1lbnQxJjAkBgNVBAMTHXd3dy5lbmds\naXNoLm1ldHJvLnRva3lvLmxnLmpwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB\nCgKCAQEAquulEb3h8exrMqf0rhPAL/aDMShJESx8qkMWamZKnOrf+Wc35mpl6ar+\n5svgUIsWt395UCVDTXMKS656soJrNSNUemcGjS+uWXw2ig/H7BM0fRquWLh7XRxc\noFq6OuoKvdTOdNTBowXNAW3kTKcYprWfvKd6Iw3e3DTx4kedY+4B0u15vTsQ3Ail\nPTenw2kVPVNYePpaAsxwexg4WNyQKX+24Sk/b14UamKS3bzq+2zTp1uYFodDmpRX\no8PjQvRR8cPRLv40vUoAVzhcx/3Nc0xPJOqtbhf0rFMUzcGr4Vw2+Tqh7h4+R7Da\n+fRWrasMyY0QrN5gh6qPMAKN3zuBVwIDAQABo4IDwjCCA74wHwYDVR0jBBgwFoAU\ny+8974N0oahC8DtANvptgpSpJzYwgYMGCCsGAQUFBwEBBHcwdTBGBggrBgEFBQcw\nAoY6aHR0cDovL3JlcG8xLnNlY29tdHJ1c3QubmV0L3NwY3BwL3Bmdy9wZndzcjNj\nYS9jYTItZGVyLmNlcjArBggrBgEFBQcwAYYfaHR0cDovL3NyMzAub2NzcC5zZWNv\nbXRydXN0Lm5ldDAoBgNVHREEITAfgh13d3cuZW5nbGlzaC5tZXRyby50b2t5by5s\nZy5qcDBhBgNVHSAEWjBYMEwGCiqDCIybG2SFbwEwPjA8BggrBgEFBQcCARYwaHR0\ncHM6Ly9yZXBvMS5zZWNvbXRydXN0Lm5ldC9zcGNwcC9wZncvcGZ3c3IzY2EvMAgG\nBmeBDAECAjATBgNVHSUEDDAKBggrBgEFBQcDATBMBgNVHR8ERTBDMEGgP6A9hjto\ndHRwOi8vcmVwbzEuc2Vjb210cnVzdC5uZXQvc3BjcHAvcGZ3L3Bmd3NyM2NhL2Z1\nbGxjcmwyLmNybDAdBgNVHQ4EFgQUhAnq8NDc9FzjFHbC+geyWsze2CQwDgYDVR0P\nAQH/BAQDAgWgMIIB9AYKKwYBBAHWeQIEAgSCAeQEggHgAd4AdgAOV5S8866pPjMb\nLJkHs/eQ35vCPXEyJd0hqSWsYcVOIQAAAZbnAYv7AAAEAwBHMEUCIQDh2PZcd+bu\nx9Ra80yBY/Il31qx/fnMaUIcgqjJVujmAwIgQvuAZj5aGhccfbcO4TbQJu/23KPP\nQo9BiC12wkoW5fQAdQCWl2S/VViXrfdDh2g3CEJ36fA61fak8zZuRqQ/D8qpxgAA\nAZbnAZKQAAAEAwBGMEQCIExgB9CEzs5Ve5zNgRHgkJtO6sftNEGws4vseRW+ErjH\nAiAezdqUDZE76OGT2FJeb1zfC3pmVTr47Q5wuiDBOmbAiwB1AGQRxGykEuyniRyi\nAi4AvKtPKAfUHjUnq+r+1QPJfc3wAAABlucBlkMAAAQDAEYwRAIgVtP0NMDdx4/Y\n8tYZEngIkMIvDt6/eThyFxu4tY2B6IACIBnJLU7zQYML+tzYbaVo4ywuQppKQ7yU\naJXOhduf3CohAHYAyzj3FYl8hKFEX1vB3fvJbvKaWc1HCmkFhbDLFMMUWOcAAAGW\n5wGYSwAABAMARzBFAiEA9upQGHEbjjgl0xmNle7lbDwTAbl+iEgdHbWTnSlJhFEC\nID/CbeTHDaqXnzlNp4hLwDj7ldWKYu6332tG2sK496SJMA0GCSqGSIb3DQEBCwUA\nA4IBAQCys7Uad8sI50UANcbS5jx6m0Elcg0XEAWebwkCOwf8+Iu+y5470aGPf/ja\n93hflbM0Kn3BKpHI/QmNFQvPko8zoAvmJ5BubdB5iqWUDZNrImi58d+Iqt5PdNHJ\nbJOXdF74rKXnvXwMtXpfjG7VnDhoa8uIN4Z/ObX/I/+83Ra2nkonmWrmqwlJSe7Q\nEwE1cHJOiO9t8ZvsSURpeC1YypbhIp0mCgOX6UfXCBSRASkOvJRuz2vMxL208Ujl\ndP+8zsR3KprG/qiIo0zI6UaOsGgpb1FR9DkYI3S+vBpqwe8D0fz/rproU0sOPpgl\nKzhk+sLfULvY5TtN2EUOzfIQ0kZb\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=SECOM Passport for Web SR 3.0 CA,O=SECOM Trust Systems CO.\\,LTD.,C=JP",
+                    "issuer": "OU=Security Communication RootCA2,O=SECOM Trust Systems CO.\\,LTD.,C=JP",
+                    "serial_number": 46157930349836962765567432856986502167,
+                    "valid_from": "2025-04-09 05:08:22",
+                    "valid_until": "2028-03-16 05:49:12",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://repository.secomtrust.net/SC-Root2/SCRoot2CRL.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://scrootca2.ocsp.secomtrust.net"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://repository.secomtrust.net/SC-Root2/SCRoot2ca.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "59f8a94c11bcd19fd4e0f1ac4d394e37913ae5fb5862a25a8ecd167ba3b9a3a2",
+                    "signature": "198fd2cbfd7df639bd3b316e3885735090a0f8266563374b3d27547d028d4e0519925612c912ed5758912a38b4c23e8c36953054d144fff20abc1297e96c59f3f9f42a82c06af6392f268d7d925ae37fb38a16a8a0889be8db0f3239d2c85f44a6de479da32bdb4ab0fd9cfc880fa419f321933d009c3f9b4d65b09665d07a899210d7440b71e51ad4ad26c98d7a1906e8804355c82f39a80ba19ca0d2385752da1461762139365f07ffbd138f632263fe5b7ea641461c5a912b5570e54e66d351419b7ca27f7bbed9582a767dc9e654a4f3c4b3f537a5b06c7dc0f5ea279f57c47d47276de414ff90c75430f17c593ae08b33dfa15d70d54f0c90946ce3287b"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIEuzCCA6OgAwIBAgIQIrmxq4CeIDhJyKefqaTEFzANBgkqhkiG9w0BAQsFADBd\nMQswCQYDVQQGEwJKUDElMCMGA1UEChMcU0VDT00gVHJ1c3QgU3lzdGVtcyBDTy4s\nTFRELjEnMCUGA1UECxMeU2VjdXJpdHkgQ29tbXVuaWNhdGlvbiBSb290Q0EyMB4X\nDTI1MDQwOTA1MDgyMloXDTI4MDMxNjA1NDkxMlowXzELMAkGA1UEBhMCSlAxJTAj\nBgNVBAoTHFNFQ09NIFRydXN0IFN5c3RlbXMgQ08uLExURC4xKTAnBgNVBAMTIFNF\nQ09NIFBhc3Nwb3J0IGZvciBXZWIgU1IgMy4wIENBMIIBIjANBgkqhkiG9w0BAQEF\nAAOCAQ8AMIIBCgKCAQEAvzSkuEXFtW1K+Lq5KVwm1r0wo236J0ElpdKLKxeCskDD\n5oUsEiHuYVW5MY1yTSGvsclk+tK5VNcOa0Fg9rU3fbp1wdR90oBcB6pYBS8JIdvF\nkqPLis/361T+bL91QhJLicVIJUo/A9dR92cSJlGDcry9BacXwX6mS22UoOPy79Ic\nrcKCMH0d1Scl23YuHYAirgWq/5MvPyQTzVYLMsRSxFTA9qPawtFoZR2WZA0ZTbZd\nJicaGCnt0XqYbmZjG6kvngDHTXiggXjpiZqFHt6jT5GOOPgnacRy5bsJ9xj+pU8q\nezYQiVivKpUa7yEfYvk0NXp71l97fn3IE1Hi7xzYNQIDAQABo4IBczCCAW8wHQYD\nVR0OBBYEFMvvPe+DdKGoQvA7QDb6bYKUqSc2MB8GA1UdIwQYMBaAFAqFqXdlBZh8\nQIH4D5csOPEK7DzPMBIGA1UdEwEB/wQIMAYBAf8CAQAwDgYDVR0PAQH/BAQDAgEG\nMBMGA1UdJQQMMAoGCCsGAQUFBwMBMEkGA1UdHwRCMEAwPqA8oDqGOGh0dHA6Ly9y\nZXBvc2l0b3J5LnNlY29tdHJ1c3QubmV0L1NDLVJvb3QyL1NDUm9vdDJDUkwuY3Js\nMCEGA1UdIAQaMBgwCAYGZ4EMAQICMAwGCiqDCIybG2SHBQQwgYUGCCsGAQUFBwEB\nBHkwdzAwBggrBgEFBQcwAYYkaHR0cDovL3Njcm9vdGNhMi5vY3NwLnNlY29tdHJ1\nc3QubmV0MEMGCCsGAQUFBzAChjdodHRwOi8vcmVwb3NpdG9yeS5zZWNvbXRydXN0\nLm5ldC9TQy1Sb290Mi9TQ1Jvb3QyY2EuY2VyMA0GCSqGSIb3DQEBCwUAA4IBAQAZ\nj9LL/X32Ob07MW44hXNQkKD4JmVjN0s9J1R9Ao1OBRmSVhLJEu1XWJEqOLTCPow2\nlTBU0UT/8gq8EpfpbFnz+fQqgsBq9jkvJo19klrjf7OKFqigiJvo2w8yOdLIX0Sm\n3kedoyvbSrD9nPyID6QZ8yGTPQCcP5tNZbCWZdB6iZIQ10QLceUa1K0myY16GQbo\ngENVyC85qAuhnKDSOFdS2hRhdiE5Nl8H/70Tj2MiY/5bfqZBRhxakStVcOVOZtNR\nQZt8on97vtlYKnZ9yeZUpPPEs/U3pbBsfcD16iefV8R9Rydt5BT/kMdUMPF8WTrg\nizPfoV1w1U8MkJRs4yh7\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "Certificate has no Common Name (CN)"
+            ],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "OU=Security Communication RootCA2,O=SECOM Trust Systems CO.\\,LTD.,C=JP",
+                    "issuer": "OU=Security Communication RootCA2,O=SECOM Trust Systems CO.\\,LTD.,C=JP",
+                    "serial_number": 0,
+                    "valid_from": "2009-05-29 05:00:39",
+                    "valid_until": "2029-05-29 05:00:39",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "513b2cecb810d4cde5dd85391adfc6c2dd60d87bb736d2b521484aa47a0ebef6",
+                    "signature": "4c3aa344acb945b1c7937ec80b0a42df64ea1cee596c08ba895f6aca4a959e7a8f07c5da457282710e3ad2cc6fa7b4a123bbf6249fcb17fe8ca6cec2d2dbcc8dfc71fc0329c16c5d335f64b6653b896f187678f5dca2481f193f8e93ebf1fa17eecd4ee3041255d6e5e4ddfb3e057ce21d5ec6a7bc974f683af5e92e0a43b6af575c62687cb7fda38a84a0ac62be2b098734f06a01bb9b29563cfe0037cf236cf14eaab67446126c91ee34d5ec9a91e744be903172d54902f602e5f41feb7cd99655a9ffec8af99947ff355a02aa04cb8a5b87712991bda4b47a0dbd9af55723000721173f4a39d105490ba7b63781a55d8caa335e81287ca77d27eb00ae8d37"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDdzCCAl+gAwIBAgIBADANBgkqhkiG9w0BAQsFADBdMQswCQYDVQQGEwJKUDEl\nMCMGA1UEChMcU0VDT00gVHJ1c3QgU3lzdGVtcyBDTy4sTFRELjEnMCUGA1UECxMe\nU2VjdXJpdHkgQ29tbXVuaWNhdGlvbiBSb290Q0EyMB4XDTA5MDUyOTA1MDAzOVoX\nDTI5MDUyOTA1MDAzOVowXTELMAkGA1UEBhMCSlAxJTAjBgNVBAoTHFNFQ09NIFRy\ndXN0IFN5c3RlbXMgQ08uLExURC4xJzAlBgNVBAsTHlNlY3VyaXR5IENvbW11bmlj\nYXRpb24gUm9vdENBMjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANAV\nOVKxUrO6xVmCxF1SrjpDZYBLx/KWvNs2l9amZIyoXvDjChz335c9S672XewhtUGr\nzbl+dp+++T42NKA7wfYxEUV0kz1XgMX5iZnK5atq1LXaQZAQwdbWQonCv/Q4EpVM\nVAX3NuRFg3sUZdbcDE3R3n4MqzvEFb46VqZab3ZpUql6ucjrappdUtAtCms1FgkQ\nhNBqyjoGADdH5H5XTz+L62e4iKrFvlNVspHEfbmwhRkGeC7bYRr6hfVKkaHnFtWO\nojnflLhwHyg/i/xAXmODPIMqGplrz95Zajv8bxbXH/1KEOtOghY6rCcMU/Gt1SSw\nawNQwS08Ft1ENCcadfsCAwEAAaNCMEAwHQYDVR0OBBYEFAqFqXdlBZh8QIH4D5cs\nOPEK7DzPMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3\nDQEBCwUAA4IBAQBMOqNErLlFsceTfsgLCkLfZOoc7llsCLqJX2rKSpWeeo8HxdpF\ncoJxDjrSzG+ntKEju/Ykn8sX/oymzsLS28yN/HH8AynBbF0zX2S2ZTuJbxh2ePXc\nokgfGT+Ok+vx+hfuzU7jBBJV1uXk3fs+BXziHV7Gp7yXT2g69ekuCkO2r1dcYmh8\nt/2jioSgrGK+KwmHNPBqAbubKVY8/gA3zyNs8U6qtnRGEmyR7jTV7JqR50S+kDFy\n1UkC9gLl9B/rfNmWVan/7Ir5mUf/NVoCqgTLiluHcSmRvaS0eg29mvVXIwAHIRc/\nSjnRBUkLp7Y3gaVdjKozXoEofKd9J+sAro03\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

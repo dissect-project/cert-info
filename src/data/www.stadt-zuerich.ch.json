@@ -1,0 +1,141 @@
+{
+    "domain": "www.stadt-zuerich.ch",
+    "date": "2025-12-15 11:47:39",
+    "ip-address": "194.56.34.182",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=www.stadt-zuerich.ch,O=Stadt Z\u00fcrich\\, Organisation und Informatik,L=Z\u00fcrich,ST=Z\u00fcrich,C=CH",
+                    "issuer": "CN=DigiCert QV TLS ICA G1,O=DigiCert\\, Inc.,C=US",
+                    "serial_number": 15296661030934435426327948686617148243,
+                    "valid_from": "2025-07-10 00:00:00",
+                    "valid_until": "2026-07-09 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "www.stadt-zuerich.ch",
+                        "stadt-zuerich.ch"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl3.digicert.com/DigiCertQVTLSICAG1.crl",
+                        "http://crl4.digicert.com/DigiCertQVTLSICAG1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.digicert.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cacerts.digicert.com/DigiCertQVTLSICAG1.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "364e6cf61193ecc0e7bf5c79d0a0f4a4be8071198e1de0348ac261cbcbd12c12",
+                    "signature": "6a468269454193d1f45dc66fe01e29bc5bcf13c6471444fea501805b23fb6c0c895ea8ed9e8c9e3f1ea492e828fb4e09f13469049222e250af0a7d1f6b9b625fb323d0119814d3b6825a4adb917ccd0fd725fe8e158e830b05be0c19db4e12f2bce098d9143b819f3dad4629710f0139319d597cd1a3a8539b55dfd7a24cccce2393d6c914505ea710e6f50ffc69c994cbc46215ca3913e9fc3e273f5d8402b1877bed2fbc6ef61375761e9df9f5164f89eeb85160da202e096f85548d1a2a6de2ead29bd47339aebbe268225d073800ec8b1f7ec7020e76cd1df3f6efafee1a1e592aa638c33a8453ac1af07e29a7bf0953f6f2143200465f35f584ea0b1111"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGvjCCBaagAwIBAgIQC4IHneIwX8W+B/85dqb7UzANBgkqhkiG9w0BAQsFADBH\nMQswCQYDVQQGEwJVUzEXMBUGA1UECgwORGlnaUNlcnQsIEluYy4xHzAdBgNVBAMM\nFkRpZ2lDZXJ0IFFWIFRMUyBJQ0EgRzEwHhcNMjUwNzEwMDAwMDAwWhcNMjYwNzA5\nMjM1OTU5WjCBhTELMAkGA1UEBhMCQ0gxEDAOBgNVBAgMB1rDvHJpY2gxEDAOBgNV\nBAcMB1rDvHJpY2gxMzAxBgNVBAoMKlN0YWR0IFrDvHJpY2gsIE9yZ2FuaXNhdGlv\nbiB1bmQgSW5mb3JtYXRpazEdMBsGA1UEAxMUd3d3LnN0YWR0LXp1ZXJpY2guY2gw\nggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCCJjrxhE7Zgr5pmXQILcGI\nmpXDQT8eNrS2NzorC/mPRFRqf1QphyRCv/Hl1p+w9AoZB6aIavXhTOkjHENkiawQ\ngpDHwM9A3kcLqVWj+h0j4rF8pVP5S5qG8rMTGaDpuILOXbHzquKMvIJWz49cjoyP\npovB/J2D5qsoXDsWz87edf7nc/l3q4519NsqGKBNrTVoAJnJXjXmRIaunY0OoVRD\nJK9tYbWSNdPItxmyZmtaGKQrBWz6kL6gxOK16Jy16/X92Bs6NyEFjX7V7R06zJis\nI3w7iXHJBzCmVlY3eCmjU27qvZpuuSxS9lp8qzMxDexv246lOwc8yVJ1bdlg3Rb/\nAgMBAAGjggNlMIIDYTAfBgNVHSMEGDAWgBTIYD0R3QZWEOCpocj4sXAq50xMaTAd\nBgNVHQ4EFgQUUePobyEKXRI12Jlvot0Sag5REs4wMQYDVR0RBCowKIIUd3d3LnN0\nYWR0LXp1ZXJpY2guY2iCEHN0YWR0LXp1ZXJpY2guY2gwPgYDVR0gBDcwNTAzBgZn\ngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdpY2VydC5jb20vQ1BT\nMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIw\ndwYDVR0fBHAwbjA1oDOgMYYvaHR0cDovL2NybDMuZGlnaWNlcnQuY29tL0RpZ2lD\nZXJ0UVZUTFNJQ0FHMS5jcmwwNaAzoDGGL2h0dHA6Ly9jcmw0LmRpZ2ljZXJ0LmNv\nbS9EaWdpQ2VydFFWVExTSUNBRzEuY3JsMHQGCCsGAQUFBwEBBGgwZjAkBggrBgEF\nBQcwAYYYaHR0cDovL29jc3AuZGlnaWNlcnQuY29tMD4GCCsGAQUFBzAChjJodHRw\nOi8vY2FjZXJ0cy5kaWdpY2VydC5jb20vRGlnaUNlcnRRVlRMU0lDQUcxLmNydDAM\nBgNVHRMBAf8EAjAAMIIBfgYKKwYBBAHWeQIEAgSCAW4EggFqAWgAdgDXbX0Q0af1\nd8LH6V/XAL/5gskzWmXh0LMBcxfAyMVpdwAAAZfzLiTmAAAEAwBHMEUCICY8z0At\ntKKCr7Ji1xrVDV52Osar/AbW8SqVhbZEKw58AiEAyLVfg3Vn3FQ6Og+MPkZPBvId\n76BpUqk+0FdrfeF+J3QAdgDCMX5XRRmjRe5/ON6ykEHrx8IhWiK/f9W1rXaa2Q5S\nzQAAAZfzLiUiAAAEAwBHMEUCIQC2qWrcWhR7nvYN6gTgHSjMvpNQ1vbJa+ddiCwj\nTOEtXQIgIgHZnQyD4p0/Q3+BpmTWVNvFOOYxezuMdXiGnQNKjAcAdgCUTkOH+uzB\n74HzGSQmqBhlAcfTXzgCAT9yZ31VNy4Z2AAAAZfzLiUyAAAEAwBHMEUCIQCsCz03\nK1cHiwIYfSNHnxmifsyx5bNFppoIKSBlvKECbgIgZQJ0EP4p+1FnVd+VQpANjfNa\n3f7/K7+gUii0pspmuDIwDQYJKoZIhvcNAQELBQADggEBAGpGgmlFQZPR9F3Gb+Ae\nKbxbzxPGRxRE/qUBgFsj+2wMiV6o7Z6Mnj8epJLoKPtOCfE0aQSSIuJQrwp9H2ub\nYl+zI9ARmBTTtoJaStuRfM0P1yX+jhWOgwsFvgwZ204S8rzgmNkUO4GfPa1GKXEP\nATkxnVl80aOoU5tV39eiTMzOI5PWyRRQXqcQ5vUP/GnJlMvEYhXKORPp/D4nP12E\nArGHe+0vvG72E3V2Hp359RZPie64UWDaIC4Jb4VUjRoqbeLq0pvUczmuu+JoIl0H\nOADsix9+xwIOds0d8/bvr+4aHlkqpjjDOoRTrBrwfimnvwlT9vIUMgBGXzX1hOoL\nERE=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=DigiCert QV TLS ICA G1,O=DigiCert\\, Inc.,C=US",
+                    "issuer": "CN=QuoVadis Root CA 2 G3,O=QuoVadis Limited,C=BM",
+                    "serial_number": 646945861620190999724714626884410762644881773938,
+                    "valid_from": "2020-03-16 19:42:22",
+                    "valid_until": "2030-03-14 19:42:22",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl.quovadisglobal.com/qvrca2g3.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.quovadisglobal.com"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "93e33af7da3030530d090c9c55762cade7eae943f834349d1057a90eb67f306b",
+                    "signature": "598073fdb1911ad09bb8f799bccf6ffb99e71768f9bf94ba7806296e45f34f50bf92ec04bac1af58e0222aabc7bdaabc6f6a6946edf0f2b1f3cf5c3eb77310f9bf37b184707e9c1618c90859475dcd196f68c71413d045df2428da91a810f7f3b05b065add70f3a53ed94ed6b1d9bccf71f3038f14b39277e2a5fb2b745b1da8534f9a8af9291e218352d8d4cc8071cd2a2ab95202e89e8aeb3e08e20822886f12e5198bb7897470225f00177dc8a89b318e1b10a572d8639dfebaddb76692709d70eaddfe10f8762080677073a5b4fe4bda1428ca4f46f592e1a9b58c39eb2638c31c49c1d2337ef2a9fb23a37b86c30240caf70253adff3da20db7341daf076dc7ad55193218e2eb1dddd4b0f8b78866a82d94dba685262715955517b130ed6724a71563af9d6e402ad6611636e01b5860659dd1a967a6f87d74d0d5af0777c5ed9cfaf269d8d0d277c43baca9a57b9a5c652436b73542355a8350f86f26744f5b9a4d0ab5c092fa40341cd33e808171a58eda61221e141d4e0185f895f6685a24f9d49f3373a824bd24fdc6bd54494482200b60cb1c5ed046bb243edc93afcf292297775e6ceb6c167ea8c173f76bab552896334a6e50b1a00a780f3c6c36a940e0a1372eeec6d09e9767da7a899292d27e6110be4fd4cb641d49bbf372ee98f95bad4229302e909d12b00216f0106d533d65e6e3c02a31e4fb7b4300df9d"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFbTCCA1WgAwIBAgIUcVIORg5UrvMi45+sFsDpelG9lXIwDQYJKoZIhvcNAQEL\nBQAwSDELMAkGA1UEBhMCQk0xGTAXBgNVBAoTEFF1b1ZhZGlzIExpbWl0ZWQxHjAc\nBgNVBAMTFVF1b1ZhZGlzIFJvb3QgQ0EgMiBHMzAeFw0yMDAzMTYxOTQyMjJaFw0z\nMDAzMTQxOTQyMjJaMEcxCzAJBgNVBAYTAlVTMRcwFQYDVQQKDA5EaWdpQ2VydCwg\nSW5jLjEfMB0GA1UEAwwWRGlnaUNlcnQgUVYgVExTIElDQSBHMTCCASIwDQYJKoZI\nhvcNAQEBBQADggEPADCCAQoCggEBAOiCO+RS/VMMfgdhTV/n0zjv0bdaASpcpHq9\nRYMcrQpwC+uXp3lGW8VnzkhmN/4hcNtThu0QLfG945sLlkhJGjrrDtA6HYBsfb2z\nY/6E38cVXeFDIWi4bQc3lJJ33kkAxq6NLHyfqkde6vPvyiyJz+InxFQXnVH3tdnp\nGXtjXlgYciTDG0+atl9maYtNEKtZgsNlmsFuEQgrppt8FptTZ11rfvb7hpgjUxsr\noSCw6zE8oBlCrAcR8LztpEupk8/C7Mt6bVqnJNE1p+6lYzViSLMztNbjPkatvhYe\n04KkeaMEtHvIk1NhmFWHZgBf1mJDPY3/U3uPM3rVcScNrqiO9ocCAwEAAaOCAU4w\nggFKMBIGA1UdEwEB/wQIMAYBAf8CAQAwHwYDVR0jBBgwFoAU7edvdlq/YOxJW8al\nd7tyFnGbxD0wOgYIKwYBBQUHAQEELjAsMCoGCCsGAQUFBzABhh5odHRwOi8vb2Nz\ncC5xdW92YWRpc2dsb2JhbC5jb20wTAYDVR0gBEUwQzA3BglghkgBhv1sAQEwKjAo\nBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzAIBgZngQwB\nAgIwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMDsGA1UdHwQ0MDIwMKAu\noCyGKmh0dHA6Ly9jcmwucXVvdmFkaXNnbG9iYWwuY29tL3F2cmNhMmczLmNybDAd\nBgNVHQ4EFgQUyGA9Ed0GVhDgqaHI+LFwKudMTGkwDgYDVR0PAQH/BAQDAgGGMA0G\nCSqGSIb3DQEBCwUAA4ICAQBZgHP9sZEa0Ju495m8z2/7mecXaPm/lLp4BiluRfNP\nUL+S7AS6wa9Y4CIqq8e9qrxvamlG7fDysfPPXD63cxD5vzexhHB+nBYYyQhZR13N\nGW9oxxQT0EXfJCjakagQ9/OwWwZa3XDzpT7ZTtax2bzPcfMDjxSzknfipfsrdFsd\nqFNPmor5KR4hg1LY1MyAcc0qKrlSAuieius+COIIIohvEuUZi7eJdHAiXwAXfcio\nmzGOGxClcthjnf663bdmknCdcOrd/hD4diCAZ3BzpbT+S9oUKMpPRvWS4am1jDnr\nJjjDHEnB0jN+8qn7I6N7hsMCQMr3AlOt/z2iDbc0Ha8HbcetVRkyGOLrHd3UsPi3\niGaoLZTbpoUmJxWVVRexMO1nJKcVY6+dbkAq1mEWNuAbWGBlndGpZ6b4fXTQ1a8H\nd8XtnPryadjQ0nfEO6yppXuaXGUkNrc1QjVag1D4byZ0T1uaTQq1wJL6QDQc0z6A\ngXGljtphIh4UHU4BhfiV9mhaJPnUnzNzqCS9JP3GvVRJRIIgC2DLHF7QRrskPtyT\nr88pIpd3XmzrbBZ+qMFz92urVSiWM0puULGgCngPPGw2qUDgoTcu7sbQnpdn2nqJ\nkpLSfmEQvk/Uy2QdSbvzcu6Y+VutQikwLpCdErACFvAQbVM9ZebjwCox5Pt7QwDf\nnQ==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=QuoVadis Root CA 2 G3,O=QuoVadis Limited,C=BM",
+                    "issuer": "CN=QuoVadis Root CA 2 G3,O=QuoVadis Limited,C=BM",
+                    "serial_number": 390156079458959257446133169266079962026824725800,
+                    "valid_from": "2012-01-12 18:59:32",
+                    "valid_until": "2042-01-12 18:59:32",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "8fe4fb0af93a4d0d67db0bebb23e37c71bf325dcbcdd240ea04daf58b47e1840",
+                    "signature": "91df803f43097e71c2f7ebb3888fe151b2bc3d75f9285dc8bc999b7b5daae5cae10af7e8b2d39fdd67317eba01aac76a413b90d4085cb2606a90f0c8ce0362f98bedfb6e2adc064d3c290f89168a584c480fe88461ea3c72a677e442ae88a34358797eaecaa5530da93d70bd201961a46c38fc4332e1c147fff8ecf1112232969cc2f65b69967b200c43419a5bf6591988de558837510b785c0a1ea342fdc79d880fc0f27802245493af898788c94a801dead06e3e612e36bb350e2796fd66343b617273f1165c47065449007a5812b00aef85fdb1b833756a931c12e6605e6f1d7fc91f23cb84619f1e8244f95fad6255249a5298ed51e7a17e973ae62f1f11da53802c859eab3510db225f6ac55e9753f232020930a358f00d01d572c6b17c697bc3f53645cc616e5e4c94c55eaee80e5e8bbff7cde0eda10e1b33ee5418fe0fbeef7e846b43e37098db5d75b20d590785152339d6f1dfa9260fd648c7b3a622f533375a95479f7bba18156fffd614648349d20a6721db0f3563602822e3b19583cd85a6dd2f0fe767526ebb2f857cf54a73e7c53ec0bd2112053ffcb70349025bc825e6e25438f579878c1d53b24e857b0638c72cf8f8b0728d25e57752f4031c48a6505f8820306ef28243ab3d9784e753fb21c14f0f229a86b8592af6473d19882de885e19eec85086ab16c34c91dec482b3b78ed66c48e796983de7f8c"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFYDCCA0igAwIBAgIURFc0JFuBiZs18s64KztbpybwdSgwDQYJKoZIhvcNAQEL\nBQAwSDELMAkGA1UEBhMCQk0xGTAXBgNVBAoTEFF1b1ZhZGlzIExpbWl0ZWQxHjAc\nBgNVBAMTFVF1b1ZhZGlzIFJvb3QgQ0EgMiBHMzAeFw0xMjAxMTIxODU5MzJaFw00\nMjAxMTIxODU5MzJaMEgxCzAJBgNVBAYTAkJNMRkwFwYDVQQKExBRdW9WYWRpcyBM\naW1pdGVkMR4wHAYDVQQDExVRdW9WYWRpcyBSb290IENBIDIgRzMwggIiMA0GCSqG\nSIb3DQEBAQUAA4ICDwAwggIKAoICAQChriWyARjcV4g/Ruv5r+LrI3HimtFhZiFf\nqq8nUeVuGxbULX1QsFN3vXg6YOJkApt8hpvWGo6t/x8Vf9WVHhLL5hSEBMHfNrMW\nn4rjyduYNM7YMxcoRvynyfDStNVNCXJJ+fKH46nafaF9a7I6JaltUkSs+L5u+9ym\nc5GQYaYDFCDy54ejiK2toIz/pgslUiXnFgHVy7g1gQyjO/Dh4fxaXc6AcW34Sas+\nO7q414AB+6XrW7PFXmAqMaCvN+ggOp+oMiwMzAkd056OXbxMmO7FGmh77FOm6RQ1\no9/NgJ8MSPsc9PG/Srj61YxxSscfrf5BmrODXfKEVu+lV0POKa2Mq1W/xPtbAd0j\nIaFYAI7D0GoT7RPjEiuA3GfmlbLNHiJuKvhB1PLKFAeNilUSxmn1uIZoL1NesNKq\nIcGY5jDjZ1XHm26sGahVpkUG0CM62+tlXSoREfA7T8pt9DTEceT/AFr2XK4jYIVz\n8eQQsSWu1ZK7E8EM4DnatDlXtas1qnIhO4M15zHfeiFuuDIIfR0ykRVKYnLP43eh\nvNURG3YBZwjgQQvD6xVu+KQZ2aKrr+InUlYrAoosFCT5v0ICvybIxo/gbjh9Uy3l\n7ZizlWNof/k19N+IxWA1ksB8aRxhlRbQ694Lrz4EEEVlWFA4r0jyWbYW8jwNkALG\ncC4BrTwV1wIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIB\nBjAdBgNVHQ4EFgQU7edvdlq/YOxJW8ald7tyFnGbxD0wDQYJKoZIhvcNAQELBQAD\nggIBAJHfgD9DCX5xwvfrs4iP4VGyvD11+ShdyLyZm3tdquXK4Qr36LLTn91nMX66\nAarHakE7kNQIXLJgapDwyM4DYvmL7ftuKtwGTTwpD4kWilhMSA/ohGHqPHKmd+RC\nroijQ1h5fq7KpVMNqT1wvSAZYaRsOPxDMuHBR//47PERIjKWnML2W2mWeyAMQ0Ga\nW/ZZGYjeVYg3UQt4XAoeo0L9x52ID8DyeAIkVJOviYeIyUqAHerQbj5hLja7NQ4n\nlv1mNDthcnPxFlxHBlRJAHpYErAK74X9sbgzdWqTHBLmYF5vHX/JHyPLhGGfHoJE\n+V+tYlUkmlKY7VHnoX6XOuYvHxHaU4AshZ6rNRDbIl9qxV6XU/IyAgkwo1jwDQHV\ncsaxfGl7w/U2Rcxhbl5MlMVerugOXou/983g7aEOGzPuVBj+D77vfoRrQ+NwmNtd\ndbINWQeFFSM51vHfqSYP1kjHs6Yi9TM3WpVHn3u6GBVv/9YUZINJ0gpnIdsPNWNg\nKCLjsZWDzYWm3S8P52dSbrsvhXz1SnPnxT7AvSESBT/8twNJAlvIJebiVDj1eYeM\nHVOyToV7BjjHLPj4sHKNJeV3UvQDHEimUF+IIDBu8oJDqz2XhOdT+yHBTw8imoa4\nWSr2Rz0ZiC3oheGe7IUIarFsNMkd7EgrO3jtZsSOeWmD3n+M\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

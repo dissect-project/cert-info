@@ -1,0 +1,137 @@
+{
+    "domain": "bishkek.gov.kg",
+    "date": "2025-12-15 11:23:36",
+    "ip-address": "85.113.1.68",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.bishkek.gov.kg",
+                    "issuer": "CN=R13,O=Let's Encrypt,C=US",
+                    "serial_number": 603059549990262738928039939355146446072154,
+                    "valid_from": "2025-11-08 16:28:41",
+                    "valid_until": "2026-02-06 16:28:40",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "*.bishkek.gov.kg",
+                        "bishkek.gov.kg"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://r13.c.lencr.org/91.crl"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://r13.i.lencr.org/"
+                    ],
+                    "validation_level": "Domain Validation (DV)",
+                    "fingerprint_SHA256": "2116e249d20e4fc89354c523b130b26708de5a6a77db6a4068ec7e6972b25f25",
+                    "signature": "2aa347aa47e2050e8b5ea3ba073f934af3a93db9f762fd32e24d593d30e1d5a318863f692e85a8d9026b04f2cf3b650ef5593a40846246ba5fa07ef75260fba723bbeeacfcc0a71e186dd759e6a05f27ca6e880de4f281bc45a13cea60d7e4c8e1fd8ac33e96ac67c85105c6eed94ed04988e77d268f4e9c1a4ba08455d119bc600dff7dabf547b904e0d18b72cf2365faeeb917d8bc03e9f7e85f7a5d815b1eca01983bb0a9c36180db285ecf3c18a015599dce5f95c5cfea936c843478b1543cdc54e21ecfaad1c991fccaf1e9288e74d636eb12c7473117ab31e9eb364468a7466b0a937c63c9d26ee45dc873d8a35b7a0a564a51475fcedc17cc6c849578"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFDDCCA/SgAwIBAgISBuw7lI636jsq2xPhvRH0FmlaMA0GCSqGSIb3DQEBCwUA\nMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD\nEwNSMTMwHhcNMjUxMTA4MTYyODQxWhcNMjYwMjA2MTYyODQwWjAbMRkwFwYDVQQD\nDBAqLmJpc2hrZWsuZ292LmtnMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC\nAQEAp1L35fZKAYa9Tr16z03uAP8C2DO9Kr3C1EG5hHLyqDs0SVr777xO3WwZ+2Su\nYl4bWWgmNKuHz83dNF5okVtwJ16f7hLlpyH6cBeKwinWtyG1vYo8bqp97O0/enW2\nRbXfVpHbopzN2UuxGBooMaAlWxU+oqOJ5EF53xJrkPPT5QaIPK4ERLKKUD1YqaWH\n0igOk966fYMMW9l+6okYIt5dmDOMz+wRasfGto4GX+Zt54671nnmTGHwnsT+ROo/\ndCG16gDjr7KdhOc9w2PFIAGXXh+DxX8PHNAHVdpdcfTt9NKIFVkAVJ6a7anV9smR\nTYZ/3eJWhUmpULflykJvk4g+twIDAQABo4ICMDCCAiwwDgYDVR0PAQH/BAQDAgWg\nMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAAMB0G\nA1UdDgQWBBSFmDad11e4XKXHTVD38Dxslwr5MjAfBgNVHSMEGDAWgBTnq58PLDOg\nU9NeT3jIsoQOO9aSMzAzBggrBgEFBQcBAQQnMCUwIwYIKwYBBQUHMAKGF2h0dHA6\nLy9yMTMuaS5sZW5jci5vcmcvMCsGA1UdEQQkMCKCECouYmlzaGtlay5nb3Yua2eC\nDmJpc2hrZWsuZ292LmtnMBMGA1UdIAQMMAowCAYGZ4EMAQIBMC4GA1UdHwQnMCUw\nI6AhoB+GHWh0dHA6Ly9yMTMuYy5sZW5jci5vcmcvOTEuY3JsMIIBBAYKKwYBBAHW\neQIEAgSB9QSB8gDwAHYAlpdkv1VYl633Q4doNwhCd+nwOtX2pPM2bkakPw/KqcYA\nAAGaZIH8ZwAABAMARzBFAiEAzrl9SFDHoZodJPB46Rgw0dFA0ebgiJO4JlO8zLr1\n8VYCIDYkTGK+F0hueHr+W5LqqWx/i+J2BcO+W8WOFM8BdutkAHYAGYbUxyiqb/66\nA294Kk0BkarOLXIxD67OXXBBLSVMx9QAAAGaZIID7QAABAMARzBFAiEAhYCr+e5/\nEbESy+XcJLVOkx35+stjL8l0IgvImfOpRMoCIHoP99anOabcwdiwxQa7ryR4ADE7\nUZpKcMXMZw1O9azrMA0GCSqGSIb3DQEBCwUAA4IBAQAqo0eqR+IFDoteo7oHP5NK\n86k9ufdi/TLiTVk9MOHVoxiGP2kuhajZAmsE8s87ZQ71WTpAhGJGul+gfvdSYPun\nI7vurPzApx4YbddZ5qBfJ8puiA3k8oG8RaE86mDX5Mjh/YrDPpasZ8hRBcbu2U7Q\nSYjnfSaPTpwaS6CEVdEZvGAN/32r9Ue5BODRi3LPI2X67rkX2LwD6ffoX3pdgVse\nygGYO7Cpw2GA2yhezzwYoBVZnc5flcXP6pNshDR4sVQ83FTiHs+q0cmR/Mrx6SiO\ndNY26xLHRzEXqzHp6zZEaKdGawqTfGPJ0m7kXchz2KNbegpWSlFHX87cF8xshJV4\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=R13,O=Let's Encrypt,C=US",
+                    "issuer": "CN=ISRG Root X1,O=Internet Security Research Group,C=US",
+                    "serial_number": 119635429456979344322213464088047616773,
+                    "valid_from": "2024-03-13 00:00:00",
+                    "valid_until": "2027-03-12 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://x1.c.lencr.org/"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://x1.i.lencr.org/"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "d3b128216a843f8ef1321501f5df52a5df52939ee2c19297712cd3de4d419354",
+                    "signature": "51375852a1229b35bb4dbaceca92ea09f2fb54ec187ff43bf4e1f97072c265e8207d08437289e593b2a087c6f4be2fbf5ee5aeec237c9ff50f7a0d6fa371beb5a5e2aebcadb614229c01c6c1cfd475b3b28096bdcee05c572aa81f70974d70c89d3fbc6be73768454c2764adfa94a7e1e77e5a40e9f228ec8a3bc4c85c04e3b86e956d0bb738e0f5f395e4f9ab83fcf159b46e2fe9340c10c71097a79c2b007a7edcdf93e6c7b8e9989fc7b60461727cf4ca3481bf2230e8bd5022ea640afd9204e0d3ff10c3de07d04322afeaba15e06d8485f13202c5a99a88f18c25021a2ca0f7b16f0ed9bf34ad8b49cf65c9b2b107bdc8dbe3f61b709a5a9befa40887095bb7d235bc182c4a75f86c5ed9c8cb68a6b2442a559da6d0f9b1a1b6f6f13b9cafbc412bb0adc2f3eb6fbf68b3bbb65cfdcee5ff5bfc7eba18dc91ae09515e5ad88c8d681982ff7f82359ff4a0bac75ae96bc0e82d7dd24c63535e58d76987538f81c7247d731da18464bd7c08cc64a26cb36f2ac6fcfa031bb809a0e644d6692bfa50ad7175ef25c25e49845a0bd2384672e99f6971b2c854419c915fe255eab400ea36a6483da78411232d2d2b676244434b485d8acac1706d8e81dba045785b37bf5b185518455bd9cb90ead0569a2b092d0ac9999fc150fcf6a49396772d2dc66721abe32ac294bb59c0d62534c9831d61ea4a47b9566e7c21771ddec289"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFBTCCAu2gAwIBAgIQWgDyEtjUtIDzkkFX6imDBTANBgkqhkiG9w0BAQsFADBP\nMQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy\nY2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa\nFw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF\nbmNyeXB0MQwwCgYDVQQDEwNSMTMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK\nAoIBAQClZ3CN0FaBZBUXYc25BtStGZCMJlA3mBZjklTb2cyEBZPs0+wIG6BgUUNI\nfSvHSJaetC3ancgnO1ehn6vw1g7UDjDKb5ux0daknTI+WE41b0VYaHEX/D7YXYKg\nL7JRbLAaXbhZzjVlyIuhrxA3/+OcXcJJFzT/jCuLjfC8cSyTDB0FxLrHzarJXnzR\nyQH3nAP2/Apd9Np75tt2QnDr9E0i2gB3b9bJXxf92nUupVcM9upctuBzpWjPoXTi\ndYJ+EJ/B9aLrAek4sQpEzNPCifVJNYIKNLMc6YjCR06CDgo28EdPivEpBHXazeGa\nXP9enZiVuppD0EqiFwUBBDDTMrOPAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG\nMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/\nAgEAMB0GA1UdDgQWBBTnq58PLDOgU9NeT3jIsoQOO9aSMzAfBgNVHSMEGDAWgBR5\ntFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG\nFmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD\nVR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B\nAQsFAAOCAgEAUTdYUqEimzW7TbrOypLqCfL7VOwYf/Q79OH5cHLCZeggfQhDconl\nk7Kgh8b0vi+/XuWu7CN8n/UPeg1vo3G+taXirrytthQinAHGwc/UdbOygJa9zuBc\nVyqoH3CXTXDInT+8a+c3aEVMJ2St+pSn4ed+WkDp8ijsijvEyFwE47hulW0Ltzjg\n9fOV5Pmrg/zxWbRuL+k0DBDHEJennCsAen7c35Pmx7jpmJ/HtgRhcnz0yjSBvyIw\n6L1QIupkCv2SBODT/xDD3gfQQyKv6roV4G2EhfEyAsWpmojxjCUCGiyg97FvDtm/\nNK2LSc9lybKxB73I2+P2G3CaWpvvpAiHCVu30jW8GCxKdfhsXtnIy2imskQqVZ2m\n0Pmxobb28Tucr7xBK7CtwvPrb79os7u2XP3O5f9b/H66GNyRrglRXlrYjI1oGYL/\nf4I1n/Sgusda6WvA6C190kxjU15Y12mHU4+BxyR9cx2hhGS9fAjMZKJss28qxvz6\nAxu4CaDmRNZpK/pQrXF17yXCXkmEWgvSOEZy6Z9pcbLIVEGckV/iVeq0AOo2pkg9\np4QRIy0tK2diRENLSF2KysFwbY6B26BFeFs3v1sYVRhFW9nLkOrQVporCS0KyZmf\nwVD89qSTlnctLcZnIavjKsKUu1nA1iU0yYMdYepKR7lWbnwhdx3ewok=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=ISRG Root X1,O=Internet Security Research Group,C=US",
+                    "issuer": "CN=ISRG Root X1,O=Internet Security Research Group,C=US",
+                    "serial_number": 172886928669790476064670243504169061120,
+                    "valid_from": "2015-06-04 11:04:38",
+                    "valid_until": "2035-06-04 11:04:38",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "96bcec06264976f37460779acf28c5a7cfe8a3c0aae11a8ffcee05c0bddf08c6",
+                    "signature": "551f58a9bcb2a850d00cb1d81a6920272908ac61755c8a6ef882e5692fd5f6564bb9b8731059d321977ee74c71fbb2d260ad39a80bea17215685f1500e59ebcee059e9bac915ef869d8f8480f6e4e99190dc179b621b45f06695d27c6fc2ea3bef1fcfcbd6ae27f1a9b0c8aefd7d7e9afa2204ebffd97fea912b22b1170e8ff28a345b58d8fc01c954b9b826cc8a8833894c2d843c82dfee965705ba2cbbf7c4b7c74e3b82be31c822737392d1c280a43939103323824c3c9f86b255981dbe29868c229b9ee26b3b573a82704ddc09c789cb0a074d6ce85d8ec9efceabc7bbb52b4e45d64ad026cce572ca086aa595e315a1f7a4edc92c5fa5fbffac28022ebed77bbbe3717b9016d3075e46537c3707428cd3c4969cd599b52ae0951a8048ae4c3907cecc47a452952bbab8fbadd233537de51d4d6dd5a1b1c7426fe64027355ca328b7078de78d3390e7239ffb509c796c46d5b415b3966e7e9b0c963ab8522d3fd65be1fb08c284fe24a8a389daac6ae1182ab1a843615bd31fdc3b8d76f22de88d75df17336c3d53fb7bcb415fffdca2d06138e196b8ac5d8b37d775d533c09911ae9d41c1727584be0241425f67244894d19b27be073fb9b84f817451e17ab7ed9d23e2bee0d52804133c31039edd7a6c8fc60718c67fde478e3f289e0406cfa5543477bdec899be91743df5bdb5ffe8e1e57a2cd409d7e6222dade1827"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw\nTzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh\ncmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMTUwNjA0MTEwNDM4\nWhcNMzUwNjA0MTEwNDM4WjBPMQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJu\nZXQgU2VjdXJpdHkgUmVzZWFyY2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBY\nMTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAK3oJHP0FDfzm54rVygc\nh77ct984kIxuPOZXoHj3dcKi/vVqbvYATyjb3miGbESTtrFj/RQSa78f0uoxmyF+\n0TM8ukj13Xnfs7j/EvEhmkvBioZxaUpmZmyPfjxwv60pIgbz5MDmgK7iS4+3mX6U\nA5/TR5d8mUgjU+g4rk8Kb4Mu0UlXjIB0ttov0DiNewNwIRt18jA8+o+u3dpjq+sW\nT8KOEUt+zwvo/7V3LvSye0rgTBIlDHCNAymg4VMk7BPZ7hm/ELNKjD+Jo2FR3qyH\nB5T0Y3HsLuJvW5iB4YlcNHlsdu87kGJ55tukmi8mxdAQ4Q7e2RCOFvu396j3x+UC\nB5iPNgiV5+I3lg02dZ77DnKxHZu8A/lJBdiB3QW0KtZB6awBdpUKD9jf1b0SHzUv\nKBds0pjBqAlkd25HN7rOrFleaJ1/ctaJxQZBKT5ZPt0m9STJEadao0xAH0ahmbWn\nOlFuhjuefXKnEgV4We0+UXgVCwOPjdAvBbI+e0ocS3MFEvzG6uBQE3xDk3SzynTn\njh8BCNAw1FtxNrQHusEwMFxIt4I7mKZ9YIqioymCzLq9gwQbooMDQaHWBfEbwrbw\nqHyGO0aoSCqI3Haadr8faqU9GY/rOPNk3sgrDQoo//fb4hVC1CLQJ13hef4Y53CI\nrU7m2Ys6xt0nUW7/vGT1M0NPAgMBAAGjQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNV\nHRMBAf8EBTADAQH/MB0GA1UdDgQWBBR5tFnme7bl5AFzgAiIyBpY9umbbjANBgkq\nhkiG9w0BAQsFAAOCAgEAVR9YqbyyqFDQDLHYGmkgJykIrGF1XIpu+ILlaS/V9lZL\nubhzEFnTIZd+50xx+7LSYK05qAvqFyFWhfFQDlnrzuBZ6brJFe+GnY+EgPbk6ZGQ\n3BebYhtF8GaV0nxvwuo77x/Py9auJ/GpsMiu/X1+mvoiBOv/2X/qkSsisRcOj/KK\nNFtY2PwByVS5uCbMiogziUwthDyC3+6WVwW6LLv3xLfHTjuCvjHIInNzktHCgKQ5\nORAzI4JMPJ+GslWYHb4phowim57iaztXOoJwTdwJx4nLCgdNbOhdjsnvzqvHu7Ur\nTkXWStAmzOVyyghqpZXjFaH3pO3JLF+l+/+sKAIuvtd7u+Nxe5AW0wdeRlN8NwdC\njNPElpzVmbUq4JUagEiuTDkHzsxHpFKVK7q4+63SM1N95R1NbdWhscdCb+ZAJzVc\noyi3B43njTOQ5yOf+1CceWxG1bQVs5ZufpsMljq4Ui0/1lvh+wjChP4kqKOJ2qxq\n4RgqsahDYVvTH9w7jXbyLeiNdd8XM2w9U/t7y0Ff/9yi0GE44Za4rF2LN9d11TPA\nmRGunUHBcnWEvgJBQl9nJEiU0Zsnvgc/ubhPgXRR4Xq37Z0j4r7g1SgEEzwxA57d\nemyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

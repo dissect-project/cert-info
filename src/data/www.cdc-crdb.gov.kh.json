@@ -1,0 +1,39 @@
+{
+    "domain": "www.cdc-crdb.gov.kh",
+    "date": "2025-12-15 10:58:52",
+    "ip-address": "203.223.32.44",
+    "status": "invalid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "invalid",
+            "issues": [
+                "Certificate chain is incomplete",
+                "Hostname mismatch"
+            ],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "1.2.840.113549.1.9.1=webmaster@localhost,CN=localhost,OU=none,O=none,L=Sometown,ST=Someprovince,C=US",
+                    "issuer": "1.2.840.113549.1.9.1=webmaster@localhost,CN=localhost,OU=none,O=none,L=Sometown,ST=Someprovince,C=US",
+                    "serial_number": 12983416599202608915,
+                    "valid_from": "2018-10-18 09:45:04",
+                    "valid_until": "2046-03-04 09:45:04",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "9996389b42be0b7b6941728480786fe25a3663ae16994c411f078b1bbdebd089",
+                    "signature": "6ff27c81c19099f01fec2210519e990cfbb15c7beefb1e5b0a3a0a733203dd4511a9525589dd7e39491cbd6d8e56c728a3c96272d3be12dc4f49063f9080499cfc3c190c5b19894d6375a962c12a82c38137cb27e92229021d8a1c9a62b2aaa933409a91cb92c73181a13034af288a589b7b5606e654d94ee3233b8bdd645d63369556074120a980c749108d4dc4564a170831a0fa158c284740c7afb1bf19f7e56ad189cffbc1adacc097e290bfa731df3927e3d68383f3eb8b5022938f34420b18a26b35b65366b4e9b920b70133426873e720583a159ce9dd6794abbb4edcf7707976abfa6207696f9f9949e3a64d1491694b26853da5f11d05f9ed36682e"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDmDCCAoACCQC0LlybnmG3EzANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMC\nVVMxFTATBgNVBAgMDFNvbWVwcm92aW5jZTERMA8GA1UEBwwIU29tZXRvd24xDTAL\nBgNVBAoMBG5vbmUxDTALBgNVBAsMBG5vbmUxEjAQBgNVBAMMCWxvY2FsaG9zdDEi\nMCAGCSqGSIb3DQEJARYTd2VibWFzdGVyQGxvY2FsaG9zdDAeFw0xODEwMTgwOTQ1\nMDRaFw00NjAzMDQwOTQ1MDRaMIGNMQswCQYDVQQGEwJVUzEVMBMGA1UECAwMU29t\nZXByb3ZpbmNlMREwDwYDVQQHDAhTb21ldG93bjENMAsGA1UECgwEbm9uZTENMAsG\nA1UECwwEbm9uZTESMBAGA1UEAwwJbG9jYWxob3N0MSIwIAYJKoZIhvcNAQkBFhN3\nZWJtYXN0ZXJAbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC\nAQEA0f0Kg8x8L40DnctCraK0ozBQaZ9wYdDOURwfuZY4fEZU6ZrVWdscmTnQHkcJ\nm1dZ2gutyeFpAyV+5nfpd5iQe5d1VU83t5khK2VyUJpIMPMFJObriCxNmtG+n1HD\nA7HoDVhbKP5MEm26eNOZ33bUCsMqQ0M3ixcy0v44gcc5hvOzhnuqm4VsiEEiirA3\nUChJIKyecJmMjn0d7ZpYEjdeDxJRBq9M35EFoCO33hdZPadYkA9/bjL+61xulC19\n+4sTgmLcR3pT2Gi10WcrHRqAmbsJTVD1i7nsIgQoC1zDbgUlvohnN3JPXE9zoONe\nTWfw/EDeRLdbJQCw/1N+3ktbNQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBv8nyB\nwZCZ8B/sIhBRnpkM+7Fce+77HlsKOgpzMgPdRRGpUlWJ3X45SRy9bY5WxyijyWJy\n074S3E9JBj+QgEmc/DwZDFsZiU1jdaliwSqCw4E3yyfpIikCHYocmmKyqqkzQJqR\ny5LHMYGhMDSvKIpYm3tWBuZU2U7jIzuL3WRdYzaVVgdBIKmAx0kQjU3EVkoXCDGg\n+hWMKEdAx6+xvxn35WrRic/7wa2swJfikL+nMd85J+PWg4Pz64tQIpOPNEILGKJr\nNbZTZrTpuSC3ATNCaHPnIFg6FZzp3WeUq7tO3PdweXar+mIHaW+fmUnjpk0UkWlL\nJoU9pfEdBfntNmgu\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

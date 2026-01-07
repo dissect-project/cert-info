@@ -1,0 +1,134 @@
+{
+    "domain": "www.ycdc.gov.mm",
+    "date": "2025-12-15 11:37:04",
+    "ip-address": "203.81.69.212",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.ycdc.gov.mm,O=Yangon City Development Committee,L=Yangon,ST=Yangon,C=MM",
+                    "issuer": "CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE",
+                    "serial_number": 4571443124979750440190669805,
+                    "valid_from": "2025-02-20 01:53:56",
+                    "valid_until": "2026-03-24 01:53:55",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "*.ycdc.gov.mm",
+                        "ycdc.gov.mm"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "ocsp_urls": [
+                        "http://ocsp.globalsign.com/gsrsaovsslca2018"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://secure.globalsign.com/cacert/gsrsaovsslca2018.crt"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "f886994a89952e0255c386c06b1ac17297c5e5b0f520145da4b736d111eb0179",
+                    "signature": "6634490a96f6ed6abdaa876b1ea6f1cba622e2be954c86c0d069b78586a47a354f17f820b4b8789500f705bf62df1df524a12a5aae246ff95376d20b49497d0ea7775d0df7300bdcf3cf8dc0ad16654916f1ba1cc4b6c0e32bb9fb42e7a5bb46a0adde94187603158b738cd46822c07599e8f826a267297d6aa08980eeeed7fffc813ecd416495aca53bff3e1cc85fe7223aefb814aec9953fe4468360e113711ddb400201ddbcbb57dcf1c464358579bed62033fd52a009ba69ccce44b9b14af4a3f52e371e777267650f097550d5d43935066eb4f9d30005e375f8488d23d4ab186f8fa49ea8c2324c2d1bd01f442342f9f8b29b0080f4df6e07ba1bcec940"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGXzCCBUegAwIBAgIMDsVovF/2ETyqaPPtMA0GCSqGSIb3DQEBCwUAMFAxCzAJ\nBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMSYwJAYDVQQDEx1H\nbG9iYWxTaWduIFJTQSBPViBTU0wgQ0EgMjAxODAeFw0yNTAyMjAwMTUzNTZaFw0y\nNjAzMjQwMTUzNTVaMHMxCzAJBgNVBAYTAk1NMQ8wDQYDVQQIEwZZYW5nb24xDzAN\nBgNVBAcTBllhbmdvbjEqMCgGA1UEChMhWWFuZ29uIENpdHkgRGV2ZWxvcG1lbnQg\nQ29tbWl0dGVlMRYwFAYDVQQDDA0qLnljZGMuZ292Lm1tMIIBIjANBgkqhkiG9w0B\nAQEFAAOCAQ8AMIIBCgKCAQEA9eM08U8SF9FRilbTvAhEeICay1JIzcejJNxYIWLB\n1CamO1NRQcSx92NmGgzXFr4z4BmlXqbL982hFQSvuibENt9QA8ni1r1nc6o4jtHm\nBss5BHtrmGLFxxD/6XgCUtYlmEXwLQz+vGkU/abPSXCDUMHGU/9ZgQRUghADyBKg\nF8s1i3XkWiX2niCIV/az4KaCe8Y79nwSbjFwvDRETbb9d2LtuQy9Sq/kUakUtoab\nWkJi1yfEx1fKE5CrRoSQP/DwNuwsbTi5dcijz+GJ3ifMKQqnvMh3SIoS8648F32i\ntMjzNEqO563QTDmCfGpUaXBlUFP742NKJkObCm3wMQayVQIDAQABo4IDFDCCAxAw\nDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwgY4GCCsGAQUFBwEBBIGBMH8w\nRAYIKwYBBQUHMAKGOGh0dHA6Ly9zZWN1cmUuZ2xvYmFsc2lnbi5jb20vY2FjZXJ0\nL2dzcnNhb3Zzc2xjYTIwMTguY3J0MDcGCCsGAQUFBzABhitodHRwOi8vb2NzcC5n\nbG9iYWxzaWduLmNvbS9nc3JzYW92c3NsY2EyMDE4MFYGA1UdIARPME0wQQYJKwYB\nBAGgMgEUMDQwMgYIKwYBBQUHAgEWJmh0dHBzOi8vd3d3Lmdsb2JhbHNpZ24uY29t\nL3JlcG9zaXRvcnkvMAgGBmeBDAECAjAlBgNVHREEHjAcgg0qLnljZGMuZ292Lm1t\nggt5Y2RjLmdvdi5tbTAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwHwYD\nVR0jBBgwFoAU+O9/8s14Z6jeb48kjYjxhwMCs+swHQYDVR0OBBYEFCidgfjjOYiL\n0Kt7hC10hnUC/cxUMIIBfwYKKwYBBAHWeQIEAgSCAW8EggFrAWkAdgBkEcRspBLs\np4kcogIuALyrTygH1B41J6vq/tUDyX3N8AAAAZUhD9PIAAAEAwBHMEUCIQD97sU9\nDFibuBxqw27jQLQCP5c32zkofpxwUqREEYKZDwIgXVHoSPdWVzJZOcbiMliDkeBs\n6LddN35KWG+NlC4NahkAdwBWbNWjdr6D3+NCtnXEnCMkmKdpusOCy6tJo4d9mrMt\nAQAAAZUhD9S/AAAEAwBIMEYCIQDSyXBb4KXXL9ldpB592npOE6gDbMIO6fumv6xc\nJUwxgwIhAKJJusNSfYkmE3QtUrIXj+DHiwNBmQTzlph7cPO2fmAEAHYADleUvPOu\nqT4zGyyZB7P3kN+bwj1xMiXdIaklrGHFTiEAAAGVIQ/VJAAABAMARzBFAiEA0KfR\nQm6iZ1BAq77k2GLTAcdeAVqpDiaZ0rcjlMa60+ACIHS58t6BvkpBpOFNP9uLDiJN\ns2mESyAiRmdX31lewn6bMA0GCSqGSIb3DQEBCwUAA4IBAQBmNEkKlvbtar2qh2se\npvHLpiLivpVMhsDQabeFhqR6NU8X+CC0uHiVAPcFv2LfHfUkoSpariRv+VN20gtJ\nSX0Op3ddDfcwC9zzz43ArRZlSRbxuhzEtsDjK7n7Quelu0agrd6UGHYDFYtzjNRo\nIsB1mej4JqJnKX1qoImA7u7X//yBPs1BZJWspTv/PhzIX+ciOu+4FK7JlT/kRoNg\n4RNxHdtAAgHdvLtX3PHEZDWFeb7WIDP9UqAJumnMzkS5sUr0o/UuNx53cmdlDwl1\nUNXUOTUGbrT50wAF43X4SI0j1KsYb4+knqjCMkwtG9AfRCNC+fiymwCA9N9uB7ob\nzslA\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE",
+                    "issuer": "CN=GlobalSign,O=GlobalSign,OU=GlobalSign Root CA - R3",
+                    "serial_number": 153000603918210013455007253847,
+                    "valid_from": "2018-11-21 00:00:00",
+                    "valid_until": "2028-11-21 00:00:00",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl.globalsign.com/root-r3.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp2.globalsign.com/rootr3"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "b676ffa3179e8812093a1b5eafee876ae7a6aaf231078dad1bfb21cd2893764a",
+                    "signature": "9990c82d5f428ad40b66db98037311d488865228538afbaddffd738e3a6704dbc353147014097cc3e0f8d71c981aa2c43edbe900e3ca70b2f122302156dbd3ad795e81580b6d148035f56f5d1deb9a4705ff598d00b140da9098961aba6c6d7f8cf5b380df8c6473369679796974eabff89e018fa095698de984bae9e5d48838db783b98d0367b29b0d2521890de524300ae6a27c8149e8695ace18031307e9a25bb8bac0423a69900e8f1d226ec0f7e3b8a2b9238131d8f86cd865247e6347c5ba4023e8a617c2276535a94533386b892a872afa1f952871f31a5fcb081572fcdf4cedcf624cfa7e23490689dfeaaf1a99a12cc9bc0c6c3a8a5b0217ede48f6"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIETjCCAzagAwIBAgINAe5fIh38YjvUMzqFVzANBgkqhkiG9w0BAQsFADBMMSAw\nHgYDVQQLExdHbG9iYWxTaWduIFJvb3QgQ0EgLSBSMzETMBEGA1UEChMKR2xvYmFs\nU2lnbjETMBEGA1UEAxMKR2xvYmFsU2lnbjAeFw0xODExMjEwMDAwMDBaFw0yODEx\nMjEwMDAwMDBaMFAxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52\nLXNhMSYwJAYDVQQDEx1HbG9iYWxTaWduIFJTQSBPViBTU0wgQ0EgMjAxODCCASIw\nDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKdaydUMGCEAI9WXD+uu3Vxoa2uP\nUGATeoHLl+6OimGUSyZ59gSnKvuk2la77qCk8HuKf1UfR5NhDW5xUTolJAgvjOH3\nidaSz6+zpz8w7bXfIa7+9UQX/dhj2S/TgVprX9NHsKzyqzskeU8fxy7quRU6fBhM\nabO1IFkJXinDY+YuRluqlJBJDrnw9UqhCS98NE3QvADFBlV5Bs6i0BDxSEPouVq1\nlVW9MdIbPYa+oewNEtssmSStR8JvA+Z6cLVwzM0nLKWMjsIYPJLJLnNvBhBWk0Cq\no8VS++XFBdZpaFwGue5RieGKDkFNm5KQConpFmvv73W+eka440eKHRwup08CAwEA\nAaOCASkwggElMA4GA1UdDwEB/wQEAwIBhjASBgNVHRMBAf8ECDAGAQH/AgEAMB0G\nA1UdDgQWBBT473/yzXhnqN5vjySNiPGHAwKz6zAfBgNVHSMEGDAWgBSP8Et/qC5F\nJK5NUPpjmove4t0bvDA+BggrBgEFBQcBAQQyMDAwLgYIKwYBBQUHMAGGImh0dHA6\nLy9vY3NwMi5nbG9iYWxzaWduLmNvbS9yb290cjMwNgYDVR0fBC8wLTAroCmgJ4Yl\naHR0cDovL2NybC5nbG9iYWxzaWduLmNvbS9yb290LXIzLmNybDBHBgNVHSAEQDA+\nMDwGBFUdIAAwNDAyBggrBgEFBQcCARYmaHR0cHM6Ly93d3cuZ2xvYmFsc2lnbi5j\nb20vcmVwb3NpdG9yeS8wDQYJKoZIhvcNAQELBQADggEBAJmQyC1fQorUC2bbmANz\nEdSIhlIoU4r7rd/9c446ZwTbw1MUcBQJfMPg+NccmBqixD7b6QDjynCy8SIwIVbb\n0615XoFYC20UgDX1b10d65pHBf9ZjQCxQNqQmJYaumxtf4z1s4DfjGRzNpZ5eWl0\n6r/4ngGPoJVpjemEuunl1Ig423g7mNA2eymw0lIYkN5SQwCuaifIFJ6GlazhgDEw\nfpolu4usBCOmmQDo8dIm7A9+O4orkjgTHY+GzYZSR+Y0fFukAj6KYXwidlNalFMz\nhriSqHKvoflShx8xpfywgVcvzfTO3PYkz6fiNJBonf6q8amaEsybwMbDqKWwIX7e\nSPY=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=GlobalSign,O=GlobalSign,OU=GlobalSign Root CA - R3",
+                    "issuer": "CN=GlobalSign,O=GlobalSign,OU=GlobalSign Root CA - R3",
+                    "serial_number": 4835703278459759426209954,
+                    "valid_from": "2009-03-18 10:00:00",
+                    "valid_until": "2029-03-18 10:00:00",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "cbb522d7b7f127ad6a0113865bdf1cd4102e7d0759af635a7cf4720dc963c53b",
+                    "signature": "4b40dbc050aafec80ceff796544549bb96000941acb3138686280733ca6be674b9ba002daea40ad3f5f1f10f8abf73674a83c7447b78e0af6e6c6f03298e333945c38ee4b9576caafc1296ec53c62de4246cb99463fbdc536867563e83b8cf3521c3c968fecedac253aacc908ae9f05d468c95dd7a58281a2f1ddecd0037418fed446dd75328977ef367041e15d78a96b4d3de4c27a44c1b737376f41799c21f7a0ee32d08ad0a1c2cff3cab550e0f917e36ebc35749bee12e2d7c608bc3415113239dcef7326b9401a899e72c331f3a3b25d28640ce3b2c8678c9612f14baeedb556fdf84ee05094dbd28d872ced36250651eeb92978331d9b3b5ca47583f5f"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDXzCCAkegAwIBAgILBAAAAAABIVhTCKIwDQYJKoZIhvcNAQELBQAwTDEgMB4G\nA1UECxMXR2xvYmFsU2lnbiBSb290IENBIC0gUjMxEzARBgNVBAoTCkdsb2JhbFNp\nZ24xEzARBgNVBAMTCkdsb2JhbFNpZ24wHhcNMDkwMzE4MTAwMDAwWhcNMjkwMzE4\nMTAwMDAwWjBMMSAwHgYDVQQLExdHbG9iYWxTaWduIFJvb3QgQ0EgLSBSMzETMBEG\nA1UEChMKR2xvYmFsU2lnbjETMBEGA1UEAxMKR2xvYmFsU2lnbjCCASIwDQYJKoZI\nhvcNAQEBBQADggEPADCCAQoCggEBAMwldpB5BngiFvXAg7aEyiie/QV2EcWtiHL8\nRgJDx7KKnQRfJMsuS+FggkbhUqsMgUdwbN1k0ev1LKMPgj0MK66X17YUhhB5uzsT\ngHeMCOFJ0mpiLx9e+pZo34knlTifBtc+ycsmWQ1z3rDI6SYOgxXG71uL0gRgykmm\nKPZpO/bLyCiR5Z2KYVc3rHQU3HTgOu5yLy6c+9C7v/U9AOEGM+iCK65TpjoWc4zd\nQQ4gOsC0p6Hpsk+QLjJg6VfLuQSSaGjlOCZgdbKfd/+RFO+uIEn8rUAVSNECMWEZ\nXriX7613t2Saer9fwRPvm2L7DWzgVGkWqQPabumDk3F2xmmFghcCAwEAAaNCMEAw\nDgYDVR0PAQH/BAQDAgEGMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFI/wS3+o\nLkUkrk1Q+mOai97i3Ru8MA0GCSqGSIb3DQEBCwUAA4IBAQBLQNvAUKr+yAzv95ZU\nRUm7lgAJQayzE4aGKAczymvmdLm6AC2upArT9fHxD4q/c2dKg8dEe3jgr25sbwMp\njjM5RcOO5LlXbKr8EpbsU8Yt5CRsuZRj+9xTaGdWPoO4zzUhw8lo/s7awlOqzJCK\n6fBdRoyV3XpYKBovHd7NADdBj+1EbddTKJd+82cEHhXXipa0095MJ6RMG3NzdvQX\nmcIfeg7jLQitChws/zyrVQ4PkX4268NXSb7hLi18YIvDQVETI53O9zJrlAGomecs\nMx86OyXShkDOOyyGeMlhLxS67ttVb9+E7gUJTb0o2HLO02JQZR7rkpeDMdmztcpH\nWD9f\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

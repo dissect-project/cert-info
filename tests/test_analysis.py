@@ -5,7 +5,7 @@ is working and behaving as expected.
 
 import unittest
 
-from cert_info.cert_info import CertificateACertificateInformationnalyzer
+from src.cert_info import CertificateACertificateInformationnalyzer
 
 class TestDomainAnalysis(unittest.TestCase):
     """Test the domain analysis function."""

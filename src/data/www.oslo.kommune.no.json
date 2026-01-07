@@ -1,0 +1,186 @@
+{
+    "domain": "www.oslo.kommune.no",
+    "date": "2025-12-15 11:37:58",
+    "ip-address": "3.174.141.55",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed."
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=oslo.kommune.no",
+                    "issuer": "CN=Amazon RSA 2048 M03,O=Amazon,C=US",
+                    "serial_number": 5656097174753668068459001458425401803,
+                    "valid_from": "2025-06-04 00:00:00",
+                    "valid_until": "2026-07-03 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "oslo.kommune.no",
+                        "www.oslo.kommune.no"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.r2m03.amazontrust.com/r2m03.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.r2m03.amazontrust.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://crt.r2m03.amazontrust.com/r2m03.cer"
+                    ],
+                    "validation_level": "Domain Validation (DV)",
+                    "fingerprint_SHA256": "d12deb583a8a13e169da938000029b4807d265012f87ecc8d566ce9e8e0288cc",
+                    "signature": "1ed6f6175610ef7f4bd3fa9c78ca569b069b0c2ec9c3a6c736a74917fcc4adb33dc8a4b97f3c33016c961236fc276c4e92f0722d742bddfc7e62bdf96a09fcc1b9ff796b47913ab7fd47bfa47262aee92839103323f458865f235c2aff3399ca7ebc0c605b794ec649b56c90bac81d70a3e1fe57e5a9f9d2a34298970dca436bef63d27491f21a91f04043d13ec851a02f2d1ac83610346547b027ff8b8278d27a1ded8eba8976073440cc4c0e85d435140d402080b37734c2051d96d2acd691b9b7de40bdec43eda866b272a4f0bb5ff589fb97486004ee9b4def0002db67fde78d595bf45def234d7a1b63807bd830bee5fd3f5a8c09e3c067789c6d4d71f4"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIF4TCCBMmgAwIBAgIQBEFTHv8oMDkdkiZ84eURyzANBgkqhkiG9w0BAQsFADA8\nMQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRwwGgYDVQQDExNBbWF6b24g\nUlNBIDIwNDggTTAzMB4XDTI1MDYwNDAwMDAwMFoXDTI2MDcwMzIzNTk1OVowGjEY\nMBYGA1UEAxMPb3Nsby5rb21tdW5lLm5vMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A\nMIIBCgKCAQEArr5LxEvNAjDnk7GGaC+5KD5dwxTb8vfA+y21ZGEYCCREN3oqmOPG\nF3xi7j4XUajQVD6RKkLM8o28ZIml839dG/4eNsjc1TY36cEnE+oc9vgw3SieImxk\n5FgoxJ45MsSHsugTuqitQTKqs/QjLmqQuYrO9ZfjV+Yy/ME5Uk9jh00MOH0qbjg0\n2nsIQY2WJ/qNzO4iVYF5OjGDEZQf2QYEWPv3KevBdOzv2LRTH6BIVEaAR5w4HYjr\nXsw2hammHmOe12MyWxfAv8uQITokbROakj9/FfMst3N/FjQ1CeBfyzrBHnBKNxst\n3+oREcIDpSvU95LcmdaCcKukXeO2qhh6RQIDAQABo4IC/zCCAvswHwYDVR0jBBgw\nFoAUVdkYX9IczAHhWLS+q9lVQgHXLgIwHQYDVR0OBBYEFEDvw4borWKFObDeYXtp\ntouh5sxBMC8GA1UdEQQoMCaCD29zbG8ua29tbXVuZS5ub4ITd3d3Lm9zbG8ua29t\nbXVuZS5ubzATBgNVHSAEDDAKMAgGBmeBDAECATAOBgNVHQ8BAf8EBAMCBaAwHQYD\nVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMDsGA1UdHwQ0MDIwMKAuoCyGKmh0\ndHA6Ly9jcmwucjJtMDMuYW1hem9udHJ1c3QuY29tL3IybTAzLmNybDB1BggrBgEF\nBQcBAQRpMGcwLQYIKwYBBQUHMAGGIWh0dHA6Ly9vY3NwLnIybTAzLmFtYXpvbnRy\ndXN0LmNvbTA2BggrBgEFBQcwAoYqaHR0cDovL2NydC5yMm0wMy5hbWF6b250cnVz\ndC5jb20vcjJtMDMuY2VyMAwGA1UdEwEB/wQCMAAwggGABgorBgEEAdZ5AgQCBIIB\ncASCAWwBagB3ANgJVTuUT3r/yBYZb5RPhauw+Pxeh1UmDxXRLnK7RUsUAAABlzvI\nfSAAAAQDAEgwRgIhAJMXD952Ptl+gY2HKRzaKVimYXLdzAi0I4IEE64ZoPLRAiEA\njxKJ6K/Juty3d3zab9vMeqruIqECxvTZpFkSfXvRJaUAdwDCMX5XRRmjRe5/ON6y\nkEHrx8IhWiK/f9W1rXaa2Q5SzQAAAZc7yH0jAAAEAwBIMEYCIQC0WJPrkSqNaMIS\n4Php/ojkEg3wMvh5w2MW1zz0U8jqTAIhALnu0eCuFz815uu/TbDyMFkqQW9ZpGmP\n6IGfZdurMkl8AHYAlE5Dh/rswe+B8xkkJqgYZQHH0184AgE/cmd9VTcuGdgAAAGX\nO8h9OgAABAMARzBFAiB3sDL6WhiROmkfpmB7JgUsJb+9DN4t/nW8MPiwH8l+wwIh\nAP6orEQs/0RnDKpurWfQhiHHo+le8vZJPiGjAVzrgR2+MA0GCSqGSIb3DQEBCwUA\nA4IBAQAe1vYXVhDvf0vT+px4ylabBpsMLsnDpsc2p0kX/MStsz3IpLl/PDMBbJYS\nNvwnbE6S8HItdCvd/H5ivflqCfzBuf95a0eROrf9R7+kcmKu6Sg5EDMj9FiGXyNc\nKv8zmcp+vAxgW3lOxkm1bJC6yB1wo+H+V+Wp+dKjQpiXDcpDa+9j0nSR8hqR8EBD\n0T7IUaAvLRrINhA0ZUewJ/+LgnjSeh3tjrqJdgc0QMxMDoXUNRQNQCCAs3c0wgUd\nltKs1pG5t95AvexD7ahmsnKk8Ltf9Yn7l0hgBO6bTe8AAttn/eeNWVv0Xe8jTXob\nY4B72DC+5f0/WowJ48BneJxtTXH0\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Amazon RSA 2048 M03,O=Amazon,C=US",
+                    "issuer": "CN=Amazon Root CA 1,O=Amazon,C=US",
+                    "serial_number": 166129356476704345391986644047206454194698629,
+                    "valid_from": "2022-08-23 22:26:04",
+                    "valid_until": "2030-08-23 22:26:04",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://crl.rootca1.amazontrust.com/rootca1.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.rootca1.amazontrust.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://crt.rootca1.amazontrust.com/rootca1.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "bf8a69027bcc8d2d42a6e6d25bdd4873f6a34b8f90edf07e86c5d6916da0b933",
+                    "signature": "068de5a6d9c0bedf3d8ccd20a7b5ee3affb259be3de24190d8ec4bce0cd759178d67ef52eb93d91b7cdc1eacad1d54dcd6dfa59e7ebee3ed94b0055839d16e5acbae6335237be134d0575cade169d26d5bcde8a94cb35862c8e65da072ac2835765063716dda0160240d6b619817c1502162ee80da77e5a48ea4ccba705972985428988ae73901f02b59ef558e2ac43489314fe0349cf5ec3f00acf3779e09f26764f07a9274b8120dcf71b9b5edab745505e22e18dc16fb1549470d89b8bbc688446a64d99a5f5e6c5aa319db201651bc62cf494b8fc27c2850e32c27c8e2ac8e6fb3676f7213dbeccb48d6b95e8b4d9fda2bc7dafc648c32e5b52a5ed9f882"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIEXjCCA0agAwIBAgITB3MSTNQG0mfAmRzdKZqfODF5hTANBgkqhkiG9w0BAQsF\nADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6\nb24gUm9vdCBDQSAxMB4XDTIyMDgyMzIyMjYwNFoXDTMwMDgyMzIyMjYwNFowPDEL\nMAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEcMBoGA1UEAxMTQW1hem9uIFJT\nQSAyMDQ4IE0wMzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALd/pVko\n8vuM475Tf45HV3BbCl/B9Jy89G1CRkFjcPY06WA9lS+7dWbUA7GtWUKoksr69hKM\nwcMsNpxlw7b3jeXFgxB09/nmalcAWtnLzF+LaDKEA5DQmvKzuh1nfIfqEiKCQSmX\nXh09Xs+dO7cm5qbaL2hhNJCSAejciwcvOFgFNgEMR42wm6KIFHsQW28jhA+1u/M0\np6fVwReuEgZfLfdx82Px0LJck3lST3EB/JfbdsdOzzzg5YkY1dfuqf8y5fUeZ7Cz\nWXbTjujwX/TovmeWKA36VLCz75azW6tDNuDn66FOpADZZ9omVaF6BqNJiLMVl6P3\n/c0OiUMC6Z5OfKcCAwEAAaOCAVowggFWMBIGA1UdEwEB/wQIMAYBAf8CAQAwDgYD\nVR0PAQH/BAQDAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAdBgNV\nHQ4EFgQUVdkYX9IczAHhWLS+q9lVQgHXLgIwHwYDVR0jBBgwFoAUhBjMhTTsvAyU\nlC4IWZzHshBOCggwewYIKwYBBQUHAQEEbzBtMC8GCCsGAQUFBzABhiNodHRwOi8v\nb2NzcC5yb290Y2ExLmFtYXpvbnRydXN0LmNvbTA6BggrBgEFBQcwAoYuaHR0cDov\nL2NydC5yb290Y2ExLmFtYXpvbnRydXN0LmNvbS9yb290Y2ExLmNlcjA/BgNVHR8E\nODA2MDSgMqAwhi5odHRwOi8vY3JsLnJvb3RjYTEuYW1hem9udHJ1c3QuY29tL3Jv\nb3RjYTEuY3JsMBMGA1UdIAQMMAowCAYGZ4EMAQIBMA0GCSqGSIb3DQEBCwUAA4IB\nAQAGjeWm2cC+3z2MzSCnte46/7JZvj3iQZDY7EvODNdZF41n71Lrk9kbfNwerK0d\nVNzW36Wefr7j7ZSwBVg50W5ay65jNSN74TTQV1yt4WnSbVvN6KlMs1hiyOZdoHKs\nKDV2UGNxbdoBYCQNa2GYF8FQIWLugNp35aSOpMy6cFlymFQomIrnOQHwK1nvVY4q\nxDSJMU/gNJz17D8ArPN3ngnyZ2TwepJ0uBINz3G5te2rdFUF4i4Y3Bb7FUlHDYm4\nu8aIRGpk2ZpfXmxaoxnbIBZRvGLPSUuPwnwoUOMsJ8jirI5vs2dvchPb7MtI1rle\ni02f2ivH2vxkjDLltSpe2fiC\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Amazon Root CA 1,O=Amazon,C=US",
+                    "issuer": "CN=Starfield Services Root Certificate Authority - G2,O=Starfield Technologies\\, Inc.,L=Scottsdale,ST=Arizona,C=US",
+                    "serial_number": 144918191876577076464031512351042010504348870,
+                    "valid_from": "2015-05-25 12:00:00",
+                    "valid_until": "2037-12-31 01:00:00",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.rootg2.amazontrust.com/rootg2.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.rootg2.amazontrust.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://crt.rootg2.amazontrust.com/rootg2.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "87dcd4dc74640a322cd205552506d1be64f12596258096544986b4850bc72706",
+                    "signature": "6237425cbc10b53e8b2ce90c9b6c45e207007af9c5580bb9088c3eedb3253cb56f50e4cd356aa79334963221a94844ab9ced3db4aa736de47f1680896ccf280318834779a3107e305bac3bb060e077d408a6e11d7c5ec0bbf99a7b229da700097eac461783dc9c265799303962968feddadeaac5cc1b3eca43686c5716bcd50e202efeffc26a5d2ea04a6d14588794e639315f7c73cb90886a84119627a6edd98146a67ea372000a523e83880763778969170f3985d2ab08454dd0513afd5d5d37644c7e30b25524429d36b05d9c178161f1caf9100224abeb0d74918d7b4529503988b2a68935251e146a4723312f5c9afaad9a0e6251a42aa9c4f9349d2118"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIEkjCCA3qgAwIBAgITBn+USionzfP6wq4rAfkI7rnExjANBgkqhkiG9w0BAQsF\nADCBmDELMAkGA1UEBhMCVVMxEDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNj\nb3R0c2RhbGUxJTAjBgNVBAoTHFN0YXJmaWVsZCBUZWNobm9sb2dpZXMsIEluYy4x\nOzA5BgNVBAMTMlN0YXJmaWVsZCBTZXJ2aWNlcyBSb290IENlcnRpZmljYXRlIEF1\ndGhvcml0eSAtIEcyMB4XDTE1MDUyNTEyMDAwMFoXDTM3MTIzMTAxMDAwMFowOTEL\nMAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv\nb3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj\nca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM\n9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw\nIFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6\nVOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L\n93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm\njgSubJrIqg0CAwEAAaOCATEwggEtMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/\nBAQDAgGGMB0GA1UdDgQWBBSEGMyFNOy8DJSULghZnMeyEE4KCDAfBgNVHSMEGDAW\ngBScXwDfqgHXMCs4iKK4bUqc8hGRgzB4BggrBgEFBQcBAQRsMGowLgYIKwYBBQUH\nMAGGImh0dHA6Ly9vY3NwLnJvb3RnMi5hbWF6b250cnVzdC5jb20wOAYIKwYBBQUH\nMAKGLGh0dHA6Ly9jcnQucm9vdGcyLmFtYXpvbnRydXN0LmNvbS9yb290ZzIuY2Vy\nMD0GA1UdHwQ2MDQwMqAwoC6GLGh0dHA6Ly9jcmwucm9vdGcyLmFtYXpvbnRydXN0\nLmNvbS9yb290ZzIuY3JsMBEGA1UdIAQKMAgwBgYEVR0gADANBgkqhkiG9w0BAQsF\nAAOCAQEAYjdCXLwQtT6LLOkMm2xF4gcAevnFWAu5CIw+7bMlPLVvUOTNNWqnkzSW\nMiGpSESrnO09tKpzbeR/FoCJbM8oAxiDR3mjEH4wW6w7sGDgd9QIpuEdfF7Au/ma\neyKdpwAJfqxGF4PcnCZXmTA5YpaP7dreqsXMGz7KQ2hsVxa81Q4gLv7/wmpdLqBK\nbRRYh5TmOTFffHPLkIhqhBGWJ6bt2YFGpn6jcgAKUj6DiAdjd4lpFw85hdKrCEVN\n0FE6/V1dN2RMfjCyVSRCnTawXZwXgWHxyvkQAiSr6w10kY17RSlQOYiypok1JR4U\nakcjMS9cmvqtmg5iUaQqqcT5NJ0hGA==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Starfield Services Root Certificate Authority - G2,O=Starfield Technologies\\, Inc.,L=Scottsdale,ST=Arizona,C=US",
+                    "issuer": "CN=Starfield Services Root Certificate Authority - G2,O=Starfield Technologies\\, Inc.,L=Scottsdale,ST=Arizona,C=US",
+                    "serial_number": 0,
+                    "valid_from": "2009-09-01 00:00:00",
+                    "valid_until": "2037-12-31 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "568d6905a2c88708a4b3025190edcfedb1974a606a13c6e5290fcb2ae63edab5",
+                    "signature": "4b36a6847769dd3b199f6723086f0e61c9fd84dc5fd83681cdd81b412d9f60ddc71a68d9d16e86e18823cf13de43cfe234b3049d1f29d5bff85ec8d5c1bdee926f3274f291822fbd82427aad2ab7207d4dbc7a5512c215eabdf76a952e6c749fcf1cb4f2c501a385d0723ead73ab0b9b750c6d45b78e94ac9637b5a0d08f15470ee3e883dd8ffdef410177cc27a9628533f23708ef71cf7706dec8191d8840cf7d461dff1ec7e1ceff23dbc6fa8d554ea902e74711463ef4fdbd7b2926bba961623728b62d2af6108664c970a7d2adb7297079ea3cda63259ffd68b730ec70fb758ab76d6067b21ec8b9e9d8a86f028b670d4d265771da20fcc14a508db128ba"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIID7zCCAtegAwIBAgIBADANBgkqhkiG9w0BAQsFADCBmDELMAkGA1UEBhMCVVMx\nEDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNjb3R0c2RhbGUxJTAjBgNVBAoT\nHFN0YXJmaWVsZCBUZWNobm9sb2dpZXMsIEluYy4xOzA5BgNVBAMTMlN0YXJmaWVs\nZCBTZXJ2aWNlcyBSb290IENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTA5\nMDkwMTAwMDAwMFoXDTM3MTIzMTIzNTk1OVowgZgxCzAJBgNVBAYTAlVTMRAwDgYD\nVQQIEwdBcml6b25hMRMwEQYDVQQHEwpTY290dHNkYWxlMSUwIwYDVQQKExxTdGFy\nZmllbGQgVGVjaG5vbG9naWVzLCBJbmMuMTswOQYDVQQDEzJTdGFyZmllbGQgU2Vy\ndmljZXMgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkgLSBHMjCCASIwDQYJKoZI\nhvcNAQEBBQADggEPADCCAQoCggEBANUMOsQq+U7i9b4Zl1+OiFOxHz/Lz58gE20p\nOsgPfTz3a3Y4Y9k2YKibXlwAgLIvWX/2h/klQ4bnaRtSmpDhcePYLQ1Ob/bISdm2\n8xpWriu2dBTrz/sm4xq6HZYuajtYlIlHVv8loJNwU4PahHQUw2eeBGg6345AWh1K\nTs9DkTvnVtYAcMtS7nt9rjrnvDH5RfbCYM8TWQIrgMw0R9+53pBlbQLPLJGmpufe\nhRhJfGZOozptqbXuNC66DQO4M99H67FrjSXZm86B0UVGMpZwh94CDklDhbZsc7tk\n6mFBrMnUVN+HL8cisibMn1lUaJ/8viovxFUcdUBgF4UCVTmLfwUCAwEAAaNCMEAw\nDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAQYwHQYDVR0OBBYEFJxfAN+q\nAdcwKziIorhtSpzyEZGDMA0GCSqGSIb3DQEBCwUAA4IBAQBLNqaEd2ndOxmfZyMI\nbw5hyf2E3F/YNoHN2BtBLZ9g3ccaaNnRbobhiCPPE95Dz+I0swSdHynVv/heyNXB\nve6SbzJ08pGCL72CQnqtKrcgfU28elUSwhXqvfdqlS5sdJ/PHLTyxQGjhdByPq1z\nqwubdQxtRbeOlKyWN7Wg0I8VRw7j6IPdj/3vQQF3zCepYoUz8jcI73HPdwbeyBkd\niEDPfUYd/x7H4c7/I9vG+o1VTqkC50cRRj70/b17KSa7qWFiNyi2LSr2EIZkyXCn\n0q23KXB56jzaYyWf/Wi3MOxw+3WKt21gZ7IeyLnp2KhvAotnDU0mV3HaIPzBSlCN\nsSi6\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

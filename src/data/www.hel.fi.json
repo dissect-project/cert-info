@@ -1,0 +1,150 @@
+{
+    "domain": "www.hel.fi",
+    "date": "2025-12-15 11:04:30",
+    "ip-address": "20.50.166.83",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=hel.fi,O=City of Helsinki,L=HELSINKI,C=FI",
+                    "issuer": "CN=Telia Server CA v3,O=Telia Finland Oyj,C=FI",
+                    "serial_number": 8302047494959493938465185170725661,
+                    "valid_from": "2025-09-16 12:48:58",
+                    "valid_until": "2026-09-16 12:48:58",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "hel.fi",
+                        "*.api.platta.hel.fi",
+                        "*.stage.hel.ninja",
+                        "*.api.hel.ninja",
+                        "*.api.hel.fi",
+                        "*.api.stage.hel.ninja",
+                        "*.platta.hel.fi",
+                        "*.hel.fi",
+                        "*.hel.ninja",
+                        "*.apps.platta.hel.fi"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "crl_distribution_points": [
+                        "http://httpcrl.trust.telia.com/teliaservercav3.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.trust.telia.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cps.trust.telia.com/teliaservercav3.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "121ef40ae561f492a67ce0df57d2d936ead0e2569c10f5605d7644b9f9233191",
+                    "signature": "25e700fe4fa231ccab3d25614223ac3b8485dee840d8c50df9ea9f9ae15f038d9fd02c94a85029c68021043e8a8ba68581ed0af20db9544f45d9feaa420e95a8de14c0c83950e6023172714ff638f1bbd58bcd35cbca228737a92f3b84fc267cdde201c079b8d08542b57b940236157f976edf214623ada0da025b574302df5811381112080454f15fe785d6cbf32cc69964a2446d9d0f46f72cb8973b54329fd67d483e6a855e18599903df52e82cd85929fac1fee841f2d4467fbe5675f9d8f9bb3648ba20b07b9d6c8e1406aa0091d6d77c711873c178944d539d5d2fb0496cc26562fc9b2cbf6d768cdb1bb5e06b1a47cac746d7f69bfbb07a99862123ab9b7b71722b49f68567830ae8978c94d91b4de89467197236ba12fdaba9c51a28b3fc939b3ad9f39b37bfbb440e280b18b17de0533486777db51ae605e349f236e165aa0a8ae317a5485f018131c9d540a6036ff3f43a52141bc5e63605479d402696015417d088c2b4f46b40df19717c1ab1a77b61f2bb9cbbc10bbef2bc1d83adac920f1339c8b9e1b71aed4c6180e1d53674e4df8d0afa5e843414f8b192ead1db06255b78322c6fd4e773596ec18394debd00291902650234d5b8258639f0339274817a858e3ceec8887fc03d26553386874e1408f126255f3291f4b8cacdcfa37d1f8cf59a34aea5afc50b255b2e36f91bf6c38e9a703d3b9f86e900d1f5"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIIvDCCBqSgAwIBAgIPAZlSkjxTLimaabY3IBsdMA0GCSqGSIb3DQEBCwUAMEYx\nCzAJBgNVBAYTAkZJMRowGAYDVQQKDBFUZWxpYSBGaW5sYW5kIE95ajEbMBkGA1UE\nAwwSVGVsaWEgU2VydmVyIENBIHYzMB4XDTI1MDkxNjEyNDg1OFoXDTI2MDkxNjEy\nNDg1OFowTDELMAkGA1UEBhMCRkkxETAPBgNVBAcMCEhFTFNJTktJMRkwFwYDVQQK\nDBBDaXR5IG9mIEhlbHNpbmtpMQ8wDQYDVQQDDAZoZWwuZmkwggIiMA0GCSqGSIb3\nDQEBAQUAA4ICDwAwggIKAoICAQCy1R+pBhygAGRX4CQ2dfWxVXpxSa91mgHLTqkC\nk9ZJvDzqLrIGGwkGAqtcLySvJlOweWQcZEm2v+nsYS3wx7ammZRO0J67ZpiDFg81\nbidayu5AqCnuqRnUfWnvGC0BhgyFhwClJDgJZ6eMqV7mtBgb9bLNk2u0GWq+c8D9\nGEFO3jmQnuo8C7zYGZNAXttPtEWQJpqQ9GB0wcILk2zZhyknWHwoweamQkePOoYn\nA+0lWRZvPwEYte6kPIoypn8dq56p0S890ZQlu6uyRm2gxgqkPXOfHi2lrDdJ/R4H\nqur4WA44K7obpyLJ+GiwA76gOz15vR4XqLCKigQjyS3mffiPqdvY1lXRBaYW4IbL\nqpGx9d5cGNk0DRHX4Vo9LxfK1Z3hms7dE1a8NN2FmUmrIFOREYWmjrjmJglHweqW\nVFUZ8aJyleBprYkvdCl94rTXOqbhJKQ7uiPmcUtcTdkDWKyZ1EWhW7WyRP/RE6fm\nKYtEaSSg4v4aciXl7r7IBX7LbApswXNjKRm7xy8/Ly2Jr4UXMasspUR6DEZcevnC\nt8ozdiJGOjx8Nlp5NaRUDDMEnk6t9w2Vmf7GrdPNNTvm1tTLI7NV+T/oyWhvgN04\ndFvn/lSSc8PnvMJNpN9WUri4bkqrSVteq1LxBGU484bpxzQO0vH++jnA9VnPn6Ca\n5bn5DwIDAQABo4IDnzCCA5swHwYDVR0jBBgwFoAURmaNDgcjFrDqTwXrllrepe7J\nfqQwHQYDVR0OBBYEFC0FD6N00FEGvNddrd9KISCVKKIJMA4GA1UdDwEB/wQEAwIF\noDA9BgNVHSAENjA0MDIGBmeBDAECAjAoMCYGCCsGAQUFBwIBFhpodHRwOi8vY3Bz\nLnRydXN0LnRlbGlhLmNvbTCBrwYDVR0RBIGnMIGkggZoZWwuZmmCEyouYXBpLnBs\nYXR0YS5oZWwuZmmCESouc3RhZ2UuaGVsLm5pbmphgg8qLmFwaS5oZWwubmluamGC\nDCouYXBpLmhlbC5maYIVKi5hcGkuc3RhZ2UuaGVsLm5pbmphgg8qLnBsYXR0YS5o\nZWwuZmmCCCouaGVsLmZpggsqLmhlbC5uaW5qYYIUKi5hcHBzLnBsYXR0YS5oZWwu\nZmkwQwYDVR0fBDwwOjA4oDagNIYyaHR0cDovL2h0dHBjcmwudHJ1c3QudGVsaWEu\nY29tL3RlbGlhc2VydmVyY2F2My5jcmwwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsG\nAQUFBwMBMHMGCCsGAQUFBwEBBGcwZTAnBggrBgEFBQcwAYYbaHR0cDovL29jc3Au\ndHJ1c3QudGVsaWEuY29tMDoGCCsGAQUFBzAChi5odHRwOi8vY3BzLnRydXN0LnRl\nbGlhLmNvbS90ZWxpYXNlcnZlcmNhdjMuY2VyMIIBfQYKKwYBBAHWeQIEAgSCAW0E\nggFpAWcAdQDLOPcViXyEoURfW8Hd+8lu8ppZzUcKaQWFsMsUwxRY5wAAAZlSkkBI\nAAAEAwBGMEQCIGor9rq2gxy8fzC+IpJWglBgKeIC57rmydcFqcARIHPRAiA4Q3BO\ntdFZJv2tBOGyspueYY5ikYZ9mFWSj76Sno/POQB2ANgJVTuUT3r/yBYZb5RPhauw\n+Pxeh1UmDxXRLnK7RUsUAAABmVKSQPgAAAQDAEcwRQIgYC2THejq8f0dH8PeljJw\nmhdPS1vHBlcLUNB3uFwLcooCIQDkXIAYOGUJEt0HWec/rbTwX+luPA5+6F+3HsiQ\nP6LDcwB2ANdtfRDRp/V3wsfpX9cAv/mCyTNaZeHQswFzF8DIxWl3AAABmVKSQTEA\nAAQDAEcwRQIhAJ+5AzqCCYZyxUCuSbZ4Jrmo1r+aPZbwfVEGBeaGNJDXAiBg82o2\njZapIWOZpvWXLDuicTfPXpBbPREesKCTsr4cRzANBgkqhkiG9w0BAQsFAAOCAgEA\nJecA/k+iMcyrPSVhQiOsO4SF3uhA2MUN+eqfmuFfA42f0CyUqFApxoAhBD6Ki6aF\nge0K8g25VE9F2f6qQg6VqN4UwMg5UOYCMXJxT/Y48bvVi801y8oihzepLzuE/CZ8\n3eIBwHm40IVCtXuUAjYVf5du3yFGI62g2gJbV0MC31gROBESCARU8V/nhdbL8yzG\nmWSiRG2dD0b3LLiXO1Qyn9Z9SD5qhV4YWZkD31LoLNhZKfrB/uhB8tRGf75WdfnY\n+bs2SLogsHudbI4UBqoAkdbXfHEYc8F4lE1TnV0vsElswmVi/Jssv212jNsbteBr\nGkfKx0bX9pv7sHqZhiEjq5t7cXIrSfaFZ4MK6JeMlNkbTeiUZxlyNroS/aupxRoo\ns/yTmzrZ85s3v7tEDigLGLF94FM0hnd9tRrmBeNJ8jbhZaoKiuMXpUhfAYExydVA\npgNv8/Q6UhQbxeY2BUedQCaWAVQX0IjCtPRrQN8ZcXwasad7YfK7nLvBC77yvB2D\nraySDxM5yLnhtxrtTGGA4dU2dOTfjQr6XoQ0FPixkurR2wYlW3gyLG/U53NZbsGD\nlN69ACkZAmUCNNW4JYY58DOSdIF6hY487siIf8A9JlUzhodOFAjxJiVfMpH0uMrN\nz6N9H4z1mjSupa/FCyVbLjb5G/bDjppwPTufhukA0fU=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Telia Server CA v3,O=Telia Finland Oyj,C=FI",
+                    "issuer": "CN=Telia Root CA v2,O=Telia Finland Oyj,C=FI",
+                    "serial_number": 7288983387143511423165797422538618,
+                    "valid_from": "2018-11-29 14:36:05",
+                    "valid_until": "2043-11-29 11:55:54",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "extended_key_usage": [
+                        "clientAuth",
+                        "serverAuth"
+                    ],
+                    "is_ca": true,
+                    "path_length": 0,
+                    "crl_distribution_points": [
+                        "http://httpcrl.trust.telia.com/teliarootcav2.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.trust.telia.com"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://cps.trust.telia.com/teliarootcav2.cer"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "1281ad8fabe883f209e9636448d1a80c373daa7686c813a270fad48f5f5e589a",
+                    "signature": "4437f280dbc47f273c9db38144c711bdc2b55daab62805b5d68190d746df72de5cd783a63e128b36ca2ef0a912e0cde7e9cb99467562b685e8c8fcceb5f0e5b17e5f2313a2d39de0f6d60902024673542eed3d45a5dd489a68de71f7954e8049e41e2ade9dbc310e5f2f019888c47fff01441c2e08b3ab87daa62014b062163bdf2fe7e928948b2b6d2a6e980a74c181a0dadb04eb5bdcea28de67b714eb64516dc95098cae21e74fcccb21d3719d0fc8aa31b80230aa6b5d9bba5631c007c63a72e04f24d3de6e34b8b4e5003fb260039f6c39f5ada59920a21a4c6a5ddfa03d7085f94dc10368442a8c05d9a5be001e38a27cf008da247b23989436db75ef8345e9c06011a8ecdae62b54170c15fada2c34187c98c8c398eccd073015bc5593a27946c3f3220018d01a8120392e213c8d6617bbd31e1cb9098dc50a7b3005387f4929d51857db0cd8bbb043cbdcf8a966e90a8a7850db650a170abeca8dc9bb6bb56cb5cc6c28b250e84131e95811fc01fcbf425f7ff42efe676df07f00372d7e015adc93e3a3430fe5e621cc85805eedce071249c946ccf81e0af5a64b220605d35c95bd46383cc5f2e644a1b6bba283b146b664b447304cc73bace75c063ab28b56837f472614a41cca9017eb97a4da554043ee87f94f1d08695f8d2578ddf120f0862bf92e4a3564f3987577c5a2e9c70356a4bb9825a7ccd794a2f833c"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGkzCCBHugAwIBAgIPAWdf548Q80klfxazcx96MA0GCSqGSIb3DQEBCwUAMEQx\nCzAJBgNVBAYTAkZJMRowGAYDVQQKDBFUZWxpYSBGaW5sYW5kIE95ajEZMBcGA1UE\nAwwQVGVsaWEgUm9vdCBDQSB2MjAeFw0xODExMjkxNDM2MDVaFw00MzExMjkxMTU1\nNTRaMEYxCzAJBgNVBAYTAkZJMRowGAYDVQQKDBFUZWxpYSBGaW5sYW5kIE95ajEb\nMBkGA1UEAwwSVGVsaWEgU2VydmVyIENBIHYzMIICIjANBgkqhkiG9w0BAQEFAAOC\nAg8AMIICCgKCAgEAvEOTCprOPJB1r/BikJEOi0F6J+/W2ZfRGzuBT0TYZpJ4DXbi\n/Y6W6KzcuUqQY4vH+h4rcF1aRSY+TBJs7GUoETp8YaWl+oLtceR7nW2M6AN0BSFc\nUf3oz1iYT/RIoT+H6uW1JcS+zNUJeDhFbDV4yqDXmdOOmoG0LLWjhP1O8jPAIv3K\ntrTnjBRSZ5bDY+z6hExAKNdIeaEd298LMbTSUaDXjvGKDmuVBj4DrwYmZDwWYIC6\nOtOnomYo4HKVcyEevPeH5OprriOR2wr88STfJE0lQuwwKRpea8kbrQ7RT263w5Dn\nMZ1w6IK0+XYc+ME0EwgNnLjIvM7mMCufMXqpg3/imbf6XIyxwbsdbZ+UzTe5LUR+\na6y62mpLbIQ7ZPYGLchNOHVEbLSRkryNOaM7VOvYProEeOux8SkJLv38+awkHqJx\nuir3XkXOd80rmpgYV9EiSOe8UE9GldeenwT04lKaQoz1vBTAGXLuGbiG5M2BDkkM\nkwY0WBDQI8ihwLS8hHVmaFD2M1yPYOXlMRydVRHu9IQMXUzYfd+ezzqXotd0P5+X\nyYAcCFC4K0mcEEb39QRTAyb4+WCPXVVdluA7tnnGI+mfR4GRyi0FzuhlMxcwA31e\niQ31Nx4jAhkY/0EBvdmH56cBnVar+46dK0uy84UNGg78SYrWdS57XSI64QcCAwEA\nAaOCAX4wggF6MB8GA1UdIwQYMBaAFHKs5DN5qkWH9v2sHZ7Wxy+G2CQ5MB0GA1Ud\nDgQWBBRGZo0OByMWsOpPBeuWWt6l7sl+pDAOBgNVHQ8BAf8EBAMCAQYwPwYDVR0g\nBDgwNjA0BgZngQwBAgIwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly9jcHMudHJ1c3Qu\ndGVsaWEuY29tLzASBgNVHRMBAf8ECDAGAQH/AgEAMEEGA1UdHwQ6MDgwNqA0oDKG\nMGh0dHA6Ly9odHRwY3JsLnRydXN0LnRlbGlhLmNvbS90ZWxpYXJvb3RjYXYyLmNy\nbDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwcQYIKwYBBQUHAQEEZTBj\nMCcGCCsGAQUFBzABhhtodHRwOi8vb2NzcC50cnVzdC50ZWxpYS5jb20wOAYIKwYB\nBQUHMAKGLGh0dHA6Ly9jcHMudHJ1c3QudGVsaWEuY29tL3RlbGlhcm9vdGNhdjIu\nY2VyMA0GCSqGSIb3DQEBCwUAA4ICAQBEN/KA28R/Jzyds4FExxG9wrVdqrYoBbXW\ngZDXRt9y3lzXg6Y+Eos2yi7wqRLgzefpy5lGdWK2hejI/M618OWxfl8jE6LTneD2\n1gkCAkZzVC7tPUWl3UiaaN5x95VOgEnkHirenbwxDl8vAZiIxH//AUQcLgizq4fa\npiAUsGIWO98v5+kolIsrbSpumAp0wYGg2tsE61vc6ijeZ7cU62RRbclQmMriHnT8\nzLIdNxnQ/IqjG4AjCqa12bulYxwAfGOnLgTyTT3m40uLTlAD+yYAOfbDn1raWZIK\nIaTGpd36A9cIX5TcEDaEQqjAXZpb4AHjiifPAI2iR7I5iUNtt174NF6cBgEajs2u\nYrVBcMFfraLDQYfJjIw5jszQcwFbxVk6J5RsPzIgAY0BqBIDkuITyNZhe70x4cuQ\nmNxQp7MAU4f0kp1RhX2wzYu7BDy9z4qWbpCop4UNtlChcKvsqNybtrtWy1zGwosl\nDoQTHpWBH8Afy/Ql9/9C7+Z23wfwA3LX4BWtyT46NDD+XmIcyFgF7tzgcSSclGzP\ngeCvWmSyIGBdNclb1GODzF8uZEoba7ooOxRrZktEcwTMc7rOdcBjqyi1aDf0cmFK\nQcypAX65ek2lVAQ+6H+U8dCGlfjSV43fEg8IYr+S5KNWTzmHV3xaLpxwNWpLuYJa\nfM15Si+DPA==\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Telia Root CA v2,O=Telia Finland Oyj,C=FI",
+                    "issuer": "CN=Telia Root CA v2,O=Telia Finland Oyj,C=FI",
+                    "serial_number": 7288924052977061235122729490515358,
+                    "valid_from": "2018-11-29 11:55:54",
+                    "valid_until": "2043-11-29 11:55:54",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 4096,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "242b69742fcb1e5b2abf98898b94572187544e5b4d9911786573621f6a74b82c",
+                    "signature": "a03b59a709943e3684d27e2f39a59697fa11adfc67f37109f2b289846744afb9efed96ec9c64db32306f679aac7e5fb2ab01367e81fae4845ed2ac36e06b62c57d4b0e826dd27662d1fe97f89f307c18f9b45277821d76dbd31da9f0c19a00bd6d75d87de7fac738a39c70e8467903af2e74db75f86e530c03c8991a8935193cd3c9547ca8f02ce66e07796f6ae1e6ea9182690a1dc37e59a29e6b4615985bd3af461d62c8ce805249113fc90412c3137c3f3b8a96db3ca01e0ab48b54b224670def82cbbe3c7dd1e27fae16d65658b9da20b18315a1ef8a4d326f412f13528294d71ac178a251dd2b706db71af9f7b0e0679756db7c61530903280240c7b3d8fd9c706ac628c385e9e2ed1a93a0de4b98a2843e057701963dfbb4200f9c72027a122fd5a3ba5178af2a2b44654eb5fd0ae8c1cd7987612bde805745bf67f19b915ea5a4ec5948100d38c7b0fac3446d04f578501c92965bdaf5b82eba5bcfe5f06a9d4b2f58732d4f2dc41c3ef4b33fab150e3b19418aa4c1571266714cfa53e357eb6295099e54ddd1c23c573cbd38ad9864b7b8039a5356605db3d8421b5c4b128a1cebeb7dc67a69c7277fa4f88bf2e49466874be994070912798ab2eb7404dccef44459e016cac52c58d73c7bcf62866a507d353666a7fb37e728c7d8d0ada569948fe8c1df24f81b07318781d85df6e828d84a5280ac13ee50141e98c7"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIFdDCCA1ygAwIBAgIPAWdfJ9b+euPkrL4JWwWeMA0GCSqGSIb3DQEBCwUAMEQx\nCzAJBgNVBAYTAkZJMRowGAYDVQQKDBFUZWxpYSBGaW5sYW5kIE95ajEZMBcGA1UE\nAwwQVGVsaWEgUm9vdCBDQSB2MjAeFw0xODExMjkxMTU1NTRaFw00MzExMjkxMTU1\nNTRaMEQxCzAJBgNVBAYTAkZJMRowGAYDVQQKDBFUZWxpYSBGaW5sYW5kIE95ajEZ\nMBcGA1UEAwwQVGVsaWEgUm9vdCBDQSB2MjCCAiIwDQYJKoZIhvcNAQEBBQADggIP\nADCCAgoCggIBALLQPwe84nvQa5n44ndp586dpAO8gm2h/oFlH0wnrI4AuhZ76zBq\nAMCzdGh+sq/H1WKzej9Qyow2RCRj0jbpDIX2Q3bVTKFgcmfiKDOlyzG4OiIjNLh9\nvVYiQJ3q9HsDrWj8soFPmNB06o3lfc1jw6P23pLCWBnglrvFxKk9pXSW/q/5iaq9\nlRdU2HhE8Qx3FZLgmEKnpNaqIJLNwaCzlrI6hEKNfdWV5Nbb6WLEWLN5xYzTNTOD\nn3WhUidhOPFZPY5Q4L15POdslv5e2QJltI5c0BE0312/UqeBAMN/mUWZFdUXyApT\n7GPzmX3MaRKGwhfwAZ6/hLzRUssbkmbOpFPlob/E2wnW5olWK8jjfN7j/4nlNW4o\n6GwLI1GpJQXrSPjdscr6bAhR77cYbETKJuFzxokGgeWKrLDiKca5JLNrRBH0pUPC\nTEPlcDaMtjNXepUugqD0XBCzYYP2AgWGLnwtbNwDRm41k9V6lS/eINhbfpSQBGq6\nWT0EBXWdN6IOLj3rwaRSg/7Qa9RmjtzG6RJOHSpXqhC8fF6CfaamyfItufUXJ63R\nDolUK5X6wK0dmBR4M0KGCqlztft0DbcbMBnEWg4cJ7faGND/isgFuvGqHKI3t+ZI\npEYslOqodmJHixBTB0hXbOKSTbauBcvcwUpej6w9GU7C7WB1K9vBykLVAgMBAAGj\nYzBhMB8GA1UdIwQYMBaAFHKs5DN5qkWH9v2sHZ7Wxy+G2CQ5MB0GA1UdDgQWBBRy\nrOQzeapFh/b9rB2e1scvhtgkOTAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUw\nAwEB/zANBgkqhkiG9w0BAQsFAAOCAgEAoDtZpwmUPjaE0n4vOaWWl/oRrfxn83EJ\n8rKJhGdEr7nv7ZbsnGTbMjBvZ5qsfl+yqwE2foH65IRe0qw24GtixX1LDoJt0nZi\n0f6X+J8wfBj5tFJ3gh1229MdqfDBmgC9bXXYfef6xzijnHDoRnkDry5023X4blMM\nA8iZGok1GTzTyVR8qPAs5m4HeW9q4ebqkYJpCh3DflminmtGFZhb069GHWLIzoBS\nSRE/yQQSwxN8PzuKlts8oB4KtItUsiRnDe+Cy748fdHif64W1lZYudogsYMVoe+K\nTTJvQS8TUoKU1xrBeKJR3Stwbbca+few4GeXVtt8YVMJAygCQMez2P2ccGrGKMOF\n6eLtGpOg3kuYooQ+BXcBlj37tCAPnHICehIv1aO6UXivKitEZU61/Qrowc15h2Er\n3oBXRb9n8ZuRXqWk7FlIEA04x7D6w0RtBPV4UBySllva9bguulvP5fBqnUsvWHMt\nTy3EHD70sz+rFQ47GUGKpMFXEmZxTPpT41frYpUJnlTd0cI8Vzy9OK2YZLe4A5pT\nVmBds9hCG1xLEooc6+t9xnppxyd/pPiL8uSUZodL6ZQHCRJ5irLrdATczvREWeAW\nysUsWNc8e89ihmpQfTU2Zqf7N+cox9jQraVplI/owd8k+BsHMYeB2F326CjYSlKA\nrBPuUBQemMc=\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}

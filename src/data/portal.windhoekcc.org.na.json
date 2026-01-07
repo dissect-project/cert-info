@@ -1,0 +1,137 @@
+{
+    "domain": "portal.windhoekcc.org.na",
+    "date": "2025-12-15 11:37:10",
+    "ip-address": "41.205.130.206",
+    "status": "valid",
+    "analysis": [],
+    "chain": [
+        {
+            "id": "Leaf Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [
+                "DNSSEC validation failed.",
+                "Certificate uses wildcard domain"
+            ],
+            "certificate": {
+                "id": "Leaf Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=*.windhoekcc.org.na",
+                    "issuer": "CN=Go Daddy Secure Certificate Authority - G2,OU=http://certs.godaddy.com/repository/,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US",
+                    "serial_number": 15521382814537330415,
+                    "valid_from": "2025-06-24 13:10:32",
+                    "valid_until": "2026-06-27 08:32:14",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Leaf Certificate",
+                    "SAN": [
+                        "*.windhoekcc.org.na",
+                        "windhoekcc.org.na"
+                    ],
+                    "key_usage": {
+                        "digital_signature": true,
+                        "key_encipherment": true,
+                        "data_encipherment": false,
+                        "key_cert_sign": false,
+                        "crl_sign": false
+                    },
+                    "extended_key_usage": [
+                        "serverAuth",
+                        "clientAuth"
+                    ],
+                    "is_ca": false,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.godaddy.com/gdig2s1-51448.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.godaddy.com/"
+                    ],
+                    "ca_issuers_urls": [
+                        "http://certificates.godaddy.com/repository/gdig2.crt"
+                    ],
+                    "validation_level": "Domain Validation (DV)",
+                    "fingerprint_SHA256": "8a6591b881fb617c0a4def3bd7a6dcf51677371b7b5e64579b20031136430c63",
+                    "signature": "2e1f7d4142fb8fcb54733f441ad36a395f30bab0902bd2dc6c72b80d82bf620c64e519ddf2cb7847693cbfd67edf09f519169c4a9a5639c7783acdb85cb033354f51d8d0a4123b4e540dda522118053bb3369b61909de9f52781f065db83a4f2b5f31fa2ab1091c4b32a8a844ba66b47551fa8bfcf15ff2310ad51c2e70f7a2aad89f6c39c11e652966393bf7c58647783f3eb6a54f9104964fa6be1ca2eed66ce2c075228b8bf5b9be6cd79880a6c945c51130c8e4687eff375c5898e59654a621c2efb628cdf2a5dfe89fde91db8666cb7adb529178eddf8ddb556dac904ca3cfeda9409fa15c9acebe0ea913cdf1cbc030b4b5cb986ea88fec7a4546cbc7c"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIGoDCCBYigAwIBAgIJANdnB28bWa7vMA0GCSqGSIb3DQEBCwUAMIG0MQswCQYD\nVQQGEwJVUzEQMA4GA1UECBMHQXJpem9uYTETMBEGA1UEBxMKU2NvdHRzZGFsZTEa\nMBgGA1UEChMRR29EYWRkeS5jb20sIEluYy4xLTArBgNVBAsTJGh0dHA6Ly9jZXJ0\ncy5nb2RhZGR5LmNvbS9yZXBvc2l0b3J5LzEzMDEGA1UEAxMqR28gRGFkZHkgU2Vj\ndXJlIENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTI1MDYyNDEzMTAzMloX\nDTI2MDYyNzA4MzIxNFowHjEcMBoGA1UEAwwTKi53aW5kaG9la2NjLm9yZy5uYTCC\nASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJ2uNj/lXaXIog0nEIK5XofM\n3BKnevQWZ7e+1AbmZzw4F0i10i+6Lx9UZGaChBkLU5KgB5lYp0cNWf9DYtR3xgP+\nsN9oH6Nzf32vDrtCj2kJJ0b/BmoFuHPvUJw33Z68CgJlLZyUb9jQGmKnceVeLGIF\nAacKqKFGV5KLuZHbLd2rEcFeJmgNV1zfkK58OT1ugKH92we+bbtE79hP8zw/cutl\nJG6smS12zcrTvzT5utcwb6mHXv93pfUr7sWtwPRjvEEmyogSssDq92hwegwx0+7I\nTEeblcayR+1T/3yjlMphs+tQ4zyJ9etCM3GVBWCT+qH01Wo0WbpHzGRsSIeqGxsC\nAwEAAaOCA0gwggNEMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYIKwYBBQUHAwEG\nCCsGAQUFBwMCMA4GA1UdDwEB/wQEAwIFoDA5BgNVHR8EMjAwMC6gLKAqhihodHRw\nOi8vY3JsLmdvZGFkZHkuY29tL2dkaWcyczEtNTE0NDguY3JsMF0GA1UdIARWMFQw\nSAYLYIZIAYb9bQEHFwEwOTA3BggrBgEFBQcCARYraHR0cDovL2NlcnRpZmljYXRl\ncy5nb2RhZGR5LmNvbS9yZXBvc2l0b3J5LzAIBgZngQwBAgEwdgYIKwYBBQUHAQEE\najBoMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5nb2RhZGR5LmNvbS8wQAYIKwYB\nBQUHMAKGNGh0dHA6Ly9jZXJ0aWZpY2F0ZXMuZ29kYWRkeS5jb20vcmVwb3NpdG9y\neS9nZGlnMi5jcnQwHwYDVR0jBBgwFoAUQMK9J47MNIMwojPX+2yz8LQsgM4wMQYD\nVR0RBCowKIITKi53aW5kaG9la2NjLm9yZy5uYYIRd2luZGhvZWtjYy5vcmcubmEw\nHQYDVR0OBBYEFG15U/070wxH5S9avFm3wlUiu3NMMIIBfgYKKwYBBAHWeQIEAgSC\nAW4EggFqAWgAdwAOV5S8866pPjMbLJkHs/eQ35vCPXEyJd0hqSWsYcVOIQAAAZei\nD8hRAAAEAwBIMEYCIQDmezGoAEgCkJt1InXmf8Vt4TH8FAGmlpSNm87ny9ZfgQIh\nAPdRViHcyfMw8UIvCD1vAm3G1lr8wzaWrc5k5fZF8//LAHYAZBHEbKQS7KeJHKIC\nLgC8q08oB9QeNSer6v7VA8l9zfAAAAGXog/JawAABAMARzBFAiEAsqvnvnkWHVn5\nFjj/TgV4sidIN8ZAo3TlV/fqdr2ORwYCICjmmZ/HiGW0RUfdf+2IN0p58j7kloFb\ndH1VvGugbWyTAHUAyzj3FYl8hKFEX1vB3fvJbvKaWc1HCmkFhbDLFMMUWOcAAAGX\nog/J3wAABAMARjBEAiB73v0XFeHV9igObYIyc3MT3Qgo3+u93Vz1KQKGWGEwhgIg\naybhHgS6SH0fOt8Yxt/o3gjMN7GCYAswfCGOMLXl+nEwDQYJKoZIhvcNAQELBQAD\nggEBAC4ffUFC+4/LVHM/RBrTajlfMLqwkCvS3GxyuA2Cv2IMZOUZ3fLLeEdpPL/W\nft8J9RkWnEqaVjnHeDrNuFywMzVPUdjQpBI7TlQN2lIhGAU7szabYZCd6fUngfBl\n24Ok8rXzH6KrEJHEsyqKhEuma0dVH6i/zxX/IxCtUcLnD3oqrYn2w5wR5lKWY5O/\nfFhkd4Pz62pU+RBJZPpr4cou7WbOLAdSKLi/W5vmzXmICmyUXFETDI5Gh+/zdcWJ\njlllSmIcLvtijN8qXf6J/ekduGZst621KReO3fjdtVbayQTKPP7alAn6Fcms6+Dq\nkTzfHLwDC0tcuYbqiP7HpFRsvHw=\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Intermediate Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Intermediate Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Go Daddy Secure Certificate Authority - G2,OU=http://certs.godaddy.com/repository/,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US",
+                    "issuer": "CN=Go Daddy Root Certificate Authority - G2,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US",
+                    "serial_number": 7,
+                    "valid_from": "2011-05-03 07:00:00",
+                    "valid_until": "2031-05-03 07:00:00",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Intermediate Certificate",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "crl_distribution_points": [
+                        "http://crl.godaddy.com/gdroot-g2.crl"
+                    ],
+                    "ocsp_urls": [
+                        "http://ocsp.godaddy.com/"
+                    ],
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "973a41276ffd01e027a2aad49e34c37846d3e976ff6a620b6712e33832041aa6",
+                    "signature": "087e6c9310c838b896a9904bffa15f4f04ef6c3e9c8806c9508fa673f757311bbebce42fdbf8bad35be0b4e7e679620e0ca2d76a637331b5f5a848a43b082da25d90d7b47c254f115630c4b6449d7b2c9de55ee6ef0c61aabfe42a1bee849eb8837dc143ce44a713700d911ff4c813ad8360d9d872a873241eb5ac220eca17896258441bab892501000fcdc41b62db51b4d30f512a9bf4bc73fc76ce36a4cdd9d82ceaae9bf52ab290d14d75188a3f8a4190237d5b4bfea403589b46b2c3606083f87d5041cec2a190c3bbef022fd21554ee4415d90aaea78a33edb12d763626dc04eb9ff7611f15dc876fee469628ada1267d0a09a72e04a38dbcf8bc043001"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIE0DCCA7igAwIBAgIBBzANBgkqhkiG9w0BAQsFADCBgzELMAkGA1UEBhMCVVMx\nEDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNjb3R0c2RhbGUxGjAYBgNVBAoT\nEUdvRGFkZHkuY29tLCBJbmMuMTEwLwYDVQQDEyhHbyBEYWRkeSBSb290IENlcnRp\nZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTExMDUwMzA3MDAwMFoXDTMxMDUwMzA3\nMDAwMFowgbQxCzAJBgNVBAYTAlVTMRAwDgYDVQQIEwdBcml6b25hMRMwEQYDVQQH\nEwpTY290dHNkYWxlMRowGAYDVQQKExFHb0RhZGR5LmNvbSwgSW5jLjEtMCsGA1UE\nCxMkaHR0cDovL2NlcnRzLmdvZGFkZHkuY29tL3JlcG9zaXRvcnkvMTMwMQYDVQQD\nEypHbyBEYWRkeSBTZWN1cmUgQ2VydGlmaWNhdGUgQXV0aG9yaXR5IC0gRzIwggEi\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC54MsQ1K92vdSTYuswZLiBCGzD\nBNliF44v/z5lz4/OYuY8UhzaFkVLVat4a2ODYpDOD2lsmcgaFItMzEUz6ojcnqOv\nK/6AYZ15V8TPLvQ/MDxdR/yaFrzDN5ZBUY4RS1T4KL7QjL7wMDge87Am+GZHY23e\ncSZHjzhHU9FGHbTj3ADqRay9vHHZqm8A29vNMDp5T19MR/gd71vCxJ1gO7GyQ5HY\npDNO6rPWJ0+tJYqlxvTV0KaudAVkV4i1RFXULSo6Pvi4vekyCgKUZMQWOlDxSq7n\neTOvDCAHf+jfBDnCaQJsY1L6d8EbyHSHyLmTGFBUNUtpTrw700kuH9zB0lL7AgMB\nAAGjggEaMIIBFjAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBBjAdBgNV\nHQ4EFgQUQMK9J47MNIMwojPX+2yz8LQsgM4wHwYDVR0jBBgwFoAUOpqFBxBnKLbv\n9r0FQW4gwZTaD94wNAYIKwYBBQUHAQEEKDAmMCQGCCsGAQUFBzABhhhodHRwOi8v\nb2NzcC5nb2RhZGR5LmNvbS8wNQYDVR0fBC4wLDAqoCigJoYkaHR0cDovL2NybC5n\nb2RhZGR5LmNvbS9nZHJvb3QtZzIuY3JsMEYGA1UdIAQ/MD0wOwYEVR0gADAzMDEG\nCCsGAQUFBwIBFiVodHRwczovL2NlcnRzLmdvZGFkZHkuY29tL3JlcG9zaXRvcnkv\nMA0GCSqGSIb3DQEBCwUAA4IBAQAIfmyTEMg4uJapkEv/oV9PBO9sPpyIBslQj6Zz\n91cxG7685C/b+LrTW+C05+Z5Yg4MotdqY3MxtfWoSKQ7CC2iXZDXtHwlTxFWMMS2\nRJ17LJ3lXubvDGGqv+QqG+6EnriDfcFDzkSnE3ANkR/0yBOtg2DZ2HKocyQetawi\nDsoXiWJYRBuriSUBAA/NxBti21G00w9RKpv0vHP8ds42pM3Z2Czqrpv1KrKQ0U11\nGIo/ikGQI31bS/6kA1ibRrLDYGCD+H1QQc7CoZDDu+8CL9IVVO5EFdkKrqeKM+2x\nLXY2JtwE65/3YR8V3Idv7kaWKK2hJn0KCacuBKONvPi8BDAB\n-----END CERTIFICATE-----\n"
+            }
+        },
+        {
+            "id": "Root CA Certificate",
+            "status": "valid",
+            "issues": [],
+            "warnings": [],
+            "certificate": {
+                "id": "Root CA Certificate",
+                "status": "valid",
+                "certificate": {
+                    "subject": "CN=Go Daddy Root Certificate Authority - G2,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US",
+                    "issuer": "CN=Go Daddy Root Certificate Authority - G2,O=GoDaddy.com\\, Inc.,L=Scottsdale,ST=Arizona,C=US",
+                    "serial_number": 0,
+                    "valid_from": "2009-09-01 00:00:00",
+                    "valid_until": "2037-12-31 23:59:59",
+                    "signature_algorithm": "sha256WithRSAEncryption",
+                    "public_key_type": "RSAPublicKey",
+                    "public_key_size": 2048,
+                    "type": "Root CA",
+                    "key_usage": {
+                        "digital_signature": false,
+                        "key_encipherment": false,
+                        "data_encipherment": false,
+                        "key_cert_sign": true,
+                        "crl_sign": true
+                    },
+                    "is_ca": true,
+                    "path_length": null,
+                    "validation_level": "Organization Validation (OV)",
+                    "fingerprint_SHA256": "45140b3247eb9cc8c5b4f0d7b53091f73292089e6e5a63e2749dd3aca9198eda",
+                    "signature": "99db5d79d5f99759670361f17e3b0631752da1208e4f6587b4f7a69cbcd8e92fd0db5aeecf748c73b43842da057bf80275b8fda5b1d7aef6d7de13cb53107e8a46d197fab72e2b11ab90b02780f9e89f5ae9379fabe4df6cb385179d3dd9244f799135d65f04eb8083ab9a022db510f4d890c7047340ed7225a0a99fec9eab68129957c68f123a09a4bd44fd061537c19be432a3ed38e8d864f32c7e14fc02ea9fcdff076817db2290382d7a8dd154f169e35f33ca7a3d7b0ae3ca7f5f39e5e275bac5761833ce2cf02f4cadf7b1e7ce4fa8c49b4a5406c57f7dd5080fe21cfe7e17b8ac5ef6d416b243090c4df6a76bb4998465ca7a88e2e244be5cf7ea1cf5"
+                },
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDxTCCAq2gAwIBAgIBADANBgkqhkiG9w0BAQsFADCBgzELMAkGA1UEBhMCVVMx\nEDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNjb3R0c2RhbGUxGjAYBgNVBAoT\nEUdvRGFkZHkuY29tLCBJbmMuMTEwLwYDVQQDEyhHbyBEYWRkeSBSb290IENlcnRp\nZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTA5MDkwMTAwMDAwMFoXDTM3MTIzMTIz\nNTk1OVowgYMxCzAJBgNVBAYTAlVTMRAwDgYDVQQIEwdBcml6b25hMRMwEQYDVQQH\nEwpTY290dHNkYWxlMRowGAYDVQQKExFHb0RhZGR5LmNvbSwgSW5jLjExMC8GA1UE\nAxMoR28gRGFkZHkgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkgLSBHMjCCASIw\nDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL9xYgjx+lk09xvJGKP3gElY6SKD\nE6bFIEMBO4Tx5oVJnyfq9oQbTqC023CYxzIBsQU+B07u9PpPL1kwIuerGVZr4oAH\n/PMWdYA5UXvl+TW2dE6pjYIT5LY/qQOD+qK+ihVqf94Lw7YZFAXK6sOoBJQ7Rnwy\nDfMAZiLIjWltNowRGLfTshxgtDj6AozO091GB94KPutdfMh8+7ArU6SSYmlRJQVh\nGkSBjCypQ5Yj36w6gZoOKcUcqeldHraenjAKOc7xiID7S13MMuyFYkMlNAJWJwGR\ntDtwKj9useiciAF9n9T521NtYJ2/LOdYq7hfRvzOxBsDPAnrSTFcaUaz4EcCAwEA\nAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAQYwHQYDVR0OBBYE\nFDqahQcQZyi27/a9BUFuIMGU2g/eMA0GCSqGSIb3DQEBCwUAA4IBAQCZ21151fmX\nWWcDYfF+OwYxdS2hII5PZYe096acvNjpL9DbWu7PdIxztDhC2gV7+AJ1uP2lsdeu\n9tfeE8tTEH6KRtGX+rcuKxGrkLAngPnon1rpN5+r5N9ss4UXnT3ZJE95kTXWXwTr\ngIOrmgIttRD02JDHBHNA7XIloKmf7J6raBKZV8aPEjoJpL1E/QYVN8Gb5DKj7Tjo\n2GTzLH4U/ALqn83/B2gX2yKQOC16jdFU8WnjXzPKej17CuPKf1855eJ1usV2GDPO\nLPAvTK33sefOT6jEm0pUBsV/fdUID+Ic/n4XuKxe9tQWskMJDE32p2u0mYRlynqI\n4uJEvlz36hz1\n-----END CERTIFICATE-----\n"
+            }
+        }
+    ]
+}
