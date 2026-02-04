@@ -139,7 +139,13 @@ class CertificateInformation:
             return {
                 "error": f"TLS handshake failed: {e.__class__.__name__}: {e}"
             }
-        except OSError as e:
+        except Exception as e:
+            # Try fallback to CT logs
+            try:
+                cert_chain = self.get_pem_cert_from_crtsh(domain)
+                return cert_chain
+            except Exception:
+                pass
             return {
                 "error": f"Socket error during handshake: {e}"
             }

@@ -28,6 +28,9 @@ def get_cert_info(
     cert_info = CertificateInformation()
     # Run the analysis
     result = cert_info.analyze(domain, showcert, force)
+    # Check if the result is an error dictionary
+    if isinstance(result, dict) and "error" in result:
+        return result
     # Convert to dict
     result = json.loads(result)
     # Return the result
