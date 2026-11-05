@@ -4,31 +4,38 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cert_info"
-version = "0.0.3"
-description = "Package that allows to verify the certificate chain of a given domain."
+version = "0.1.0"
+description = "Web service that builds a domain's TLS certificate chain the way Firefox does and validates every certificate in it."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "GPL-3.0-or-later"
 license-files = ["LICEN[CS]E*"]
-keywords = []
+keywords = ["tls", "x509", "certificate", "certificate-chain", "pki", "security"]
 authors = [
     { name = "Diogo Ribeiro", email = "diogo.p.ribeiro@inesctec.pt" },
     { name = "João Marco Silva", email = "joaomarco@di.uminho.pt" }
 ]
-dependencies = ["requests"]
+dependencies = [
+    "certifi",
+    "cryptography>=43",
+    "requests",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
 
-[tool.setuptools.package-data]
-"cert_info" = ["testssl/**"]
-
-[tool.setuptools.packages.find]
-where = ["."]
-
 [project.urls]
 Homepage = "https://github.com/dissect-project/cert-info"
 
-[project.scripts]
-cert-info = "cert_info.cli:main"
+# The code is imported as the "src" package (e.g. uvicorn src.api:app)
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src", "src.*"]
+
+[tool.setuptools.package-data]
+"src.trust" = ["data/*"]
+"src.validation.nist" = ["*.csv"]
+"src.fetch" = ["*.cnf"]

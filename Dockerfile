@@ -1,47 +1,65 @@
+# syntax=docker/dockerfile:1
+
+############################
+# Python dependencies
+############################
 FROM python:3.12-slim AS builder
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 WORKDIR /app
-
-# Install deps (cache-friendly)
 COPY requirements.txt .
 RUN --mount=type=cache,target=/root/.cache/pip \
-    apt-get update && apt-get install -y --no-install-recommends curl && \
-    pip install --no-cache-dir -r requirements.txt && \
-    apt-get purge -y --auto-remove curl && rm -rf /var/lib/apt/lists/*
+    pip install -r requirements.txt
 
-# Production image
+############################
+# Trust data (roots and distrust dates, preloaded intermediates, EV roots,
+# OneCRL, CT logs, static key pins)
+#
+# By default the bundled files in src/trust/data are used. Pass any new value in
+# REFRESH_TRUST_DATA (deploy.sh passes today's date) to download the current
+# data from Mozilla instead; any file that cannot be downloaded keeps its
+# bundled version.
+############################
+FROM builder AS trust-data
+
+ARG REFRESH_TRUST_DATA=""
+COPY scripts/ scripts/
+COPY src/trust/data/ src/trust/data/
+RUN if [ -n "$REFRESH_TRUST_DATA" ]; then \
+        python scripts/update_trust_data.py \
+        || echo "WARNING: some trust data could not be refreshed, using the bundled files"; \
+    fi
+
+############################
+# Runtime image
+############################
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PORT=6010 \
-    HOST=0.0.0.0
+    WORKERS=4
+
+# dig is used for the DNSSEC check; openssl is already in the base image
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends dnsutils \
+    && rm -rf /var/lib/apt/lists/* \
+    && groupadd -g 10001 appuser \
+    && useradd -u 10001 -g 10001 -s /usr/sbin/nologin -d /nonexistent appuser
+
+COPY --from=builder /usr/local /usr/local
 
 WORKDIR /app
+COPY src/ src/
+COPY --from=trust-data /app/src/trust/data/ src/trust/data/
 
-# Copy deps + runtime binaries/libs
-COPY --from=builder /usr/local /usr/local
-COPY . .
-
-# Install dig + create/fix user in ONE step
-USER root
-RUN groupadd -g 10001 appuser 2>/dev/null || true && \
-    useradd -u 10001 -g 10001 -s /sbin/nologin -d /nonexistent appuser 2>/dev/null || true && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends dnsutils && \
-    apt-get purge -y --auto-remove && \
-    rm -rf /var/lib/apt/lists/* && \
-    chown -R appuser:appuser /app /usr/local && \
-    chmod -R +x /usr/local/bin/*
 USER appuser
 
-# Healthcheck (add /health endpoint to src/api.py if needed)
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:${PORT}/docs || exit 1
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD python -c "import os, urllib.request; urllib.request.urlopen(f'http://127.0.0.1:{os.environ[\"PORT\"]}/health', timeout=4)" || exit 1
 
 EXPOSE ${PORT}
 
-CMD ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "6010", "--workers", "2"]
+CMD ["sh", "-c", "exec uvicorn src.api:app --host 0.0.0.0 --port \"$PORT\" --workers \"$WORKERS\""]

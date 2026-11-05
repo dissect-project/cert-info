@@ -1,0 +1,3 @@
+# Empty list of Certificate Transparency logs for "openssl s_client -ct"
+# (src/fetch/tls.py). SCTs are verified by src/validation/transparency.py.
+enabled_logs =

@@ -229,3 +229,6 @@ pyrightconfig.json
 testssl/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,macos
+
+# Report of tests/test_firefox_comparison.py
+firefox_comparison.json

@@ -5,7 +5,7 @@ is working and behaving as expected.
 
 import unittest
 
-from certificate_info import CertificateACertificateInformationnalyzer
+from src.certificate_info import CertificateInformation
 
 class TestDomainAnalysis(unittest.TestCase):
     """Test the domain analysis function."""
@@ -16,7 +16,8 @@ class TestDomainAnalysis(unittest.TestCase):
     def test_domains(self):
         """Tests the analysis of a domain."""
         result = self.analyzer.analyze('cm-porto.pt')
-        print(result)
+        self.assertIn(result["status"], ("valid", "invalid"))
+        self.assertEqual(result["chain"][0]["id"], "Leaf Certificate")
 
 if __name__ == '__main__':
     unittest.main()

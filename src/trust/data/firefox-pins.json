@@ -1,0 +1,1927 @@
+{
+ "source": "https://raw.githubusercontent.com/mozilla-firefox/firefox/refs/heads/release/security/manager/ssl/StaticHPKPins.h",
+ "expiration": "2027-02-05T17:25:15Z",
+ "description": "pinsets: base64 SHA-256 hashes of SubjectPublicKeyInfo",
+ "pinsets": {
+  "google_root_pems": [
+   "58qRu/uxh4gFezqAcERupSkRYBlBAvfcw7mEjGPLnNU=",
+   "8ca6Zwz8iOTfUpc8rkIPCgid1HQUT+WAbEIAZOFZEik=",
+   "AG1751Vd2CAmRCxPGieoDomhmJy4ezREjtIZTBgZbV4=",
+   "CLOmM1/OXvSPjw5UOYbAf9GKOxImEp9hhku9W90fHMk=",
+   "Fe7TOVlLME+M+Ee0dzcdjW/sYfTbKwGvWJ58U7Ncrkw=",
+   "FfFKxFycfaIz00eRZOgTf+Ne4POK6FgYPwhBDqgqxLQ=",
+   "I/Lt/z7ekCWanjD0Cvj5EqXls2lOaThEA0H2Bg4BT/o=",
+   "ICGRfpgmOUXIWcQ/HXPLQTkFPEFPoDyjvH7ohhQpjzs=",
+   "K87oWBWM9UZfyddvDfoxL+8lpNyoUB2ptGtn0fv6G2Q=",
+   "Ko8tivDrEjiY90yGasP6ZpBU4jwXvHqVvQI0GS3GNdA=",
+   "QXnt2YHvdHR3tJYmQIr0Paosp6t/nggsEGD4QJZ3Q0g=",
+   "Vfd95BwDeSQo+NUYxVEEIlvkOlWY2SalKK1lPhzOx78=",
+   "VjLZe/p3W/PJnd6lL8JVNBCGQBZynFLdZSTIqcO0SJ8=",
+   "Wd8xe/qfTwq3ylFNd3IpaqLHZbh2ZNCLluVzmeNkcpw=",
+   "WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=",
+   "aCdH+LpiG4fN07wpXtXKvOciocDANj0daLOJKNJ4fx4=",
+   "cGuxAXyFXFkWm61cF4HPWX8S0srS9j0aSqN0k4AP+4A=",
+   "fg6tdrtoGdwvVFEahDVPboswe53YIFjqbABPAdndpd8=",
+   "gI1os/q0iEpflxrOfRBVDXqVoWN3Tz7Dav/7IT++THQ=",
+   "grX4Ta9HpZx6tSHkmCrvpApTQGo67CYDnvprLg5yRME=",
+   "hxqRlPTu1bMS/0DITB1SSu0vd4u/8l8TjPgfaAp63Gc=",
+   "i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=",
+   "mEflZT5enoR1FuXLgYYGqnVEoZvmf9c2bVBpiOjYQ0c=",
+   "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=",
+   "uUwZgwDOxcBXrQcntwu+kYFpkiVkOaezL0WYEZ3anJc=",
+   "vRU+17BDT2iGsXvOi76E7TQMcTLXAqj0+jGPdW7L1vM=",
+   "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4="
+  ],
+  "mozilla_services": [
+   "C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M=",
+   "WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=",
+   "ape1HIIZ6T5d7GS61YBs3rD4NVvkfnVwELcCRW4Bqv0=",
+   "i7WTqTvh0OioIruIfFR4kMPnBqrS2rdiVPl/s2uC/CY=",
+   "oC+voZLIy4HLE0FVT5wFtxzKKokLDRKY1oNkfJYe+98=",
+   "r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E="
+  ],
+  "mozilla_test": [
+   "VCIlmPM9NkgFQtrs4Oa5TeFcDu6MWRTKSNdePEhOgD8="
+  ],
+  "test": [
+   "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  ],
+  "google": [
+   "CLOmM1/OXvSPjw5UOYbAf9GKOxImEp9hhku9W90fHMk=",
+   "IGnQeIPjbxiR+JteR7AkUXl7pV+19BT4x3o15saZBNE=",
+   "IPMbDAjLVSGntGO3WP53X/zilCVndez5YJ2+vJvhJsA=",
+   "O5TQDB/wa4SkRjBrQL2Aq9CG317H9MDDgpTVcrpJDa4=",
+   "OdSlmQD9NWJh4EbcOHBxkhygPwNSwA9Q91eounfbcoE=",
+   "YPtHaftLw6/0vnc2BnNKGF54xiCA28WFcccjkA4ypCM=",
+   "daBIAnKdRIX3bqM85I6We7wBUh0DPycNFBMvYkXGX2Q=",
+   "hZe1OerqJ1Pnq6F4N0gVjjpHqm037Ndf4aLLVpZZdAE=",
+   "hxqRlPTu1bMS/0DITB1SSu0vd4u/8l8TjPgfaAp63Gc=",
+   "kIdp6NNEd8wsugYyyIYFsi1ylMCED3hZbSR8ZFsa/A4=",
+   "mEflZT5enoR1FuXLgYYGqnVEoZvmf9c2bVBpiOjYQ0c=",
+   "vh78KSg1Ry4NaqGDV10w/cTb9VH3BQUZoCWNa93W/EY=",
+   "yDu9og255NN5GEf+Bwa9rTrqFQ0EydZ0r1FCh9TdAW4="
+  ]
+ },
+ "entries": [
+  {
+   "host": "2mdn.net",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "accounts.firefox.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "addons.mozilla.net",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "addons.mozilla.org",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "android.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "api.accounts.firefox.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "appspot.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "aus4.mozilla.org",
+   "include_subdomains": true,
+   "test_mode": true,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "aus5.mozilla.org",
+   "include_subdomains": true,
+   "test_mode": true,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "blogger.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "blogspot.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "bugs.chromium.org",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "build.chromium.org",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "cdn.ampproject.org",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "cdn.mozilla.net",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "cdn.mozilla.org",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "chrome.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "codereview.chromium.org",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "corp.goog",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "crash-reports-xpsp2.mozilla.com",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "crash-reports.mozilla.com",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "crash-stats.mozilla.org",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "crbug.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "crosbug.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "crossmediapanel.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "crrev.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "doubleclick.net",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "download.mozilla.org",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "example.test",
+   "include_subdomains": true,
+   "test_mode": true,
+   "pinset": "test"
+  },
+  {
+   "host": "exclude-subdomains.pinning.example.com",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "mozilla_test"
+  },
+  {
+   "host": "firebaseio.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "firefox.com",
+   "include_subdomains": true,
+   "test_mode": true,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "g.co",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "g4w.co",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "ggpht.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "gmail.co.ug",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "gmail.com",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "goo.gl",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google-analytics.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ac",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ad",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ae",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.af",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ag",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.al",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.am",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.as",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.at",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.az",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ba",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.be",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.bf",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.bg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.bi",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.bj",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.bs",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.bt",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.by",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ca",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cat",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cc",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cd",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cf",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ch",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ci",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cl",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cm",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.ao",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.bw",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.ck",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.cr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.hu",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.id",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.il",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.im",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.in",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.je",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.jp",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.ke",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.kr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.ls",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.ma",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.mz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.nz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.th",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.tz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.ug",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.uk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.uz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.ve",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.vi",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.za",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.zm",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.co.zw",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.af",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ag",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ai",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ar",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.au",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.bd",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.bh",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.bn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.bo",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.br",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.by",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.bz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.cn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.co",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.cu",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.cy",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.do",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ec",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.eg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.et",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.fj",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ge",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.gh",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.gi",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.gr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.gt",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.hk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.iq",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.jm",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.jo",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.kh",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.kw",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.lb",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ly",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.mm",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.mt",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.mx",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.my",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.na",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.nf",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ng",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ni",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.np",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.nr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.om",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.pa",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.pe",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.pg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ph",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.pk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.pl",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.pr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.py",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.qa",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ru",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.sa",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.sb",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.sg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.sl",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.sv",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.tj",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.tn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.tr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.tw",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ua",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.uy",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.vc",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.ve",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.vn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cv",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.cz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.de",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.dj",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.dk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.dm",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.dz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ee",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.es",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.eus",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.fi",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.fm",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.fr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ga",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ge",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.gg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.gl",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.gm",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.gp",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.gr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.gy",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.hk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.hn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.hr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ht",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.hu",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ie",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.im",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.info",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.iq",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.is",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.it",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.it.ao",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.je",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.jo",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.jobs",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.jp",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.kg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ki",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.kz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.la",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.li",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.lk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.lt",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.lu",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.lv",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.md",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.me",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.mg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.mk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ml",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.mn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ms",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.mu",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.mv",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.mw",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ne",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ne.jp",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.net",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.nl",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.no",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.nr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.nu",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.off.ai",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.pk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.pl",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.pn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ps",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.pt",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ro",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.rs",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ru",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.rw",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.sc",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.se",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.sh",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.si",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.sk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.sm",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.sn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.so",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.sr",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.st",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.td",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.tg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.tk",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.tl",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.tm",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.tn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.to",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.tt",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ua",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ug",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.us",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.uz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.vg",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.vu",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.ws",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googleadservices.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googleapis.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googlecode.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googlecommerce.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googlegroups.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googlemail.com",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googleplex.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googlesource.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googlesyndication.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googletagmanager.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googletagservices.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googleusercontent.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googlevideo.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "googleweblight.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "gstatic.cn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "gstatic.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "gvt1.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "gvt2.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "gvt3.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "hangout",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "include-subdomains.pinning.example.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "mozilla_test"
+  },
+  {
+   "host": "mfg-inspector.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "pinning-test.badssl.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "test"
+  },
+  {
+   "host": "pinningtest.appspot.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "test"
+  },
+  {
+   "host": "services.mozilla.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "static.googleadsserving.cn",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "sync.services.mozilla.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "telemetry.mozilla.org",
+   "include_subdomains": true,
+   "test_mode": true,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "test-mode.pinning.example.com",
+   "include_subdomains": true,
+   "test_mode": true,
+   "pinset": "mozilla_test"
+  },
+  {
+   "host": "testpilot.firefox.com",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "mozilla_services"
+  },
+  {
+   "host": "tunnel-staging.googlezip.net",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "tunnel.googlezip.net",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "ua5v.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "urchin.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "withgoogle.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "withyoutube.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "www.g.co",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "www.gmail.com",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "www.googlemail.com",
+   "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "youtu.be",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "youtube-nocookie.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "youtube.co.ug",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "youtube.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "youtube.ug",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "ytimg.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  }
+ ]
+}
