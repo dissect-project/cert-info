@@ -6,6 +6,7 @@ offline.
 """
 
 import hashlib
+import subprocess
 import unittest
 from datetime import datetime, timedelta, timezone
 from unittest import mock
@@ -292,6 +293,48 @@ class TestHandshakeParsing(unittest.TestCase):
     def test_truncated_message_is_ignored(self):
         output = _msg_output([("TLS 1.3", 11, b"\x00\x00\x00\x09\x00")])
         self.assertEqual(tls.parse_handshake(output), (None, None))
+
+
+class TestFirefoxClientHello(unittest.TestCase):
+    """The ClientHello offers what Firefox offers, post-quantum group included when available."""
+
+    def setUp(self):
+        tls.supports_post_quantum.cache_clear()
+
+    def tearDown(self):
+        tls.supports_post_quantum.cache_clear()
+
+    def groups(self, openssl_output, returncode=0):
+        result = subprocess.CompletedProcess([], returncode, stdout=openssl_output, stderr="")
+        with mock.patch("subprocess.run", return_value=result):
+            args = tls.firefox_tls_args()
+        return args[args.index("-groups") + 1]
+
+    def test_post_quantum_group_and_key_shares(self):
+        self.assertEqual(self.groups("secp256r1:x25519:MLKEM768:X25519MLKEM768:SecP256r1MLKEM768\n"),
+                         "*X25519MLKEM768:*X25519:*P-256:P-384:P-521")
+
+    def test_older_openssl_gets_classical_groups(self):
+        self.assertEqual(self.groups("secp256r1:secp384r1:x25519\n"), "X25519:P-256:P-384:P-521")
+        tls.supports_post_quantum.cache_clear()
+        self.assertEqual(self.groups("", returncode=1), "X25519:P-256:P-384:P-521")
+
+    def test_only_tls_1_2_and_1_3(self):
+        with mock.patch.object(tls, "supports_post_quantum", return_value=False):
+            args = tls.firefox_tls_args()
+        self.assertTrue({"-no_ssl3", "-no_tls1", "-no_tls1_1"} <= set(args))
+
+    def test_last_fallback_has_no_post_quantum_key_share(self):
+        """For servers that break on the larger post-quantum ClientHello."""
+        legacy = tls.OPENSSL_FALLBACK_ATTEMPTS[-1]
+        groups = legacy[legacy.index("-groups") + 1]
+        self.assertNotIn("MLKEM", groups.upper())
+        self.assertNotIn("*", groups)
+
+    def test_ecdsa_cbc_suites_are_not_offered(self):
+        """Firefox disables ECDHE-ECDSA with AES-CBC."""
+        self.assertNotIn("ECDHE-ECDSA-AES128-SHA:", tls.FIREFOX_CIPHERS + ":")
+        self.assertNotIn("ECDHE-ECDSA-AES256-SHA:", tls.FIREFOX_CIPHERS + ":")
 
 
 if __name__ == "__main__":

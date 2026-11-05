@@ -6,7 +6,7 @@ The **Certificate Analysis** component (`cert-info`) is part of the **DISSECT** 
 
 For each domain, `cert-info`:
 
-- **Retrieves what the server sends**: its certificates, its stapled OCSP response and its Signed Certificate Timestamps (SCTs), using a TLS handshake that offers the same algorithms as Firefox, so that servers with several certificates (e.g. RSA and ECDSA) send the one Firefox would receive. Old servers are retried with legacy TLS settings.
+- **Retrieves what the server sends**: its certificates, its stapled OCSP response and its Signed Certificate Timestamps (SCTs), using a TLS handshake that offers what Firefox offers: TLS 1.2 and 1.3, its cipher suites, signature algorithms and key exchange groups, including the post-quantum hybrid `X25519MLKEM768` with key shares for it, X25519 and P-256 (this needs OpenSSL 3.5 or later, as in the Docker image; older versions offer the classical groups only). Servers with several certificates (e.g. RSA and ECDSA) then send the one Firefox would receive. If that handshake fails, OpenSSL's defaults are tried, then legacy settings for old servers, which offer only classical key exchange groups: some old servers and middleboxes break on the larger ClientHello of a post-quantum key share. Firefox cannot connect to those, but `cert-info` still retrieves their certificates.
 - **Builds the chain like Firefox**, using the Mozilla root store and Firefox's preloaded intermediate certificates (see [How the chain is built](#how-the-chain-is-built)).
 - **Validates the chain with Firefox's rules** (see [When is a chain valid?](#when-is-a-chain-valid)):
   - **Chain of trust**: each certificate is signed by the next one, and the chain ends at a root of the Mozilla trust store.

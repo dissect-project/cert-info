@@ -15,28 +15,63 @@ import os
 import re
 import subprocess
 from dataclasses import dataclass, field
+from functools import lru_cache
 
 PEM_PATTERN = re.compile(r"-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----", re.DOTALL)
 
-# ClientHello settings taken from Firefox (TLS 1.3 and TLS 1.2 cipher suites,
-# signature algorithms and groups). Servers choose their certificate from these.
-FIREFOX_TLS_ARGS = [
-    "-ciphersuites", "TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384",
-    "-cipher", "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:"
-               "ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:"
-               "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:"
-               "ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:"
-               "ECDHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA:AES256-SHA",
-    "-sigalgs", "ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512:"
-                "rsa_pss_rsae_sha256:rsa_pss_rsae_sha384:rsa_pss_rsae_sha512:"
-                "rsa_pkcs1_sha256:rsa_pkcs1_sha384:rsa_pkcs1_sha512",
-    "-groups", "X25519:P-256:P-384:P-521",
-    "-alpn", "h2,http/1.1",
-]
-# Settings for servers that only support old protocols or ciphers
-LEGACY_TLS_ARGS = ["-cipher", "ALL:@SECLEVEL=0", "-legacy_server_connect"]
-# Handshakes tried in order until one returns certificates
-OPENSSL_ATTEMPTS = (FIREFOX_TLS_ARGS, [], LEGACY_TLS_ARGS)
+# ClientHello settings taken from Firefox (nsNSSComponent.cpp,
+# nsNSSIOLayer.cpp, EnabledSignatureSchemes.h): TLS 1.2 and 1.3 only, its
+# cipher suites, signature algorithms and key exchange groups. Servers choose
+# their certificate from these.
+FIREFOX_CIPHERSUITES = "TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384"
+FIREFOX_CIPHERS = ("ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:"
+                   "ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:"
+                   "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:"
+                   "ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:"
+                   "AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA:AES256-SHA")
+FIREFOX_SIGALGS = ("ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ecdsa_secp521r1_sha512:"
+                   "rsa_pss_rsae_sha256:rsa_pss_rsae_sha384:rsa_pss_rsae_sha512:"
+                   "rsa_pkcs1_sha256:rsa_pkcs1_sha384:rsa_pkcs1_sha512:ecdsa_sha1:rsa_pkcs1_sha1")
+# Firefox offers the post-quantum hybrid X25519MLKEM768 first and sends key
+# shares for it, X25519 and P-256 ("*" asks openssl for a key share). It
+# needs OpenSSL 3.5 or later; older versions get the classical groups.
+POST_QUANTUM_GROUP = "X25519MLKEM768"
+FIREFOX_GROUPS = "*X25519MLKEM768:*X25519:*P-256:P-384:P-521"
+CLASSICAL_GROUPS = "X25519:P-256:P-384:P-521"
+
+
+@lru_cache(maxsize=1)
+def supports_post_quantum() -> bool:
+    """Whether the local openssl can offer X25519MLKEM768 (checked once)."""
+    try:
+        result = subprocess.run(["openssl", "list", "-tls-groups"], stdin=subprocess.DEVNULL,
+                                capture_output=True, text=True, timeout=10, check=False)
+    except (subprocess.TimeoutExpired, OSError):
+        return False
+    return result.returncode == 0 and POST_QUANTUM_GROUP in result.stdout.split(":")
+
+
+def firefox_tls_args() -> list:
+    """openssl s_client arguments for a ClientHello like Firefox's."""
+    return [
+        "-no_ssl3", "-no_tls1", "-no_tls1_1",
+        "-ciphersuites", FIREFOX_CIPHERSUITES,
+        "-cipher", FIREFOX_CIPHERS,
+        "-sigalgs", FIREFOX_SIGALGS,
+        "-groups", FIREFOX_GROUPS if supports_post_quantum() else CLASSICAL_GROUPS,
+        "-alpn", "h2,http/1.1",
+    ]
+
+
+# Settings for servers that only support old protocols or ciphers. Only
+# classical key exchange groups are offered: some old servers and middleboxes
+# break on the larger ClientHello of a post-quantum key share (Firefox fails
+# on them; cert-info still retrieves their certificates).
+LEGACY_GROUPS = "X25519:P-256:P-384:P-521:X448:ffdhe2048:ffdhe3072"
+LEGACY_TLS_ARGS = ["-cipher", "ALL:@SECLEVEL=0", "-legacy_server_connect", "-groups", LEGACY_GROUPS]
+# Handshakes tried in order until one returns certificates: Firefox's
+# settings, OpenSSL's defaults, then legacy settings
+OPENSSL_FALLBACK_ATTEMPTS = ([], LEGACY_TLS_ARGS)
 # Ask for a stapled OCSP response and for SCTs, and print the handshake
 # messages. -ct needs a CT log list; an empty one is given because the SCTs
 # are verified by cert-info (src/validation/transparency.py), not by openssl.
@@ -168,9 +203,10 @@ def fetch_handshake(domain: str, port: int = 443) -> Handshake:
     The first attempt offers the same signature algorithms, groups and
     cipher suites as Firefox, so a server with several certificates (e.g.
     RSA and ECDSA) sends the one Firefox receives. If that handshake fails,
-    OpenSSL's defaults are tried, then legacy settings for old servers.
+    OpenSSL's defaults are tried, then legacy settings for old servers
+    (without the post-quantum key share).
     """
-    for extra_args in OPENSSL_ATTEMPTS:
+    for extra_args in (firefox_tls_args(), *OPENSSL_FALLBACK_ATTEMPTS):
         cmd = ["openssl", "s_client", "-connect", f"{domain}:{port}",
                "-servername", domain, "-showcerts", *HANDSHAKE_ARGS, *extra_args]
         try:
