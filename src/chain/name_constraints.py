@@ -1,6 +1,6 @@
 """
-Name constraints, as Firefox (mozilla::pkix) applies them during path
-building.
+Name constraints, as Firefox (mozilla::pkix, pkixnames.cpp) applies them
+during path building.
 
 A CA certificate's Name Constraints extension lists the names the
 certificates below it may (permitted subtrees) or may not (excluded subtrees)
@@ -9,23 +9,41 @@ The constraints of every CA in a path apply to every certificate below it.
 Unlike RFC 5280, mozilla::pkix makes no exception for self-issued CA
 certificates.
 
-Checked name types:
-    dNSName      the SAN DNS names (for a leaf without SAN DNS names or IP
-                 addresses, a Common Name that looks like a host name)
-    iPAddress    the SAN IP addresses
-    directoryName  the certificate's subject
+The names of a certificate that are checked:
+    every Subject Alternative Name entry;
+    the subject, as a directoryName (always, even when empty);
+    without a Subject Alternative Name extension, the subject's emailAddress
+        attributes, as rfc822Names;
+    for a server certificate without SAN DNS names or IP addresses, the
+        most specific (last) Common Name, as a DNS name or an IPv4 address.
 
-A name type is only restricted by permitted subtrees if the constraints have
-at least one permitted subtree of that type. A name inside any excluded
-subtree is never allowed.
+Each name is compared with the subtrees of its own type:
+    dNSName        "example.com" covers it and its subdomains, ".example.com"
+                   only subdomains, "" everything. A wildcard name is within
+                   a permitted subtree only if all names it covers are.
+    iPAddress      address and mask.
+    directoryName  permitted: the subject starts with the constraint's RDNs,
+                   compared on their encoding. Excluded directoryName
+                   subtrees are not supported by mozilla::pkix: any of them
+                   rejects every certificate below.
+    rfc822Name     a whole address, a host ("example.com", that host only)
+                   or a domain (".example.com").
+    other types    (URI, otherName, registeredID) not supported: a
+                   certificate with such a name is rejected if the
+                   constraints have a subtree of the same type.
+A name type is only restricted by permitted subtrees if there is at least
+one permitted subtree of that type; a name inside an excluded subtree is
+never allowed. Invalid names make the certificate unusable.
 """
 
 import ipaddress
-import re
 
 from cryptography import x509
 
+from src.chain import der
 from src.chain.certificate_rules import extension
+from src.chain.names import CONSTRAINT, PRESENTED, InvalidName, is_valid_dns_id, match_dns_id, \
+    match_rfc822_constraint, parse_ipv4
 
 # Name constraints NSS imposes on roots without the extension
 # (security/nss/lib/certdb/genname.c, builtInNameConstraints)
@@ -56,7 +74,13 @@ IMPOSED_NAME_CONSTRAINTS = {
         permitted_subtrees=[x509.DNSName(".tr")], excluded_subtrees=None),
 }
 
-_HOSTNAME = re.compile(r"^(\*\.)?([a-z0-9_]([a-z0-9_-]*[a-z0-9_])?\.)*[a-z0-9_]([a-z0-9_-]*[a-z0-9_])?\.?$", re.I)
+_COMMON_NAME = "2.5.4.3"
+_EMAIL_ADDRESS = "1.2.840.113549.1.9.1"
+_PRINTABLE_STRING, _UTF8_STRING, _TELETEX_STRING, _IA5_STRING = 0x13, 0x0C, 0x14, 0x16
+
+
+class _Violation(Exception):
+    """A name outside the constraints, or one that cannot be checked."""
 
 
 def constraints_of(ca: x509.Certificate) -> x509.NameConstraints | None:
@@ -64,82 +88,117 @@ def constraints_of(ca: x509.Certificate) -> x509.NameConstraints | None:
     return extension(ca, x509.NameConstraints) or IMPOSED_NAME_CONSTRAINTS.get(ca.subject.public_bytes())
 
 
-def _names(cert: x509.Certificate, is_leaf: bool) -> tuple[list, list]:
-    """(DNS names, IP addresses) of a certificate."""
-    san = extension(cert, x509.SubjectAlternativeName)
-    dns = san.get_values_for_type(x509.DNSName) if san is not None else []
-    ips = san.get_values_for_type(x509.IPAddress) if san is not None else []
-    if is_leaf and not dns and not ips:
-        # mozilla::pkix treats the CN of such a leaf as a DNS name or IP address
-        for attribute in cert.subject.get_attributes_for_oid(x509.NameOID.COMMON_NAME):
-            value = attribute.value
-            try:
-                ips.append(ipaddress.ip_address(value))
-            except ValueError:
-                if _HOSTNAME.match(value):
-                    dns.append(value)
-    return dns, ips
+def _attributes(name_der: bytes) -> list:
+    """(OID, string tag, value bytes) of every attribute of an encoded Name, in order."""
+    attributes = []
+    for rdn in der.children(der.parse(name_der).content):
+        for ava in der.children(rdn.content):
+            oid, value = der.children(ava.content)
+            attributes.append((der.decode_oid(oid.content), value.tag, value.content))
+    return attributes
 
 
-def _dns_in_subtree(name: str, base: str) -> bool:
-    """
-    Whether a DNS name is inside a dNSName subtree: "example.com" covers
-    example.com and its subdomains; ".example.com" covers only subdomains;
-    an empty base covers everything.
-    """
-    name, base = name.lower().rstrip("."), base.lower().rstrip(".")
-    if not base:
+def _presented_names(cert: x509.Certificate, is_leaf: bool) -> list:
+    """The names of a certificate that name constraints apply to (see above)."""
+    try:
+        san = cert.extensions.get_extension_for_class(x509.SubjectAlternativeName).value
+    except x509.ExtensionNotFound:
+        san = None
+    except Exception:
+        raise _Violation("unreadable Subject Alternative Name")
+    names = list(san) if san is not None else []
+    fall_back_to_cn = is_leaf and not any(isinstance(n, (x509.DNSName, x509.IPAddress)) for n in names)
+    names.append(x509.DirectoryName(cert.subject))
+    attributes = _attributes(cert.subject.public_bytes())
+    if san is None:
+        for oid, tag, value in attributes:
+            if oid == _EMAIL_ADDRESS:
+                if tag != _IA5_STRING:
+                    raise _Violation("emailAddress is not an IA5String")
+                names.append(x509.RFC822Name(value.decode("ascii", "replace")))
+    if fall_back_to_cn:
+        common_names = [(tag, value) for oid, tag, value in attributes if oid == _COMMON_NAME]
+        if common_names:
+            tag, value = common_names[-1]
+            text = value.decode("latin-1")
+            if tag in (_PRINTABLE_STRING, _UTF8_STRING, _TELETEX_STRING):
+                if is_valid_dns_id(text, PRESENTED, allow_wildcards=True):
+                    names.append(x509.DNSName(text))
+                elif parse_ipv4(text) is not None:
+                    names.append(x509.IPAddress(ipaddress.ip_address(parse_ipv4(text))))
+    return names
+
+
+def _ip_matches(address, network) -> bool:
+    """Whether an address is within an address/mask constraint (same IP version only)."""
+    if address.version != network.version:
+        return False
+    mask = network.netmask.packed
+    return all(a & m == n & m for a, n, m in zip(address.packed, network.network_address.packed, mask))
+
+
+def _directory_matches(subject: x509.Name, constraint: x509.Name, permitted: bool) -> bool:
+    """MatchPresentedDirectoryNameWithConstraint: RDN by RDN, on the encoded values."""
+    presented_rdns = der.children(der.parse(subject.public_bytes()).content)
+    constraint_rdns = der.children(der.parse(constraint.public_bytes()).content)
+    if not permitted:
+        if constraint_rdns or presented_rdns:
+            raise _Violation("excluded directoryName subtrees are not supported")
         return True
-    if base.startswith("."):
-        return name.endswith(base)
-    return name == base or name.endswith("." + base)
+    for index, constraint_rdn in enumerate(constraint_rdns):
+        if index >= len(presented_rdns):
+            return False
+        constraint_avas = der.children(constraint_rdn.content)
+        presented_avas = der.children(presented_rdns[index].content)
+        if len(constraint_avas) != len(presented_avas):
+            return False
+        for constraint_ava, presented_ava in zip(constraint_avas, presented_avas):
+            c_type, c_value = der.children(constraint_ava.content)
+            p_type, p_value = der.children(presented_ava.content)
+            strings = {_PRINTABLE_STRING, _UTF8_STRING}
+            same_tag = c_value.tag == p_value.tag or {c_value.tag, p_value.tag} <= strings
+            if c_type.content != p_type.content or c_value.content != p_value.content or not same_tag:
+                return False
+    return True
 
 
-def _wildcard_overlaps(name: str, base: str) -> bool:
-    """Whether some host a wildcard name (*.domain) covers is inside the subtree."""
-    domain = name[2:].lower().rstrip(".")
-    stripped = base.lower().rstrip(".").lstrip(".")
-    # The subtree contains the wildcard's whole domain ...
-    if _dns_in_subtree("x." + domain, base):
-        return True
-    # ... or is one of the hosts the wildcard covers (one label below)
-    return stripped.endswith("." + domain) and stripped.count(".") == domain.count(".") + 1
+def _matches(name, base, permitted: bool) -> bool:
+    if isinstance(name, x509.DNSName):
+        return match_dns_id(name.value, base.value, CONSTRAINT, permitted)
+    if isinstance(name, x509.IPAddress):
+        return _ip_matches(name.value, base.value)
+    if isinstance(name, x509.DirectoryName):
+        return _directory_matches(name.value, base.value, permitted)
+    if isinstance(name, x509.RFC822Name):
+        return match_rfc822_constraint(name.value, base.value, permitted)
+    raise _Violation(f"name constraints on {type(name).__name__} are not supported")
 
 
-def _directory_in_subtree(subject: x509.Name, base: x509.Name) -> bool:
-    """Whether a subject is inside a directoryName subtree (starts with its RDNs)."""
-    return list(subject.rdns[:len(base.rdns)]) == list(base.rdns)
-
-
-def _ip_in_subtree(ip, network) -> bool:
-    return ip.version == network.version and ip in network
+def _check(name, constraints: x509.NameConstraints) -> None:
+    """CheckPresentedIDConformsToConstraints: raises _Violation if the name is not allowed."""
+    for subtrees, permitted in ((constraints.permitted_subtrees, True), (constraints.excluded_subtrees, False)):
+        found_match = found_mismatch = False
+        for base in subtrees or []:
+            if type(base) is not type(name):
+                continue
+            if _matches(name, base, permitted):
+                if not permitted:
+                    raise _Violation("name in an excluded subtree")
+                found_match = True
+            else:
+                found_mismatch = True
+        if permitted and found_mismatch and not found_match:
+            raise _Violation("name outside the permitted subtrees")
 
 
 def violates(constraints: x509.NameConstraints, cert: x509.Certificate, is_leaf: bool) -> bool:
     """Whether a certificate below a constrained CA breaks its constraints."""
-    permitted = constraints.permitted_subtrees or []
-    excluded = constraints.excluded_subtrees or []
-    dns, ips = _names(cert, is_leaf)
-    subjects = [cert.subject] if cert.subject.rdns else []
-
-    def check(names, general_type, inside, overlaps=None):
-        allowed = [g.value for g in permitted if isinstance(g, general_type)]
-        denied = [g.value for g in excluded if isinstance(g, general_type)]
-        for name in names:
-            if allowed and not any(inside(name, base) for base in allowed):
-                return True
-            touches = overlaps if overlaps and isinstance(name, str) and name.startswith("*.") else inside
-            if any(touches(name, base) for base in denied):
-                return True
-        return False
-
-    def dns_inside(name, base):
-        # A wildcard is inside a permitted subtree only if all hosts it covers are
-        return _dns_in_subtree("x." + name[2:] if name.startswith("*.") else name, base)
-
-    return (check(dns, x509.DNSName, dns_inside, _wildcard_overlaps)
-            or check(ips, x509.IPAddress, _ip_in_subtree)
-            or check(subjects, x509.DirectoryName, _directory_in_subtree))
+    try:
+        for name in _presented_names(cert, is_leaf):
+            _check(name, constraints)
+    except (_Violation, InvalidName, der.DERError, ValueError):
+        return True
+    return False
 
 
 def path_violations(certs: list) -> list:

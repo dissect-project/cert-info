@@ -12,7 +12,12 @@ from datetime import datetime
 from cryptography import x509
 from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.primitives.asymmetric import ec, rsa
-from cryptography.x509.oid import ExtendedKeyUsageOID, ExtensionOID, ObjectIdentifier, SignatureAlgorithmOID
+from cryptography.hazmat.primitives.serialization import Encoding
+from cryptography.x509.oid import ExtendedKeyUsageOID, ExtensionOID, ObjectIdentifier
+
+from src.chain import der
+
+DER = Encoding.DER
 
 # Problems
 MALFORMED_EXTENSIONS = "Certificate has malformed or duplicate extensions"
@@ -22,6 +27,7 @@ UNSUPPORTED_CURVE = "Elliptic curve is not supported by Firefox (only P-256, P-3
 RSA_KEY_TOO_SMALL = "RSA key is shorter than {bits} bits"
 SHA1_SIGNATURE = "Signed with SHA-1, which Firefox rejects"
 UNSUPPORTED_SIGNATURE = "Signature algorithm is not supported by Firefox"
+SIGNATURE_ALGORITHM_MISMATCH = "Signature algorithm differs inside and outside the signed part of the certificate"
 NOT_VALID_CA = "Issuer is not a valid CA"
 NO_CA_INFO = "Certificate has no information about being a valid CA"
 ISSUER_KEY_USAGE = "Issuer is not allowed to sign certificates (Key Usage)"
@@ -35,15 +41,32 @@ LEAF_OCSP_SIGNING = "Certificate is also an OCSP signing certificate, which Fire
 MIN_RSA_BITS = 2048
 MIN_RSA_BITS_WEAK = 1024
 SUPPORTED_CURVES = (ec.SECP256R1, ec.SECP384R1, ec.SECP521R1)
-# RSA (PKCS#1 v1.5 and PSS) and ECDSA with SHA-256, SHA-384 or SHA-512
-SUPPORTED_SIGNATURES = {
-    SignatureAlgorithmOID.RSA_WITH_SHA256, SignatureAlgorithmOID.RSA_WITH_SHA384,
-    SignatureAlgorithmOID.RSA_WITH_SHA512, SignatureAlgorithmOID.ECDSA_WITH_SHA256,
-    SignatureAlgorithmOID.ECDSA_WITH_SHA384, SignatureAlgorithmOID.ECDSA_WITH_SHA512,
+# Signature algorithms mozilla::pkix supports (pkixder.cpp,
+# SignatureAlgorithmIdentifierValue): OID -> (key algorithm, digest).
+# SHA-224 and MD5 are not supported; SHA-1 is parsed, then disabled.
+SIGNATURE_ALGORITHMS = {
+    "1.2.840.113549.1.1.11": ("RSA", "SHA-256"),
+    "1.2.840.113549.1.1.12": ("RSA", "SHA-384"),
+    "1.2.840.113549.1.1.13": ("RSA", "SHA-512"),
+    "1.2.840.10045.4.3.2": ("ECDSA", "SHA-256"),
+    "1.2.840.10045.4.3.3": ("ECDSA", "SHA-384"),
+    "1.2.840.10045.4.3.4": ("ECDSA", "SHA-512"),
+    "1.2.840.113549.1.1.5": ("RSA", "SHA-1"),
+    "1.3.14.3.2.29": ("RSA", "SHA-1"),         # sha1WithRSASignature (OIW)
+    "1.2.840.10045.4.1": ("ECDSA", "SHA-1"),
 }
-SHA1_SIGNATURES = {SignatureAlgorithmOID.RSA_WITH_SHA1, SignatureAlgorithmOID._RSA_WITH_SHA1,
-                   SignatureAlgorithmOID.ECDSA_WITH_SHA1}
-SUPPORTED_PSS_HASHES = ("sha256", "sha384", "sha512")
+RSA_PSS = "1.2.840.113549.1.1.10"
+# The only RSA-PSS parameters allowed (CA/Browser Forum Baseline
+# Requirements): hash, MGF-1 with the same hash, salt as long as the hash
+_PSS_PARAMETERS = {
+    bytes.fromhex("3034a00f300d06096086480165030402010500a11c301a06092a864886f70d010108"
+                  "300d06096086480165030402010500a203020120"): "SHA-256",
+    bytes.fromhex("3034a00f300d06096086480165030402020500a11c301a06092a864886f70d010108"
+                  "300d06096086480165030402020500a203020130"): "SHA-384",
+    bytes.fromhex("3034a00f300d06096086480165030402030500a11c301a06092a864886f70d010108"
+                  "300d06096086480165030402030500a203020140"): "SHA-512",
+}
+_NULL = b"\x05\x00"
 
 # Extensions mozilla::pkix understands; any other critical extension makes
 # the certificate unusable (pkixcert.cpp, BackCert::RememberExtension).
@@ -102,20 +125,43 @@ def key_problems(cert: x509.Certificate, min_rsa_bits: int = MIN_RSA_BITS_WEAK) 
     return [UNSUPPORTED_KEY]
 
 
+def _signature_algorithm(algorithm_identifier: der.Element) -> tuple | None:
+    """(key algorithm, digest) of an encoded AlgorithmIdentifier, or None if Firefox does not support it."""
+    parts = der.children(algorithm_identifier.content)
+    if not parts or parts[0].tag != 0x06:
+        return None
+    oid = der.decode_oid(parts[0].content)
+    parameters = b"".join(part.encoded for part in parts[1:])
+    if oid == RSA_PSS:
+        digest = _PSS_PARAMETERS.get(parameters)
+        return ("RSA-PSS", digest) if digest else None
+    algorithm = SIGNATURE_ALGORITHMS.get(oid)
+    # Other algorithms' parameters must be NULL or absent
+    return algorithm if parameters in (b"", _NULL) else None
+
+
 def signature_problems(cert: x509.Certificate) -> list:
-    """Firefox accepts RSA and ECDSA signatures with SHA-256, SHA-384 or SHA-512."""
-    oid = cert.signature_algorithm_oid
-    if oid in SUPPORTED_SIGNATURES:
-        return []
-    if oid in SHA1_SIGNATURES:
-        return [SHA1_SIGNATURE]
-    if oid == SignatureAlgorithmOID.RSASSA_PSS:
-        try:
-            if cert.signature_hash_algorithm.name in SUPPORTED_PSS_HASHES:
-                return []
-        except (ValueError, UnsupportedAlgorithm):
-            pass
-    return [UNSUPPORTED_SIGNATURE]
+    """
+    Firefox's CheckSignatureAlgorithm: the signature algorithm must be RSA
+    (PKCS#1 v1.5, or PSS with the standard parameters) or ECDSA with SHA-256,
+    SHA-384 or SHA-512, and the same in the signed part of the certificate as
+    outside it.
+    """
+    try:
+        certificate, signature_algorithm = der.children(der.parse(cert.public_bytes(DER)).content)[:2]
+        tbs_fields = der.children(certificate.content)
+        if tbs_fields and tbs_fields[0].tag == 0xA0:       # [0] version
+            tbs_fields = tbs_fields[1:]
+        tbs_signature = tbs_fields[1]                      # after the serial number
+    except (ValueError, IndexError):
+        return [UNSUPPORTED_SIGNATURE]
+    outer = _signature_algorithm(signature_algorithm)
+    inner = _signature_algorithm(tbs_signature)
+    if outer is None or inner is None:
+        return [UNSUPPORTED_SIGNATURE]
+    if outer != inner:
+        return [SIGNATURE_ALGORITHM_MISMATCH]
+    return [SHA1_SIGNATURE] if outer[1] == "SHA-1" else []
 
 
 def allows_server_auth(cert: x509.Certificate) -> bool:

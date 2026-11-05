@@ -11,6 +11,7 @@ or GlobalSign Root CA - R6 / R3.
 """
 
 import unittest
+from unittest import mock
 from datetime import datetime, timedelta, timezone
 
 from cryptography import x509
@@ -18,6 +19,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import ec, rsa
 from cryptography.x509.oid import NameOID
 
+from src.chain import path_builder
 from src.chain.path_builder import (
     ORIGIN_AIA, ORIGIN_PRELOAD, ORIGIN_ROOTS, ORIGIN_SERVER, PathBuilder,
 )
@@ -395,6 +397,35 @@ class TestFirefoxChecks(unittest.TestCase):
         result = PathBuilder(roots=[root], intermediates=[]).build([leaf, rollover], now=NOW)
         self.assertTrue(result.trusted)
         self.assertFalse(result.strict)
+
+
+class TestSearchBudget(unittest.TestCase):
+    """mozilla::pkix limits the number of candidate issuers it examines."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.k = {n: ec.generate_private_key(ec.SECP256R1()) for n in ("R", "I", "L")}
+        cls.R = _custom("Root", cls.k["R"], "Root", cls.k["R"])
+        cls.I = _custom("CA", cls.k["I"], "Root", cls.k["R"])
+        cls.L = _custom("example.com", cls.k["L"], "CA", cls.k["I"], ca=False)
+
+    def test_search_stops_when_the_budget_runs_out(self):
+        builder = PathBuilder(roots=[self.R], intermediates=[])
+        with mock.patch.object(path_builder, "SEARCH_BUDGET", 2):
+            self.assertTrue(builder.build([self.L, self.I], now=NOW).strict)
+        with mock.patch.object(path_builder, "SEARCH_BUDGET", 1):
+            self.assertFalse(builder.build([self.L, self.I], now=NOW).strict)
+
+    def test_candidates_outside_name_constraints_are_not_counted(self):
+        """Like Firefox, the budget is spent after the name constraint check."""
+        constraints = x509.NameConstraints(permitted_subtrees=[x509.DNSName("other.example")],
+                                           excluded_subtrees=None)
+        constrained = _custom("CA", self.k["I"], "Root", self.k["R"], extensions=[(constraints, True)])
+        builder = PathBuilder(roots=[self.R], intermediates=[self.I])
+        with mock.patch.object(path_builder, "SEARCH_BUDGET", 2):
+            result = builder.build([self.L, constrained], now=NOW)
+        self.assertTrue(result.strict)
+        self.assertEqual([c for c, _ in result.path][1], self.I)
 
 
 class TestKeyPins(unittest.TestCase):

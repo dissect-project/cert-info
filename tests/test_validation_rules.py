@@ -16,7 +16,7 @@ from unittest import mock
 
 from cryptography import x509
 from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import ec, ed25519, rsa
+from cryptography.hazmat.primitives.asymmetric import ec, ed25519, padding, rsa
 from cryptography.x509 import ocsp
 from cryptography.x509.oid import ExtendedKeyUsageOID, NameOID
 
@@ -243,6 +243,32 @@ class TestAlgorithms(unittest.TestCase):
         self.assertIn(rules.UNSUPPORTED_SIGNATURE, issues)
         self.assertIn("Hash " + cv.NIST_DEPRECATED, issues)
 
+    def test_rsa_pss_needs_the_standard_parameters(self):
+        """Firefox only accepts RSA-PSS with MGF-1 on the same hash and a salt as long as the hash."""
+        rsa_ca_key = rsa.generate_private_key(65537, 2048)
+
+        def pss_cert(algorithm, mgf_hash, salt):
+            return (x509.CertificateBuilder().subject_name(_name("example.com")).issuer_name(_name("CA"))
+                    .public_key(KEYS["leaf"].public_key()).serial_number(1)
+                    .not_valid_before(NOW - timedelta(days=1)).not_valid_after(NOW + timedelta(days=30))
+                    .sign(rsa_ca_key, algorithm, rsa_padding=padding.PSS(padding.MGF1(mgf_hash), salt)))
+        self.assertEqual(rules.signature_problems(pss_cert(hashes.SHA256(), hashes.SHA256(), 32)), [])
+        self.assertEqual(rules.signature_problems(pss_cert(hashes.SHA384(), hashes.SHA384(), 48)), [])
+        for algorithm, mgf_hash, salt in ((hashes.SHA256(), hashes.SHA256(), 20),
+                                          (hashes.SHA256(), hashes.SHA384(), 32)):
+            with self.subTest(salt=salt, mgf=mgf_hash.name):
+                self.assertEqual(rules.signature_problems(pss_cert(algorithm, mgf_hash, salt)),
+                                 [rules.UNSUPPORTED_SIGNATURE])
+
+    def test_signature_algorithm_must_match_inside_and_outside(self):
+        leaf = self.leaf("leaf")
+        ecdsa_sha256 = bytes.fromhex("06082a8648ce3d040302")
+        ecdsa_sha384 = bytes.fromhex("06082a8648ce3d040303")
+        der = leaf.public_bytes(serialization.Encoding.DER)
+        # The first occurrence is the copy inside the signed part
+        tampered = x509.load_der_x509_certificate(der.replace(ecdsa_sha256, ecdsa_sha384, 1))
+        self.assertEqual(rules.signature_problems(tampered), [rules.SIGNATURE_ALGORITHM_MISMATCH])
+
     def test_supported_signatures(self):
         for algorithm in (hashes.SHA256(), hashes.SHA384(), hashes.SHA512()):
             with self.subTest(algorithm=algorithm.name):
@@ -430,6 +456,20 @@ class TestRevocation(unittest.TestCase):
             with self.subTest(reason=reason):
                 self.assertEqual(self.check(cert, _no_fetch, stapled)[:2],
                                  (False, [revocation.STAPLED_OCSP_INVALID.format(reason=reason)]))
+
+    def test_expired_stapled_response_is_ignored_whatever_it_says(self):
+        """Firefox ignores an expired stapled response, even one saying 'revoked' or 'unknown'."""
+        cert = _cert("example.com", "leaf", "CA", "ca")
+        for status in (ocsp.OCSPCertStatus.REVOKED, ocsp.OCSPCertStatus.UNKNOWN):
+            with self.subTest(status=status.name):
+                stapled = _ocsp_response(cert, status, this_update=NOW - timedelta(days=5))
+                self.assertEqual(self.check(cert, _no_fetch, stapled),
+                                 (True, [], [revocation.STAPLED_OCSP_IGNORED.format(reason=revocation.OLD)]))
+
+    def test_expired_revoked_response_from_the_network_counts(self):
+        cert = _cert("example.com", "leaf", "CA", "ca")
+        old = _ocsp_response(cert, ocsp.OCSPCertStatus.REVOKED, this_update=NOW - timedelta(days=5))
+        self.assertEqual(revocation.evaluate_ocsp(old, cert, CA, NOW)[0], revocation.REVOKED)
 
     def test_tolerated_stapled_responses_are_ignored(self):
         """Firefox ignores expired responses and responses about another certificate."""

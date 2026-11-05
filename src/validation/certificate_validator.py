@@ -7,7 +7,6 @@ is reported too, for information.
 """
 
 import ipaddress
-import re
 import subprocess
 from datetime import datetime, timezone
 
@@ -17,6 +16,7 @@ from cryptography.x509.oid import SignatureAlgorithmOID
 
 from src.chain import certificate_rules as rules
 from src.chain.certificate_rules import extension
+from src.chain.names import PRESENTED, InvalidName, is_valid_dns_id, match_dns_id
 from src.chain.signatures import UnsupportedSignature, verify_signature
 from src.validation import revocation
 from src.validation.nist.parser import CSVParser
@@ -221,45 +221,20 @@ def _check_tls_key_usage(cert: x509.Certificate, issues: list) -> bool:
     return False
 
 
-# A DNS name as mozilla::pkix accepts it in a certificate (IsValidDNSID):
-# letters, digits, "_" and "-" (not at the start or end of a label), labels
-# of 1 to 63 characters, no trailing dot, and a last label that is not all
-# digits. A wildcard is only allowed as the whole first label.
-_LABEL = r"[A-Za-z0-9_](?:[A-Za-z0-9_-]{0,61}[A-Za-z0-9_])?"
-_PRESENTED_DNS_ID = re.compile(rf"^(?:\*\.)?(?:{_LABEL}\.)*{_LABEL}$")
-
-
-def _is_valid_presented_dns_id(name: str) -> bool:
-    if len(name) > 253 or not _PRESENTED_DNS_ID.match(name):
-        return False
-    labels = name.split(".")
-    if labels[-1].isdigit():
-        return False
-    # Like NSS, a wildcard needs at least two labels after it
-    return not (labels[0] == "*" and len(labels) < 3)
-
-
 def _matches(name: str, hostname: str) -> tuple[bool, bool]:
     """
-    Match a certificate DNS name against a hostname, case-insensitively. A
-    wildcard (*.example.com) matches exactly one label.
+    Match a certificate DNS name against a hostname as mozilla::pkix does
+    (src/chain/names.py): case-insensitively, a wildcard only as the whole
+    first label, with two labels after it, matching exactly one label.
 
     Returns:
         tuple: (matches, through_wildcard)
     """
-    if not _is_valid_presented_dns_id(name):
+    try:
+        matches = match_dns_id(name, hostname)
+    except InvalidName:
         return False, False
-    name = name.lower()
-    hostname = hostname.lower()
-    if hostname.endswith("."):
-        hostname = hostname[:-1]
-    if name == hostname:
-        return True, False
-    if name.startswith("*."):
-        first_label, _, rest = hostname.partition(".")
-        if first_label and rest == name[2:]:
-            return True, True
-    return False, False
+    return matches, matches and name.startswith("*.")
 
 
 def _check_hostname(cert: x509.Certificate, expected: str, issues: list, warnings: list) -> bool:
@@ -276,7 +251,7 @@ def _check_hostname(cert: x509.Certificate, expected: str, issues: list, warning
     san = extension(cert, x509.SubjectAlternativeName) or []
     for name in san:
         if ip is None and isinstance(name, x509.DNSName):
-            if not _is_valid_presented_dns_id(name.value):
+            if not is_valid_dns_id(name.value, PRESENTED, allow_wildcards=True):
                 break
             matches, wildcard = _matches(name.value, expected)
             if matches:

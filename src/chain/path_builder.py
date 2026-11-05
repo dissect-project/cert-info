@@ -74,8 +74,10 @@ ORIGIN_AIA = "AIA"
 MAX_PATH_LENGTH = 8
 # Maximum number of issuers fetched through AIA for one chain
 MAX_AIA_FETCHES = 4
-# Maximum number of candidate issuers evaluated per search
-SEARCH_BUDGET = 2000
+# Maximum number of candidate issuers examined per search, counted as in
+# mozilla::pkix (buildForwardCallBudget): candidates that pass the loop,
+# name constraint and TLS feature checks. When it runs out, the search fails.
+SEARCH_BUDGET = 200_000
 
 
 def _policies(cert: x509.Certificate) -> list | None:
@@ -146,6 +148,12 @@ def _usable_issuer(issuer: x509.Certificate, now: datetime, sub_cas_below: int,
     if rules.key_problems(issuer, min_rsa_bits):
         return False
     return is_trust_anchor or not rules.signature_problems(issuer)
+
+
+@lru_cache(maxsize=65536)
+def _signed_by(child: x509.Certificate, issuer: x509.Certificate) -> bool:
+    """is_signed_by, remembered: the same pairs are tried in every search attempt."""
+    return is_signed_by(child, issuer)
 
 
 def _index_by_subject(certs: list) -> dict:
@@ -399,15 +407,18 @@ class PathBuilder:
             if not best or score > best[1]:
                 best[:] = [list(path), score]
 
+        def allowed_below(candidate, path):
+            """PathBuildingStep::Check, before the budget: name constraints and TLS features."""
+            return name_constraints_permit(candidate, [c for c, _ in path]) and \
+                rules.inherits_tls_features(path[-1][0], candidate)
+
         def acceptable(candidate, anchor, path):
-            """Firefox's checks on a candidate issuer of path[-1]."""
+            """BuildForward on the candidate: Firefox's checks on the issuer itself."""
             if not _usable_issuer(candidate, now, len(path) - 1, anchor, min_rsa_bits):
                 return False
+            if self.is_revoked(candidate):
+                return False
             certs = [c for c, _ in path]
-            if self.is_revoked(candidate) or not name_constraints_permit(candidate, certs):
-                return False
-            if not rules.inherits_tls_features(path[-1][0], candidate):
-                return False
             if anchor:
                 # NSSCertDBTrustDomain::IsChainValid
                 return not self.distrusts(candidate, leaf) and \
@@ -420,13 +431,17 @@ class PathBuilder:
                 return None
             child = path[-1][0]
             for candidate, origin, anchor in self._candidates(child, pool, policy):
-                budget[0] -= 1
-                if budget[0] < 0:
-                    return None
                 identity = _identity(candidate)
-                if identity in identities or not is_signed_by(child, candidate):
+                if identity in identities:
                     continue
+                if strict and not allowed_below(candidate, path):
+                    continue
+                if budget[0] <= 0:
+                    return None
+                budget[0] -= 1
                 if strict and not acceptable(candidate, anchor, path):
+                    continue
+                if not _signed_by(child, candidate):
                     continue
                 if anchor:
                     return path + [(candidate, origin)]

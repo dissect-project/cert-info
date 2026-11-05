@@ -11,7 +11,8 @@ src/chain/path_builder.py). For the leaf certificate, in order:
 2. The OCSP response stapled by the server: "good" accepts the certificate,
    "revoked" rejects it. An expired response, a responder answering
    tryLater, a response signed by an unauthorised certificate or a response
-   about another certificate is ignored; any other problem (bad signature,
+   about another certificate is ignored (whatever an expired response
+   says); any other problem (bad signature,
    "unknown" status, malformed response, ...) rejects the certificate.
 3. Certificates valid for less than 10 days are not checked further.
 4. Firefox does not fetch OCSP for certificates that chain to a Mozilla root:
@@ -127,7 +128,7 @@ def check_leaf_revocation(cert: x509.Certificate, issuer: x509.Certificate, issu
 
     # 2. Stapled OCSP response
     if stapled_ocsp is not None:
-        status, ocsp_scts = evaluate_ocsp(stapled_ocsp, cert, issuer, now)
+        status, ocsp_scts = evaluate_ocsp(stapled_ocsp, cert, issuer, now, stapled=True)
         if status == GOOD:
             if outcome is not None and ocsp_scts:
                 outcome["ocsp_scts"] = ocsp_scts
@@ -309,9 +310,13 @@ def _query_ocsp(url: str, cert: x509.Certificate, issuer: x509.Certificate, now:
 
 
 def evaluate_ocsp(der: bytes, cert: x509.Certificate, issuer: x509.Certificate,
-                  now: datetime) -> tuple[str, bytes | None]:
+                  now: datetime, stapled: bool = False) -> tuple[str, bytes | None]:
     """
     Verify an OCSP response about `cert` the way mozilla::pkix does.
+
+    An expired response still reports "revoked" or "unknown", as Firefox
+    does for responses from the network. For a stapled response (stapled
+    True), Firefox ignores any expired response, so OLD is returned.
 
     Returns:
         tuple: (result, SCT list): result is GOOD, REVOKED or a description
@@ -352,8 +357,10 @@ def evaluate_ocsp(der: bytes, cert: x509.Certificate, issuer: x509.Certificate,
             status = UNKNOWN
     if not matched:
         return NOT_FOR_CERTIFICATE, None
+    if expired and (status == GOOD or stapled):
+        return OLD, None
     if status == GOOD:
-        return (OLD, None) if expired else (GOOD, _ocsp_scts(response))
+        return GOOD, _ocsp_scts(response)
     return status, None
 
 

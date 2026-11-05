@@ -322,6 +322,73 @@ class TestNameConstraints(unittest.TestCase):
         self.assertTrue(violates(c, _leaf(cn="evil.com"), True))
         self.assertFalse(violates(c, _leaf(cn="www.example.com"), True))
 
+    def leaf_with(self, names=None, subject=None):
+        """A leaf with any Subject Alternative Names (None: no SAN extension)."""
+        builder = (x509.CertificateBuilder().subject_name(subject if subject is not None else _name("host"))
+                   .issuer_name(_name("CA")).public_key(KEYS["L"].public_key()).serial_number(1)
+                   .not_valid_before(NOW - timedelta(days=1)).not_valid_after(NOW + timedelta(days=30)))
+        if names is not None:
+            builder = builder.add_extension(x509.SubjectAlternativeName(names), critical=False)
+        return builder.sign(KEYS["I"], hashes.SHA256())
+
+    def test_excluded_directory_names_reject_everything(self):
+        """mozilla::pkix does not support excluded directoryName subtrees."""
+        c = _constraints(excluded=[x509.DirectoryName(x509.Name([
+            x509.NameAttribute(NameOID.ORGANIZATION_NAME, "Evil")]))])
+        self.assertTrue(violates(c, _leaf(["example.com"]), True))
+
+    def test_directory_names_compare_encodings(self):
+        """PrintableString and UTF8String are interchangeable; other string types are not."""
+        def org(value, string_type):
+            return x509.Name([x509.NameAttribute(NameOID.ORGANIZATION_NAME, value, _type=string_type)])
+        from cryptography.x509.name import _ASN1Type
+        c = _constraints(permitted=[x509.DirectoryName(org("Example", _ASN1Type.UTF8String))])
+        self.assertFalse(violates(c, self.leaf_with([x509.DNSName("a.example")],
+                                                    org("Example", _ASN1Type.PrintableString)), True))
+        self.assertTrue(violates(c, self.leaf_with([x509.DNSName("a.example")],
+                                                   org("Example", _ASN1Type.IA5String)), True))
+
+    def test_empty_subject_is_checked(self):
+        c = _constraints(permitted=[x509.DirectoryName(_name("host", org="Example Org"))])
+        self.assertTrue(violates(c, self.leaf_with([x509.DNSName("a.example")], x509.Name([])), True))
+
+    def test_email_addresses(self):
+        c = _constraints(permitted=[x509.RFC822Name("example.com")])
+        self.assertFalse(violates(c, self.leaf_with([x509.RFC822Name("a@example.com")]), True))
+        self.assertTrue(violates(c, self.leaf_with([x509.RFC822Name("a@sub.example.com")]), True))
+        domain = _constraints(permitted=[x509.RFC822Name(".example.com")])
+        self.assertFalse(violates(domain, self.leaf_with([x509.RFC822Name("a@sub.example.com")]), True))
+        mailbox = _constraints(excluded=[x509.RFC822Name("ceo@example.com")])
+        self.assertTrue(violates(mailbox, self.leaf_with([x509.RFC822Name("CEO@example.com")]), True))
+
+    def test_subject_email_address_without_san(self):
+        """Without a SAN extension, the subject's emailAddress attributes are checked."""
+        c = _constraints(permitted=[x509.RFC822Name("example.com")])
+        subject = x509.Name([x509.NameAttribute(NameOID.EMAIL_ADDRESS, "a@evil.com")])
+        self.assertTrue(violates(c, self.leaf_with(None, subject), True))
+        self.assertFalse(violates(c, self.leaf_with([x509.DNSName("a.example")], subject), True))
+
+    def test_unsupported_name_types(self):
+        """A URI is rejected only if the constraints have a URI subtree."""
+        # (no Common Name: it would be checked as a DNS name)
+        uri_leaf = self.leaf_with([x509.UniformResourceIdentifier("https://example.com/")],
+                                  x509.Name([x509.NameAttribute(NameOID.ORGANIZATION_NAME, "Example")]))
+        self.assertTrue(violates(_constraints(permitted=[x509.UniformResourceIdentifier(".example.com")]),
+                                 uri_leaf, True))
+        self.assertFalse(violates(_constraints(permitted=[x509.DNSName("example.com")]), uri_leaf, True))
+
+    def test_only_the_last_common_name_counts(self):
+        c = _constraints(permitted=[x509.DNSName("example.com")])
+        subject = x509.Name([x509.NameAttribute(NameOID.COMMON_NAME, "evil.com"),
+                             x509.NameAttribute(NameOID.COMMON_NAME, "www.example.com")])
+        self.assertFalse(violates(c, self.leaf_with(None, subject), True))
+        reversed_subject = x509.Name(list(reversed(list(subject))))
+        self.assertTrue(violates(c, self.leaf_with(None, reversed_subject), True))
+
+    def test_invalid_dns_name_is_rejected(self):
+        c = _constraints(permitted=[x509.DNSName("example.com")])
+        self.assertTrue(violates(c, self.leaf_with([x509.DNSName("bad name.example.com")]), True))
+
     def test_imposed_constraints_on_tubitak_root(self):
         """NSS limits the TUBITAK root (no extension) to .tr."""
         tubitak = [c for c in load_pem_bundle(MOZILLA_ROOTS)
