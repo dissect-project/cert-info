@@ -14,6 +14,10 @@
 #                          (roots, distrust dates, preloaded intermediates, EV
 #                          roots, OneCRL, CT logs, key pins) during the build, "false" to use the
 #                          bundled files in src/trust/data (default: true)
+#   CERTINFO_USER_AGENT    User-Agent of the HTTP requests cert-info makes (HTTPS
+#                          probe, CRL/OCSP/AIA downloads), e.g. to point to a page
+#                          about this deployment (default: cert-info/<version>
+#                          (+https://github.com/dissect-project/cert_info))
 #######################################
 
 set -e  # Exit on error
@@ -26,6 +30,7 @@ PORT="${PORT:-6010}"
 HOST_PORT="${HOST_PORT:-6010}"
 WORKERS="${WORKERS:-4}"
 REFRESH_TRUST_DATA="${REFRESH_TRUST_DATA:-true}"
+CERTINFO_USER_AGENT="${CERTINFO_USER_AGENT:-}"
 
 # Colors for output
 RED='\033[0;31m'
@@ -84,11 +89,17 @@ build_image() {
 
 run_container() {
     log_info "Starting container: ${CONTAINER_NAME}"
+    # Only passed when set, so the application's default applies otherwise
+    local env_args=()
+    if [ -n "${CERTINFO_USER_AGENT}" ]; then
+        env_args+=(-e "CERTINFO_USER_AGENT=${CERTINFO_USER_AGENT}")
+    fi
     docker run -d \
         --name "${CONTAINER_NAME}" \
         -p "${HOST_PORT}:${PORT}" \
         -e "PORT=${PORT}" \
         -e "WORKERS=${WORKERS}" \
+        "${env_args[@]}" \
         --restart unless-stopped \
         "${IMAGE_NAME}:${TAG}"
 
@@ -135,6 +146,7 @@ show_info() {
     log_info "Image: ${IMAGE_NAME}:${TAG}"
     log_info "Port Mapping: ${HOST_PORT}:${PORT}"
     log_info "Workers: ${WORKERS}"
+    log_info "User-Agent: ${CERTINFO_USER_AGENT:-default (cert-info/<version>)}"
     log_info "API Docs: http://localhost:${HOST_PORT}/docs"
     log_info "Example: curl 'http://localhost:${HOST_PORT}/certinfo/www.google.com?showcert=true'"
     echo ""

@@ -10,7 +10,9 @@ service being used to reach internal systems (SSRF), every request:
 - may only go to a public IP address, checked after DNS resolution, and the
   connection is made to that checked address so DNS cannot change in between;
 - does not follow redirects;
-- is limited in size and time.
+- is limited in size and time;
+- identifies cert-info (User-Agent), and is not sent to a server that
+  answered 429 or 503 until its Retry-After delay has passed.
 """
 
 import ipaddress
@@ -19,8 +21,12 @@ from urllib.parse import urlparse, urlunparse
 
 import requests
 
+from src.fetch.client import USER_AGENT, BackOff
+
 MAX_RESPONSE_BYTES = 20 * 1024 * 1024  # large CRLs can be several MB
 TIMEOUT = 10
+# Servers (by host name) that asked cert-info to wait (429/503 Retry-After)
+_back_off = BackOff()
 MAX_ADDRESSES = 3  # addresses tried when a connection fails (e.g. no IPv6 route)
 
 
@@ -57,7 +63,10 @@ def fetch(url: str, data: bytes | None = None, content_type: str | None = None) 
         raise FetchError("only http:// URLs are fetched")
     port = parsed.port or 80
     host_header = parsed.hostname if parsed.port in (None, 80) else f"{parsed.hostname}:{parsed.port}"
-    headers = {"Host": host_header}
+    waiting, _ = _back_off.waiting(parsed.hostname)
+    if waiting:
+        raise FetchError("server asked to retry later")
+    headers = {"Host": host_header, "User-Agent": USER_AGENT}
     if content_type:
         headers["Content-Type"] = content_type
     method = "POST" if data is not None else "GET"
@@ -66,7 +75,7 @@ def fetch(url: str, data: bytes | None = None, content_type: str | None = None) 
         netloc = f"[{address}]:{port}" if ":" in address else f"{address}:{port}"
         pinned = urlunparse(parsed._replace(netloc=netloc))
         try:
-            return _request(method, pinned, data, headers)
+            return _request(method, pinned, data, headers, parsed.hostname)
         except requests.ConnectionError:
             continue  # try the next address
         except requests.RequestException as e:
@@ -74,10 +83,11 @@ def fetch(url: str, data: bytes | None = None, content_type: str | None = None) 
     raise FetchError("download failed")
 
 
-def _request(method: str, url: str, data: bytes | None, headers: dict) -> bytes:
+def _request(method: str, url: str, data: bytes | None, headers: dict, hostname: str) -> bytes:
     """One request, without redirects and with a size limit."""
     with requests.request(method, url, data=data, headers=headers, timeout=TIMEOUT,
                           allow_redirects=False, stream=True) as response:
+        _back_off.remember(hostname, response.status_code, response.headers.get("Retry-After"), None)
         if response.status_code != 200:
             raise FetchError(f"HTTP status {response.status_code}")
         body = bytearray()

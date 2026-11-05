@@ -102,6 +102,14 @@ SCTs from tiled (static-ct-api) logs must carry the certificate's index in the l
 - Firefox reports the first problem it finds; `cert-info` reports all of them.
 - Certificates and settings added by the user (e.g. enterprise roots, certificate exceptions) are not considered.
 
+### Requests to other servers
+
+Besides the TLS handshake, `cert-info` makes a few HTTP requests: the HTTPS probe (which follows redirects to find the host to analyse) and the download of CRLs, OCSP responses and missing issuers. These requests:
+
+- identify `cert-info` with the User-Agent `cert-info/0.1.0 (+https://github.com/dissect-project/cert_info)`. Set the environment variable `CERTINFO_USER_AGENT` to change it, for example to point to a page about your deployment. If a site cannot be reached with it, the probe retries once with the `requests` library's default User-Agent;
+- only read the status and headers of the probe's responses, never the pages themselves;
+- are not repeated to a server that answered `429 Too Many Requests` or `503 Service Unavailable` until its `Retry-After` delay has passed (60 seconds if it gives none, at most one hour); the previous probe answer is reused meanwhile. The TLS handshake that retrieves the certificates is not affected.
+
 ## Installation
 
 `cert-info` runs as a web service inside a Docker container, so Docker is required.
@@ -122,6 +130,7 @@ The script builds the image, replaces any existing `cert-info` container, waits 
 | `PORT` | `6010` | Port the API listens on inside the container |
 | `WORKERS` | `4` | Number of uvicorn worker processes |
 | `REFRESH_TRUST_DATA` | `true` | Download the current Mozilla trust data (roots and distrust dates, preloaded intermediates, EV roots, OneCRL, CT logs, key pins) during the build (`false` uses the bundled files) |
+| `CERTINFO_USER_AGENT` | `cert-info/<version> (+https://github.com/dissect-project/cert_info)` | User-Agent of the HTTP requests `cert-info` makes (see [Requests to other servers](#requests-to-other-servers)) |
 
 Example:
 
@@ -384,6 +393,7 @@ src/
     tls.py                      What the server sends in the TLS handshake: certificates, stapled
                                 OCSP response, SCTs (openssl, Firefox-like ClientHello)
     empty-ct-logs.cnf           Empty CT log list for openssl (SCTs are verified by cert-info)
+    client.py                   User-Agent and back-off (429/503 Retry-After) for HTTP requests
     network.py                  Fetching URLs from certificates (CRL, OCSP, AIA) safely
     cache.py                    In-memory cache for downloaded CRLs and OCSP responses
   trust/                      Mozilla trust data
