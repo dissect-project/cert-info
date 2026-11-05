@@ -417,7 +417,7 @@ src/
     certificate_fields.py       Certificate fields in the response (showcert)
     nist/                       NIST algorithm tables and their parser
 scripts/                      Updating the trust data
-tests/                        Unit tests, and the opt-in comparison with Firefox
+tests/                        Unit tests, and the opt-in comparison with Firefox (see tests/README.md)
 docs/nist/                    The NIST publications the algorithm tables come from
 ```
 
@@ -458,7 +458,7 @@ Contributions are more than welcome and they are what makes the community great!
     brief commit description should be self-explanatory."
     ```
 
-- **Testing**: To test the code, execute the `python -m unittest` command in the root of the repository. Make sure all tests pass successfully. The tests in `tests/test_analysis.py` and `tests/test_domain.py` need network access; the others run offline, except the Firefox comparison, which is skipped unless enabled (see [Comparing with Firefox](#comparing-with-firefox)). To test using `pylint`, run `pylint src` at the root of the project and make sure the score is above `9.0`; `python -m pyflakes src scripts tests` (from `requirements-dev.txt`) must report nothing.
+- **Testing**: To test the code, execute the `python -m unittest` command in the root of the repository ([`tests/README.md`](tests/README.md) describes every test and how to run them). Make sure all tests pass successfully. The tests in `tests/test_analysis.py` and `tests/test_domain.py` need network access; the others run offline, except the Firefox comparison, which is skipped unless enabled (see [Comparing with Firefox](#comparing-with-firefox)). To test using `pylint`, run `pylint src` at the root of the project and make sure the score is above `9.0`; `python -m pyflakes src scripts tests` (from `requirements-dev.txt`) must report nothing.
 
 - **Pull Requests**: When opening a pull request, make sure to assign at least a reviewer so that all the code being merged has been validated by more than one person. When merging the pull request, make sure to **squash** all **commits** **before merging**.
 
