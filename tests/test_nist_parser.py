@@ -57,10 +57,14 @@ class TestKeyStatus(unittest.TestCase):
 
     def test_deprecated_binary_curve(self):
         """The curve status now also sets the key status."""
+        if not hasattr(ec, "SECT233K1"):
+            raise unittest.SkipTest("cryptography does not expose SECT233K1")
         self.assertKey(_ec_key(ec.SECT233K1()), "Deprecated",
                        ["Usage of curve sect233k1 is Deprecated"])
 
     def test_small_binary_curve(self):
+        if not hasattr(ec, "SECT163K1"):
+            raise unittest.SkipTest("cryptography does not expose SECT163K1")
         self.assertKey(_ec_key(ec.SECT163K1()), "Disallowed",
                        ["Usage of curve sect163k1 is Legacy"])
 
@@ -76,16 +80,16 @@ class TestHashStatus(unittest.TestCase):
     """CSVParser.get_hash_status"""
 
     def test_hashes(self):
-        expected = {
-            hashes.MD5(): "Disallowed",
-            hashes.SHA1(): "Disallowed",
-            hashes.SHA224(): "Deprecated",
-            hashes.SHA256(): "Acceptable",
-            hashes.SHA512_224(): "Deprecated",
-            hashes.SHA512_256(): "Acceptable",
-            hashes.SHA3_256(): "Acceptable",
-        }
-        for hash_function, status in expected.items():
+        expected = [
+            (hashes.MD5(), "Disallowed"),
+            (hashes.SHA1(), "Disallowed"),
+            (hashes.SHA224(), "Deprecated"),
+            (hashes.SHA256(), "Acceptable"),
+            (hashes.SHA512_224(), "Deprecated"),
+            (hashes.SHA512_256(), "Acceptable"),
+            (hashes.SHA3_256(), "Acceptable"),
+        ]
+        for hash_function, status in expected:
             self.assertEqual(CSVParser.get_hash_status(hash_function), status, hash_function.name)
 
     def test_missing_hash_is_unsupported(self):
