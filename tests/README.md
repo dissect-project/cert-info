@@ -37,7 +37,7 @@ The whole suite takes a few seconds. `test_analysis.py` and `test_domain.py` nee
 | [`test_transparency.py`](#test_transparencypy) | Certificate Transparency, reading the TLS handshake, Firefox-like ClientHello | No |
 | [`test_signatures.py`](#test_signaturespy) | Signature verification | No |
 | [`test_nist_parser.py`](#test_nist_parserpy) | NIST classification of hashes, keys and curves | No |
-| [`test_certificate_fields.py`](#test_certificate_fieldspy) | Validation level (EV/OV/DV) in the response | No |
+| [`test_certificate_fields.py`](#test_certificate_fieldspy) | Decoded certificate fields and validation level (EV/OV/DV) in the response | No |
 | [`test_client.py`](#test_clientpy) | User-Agent, header-only HTTPS probe, back-off after 429/503 | No |
 | [`test_firefox_comparison.py`](#test_firefox_comparisonpy) | cert-info's chains against Firefox's, on the Tranco top domains | Yes, opt-in |
 
@@ -405,8 +405,8 @@ NIST classification (`src/validation/nist/parser.py`) and how it is reported.
 | `TestKeyStatus.test_eddsa` | EdDSA keys are acceptable |
 | `TestKeyStatus.test_nist_prime_curves` | NIST prime curves are acceptable |
 | `TestKeyStatus.test_p192_is_disallowed` | P-192 is not acceptable |
-| `TestKeyStatus.test_deprecated_binary_curve` | Large binary curves are deprecated |
-| `TestKeyStatus.test_small_binary_curve` | Small binary curves are not acceptable |
+| `TestKeyStatus.test_deprecated_binary_curve` | Large binary curves are deprecated (skipped when cryptography no longer supports binary curves) |
+| `TestKeyStatus.test_small_binary_curve` | Small binary curves are not acceptable (skipped when cryptography no longer supports binary curves) |
 | `TestKeyStatus.test_brainpool_is_allowed` | Brainpool curves are acceptable |
 | `TestKeyStatus.test_secp256k1_is_disallowed` | secp256k1 is disallowed |
 | `TestHashStatus.test_hashes` | Each hash function gets the right status |
@@ -417,7 +417,7 @@ NIST classification (`src/validation/nist/parser.py`) and how it is reported.
 
 ### `test_certificate_fields.py`
 
-The `validation_level` field (`src/validation/certificate_fields.py`).
+The decoded certificate fields and the `validation_level` field (`src/validation/certificate_fields.py`).
 
 | Test | Checks that |
 |---|---|
@@ -427,6 +427,8 @@ The `validation_level` field (`src/validation/certificate_fields.py`).
 | `TestValidationLevel.test_highest_policy_wins` | With several policies, the highest level wins |
 | `TestValidationLevel.test_other_policies_are_ignored` | Other policies are ignored |
 | `TestValidationLevel.test_fallback_without_policy` | Without a policy, OV if the subject has an Organization, DV otherwise |
+| `TestDecode.test_fields` | The public key type and size are reported |
+| `TestDecode.test_unsupported_key_does_not_fail` | A key cryptography cannot load (a binary curve) is reported as `Unsupported` instead of failing the analysis (skipped while cryptography can still load it) |
 
 ### `test_client.py`
 

@@ -6,6 +6,7 @@ import unittest
 from datetime import datetime, timedelta, timezone
 
 from cryptography import x509
+from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import ec
 from cryptography.x509.oid import NameOID
@@ -64,6 +65,43 @@ class TestValidationLevel(unittest.TestCase):
     def test_fallback_without_policy(self):
         self.assertEqual(CertificateFields.get_validation_level(_cert(organization="Example Inc")), OV)
         self.assertEqual(CertificateFields.get_validation_level(_cert()), DV)
+
+
+# Self-signed certificate with a key on sect233k1 (a binary curve), made with
+# openssl. cryptography can no longer load or generate such keys.
+BINARY_CURVE_CERT = b"""-----BEGIN CERTIFICATE-----
+MIIBcjCCAR+gAwIBAgIBATAKBggqhkjOPQQDAjAfMR0wGwYDVQQDDBRiaW5hcnkt
+Y3VydmUuZXhhbXBsZTAeFw0yNjExMDYxNzQzMDFaFw0zNjExMDMxNzQzMDFaMB8x
+HTAbBgNVBAMMFGJpbmFyeS1jdXJ2ZS5leGFtcGxlMFIwEAYHKoZIzj0CAQYFK4EE
+ABoDPgAEACDfEuE0mu+oB4Em72zy+kzjUT6ZXi3G3bGVF9E1AGxJsXllCIWWMS5O
+b+lmlns4IKHhYfq7pGS5icNwo1MwUTAdBgNVHQ4EFgQUl11vAWqVZ2HRkVs31mSs
+C9TxBxEwHwYDVR0jBBgwFoAUl11vAWqVZ2HRkVs31mSsC9TxBxEwDwYDVR0TAQH/
+BAUwAwEB/zAKBggqhkjOPQQDAgNBADA+Ah0wm92AhFJ9sHnFsU5+GVk5+KL4zOMs
+K1DXEYS4AgIdDYc4mKIWYfZRwBC3xWdVKKfWThIjyFJ4zmmB/c0=
+-----END CERTIFICATE-----
+"""
+
+
+class TestDecode(unittest.TestCase):
+
+    def test_fields(self):
+        fields = CertificateFields.decode(_cert())
+        self.assertEqual(fields["public_key_type"], type(KEY.public_key()).__name__)
+        self.assertEqual(fields["public_key_size"], 256)
+
+    def test_unsupported_key_does_not_fail(self):
+        """A key cryptography cannot load is reported instead of raising."""
+        cert = x509.load_pem_x509_certificate(BINARY_CURVE_CERT)
+        try:
+            cert.public_key()
+        except UnsupportedAlgorithm:
+            pass
+        else:
+            self.skipTest("this cryptography release can still load binary curve keys")
+        fields = CertificateFields.decode(cert)
+        self.assertEqual(fields["public_key_type"], "Unsupported")
+        self.assertEqual(fields["public_key_size"], "N/A")
+        self.assertEqual(fields["subject"], "CN=binary-curve.example")
 
 
 if __name__ == "__main__":

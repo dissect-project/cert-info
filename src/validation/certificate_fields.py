@@ -3,6 +3,7 @@ Decodes a certificate into the fields reported in chain[].certificate.
 """
 
 from cryptography import x509
+from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.primitives import hashes
 from cryptography.x509.oid import AuthorityInformationAccessOID, NameOID
 
@@ -35,7 +36,13 @@ class CertificateFields:
         Returns:
             dict: The certificate fields.
         """
-        public_key = cert.public_key()
+        try:
+            public_key = cert.public_key()
+            key_type, key_size = type(public_key).__name__, getattr(public_key, "key_size", "N/A")
+        except (ValueError, UnsupportedAlgorithm):
+            # A key cryptography cannot load, e.g. on a binary curve (sect*),
+            # which cryptography no longer supports (nor does Firefox)
+            key_type, key_size = "Unsupported", "N/A"
         cert_data = {
             "subject": cert.subject.rfc4514_string(),
             "issuer": cert.issuer.rfc4514_string(),
@@ -43,8 +50,8 @@ class CertificateFields:
             "valid_from": cert.not_valid_before_utc.strftime(DATE_FORMAT),
             "valid_until": cert.not_valid_after_utc.strftime(DATE_FORMAT),
             "signature_algorithm": cert.signature_algorithm_oid._name,
-            "public_key_type": type(public_key).__name__,
-            "public_key_size": getattr(public_key, "key_size", "N/A"),
+            "public_key_type": key_type,
+            "public_key_size": key_size,
             "type": CertificateFields.get_certificate_type(cert),
         }
 
