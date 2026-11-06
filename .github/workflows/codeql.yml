@@ -1,0 +1,32 @@
+# CodeQL static analysis of the Python code (security-extended queries).
+# Results appear under Security > Code scanning. On a private repository this
+# needs GitHub Code Security to be enabled for the repository.
+name: CodeQL
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+  schedule:
+    - cron: "53 4 * * 3"   # Wednesdays 04:53 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: python
+          build-mode: none
+          queries: security-extended
+      - uses: github/codeql-action/analyze@v4
+        with:
+          category: /language:python

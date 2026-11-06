@@ -1,0 +1,44 @@
+# Static check and offline tests on every push and pull request.
+# The tests that need the network (test_analysis.py and the reachability tests
+# in test_domain.py) are skipped here with CERTINFO_NETWORK_TESTS=0 so that a
+# flaky network or DNS cannot fail a pull request; they run weekly in
+# trust-data.yml instead.
+name: CI
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.10 is the lowest version pyproject.toml allows, 3.12 is the one in the Dockerfile
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Static check (pyflakes)
+        run: python -m pyflakes src scripts tests
+      - name: Offline tests
+        env:
+          CERTINFO_NETWORK_TESTS: "0"
+        run: python -m unittest -v

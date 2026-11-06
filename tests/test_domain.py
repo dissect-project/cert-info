@@ -3,11 +3,15 @@ This set of tests is made to check if the validity and the reachability of the d
 is being accurately assessed by the analyzer.
 """
 
+import os
 import unittest
 
 from src.certificate_info import CertificateInformation
 from src.fetch.domain import split_host_port
 from src.fetch.https_probe import host_port_from_url
+
+NETWORK = os.environ.get("CERTINFO_NETWORK_TESTS", "1") != "0"
+NEEDS_NETWORK = unittest.skipUnless(NETWORK, "needs network access (skipped because CERTINFO_NETWORK_TESTS=0)")
 
 class TestDomainValidation(unittest.TestCase):
     """Test the domain validation functions."""
@@ -36,12 +40,14 @@ class TestDomainValidation(unittest.TestCase):
         self.assertFalse(self.analyzer.is_valid('www.random-domain'))
         self.assertFalse(self.analyzer.is_valid('htt://www.random-domain.com'))
 
+    @NEEDS_NETWORK
     def test_reachable_domains(self):
         """Tests if domains are reachable."""
         # Examples of valid domains
         self.assertTrue(self.analyzer.is_reachable('www.google.com'))
         self.assertTrue(self.analyzer.is_valid('https://github.com'))
 
+    @NEEDS_NETWORK
     def test_unreachable_domains(self):
         """Tests if domains are unreachable."""
         # Examples of valid domains

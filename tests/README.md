@@ -19,10 +19,11 @@ pip install -r requirements-dev.txt     # requirements.txt + Selenium + pyflakes
 | One class | `python -m unittest tests.test_path_builder.TestKeyPins` |
 | One test | `python -m unittest tests.test_path_builder.TestKeyPins.test_host_lookup` |
 | Verbose (one line per test) | add `-v`, e.g. `python -m unittest -v` |
+| Offline only (skip the tests that need the network, as CI does) | `CERTINFO_NETWORK_TESTS=0 python -m unittest` |
 | Comparison with Firefox | `CERTINFO_FIREFOX_TEST=1 python -m unittest tests.test_firefox_comparison -v` |
 | Static check (must report nothing) | `python -m pyflakes src scripts tests` |
 
-The whole suite takes a few seconds. `test_analysis.py` and `test_domain.py` need network access and can be slow or fail if the network or DNS is unavailable; all other files (except the Firefox comparison) run offline.
+The whole suite takes a few seconds. `test_analysis.py` and `test_domain.py` need network access and can be slow or fail if the network or DNS is unavailable (set `CERTINFO_NETWORK_TESTS=0` to skip them); all other files (except the Firefox comparison) run offline.
 
 ## Test files
 

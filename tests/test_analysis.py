@@ -3,10 +3,15 @@ This set of tests is made to check if the analysis of the domain
 is working and behaving as expected.
 """
 
+import os
 import unittest
 
 from src.certificate_info import CertificateInformation
 
+NETWORK = os.environ.get("CERTINFO_NETWORK_TESTS", "1") != "0"
+
+
+@unittest.skipUnless(NETWORK, "needs network access (skipped because CERTINFO_NETWORK_TESTS=0)")
 class TestDomainAnalysis(unittest.TestCase):
     """Test the domain analysis function."""
 
