@@ -1,0 +1,87 @@
+# Weekly refresh of the Mozilla/Firefox trust data bundled in src/trust/data
+# (roots and distrust dates, preloaded intermediates, EV roots, OneCRL, CT logs,
+# key pins). If anything changed and the offline tests still pass with the new
+# data, a pull request is opened (or updated) on the trust-data/refresh branch.
+#
+# The same schedule runs the tests that need the network, which are skipped in
+# ci.yml.
+#
+# Requires "Allow GitHub Actions to create and approve pull requests" in
+# Settings > Actions > General. Pull requests opened with GITHUB_TOKEN do not
+# trigger ci.yml; close and reopen the pull request (or push to it) to run it.
+name: Trust data refresh
+
+on:
+  schedule:
+    - cron: "37 5 * * 1"   # Mondays 05:37 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Download the current trust data
+        id: update
+        # A file that fails to download keeps its current version; the others
+        # are still proposed, and the failure is reported in the pull request.
+        run: |
+          if python scripts/update_trust_data.py; then
+            echo "complete=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Some trust data could not be refreshed; see the log above"
+            echo "complete=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Show what changed
+        run: git status --short src/trust/data && git diff --stat src/trust/data
+      - name: Offline tests with the new data
+        env:
+          CERTINFO_NETWORK_TESTS: "0"
+        run: python -m unittest
+      - name: Open or update the pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: trust-data/refresh
+          base: ${{ github.event.repository.default_branch }}
+          add-paths: src/trust/data/*
+          commit-message: Refresh Mozilla and Firefox trust data
+          title: Refresh Mozilla and Firefox trust data
+          body: |
+            Weekly refresh of `src/trust/data` by `scripts/update_trust_data.py`
+            ([run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})).
+            The offline tests pass with the new data.
+
+            ${{ steps.update.outputs.complete == 'true' && 'Every file was refreshed.' || '**Some files could not be downloaded and kept their previous version; see the run log.**' }}
+
+            Close and reopen this pull request to run CI on it.
+          labels: trust-data
+          delete-branch: true
+
+  network-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - name: Install dig
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends dnsutils
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Tests that need the network
+        run: python -m unittest -v tests.test_analysis tests.test_domain
