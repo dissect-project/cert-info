@@ -11,6 +11,7 @@ ServerHello extension and the OCSP response has its own CertificateStatus
 message.
 """
 
+import ipaddress
 import os
 import re
 import subprocess
@@ -18,6 +19,10 @@ from dataclasses import dataclass, field
 from functools import lru_cache
 
 PEM_PATTERN = re.compile(r"-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----", re.DOTALL)
+# A DNS host name: dot-separated labels of letters, digits, "-" and "_", not
+# starting or ending with "-" (so it can never be read as an openssl option)
+HOSTNAME_PATTERN = re.compile(r"^(?=.{1,253}\Z)[a-z0-9_](?:[a-z0-9_-]{0,61}[a-z0-9_])?"
+                              r"(?:\.[a-z0-9_](?:[a-z0-9_-]{0,61}[a-z0-9_])?)*\.?\Z", re.IGNORECASE)
 
 # ClientHello settings taken from Firefox (nsNSSComponent.cpp,
 # nsNSSIOLayer.cpp, EnabledSignatureSchemes.h): TLS 1.2 and 1.3 only, its
@@ -196,6 +201,25 @@ def chain_certificates(output: str) -> list:
     return PEM_PATTERN.findall(output[start:end if end >= 0 else len(output)])
 
 
+def connect_target(domain: str, port: int) -> str | None:
+    """
+    The host:port argument of openssl -connect, or None if the host is not a
+    plain host name or IP address or the port is out of range. The host can
+    come from a redirect chosen by the server, so it is checked here before
+    it reaches the openssl command line.
+    """
+    if not isinstance(port, int) or isinstance(port, bool) or not 1 <= port <= 65535:
+        return None
+    try:
+        address = ipaddress.ip_address(domain)
+        return f"[{address}]:{port}" if address.version == 6 else f"{address}:{port}"
+    except ValueError:
+        pass
+    if HOSTNAME_PATTERN.match(domain) is None:
+        return None
+    return f"{domain}:{port}"
+
+
 def fetch_handshake(domain: str, port: int = 443) -> Handshake:
     """
     Connect to the server with openssl s_client and return what it sent.
@@ -205,9 +229,14 @@ def fetch_handshake(domain: str, port: int = 443) -> Handshake:
     RSA and ECDSA) sends the one Firefox receives. If that handshake fails,
     OpenSSL's defaults are tried, then legacy settings for old servers
     (without the post-quantum key share).
+
+    An invalid host or port returns an empty Handshake without running openssl.
     """
+    target = connect_target(domain, port)
+    if target is None:
+        return Handshake()
     for extra_args in (firefox_tls_args(), *OPENSSL_FALLBACK_ATTEMPTS):
-        cmd = ["openssl", "s_client", "-connect", f"{domain}:{port}",
+        cmd = ["openssl", "s_client", "-connect", target,
                "-servername", domain, "-showcerts", *HANDSHAKE_ARGS, *extra_args]
         try:
             # errors="replace": openssl prints certificate names in their
