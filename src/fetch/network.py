@@ -20,6 +20,11 @@ import socket
 from urllib.parse import urlparse, urlunparse
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.connection import HTTPConnection, HTTPSConnection
+from urllib3.connectionpool import HTTPConnectionPool, HTTPSConnectionPool
+from urllib3.exceptions import ConnectTimeoutError, NewConnectionError
+from urllib3.util import connection as urllib3_connection
 
 from src.fetch.client import USER_AGENT, BackOff
 
@@ -34,6 +39,10 @@ class FetchError(Exception):
     """The URL could not be fetched. The message is safe to show to users."""
 
 
+class AddressNotAllowed(FetchError):
+    """The host resolves to an address that is not public (internal, loopback, ...)."""
+
+
 def _public_addresses(host: str, port: int) -> list:
     """Resolve host and return its addresses, if every address is public."""
     try:
@@ -44,8 +53,76 @@ def _public_addresses(host: str, port: int) -> list:
     for address in addresses:
         ip = ipaddress.ip_address(address.split("%")[0])
         if not ip.is_global or ip.is_multicast:
-            raise FetchError("address not allowed")
+            raise AddressNotAllowed("address not allowed")
     return list(dict.fromkeys(addresses))
+
+
+class _PublicOnly:
+    """
+    Connection mixin: the host is resolved, every address checked to be
+    public, and the socket connected to a checked address, in one step. The
+    host is not resolved again in between, so a DNS answer that changes after
+    the check (DNS rebinding) cannot lead to an internal address. TLS (SNI,
+    certificate) and the Host header still use the host name.
+    """
+
+    def _new_conn(self):
+        try:
+            addresses = _public_addresses(self._dns_host, self.port)
+        except FetchError as e:
+            raise NewConnectionError(self, f"{self.host}: {e}") from e
+        error = None
+        for address in addresses[:MAX_ADDRESSES]:
+            try:
+                return urllib3_connection.create_connection(
+                    (address, self.port), self.timeout,
+                    source_address=self.source_address, socket_options=self.socket_options)
+            except socket.timeout as e:
+                error = ConnectTimeoutError(self, f"Connection to {self.host} timed out.")
+                error.__cause__ = e
+            except OSError as e:
+                error = NewConnectionError(self, f"Failed to establish a new connection: {e}")
+                error.__cause__ = e
+        raise error
+
+
+class _PublicHTTPConnection(_PublicOnly, HTTPConnection):
+    pass
+
+
+class _PublicHTTPSConnection(_PublicOnly, HTTPSConnection):
+    pass
+
+
+class _PublicHTTPConnectionPool(HTTPConnectionPool):
+    ConnectionCls = _PublicHTTPConnection
+
+
+class _PublicHTTPSConnectionPool(HTTPSConnectionPool):
+    ConnectionCls = _PublicHTTPSConnection
+
+
+class PublicOnlyAdapter(HTTPAdapter):
+    """requests adapter whose connections only go to public IP addresses (see _PublicOnly)."""
+
+    def init_poolmanager(self, *args, **kwargs):
+        super().init_poolmanager(*args, **kwargs)
+        self.poolmanager.pool_classes_by_scheme = {"http": _PublicHTTPConnectionPool,
+                                                   "https": _PublicHTTPSConnectionPool}
+
+
+def public_only_session() -> requests.Session:
+    """
+    A requests Session that only connects to public IP addresses. Proxy
+    settings from the environment are ignored: the check is about the server
+    itself, which a proxy connection would bypass.
+    """
+    session = requests.Session()
+    session.trust_env = False
+    adapter = PublicOnlyAdapter()
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
 
 
 def fetch(url: str, data: bytes | None = None, content_type: str | None = None) -> bytes:

@@ -18,6 +18,8 @@ import subprocess
 from dataclasses import dataclass, field
 from functools import lru_cache
 
+from src.fetch.network import MAX_ADDRESSES, FetchError, _public_addresses
+
 PEM_PATTERN = re.compile(r"-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----", re.DOTALL)
 # A DNS host name: dot-separated labels of letters, digits, "-" and "_", not
 # starting or ending with "-" (so it can never be read as an openssl option)
@@ -230,26 +232,37 @@ def fetch_handshake(domain: str, port: int = 443) -> Handshake:
     OpenSSL's defaults are tried, then legacy settings for old servers
     (without the post-quantum key share).
 
-    An invalid host or port returns an empty Handshake without running openssl.
+    An invalid host or port returns an empty Handshake without running
+    openssl, as does a host that resolves to a non-public address: the host
+    is resolved and checked here, and openssl connects to a checked address
+    (sending the host name as SNI), so it never resolves the name itself and
+    a changed DNS answer (DNS rebinding) cannot lead to an internal address.
     """
-    target = connect_target(domain, port)
-    if target is None:
+    if connect_target(domain, port) is None:
         return Handshake()
-    for extra_args in (firefox_tls_args(), *OPENSSL_FALLBACK_ATTEMPTS):
-        cmd = ["openssl", "s_client", "-connect", target,
-               "-servername", domain, "-showcerts", *HANDSHAKE_ARGS, *extra_args]
-        try:
-            # errors="replace": openssl prints certificate names in their
-            # raw encoding (not always UTF-8); the PEM blocks are ASCII.
-            result = subprocess.run(cmd, stdin=subprocess.DEVNULL, capture_output=True,
-                                    text=True, encoding="utf-8", errors="replace",
-                                    timeout=20, check=False)
-        except (subprocess.TimeoutExpired, OSError):
-            continue
-        certs = chain_certificates(result.stdout)
-        if certs:
-            ocsp, scts = parse_handshake(result.stdout)
-            return Handshake(certs, ocsp, scts)
+    try:
+        addresses = _public_addresses(domain, port)
+    except FetchError:
+        return Handshake()
+    for address in addresses[:MAX_ADDRESSES]:
+        target = connect_target(address.split("%")[0], port)
+        for extra_args in (firefox_tls_args(), *OPENSSL_FALLBACK_ATTEMPTS):
+            cmd = ["openssl", "s_client", "-connect", target,
+                   "-servername", domain, "-showcerts", *HANDSHAKE_ARGS, *extra_args]
+            try:
+                # errors="replace": openssl prints certificate names in their
+                # raw encoding (not always UTF-8); the PEM blocks are ASCII.
+                result = subprocess.run(cmd, stdin=subprocess.DEVNULL, capture_output=True,
+                                        text=True, encoding="utf-8", errors="replace",
+                                        timeout=20, check=False)
+            except (subprocess.TimeoutExpired, OSError):
+                continue
+            certs = chain_certificates(result.stdout)
+            if certs:
+                ocsp, scts = parse_handshake(result.stdout)
+                return Handshake(certs, ocsp, scts)
+            if "CONNECTED(" not in result.stdout:
+                break   # no TCP connection to this address: try the next one
     return Handshake()
 
 
