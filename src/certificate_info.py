@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from src.fetch import https_probe
 from src.fetch.domain import DEFAULT_PORT, is_reachable, is_valid_domain, split_host_port
+from src.fetch.network import AddressNotAllowed, FetchError, _public_addresses
 from src.fetch.tls import fetch_handshake
 from src.validation.certificate_validator import check_dnssec
 from src.validation.chain_validator import ChainValidator
@@ -54,6 +55,9 @@ class CertificateInformation:
         original_host, port = split_host_port(domain)
         if port is None:
             return _error("Invalid port number.")
+        if _is_internal(original_host, port):
+            # Not even with force: cert-info must not reach internal systems (SSRF)
+            return _error("Domain resolves to a non-public address.")
         dnssec = _background.submit(check_dnssec, original_host)
         if not self.is_reachable(original_host, port) and not force:
             return _error("Domain is not reachable.")
@@ -88,6 +92,17 @@ class CertificateInformation:
             )
         except KeyboardInterrupt:
             return _error("Scan interrupted.")
+
+
+def _is_internal(host: str, port: int) -> bool:
+    """Whether the host resolves to a non-public (internal, loopback, ...) address."""
+    try:
+        _public_addresses(host, port)
+    except AddressNotAllowed:
+        return True
+    except FetchError:
+        pass    # no DNS answer: reported as not reachable
+    return False
 
 
 def _error(message: str) -> dict:

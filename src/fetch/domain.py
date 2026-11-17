@@ -5,6 +5,8 @@ Parsing and checking the domain given to the API.
 import re
 import socket
 
+from src.fetch.network import MAX_ADDRESSES, FetchError, _public_addresses
+
 DEFAULT_PORT = 443
 # Optional scheme, host name (labels of letters, digits, "-" and "_"; the
 # top-level domain is letters or an internationalised "xn--" label) and
@@ -40,10 +42,20 @@ def split_host_port(domain: str) -> tuple[str, int | None]:
 
 
 def is_reachable(domain: str, port: int = DEFAULT_PORT) -> bool:
-    """Check that a TCP connection to the domain (host part only) can be opened."""
+    """
+    Check that a TCP connection to the domain (host part only) can be opened.
+    Only public addresses are tried: the host is resolved and checked once
+    and the connection made to a checked address (see src/fetch/network.py).
+    """
     host, _ = split_host_port(domain)
     try:
-        with socket.create_connection((host, port), timeout=30):
-            return True
-    except OSError:
+        addresses = _public_addresses(host, port)
+    except FetchError:
         return False
+    for address in addresses[:MAX_ADDRESSES]:
+        try:
+            with socket.create_connection((address, port), timeout=30):
+                return True
+        except OSError:
+            continue
+    return False
