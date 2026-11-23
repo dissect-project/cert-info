@@ -1,13 +1,13 @@
 {
  "source": "https://raw.githubusercontent.com/mozilla-firefox/firefox/refs/heads/release/security/ct/CTKnownLogs.h",
- "expiration": "2027-01-12T20:15:47Z",
+ "expiration": "2027-01-26T20:08:06Z",
  "logs": [
   {
    "name": "Google Argon2026h2",
    "log_id": "1219ENGn9XfCx+lf1wC/+YLJM1pl4dCzAXMXwMjFaXc=",
    "state": "Admissible",
    "format": "RFC6962",
-   "timestamp_ms": 1727734767000,
+   "timestamp_ms": 1794591000000,
    "operator": "Google",
    "operator_id": 0,
    "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEKjpni/66DIYrSlGK6Rf+e6F2c/28ZUvDJ79N81+gyimAESAyeNZ++TRgjHWg9TVQnKHTSU0T1TtqDupFnSQTIg=="
@@ -17,7 +17,7 @@
    "log_id": "1tWNqdAXU/NqSqDHV0kCr+vH3CzTjNn3ZMgMiRkenwI=",
    "state": "Admissible",
    "format": "RFC6962",
-   "timestamp_ms": 1766881800000,
+   "timestamp_ms": 1794591000000,
    "operator": "Google",
    "operator_id": 0,
    "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEKHRm0H/zUaFA6Idz5cGvGO3tCPQyfGMgJmVBOPyKAP6mGM1IiNXi4CLomOUyYj0YN74p+eGVApFMsM4h/jzCsA=="
@@ -27,7 +27,7 @@
    "log_id": "2AlVO5RPev/IFhlvlE+Fq7D4/F6HVSYPFdEucrtFSxQ=",
    "state": "Admissible",
    "format": "RFC6962",
-   "timestamp_ms": 1727734767000,
+   "timestamp_ms": 1794591000000,
    "operator": "Google",
    "operator_id": 0,
    "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5Xd4lXEos5XJpcx6TOgyA5Z7/C4duaTbQ6C9aXL5Rbqaw+mW1XDnDX7JlRUninIwZYZDU9wRRBhJmCVopzwFvw=="
@@ -37,7 +37,7 @@
    "log_id": "RMK9DOkUDmSlyUoBkwpaobs1lw4A7hEWiWgqHETXtWY=",
    "state": "Admissible",
    "format": "RFC6962",
-   "timestamp_ms": 1766881800000,
+   "timestamp_ms": 1794591000000,
    "operator": "Google",
    "operator_id": 0,
    "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/6WcA4VRSljIfTdY48+pFRLLtLrmTb88cGDdl8Gv3E2LduG4jgJ3AK5iNMFGhpbRRLi5B3rPlBaXVywuR5IFDg=="

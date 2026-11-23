@@ -1,6 +1,6 @@
 {
  "source": "https://raw.githubusercontent.com/mozilla-firefox/firefox/refs/heads/release/security/manager/ssl/StaticHPKPins.h",
- "expiration": "2027-02-05T17:25:15Z",
+ "expiration": "2027-02-19T17:23:45Z",
  "description": "pinsets: base64 SHA-256 hashes of SubjectPublicKeyInfo",
  "pinsets": {
   "google_root_pems": [
@@ -282,6 +282,12 @@
   {
    "host": "gmail.com",
    "include_subdomains": false,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "gmail.kz",
+   "include_subdomains": true,
    "test_mode": false,
    "pinset": "google_root_pems"
   },
@@ -839,6 +845,12 @@
   },
   {
    "host": "google.com.kw",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "google.com.kz",
    "include_subdomains": true,
    "test_mode": false,
    "pinset": "google_root_pems"
@@ -1907,6 +1919,18 @@
   },
   {
    "host": "youtube.com",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "youtube.com.kz",
+   "include_subdomains": true,
+   "test_mode": false,
+   "pinset": "google_root_pems"
+  },
+  {
+   "host": "youtube.kz",
    "include_subdomains": true,
    "test_mode": false,
    "pinset": "google_root_pems"
